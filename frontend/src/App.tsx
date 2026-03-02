@@ -7,6 +7,9 @@ import ReviewScreen from './pages/ReviewScreen';
 import TopicBrowserScreen from './pages/TopicBrowserScreen';
 import HistoryScreen from './pages/HistoryScreen';
 import AdminPanelScreen from './pages/AdminPanelScreen';
+import SubscriptionPlansScreen from './pages/SubscriptionPlansScreen';
+import PaymentMethodSelectorScreen from './pages/PaymentMethodSelectorScreen';
+import AppHeader from './components/AppHeader';
 import { type Question } from './data/questions';
 
 export type Screen =
@@ -16,73 +19,92 @@ export type Screen =
   | { name: 'review'; questions: Question[]; answers: number[] }
   | { name: 'topics' }
   | { name: 'history' }
-  | { name: 'admin' };
+  | { name: 'admin' }
+  | { name: 'subscription' }
+  | { name: 'payment'; planName: string; planPrice: string; planCycle: 'monthly' | 'yearly' };
 
 const queryClient = new QueryClient();
+
+// Screens where the persistent AppHeader should NOT be shown
+// (quiz/results/review have their own back navigation)
+const HEADER_HIDDEN_SCREENS = new Set(['quiz', 'results', 'review']);
 
 function AppContent() {
   const [screen, setScreen] = useState<Screen>({ name: 'home' });
 
   const navigateTo = (s: Screen) => setScreen(s);
 
-  if (screen.name === 'home') {
-    return <HomeScreen onNavigate={navigateTo} />;
-  }
+  const showHeader = !HEADER_HIDDEN_SCREENS.has(screen.name);
 
-  if (screen.name === 'quiz') {
-    return (
-      <QuizScreen
-        questions={screen.questions}
-        onComplete={(answers, startTime) =>
-          navigateTo({ name: 'results', questions: screen.questions, answers, startTime })
-        }
-        onBack={() => navigateTo({ name: 'home' })}
-      />
-    );
-  }
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      {showHeader && (
+        <AppHeader onNavigate={navigateTo} currentScreen={screen.name} />
+      )}
 
-  if (screen.name === 'results') {
-    return (
-      <ResultsScreen
-        questions={screen.questions}
-        answers={screen.answers}
-        startTime={screen.startTime}
-        onReview={() =>
-          navigateTo({ name: 'review', questions: screen.questions, answers: screen.answers })
-        }
-        onNewQuiz={() => navigateTo({ name: 'home' })}
-      />
-    );
-  }
+      <div className="flex-1">
+        {screen.name === 'home' && <HomeScreen onNavigate={navigateTo} />}
 
-  if (screen.name === 'review') {
-    return (
-      <ReviewScreen
-        questions={screen.questions}
-        answers={screen.answers}
-        onBack={() => navigateTo({ name: 'home' })}
-      />
-    );
-  }
+        {screen.name === 'quiz' && (
+          <QuizScreen
+            questions={screen.questions}
+            onComplete={(answers, startTime) =>
+              navigateTo({ name: 'results', questions: screen.questions, answers, startTime })
+            }
+            onBack={() => navigateTo({ name: 'home' })}
+          />
+        )}
 
-  if (screen.name === 'topics') {
-    return (
-      <TopicBrowserScreen
-        onStartQuiz={(qs) => navigateTo({ name: 'quiz', questions: qs })}
-        onBack={() => navigateTo({ name: 'home' })}
-      />
-    );
-  }
+        {screen.name === 'results' && (
+          <ResultsScreen
+            questions={screen.questions}
+            answers={screen.answers}
+            startTime={screen.startTime}
+            onReview={() =>
+              navigateTo({ name: 'review', questions: screen.questions, answers: screen.answers })
+            }
+            onNewQuiz={() => navigateTo({ name: 'home' })}
+          />
+        )}
 
-  if (screen.name === 'history') {
-    return <HistoryScreen onBack={() => navigateTo({ name: 'home' })} />;
-  }
+        {screen.name === 'review' && (
+          <ReviewScreen
+            questions={screen.questions}
+            answers={screen.answers}
+            onBack={() => navigateTo({ name: 'home' })}
+          />
+        )}
 
-  if (screen.name === 'admin') {
-    return <AdminPanelScreen onBack={() => navigateTo({ name: 'home' })} />;
-  }
+        {screen.name === 'topics' && (
+          <TopicBrowserScreen
+            onStartQuiz={(qs) => navigateTo({ name: 'quiz', questions: qs })}
+            onBack={() => navigateTo({ name: 'home' })}
+          />
+        )}
 
-  return <HomeScreen onNavigate={navigateTo} />;
+        {screen.name === 'history' && (
+          <HistoryScreen onBack={() => navigateTo({ name: 'home' })} />
+        )}
+
+        {screen.name === 'admin' && (
+          <AdminPanelScreen onBack={() => navigateTo({ name: 'home' })} />
+        )}
+
+        {screen.name === 'subscription' && (
+          <SubscriptionPlansScreen onNavigate={navigateTo} />
+        )}
+
+        {screen.name === 'payment' && (
+          <PaymentMethodSelectorScreen
+            planName={screen.planName}
+            planPrice={screen.planPrice}
+            planCycle={screen.planCycle}
+            onNavigate={navigateTo}
+          />
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function App() {

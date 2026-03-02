@@ -33,6 +33,7 @@ export default function TopicBrowserScreen({ onStartQuiz, onBack }: TopicBrowser
   );
 
   // Build year list: include all static years + any new years from backend questions
+  // Local Question.year is always a number
   const allYears = Array.from(
     new Set([...YEARS, ...allQuestions.map((q) => q.year)])
   ).sort((a, b) => a - b);
@@ -200,7 +201,7 @@ export default function TopicBrowserScreen({ onStartQuiz, onBack }: TopicBrowser
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-foreground font-body leading-snug">{q.text}</p>
                         <span className="text-xs text-muted-foreground font-body mt-1 inline-block">
-                          {q.topic}
+                          Topic: {q.topic}
                         </span>
                       </div>
                     </div>
@@ -210,6 +211,22 @@ export default function TopicBrowserScreen({ onStartQuiz, onBack }: TopicBrowser
             </div>
           ))}
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-card py-4 px-4 text-center">
+        <p className="text-xs text-muted-foreground font-body">
+          © {new Date().getFullYear()} AIAPGET Unani PYQ Practice &nbsp;·&nbsp;{' '}
+          Built with <span className="text-destructive">♥</span> using{' '}
+          <a
+            href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname || 'aiapget-unani-pyq')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline"
+          >
+            caffeine.ai
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

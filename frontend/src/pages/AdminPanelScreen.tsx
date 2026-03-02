@@ -1,395 +1,379 @@
-import { useState } from 'react';
-import { ArrowLeft, PlusCircle, BookOpen, Loader2, AlertCircle, CheckCircle2, List } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { TOPICS, YEARS } from '../data/questions';
-import { useAddQuestion, useGetAdminQuestions } from '../hooks/useAdminQueries';
+import React, { useState } from "react";
+import { ArrowLeft, Plus, BookOpen, CheckCircle, AlertCircle, Loader2, Trash2 } from "lucide-react";
+import { useGetAdminQuestions, useAddQuestion } from "../hooks/useAdminQueries";
+import type { Question } from "../backend";
+
+const ADMIN_PASSWORD = "Naeem9472";
 
 interface AdminPanelScreenProps {
   onBack: () => void;
 }
 
-interface FormState {
+interface QuestionForm {
   questionText: string;
-  optionA: string;
-  optionB: string;
-  optionC: string;
-  optionD: string;
-  correctAnswerIndex: string;
+  option1: string;
+  option2: string;
+  option3: string;
+  option4: string;
+  correctAnswerIndex: number;
   topic: string;
   year: string;
 }
 
-const EMPTY_FORM: FormState = {
-  questionText: '',
-  optionA: '',
-  optionB: '',
-  optionC: '',
-  optionD: '',
-  correctAnswerIndex: '',
-  topic: '',
-  year: '',
-};
+const TOPICS = [
+  "Kulliyat",
+  "Ilmul Advia",
+  "Moalijat",
+  "Ilmul Jarahat",
+  "Ain, Uzn, Anf, Halaq wa Asnan",
+  "Amraz Jild wa Tazeeniyat",
+  "Amraz Niswan wa Ilmul Qabala",
+  "Kulliyat Ilaj",
+  "Other",
+];
 
-type NotificationType = 'success' | 'error' | null;
+const YEARS = ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"];
 
 export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
-  const [form, setForm] = useState<FormState>(EMPTY_FORM);
-  const [notification, setNotification] = useState<{ type: NotificationType; message: string }>({
-    type: null,
-    message: '',
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [activeTab, setActiveTab] = useState<"add" | "list">("add");
+
+  const [form, setForm] = useState<QuestionForm>({
+    questionText: "",
+    option1: "",
+    option2: "",
+    option3: "",
+    option4: "",
+    correctAnswerIndex: 0,
+    topic: TOPICS[0],
+    year: YEARS[0],
   });
 
-  const { data: adminQuestions, isLoading: questionsLoading, error: questionsError } = useGetAdminQuestions();
-  const addQuestion = useAddQuestion();
+  const { data: adminQuestions = [], isLoading: questionsLoading } = useGetAdminQuestions();
+  const addQuestionMutation = useAddQuestion();
 
-  const setField = (field: keyof FormState, value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      setPasswordError("");
+    } else {
+      setPasswordError("Incorrect password. Please try again.");
+    }
   };
 
-  const showNotification = (type: NotificationType, message: string) => {
-    setNotification({ type, message });
-    setTimeout(() => setNotification({ type: null, message: '' }), 4000);
+  const handleFormChange = (field: keyof QuestionForm, value: string | number) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSuccessMessage("");
+    setErrorMessage("");
 
-    if (
-      !form.questionText.trim() ||
-      !form.optionA.trim() ||
-      !form.optionB.trim() ||
-      !form.optionC.trim() ||
-      !form.optionD.trim() ||
-      !form.correctAnswerIndex ||
-      !form.topic ||
-      !form.year
-    ) {
-      showNotification('error', 'Please fill in all fields before submitting.');
+    if (!form.questionText.trim()) {
+      setErrorMessage("Question text is required.");
+      return;
+    }
+    if (!form.option1.trim() || !form.option2.trim() || !form.option3.trim() || !form.option4.trim()) {
+      setErrorMessage("All four answer options are required.");
       return;
     }
 
-    const nextId = BigInt(Date.now());
-
     try {
-      await addQuestion.mutateAsync({
-        id: nextId,
+      await addQuestionMutation.mutateAsync({
         questionText: form.questionText.trim(),
-        answerOptions: [
-          form.optionA.trim(),
-          form.optionB.trim(),
-          form.optionC.trim(),
-          form.optionD.trim(),
-        ],
-        correctAnswerIndex: BigInt(parseInt(form.correctAnswerIndex, 10)),
+        answerOptions: [form.option1.trim(), form.option2.trim(), form.option3.trim(), form.option4.trim()],
+        correctAnswerIndex: form.correctAnswerIndex,
         topic: form.topic,
-        year: BigInt(parseInt(form.year, 10)),
+        year: String(form.year),
       });
-      setForm(EMPTY_FORM);
-      showNotification('success', 'Question added successfully!');
+
+      setSuccessMessage("Question added successfully!");
+      setForm({
+        questionText: "",
+        option1: "",
+        option2: "",
+        option3: "",
+        option4: "",
+        correctAnswerIndex: 0,
+        topic: TOPICS[0],
+        year: YEARS[0],
+      });
+
+      setTimeout(() => setSuccessMessage(""), 4000);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Failed to add question. Please try again.';
-      showNotification('error', message);
+      const message = err instanceof Error ? err.message : "Failed to add question.";
+      setErrorMessage(message);
     }
   };
 
-  const correctAnswerLabel = (index: number) => {
-    const labels = ['A', 'B', 'C', 'D'];
-    return labels[index] ?? String(index);
-  };
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <div className="bg-card rounded-2xl shadow-lg border border-border p-8">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="w-8 h-8 text-primary" />
+              </div>
+              <h1 className="font-heading text-2xl font-bold text-foreground">Question Manager</h1>
+              <p className="text-muted-foreground mt-2 text-sm">Enter admin password to continue</p>
+            </div>
+
+            <form onSubmit={handlePasswordSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Password</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  placeholder="Enter admin password"
+                  autoFocus
+                />
+                {passwordError && (
+                  <p className="text-destructive text-sm mt-2 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {passwordError}
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Access Panel
+              </button>
+
+              <button
+                type="button"
+                onClick={onBack}
+                className="w-full py-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
+              >
+                ← Back to Home
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-primary text-primary-foreground shadow-md">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
+      <header className="bg-card border-b border-border sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <button
             onClick={onBack}
-            className="p-1.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-            aria-label="Go back"
+            className="p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <img
-            src="/assets/generated/app-logo.dim_128x128.png"
-            alt="AIAPGET Logo"
-            className="w-9 h-9 rounded-full border-2 border-gold object-cover"
-          />
           <div>
-            <h1 className="text-lg font-heading font-bold tracking-wide leading-tight">Question Manager</h1>
-            <p className="text-xs opacity-80 font-body">Add & Manage Questions</p>
+            <h1 className="font-heading text-xl font-bold text-foreground">Question Manager</h1>
+            <p className="text-xs text-muted-foreground">AIAPGET Unani PYQ Admin Panel</p>
           </div>
         </div>
       </header>
 
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 space-y-6">
-        {/* Notification Banner */}
-        {notification.type && (
-          <div
-            className={`flex items-center gap-3 px-4 py-3 rounded-xl border font-body text-sm ${
-              notification.type === 'success'
-                ? 'bg-success/10 border-success/30 text-success'
-                : 'bg-destructive/10 border-destructive/30 text-destructive'
+      <main className="max-w-4xl mx-auto px-4 py-6">
+        {/* Tabs */}
+        <div className="flex gap-2 mb-6">
+          <button
+            onClick={() => setActiveTab("add")}
+            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              activeTab === "add"
+                ? "bg-primary text-primary-foreground"
+                : "bg-card text-muted-foreground hover:text-foreground border border-border"
             }`}
           >
-            {notification.type === 'success' ? (
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-            ) : (
-              <AlertCircle className="w-5 h-5 flex-shrink-0" />
-            )}
-            <span>{notification.message}</span>
+            <Plus className="w-4 h-4 inline mr-1.5" />
+            Add Question
+          </button>
+          <button
+            onClick={() => setActiveTab("list")}
+            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              activeTab === "list"
+                ? "bg-primary text-primary-foreground"
+                : "bg-card text-muted-foreground hover:text-foreground border border-border"
+            }`}
+          >
+            <BookOpen className="w-4 h-4 inline mr-1.5" />
+            View Questions ({adminQuestions.length})
+          </button>
+        </div>
+
+        {/* Notifications */}
+        {successMessage && (
+          <div className="mb-4 p-4 bg-success/10 border border-success/30 rounded-xl flex items-center gap-2 text-success">
+            <CheckCircle className="w-5 h-5 flex-shrink-0" />
+            <span className="text-sm font-medium">{successMessage}</span>
+          </div>
+        )}
+        {errorMessage && (
+          <div className="mb-4 p-4 bg-destructive/10 border border-destructive/30 rounded-xl flex items-center gap-2 text-destructive">
+            <AlertCircle className="w-5 h-5 flex-shrink-0" />
+            <span className="text-sm font-medium">{errorMessage}</span>
           </div>
         )}
 
         {/* Add Question Form */}
-        <Card className="border-border shadow-xs">
-          <CardHeader className="pb-3">
-            <CardTitle className="font-heading text-foreground flex items-center gap-2">
-              <PlusCircle className="w-5 h-5 text-gold" />
-              Add New Question
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+        {activeTab === "add" && (
+          <div className="bg-card rounded-2xl border border-border p-6">
+            <h2 className="font-heading text-lg font-semibold text-foreground mb-6">Add New Question</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Question Text */}
-              <div className="space-y-1.5">
-                <Label htmlFor="questionText" className="font-body text-sm font-medium text-foreground">
-                  Question Text <span className="text-destructive">*</span>
-                </Label>
-                <Textarea
-                  id="questionText"
-                  placeholder="Enter the question text..."
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Question Text *</label>
+                <textarea
                   value={form.questionText}
-                  onChange={(e) => setField('questionText', e.target.value)}
+                  onChange={(e) => handleFormChange("questionText", e.target.value)}
                   rows={3}
-                  className="font-body resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                  placeholder="Enter the question..."
                 />
               </div>
 
-              {/* Options */}
-              <div className="space-y-3">
-                <Label className="font-body text-sm font-medium text-foreground">
-                  Answer Options <span className="text-destructive">*</span>
-                </Label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {(['A', 'B', 'C', 'D'] as const).map((letter) => {
-                    const fieldKey = `option${letter}` as keyof FormState;
-                    return (
-                      <div key={letter} className="flex items-center gap-2">
-                        <span className="w-7 h-7 rounded-full bg-primary/10 text-primary text-xs font-bold font-heading flex items-center justify-center flex-shrink-0">
-                          {letter}
-                        </span>
-                        <Input
-                          placeholder={`Option ${letter}`}
-                          value={form[fieldKey]}
-                          onChange={(e) => setField(fieldKey, e.target.value)}
-                          className="font-body"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
+              {/* Answer Options */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {(["option1", "option2", "option3", "option4"] as const).map((opt, idx) => (
+                  <div key={opt}>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Option {idx + 1} {form.correctAnswerIndex === idx && <span className="text-success text-xs">(Correct)</span>}
+                    </label>
+                    <input
+                      type="text"
+                      value={form[opt]}
+                      onChange={(e) => handleFormChange(opt, e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder={`Option ${idx + 1}`}
+                    />
+                  </div>
+                ))}
               </div>
 
-              {/* Correct Answer, Topic, Year */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {/* Correct Answer */}
-                <div className="space-y-1.5">
-                  <Label className="font-body text-sm font-medium text-foreground">
-                    Correct Answer <span className="text-destructive">*</span>
-                  </Label>
-                  <Select
-                    value={form.correctAnswerIndex}
-                    onValueChange={(v) => setField('correctAnswerIndex', v)}
+              {/* Correct Answer */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Correct Answer *</label>
+                <select
+                  value={form.correctAnswerIndex}
+                  onChange={(e) => handleFormChange("correctAnswerIndex", Number(e.target.value))}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                >
+                  <option value={0}>Option 1</option>
+                  <option value={1}>Option 2</option>
+                  <option value={2}>Option 3</option>
+                  <option value={3}>Option 4</option>
+                </select>
+              </div>
+
+              {/* Topic & Year */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Topic *</label>
+                  <select
+                    value={form.topic}
+                    onChange={(e) => handleFormChange("topic", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                   >
-                    <SelectTrigger className="font-body">
-                      <SelectValue placeholder="Select..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0">A</SelectItem>
-                      <SelectItem value="1">B</SelectItem>
-                      <SelectItem value="2">C</SelectItem>
-                      <SelectItem value="3">D</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    {TOPICS.map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
                 </div>
-
-                {/* Topic */}
-                <div className="space-y-1.5">
-                  <Label className="font-body text-sm font-medium text-foreground">
-                    Topic <span className="text-destructive">*</span>
-                  </Label>
-                  <Select value={form.topic} onValueChange={(v) => setField('topic', v)}>
-                    <SelectTrigger className="font-body">
-                      <SelectValue placeholder="Select topic..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {TOPICS.map((t) => (
-                        <SelectItem key={t} value={t}>
-                          {t}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Year */}
-                <div className="space-y-1.5">
-                  <Label className="font-body text-sm font-medium text-foreground">
-                    Year <span className="text-destructive">*</span>
-                  </Label>
-                  <Select value={form.year} onValueChange={(v) => setField('year', v)}>
-                    <SelectTrigger className="font-body">
-                      <SelectValue placeholder="Select year..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {YEARS.map((y) => (
-                        <SelectItem key={y} value={String(y)}>
-                          {y}
-                        </SelectItem>
-                      ))}
-                      {/* Allow future years */}
-                      {[2024, 2025, 2026].map((y) => (
-                        <SelectItem key={y} value={String(y)}>
-                          {y}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Year *</label>
+                  <select
+                    value={form.year}
+                    onChange={(e) => handleFormChange("year", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  >
+                    {YEARS.map((y) => (
+                      <option key={y} value={y}>{y}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
-              <Button
+              <button
                 type="submit"
-                disabled={addQuestion.isPending}
-                className="w-full sm:w-auto font-body"
+                disabled={addQuestionMutation.isPending}
+                className="w-full py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
               >
-                {addQuestion.isPending ? (
+                {addQuestionMutation.isPending ? (
                   <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin" />
                     Adding Question...
                   </>
                 ) : (
                   <>
-                    <PlusCircle className="w-4 h-4 mr-2" />
+                    <Plus className="w-4 h-4" />
                     Add Question
                   </>
                 )}
-              </Button>
+              </button>
             </form>
-          </CardContent>
-        </Card>
+          </div>
+        )}
 
-        {/* Existing Questions List */}
-        <Card className="border-border shadow-xs">
-          <CardHeader className="pb-3">
-            <CardTitle className="font-heading text-foreground flex items-center gap-2">
-              <List className="w-5 h-5 text-gold" />
-              Questions in Database
-              {adminQuestions && (
-                <Badge variant="secondary" className="ml-auto font-body text-xs">
-                  {adminQuestions.length} total
-                </Badge>
-              )}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {questionsLoading && (
-              <div className="flex items-center justify-center py-10 gap-2 text-muted-foreground font-body text-sm">
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Loading questions...
+        {/* Questions List */}
+        {activeTab === "list" && (
+          <div className="space-y-4">
+            {questionsLoading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
               </div>
-            )}
-
-            {questionsError && (
-              <div className="flex items-center gap-2 py-6 text-destructive font-body text-sm">
-                <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                <span>
-                  {questionsError instanceof Error
-                    ? questionsError.message
-                    : 'Failed to load questions. Please try again.'}
-                </span>
+            ) : adminQuestions.length === 0 ? (
+              <div className="bg-card rounded-2xl border border-border p-12 text-center">
+                <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground">No questions added yet.</p>
+                <button
+                  onClick={() => setActiveTab("add")}
+                  className="mt-4 px-5 py-2 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Add First Question
+                </button>
               </div>
-            )}
-
-            {!questionsLoading && !questionsError && adminQuestions && adminQuestions.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-10 gap-2 text-muted-foreground">
-                <BookOpen className="w-10 h-10 opacity-30" />
-                <p className="font-body text-sm">No questions in the database yet.</p>
-                <p className="font-body text-xs opacity-70">Use the form above to add the first question.</p>
-              </div>
-            )}
-
-            {!questionsLoading && !questionsError && adminQuestions && adminQuestions.length > 0 && (
-              <ScrollArea className="h-[400px] pr-3">
-                <div className="space-y-3">
-                  {adminQuestions.map((q, idx) => (
-                    <div key={String(q.id)}>
-                      <div className="py-3">
-                        <div className="flex items-start justify-between gap-3 mb-2">
-                          <span className="text-xs font-bold text-muted-foreground font-body flex-shrink-0 mt-0.5">
-                            #{idx + 1}
-                          </span>
-                          <p className="flex-1 text-sm font-body text-foreground leading-relaxed">
-                            {q.questionText}
-                          </p>
-                          <div className="flex gap-1.5 flex-shrink-0">
-                            <Badge variant="outline" className="font-body text-xs text-teal border-teal/30">
-                              {q.topic}
-                            </Badge>
-                            <Badge variant="outline" className="font-body text-xs text-gold border-gold/30">
-                              {String(q.year)}
-                            </Badge>
-                          </div>
-                        </div>
-                        <div className="ml-5 grid grid-cols-2 gap-1">
-                          {q.answerOptions.map((opt, optIdx) => (
-                            <div
-                              key={optIdx}
-                              className={`text-xs font-body px-2 py-1 rounded flex items-center gap-1.5 ${
-                                BigInt(optIdx) === q.correctAnswerIndex
-                                  ? 'bg-success/10 text-success font-medium'
-                                  : 'text-muted-foreground'
-                              }`}
-                            >
-                              <span className="font-bold">{correctAnswerLabel(optIdx)}.</span>
-                              <span>{opt}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      {idx < adminQuestions.length - 1 && <Separator />}
+            ) : (
+              adminQuestions.map((q: Question, idx: number) => (
+                <div key={String(q.id)} className="bg-card rounded-2xl border border-border p-5">
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-lg">
+                      #{idx + 1}
+                    </span>
+                    <div className="flex gap-2">
+                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-lg">{q.topic}</span>
+                      <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-lg">{q.year}</span>
                     </div>
-                  ))}
+                  </div>
+                  <p className="text-foreground font-medium mb-3 text-sm leading-relaxed">{q.questionText}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {q.answerOptions.map((opt: string, optIdx: number) => (
+                      <div
+                        key={optIdx}
+                        className={`text-xs px-3 py-2 rounded-lg border ${
+                          optIdx === Number(q.correctAnswerIndex)
+                            ? "bg-success/10 border-success/30 text-success font-medium"
+                            : "bg-muted/50 border-border text-muted-foreground"
+                        }`}
+                      >
+                        {String.fromCharCode(65 + optIdx)}. {opt}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </ScrollArea>
+              ))
             )}
-          </CardContent>
-        </Card>
+          </div>
+        )}
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-card py-4 px-4 text-center">
-        <p className="text-xs text-muted-foreground font-body">
-          © {new Date().getFullYear()} AIAPGET Unani PYQ Practice &nbsp;·&nbsp; Built with{' '}
-          <span className="text-destructive">♥</span> using{' '}
-          <a
-            href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname || 'aiapget-unani-pyq')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gold hover:underline"
-          >
-            caffeine.ai
-          </a>
-        </p>
-      </footer>
     </div>
   );
 }

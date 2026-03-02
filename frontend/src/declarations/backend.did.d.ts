@@ -10,13 +10,22 @@ import type { ActorMethod } from '@icp-sdk/core/agent';
 import type { IDL } from '@icp-sdk/core/candid';
 import type { Principal } from '@icp-sdk/core/principal';
 
+export type BillingCycle = { 'monthly' : null } |
+  { 'yearly' : null };
 export interface Question {
   'id' : bigint,
   'topic' : string,
-  'year' : bigint,
+  'year' : string,
   'answerOptions' : Array<string>,
   'questionText' : string,
   'correctAnswerIndex' : bigint,
+}
+export interface SubscriptionPlan {
+  'id' : bigint,
+  'features' : Array<string>,
+  'name' : string,
+  'billingCycle' : BillingCycle,
+  'price' : number,
 }
 export interface UserProfile { 'name' : string }
 export type UserRole = { 'admin' : null } |
@@ -24,15 +33,17 @@ export type UserRole = { 'admin' : null } |
   { 'guest' : null };
 export interface _SERVICE {
   '_initializeAccessControlWithSecret' : ActorMethod<[string], undefined>,
-  'addQuestion' : ActorMethod<[Question], undefined>,
+  'addQuestion' : ActorMethod<[Question], boolean>,
+  'addSubscriptionPlan' : ActorMethod<[SubscriptionPlan], boolean>,
   'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
   'clearArray' : ActorMethod<[], undefined>,
   'getAdminQuestions' : ActorMethod<[], Array<Question>>,
   'getByTopic' : ActorMethod<[string], Array<Question>>,
-  'getByYear' : ActorMethod<[bigint], Array<Question>>,
+  'getByYear' : ActorMethod<[string], Array<Question>>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
   'getCallerUserRole' : ActorMethod<[], UserRole>,
   'getQuestions' : ActorMethod<[], Array<Question>>,
+  'getSubscriptionPlans' : ActorMethod<[], Array<SubscriptionPlan>>,
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
   'isCallerAdmin' : ActorMethod<[], boolean>,
   'recordAttempt' : ActorMethod<[bigint, bigint], boolean>,

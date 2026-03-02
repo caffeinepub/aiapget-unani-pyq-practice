@@ -1,4 +1,4 @@
-import { BookOpen, Clock, List, Trophy, ChevronRight, Sparkles, ShieldCheck } from 'lucide-react';
+import { BookOpen, Clock, List, Trophy, ChevronRight, Sparkles, ShieldCheck, CreditCard } from 'lucide-react';
 import { questions as staticQuestions, TOPICS } from '../data/questions';
 import { useAllQuestions } from '../hooks/useAdminQueries';
 import type { Screen } from '../App';
@@ -53,6 +53,13 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
       action: () => onNavigate({ name: 'history' }),
     },
     {
+      icon: <CreditCard className="w-6 h-6" />,
+      title: 'Subscription Plans',
+      desc: 'Monthly & yearly premium access',
+      action: () => onNavigate({ name: 'subscription' }),
+      isSubscription: true,
+    },
+    {
       icon: <ShieldCheck className="w-6 h-6" />,
       title: 'Admin Panel',
       desc: 'Add and manage questions',
@@ -62,24 +69,7 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground shadow-md">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
-          <img
-            src="/assets/generated/app-logo.dim_128x128.png"
-            alt="AIAPGET Logo"
-            className="w-10 h-10 rounded-full border-2 border-gold object-cover"
-          />
-          <div>
-            <h1 className="text-lg font-heading font-bold tracking-wide leading-tight">
-              AIAPGET Unani PYQ
-            </h1>
-            <p className="text-xs opacity-80 font-body">Previous Year Questions Practice</p>
-          </div>
-        </div>
-      </header>
-
+    <div className="flex flex-col">
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 space-y-6">
         {/* Hero Banner */}
         <section className="relative rounded-2xl overflow-hidden shadow-lg">
@@ -128,6 +118,8 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
                 className={`group bg-card border rounded-xl p-4 flex items-center gap-4 text-left hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gold/50 ${
                   card.isAdmin
                     ? 'border-gold/40 hover:border-gold'
+                    : card.isSubscription
+                    ? 'border-gold/60 hover:border-gold bg-gradient-to-r from-card to-gold/5'
                     : 'border-border hover:border-gold'
                 }`}
               >
@@ -135,6 +127,8 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
                   className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
                     card.isAdmin
                       ? 'bg-gold/15 text-gold group-hover:bg-gold/25'
+                      : card.isSubscription
+                      ? 'bg-gold/20 text-gold group-hover:bg-gold/30'
                       : 'bg-primary/10 text-primary group-hover:bg-gold/20 group-hover:text-gold'
                   }`}
                 >
@@ -146,6 +140,11 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
                     {card.isAdmin && (
                       <span className="text-[10px] font-body font-normal bg-gold/15 text-gold px-1.5 py-0.5 rounded-full border border-gold/30">
                         Admin
+                      </span>
+                    )}
+                    {card.isSubscription && (
+                      <span className="text-[10px] font-body font-normal bg-gold/20 text-gold px-1.5 py-0.5 rounded-full border border-gold/40">
+                        Premium
                       </span>
                     )}
                   </div>

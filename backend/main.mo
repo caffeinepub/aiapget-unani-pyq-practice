@@ -1,15 +1,13 @@
 import Array "mo:core/Array";
 import Map "mo:core/Map";
 import Nat "mo:core/Nat";
+import List "mo:core/List";
 import Iter "mo:core/Iter";
 import Principal "mo:core/Principal";
 import Runtime "mo:core/Runtime";
-import AccessControl "authorization/access-control";
 import MixinAuthorization "authorization/MixinAuthorization";
-import Migration "migration";
+import AccessControl "authorization/access-control";
 
-// Apply migration logic during upgrades
-(with migration = Migration.run)
 actor {
   public type Question = {
     id : Nat;
@@ -17,14 +15,28 @@ actor {
     answerOptions : [Text];
     correctAnswerIndex : Nat;
     topic : Text;
-    year : Nat;
+    year : Text;
   };
 
   public type UserProfile = {
     name : Text;
   };
 
+  public type SubscriptionPlan = {
+    id : Nat;
+    name : Text;
+    price : Float;
+    billingCycle : BillingCycle;
+    features : [Text];
+  };
+
+  public type BillingCycle = {
+    #monthly;
+    #yearly;
+  };
+
   var storedArray : [Nat] = [];
+  let subscriptionPlans = Map.empty<Nat, SubscriptionPlan>();
   let accessControlState = AccessControl.initState();
   let userProfiles = Map.empty<Principal, UserProfile>();
   let questions = Map.empty<Nat, Question>();
@@ -75,14 +87,29 @@ actor {
     storedArray := [];
   };
 
+  // ── Subscription plan management (admin-only) ───────────────────────────────
+  public shared ({ caller }) func addSubscriptionPlan(newPlan : SubscriptionPlan) : async Bool {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can add subscription plans");
+    };
+    subscriptionPlans.add(newPlan.id, newPlan);
+    true;
+  };
+
+  public query func getSubscriptionPlans() : async [SubscriptionPlan] {
+    subscriptionPlans.values().toArray();
+  };
+
   // ── Question management (admin-only) ────────────────────────────────────────
-  public shared ({ caller }) func addQuestion(newQuestion : Question) : async () {
+  public shared ({ caller }) func addQuestion(newQuestion : Question) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
       Runtime.trap("Unauthorized: Only admins can add questions");
     };
     questions.add(newQuestion.id, newQuestion);
+    true;
   };
 
+  // ── Admin question query (admin-only) ───────────────────────────────────────
   public query ({ caller }) func getAdminQuestions() : async [Question] {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
       Runtime.trap("Unauthorized: Only admins can access admin questions");
@@ -99,10 +126,11 @@ actor {
     questions.values().toArray().filter(func(q : Question) : Bool { q.topic == topic });
   };
 
-  public query func getByYear(year : Nat) : async [Question] {
+  public query func getByYear(year : Text) : async [Question] {
     questions.values().toArray().filter(func(q : Question) : Bool { q.year == year });
   };
 
+  // ── Attempt recording (user-only) ───────────────────────────────────────────
   public shared ({ caller }) func recordAttempt(questionId : Nat, answerIndex : Nat) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
       Runtime.trap("Unauthorized: Only users can record attempts");

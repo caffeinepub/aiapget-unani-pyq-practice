@@ -1,16 +1,20 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 11,
+  "projectStateVersion": 27,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
-    "Question format: MCQ (Multiple Choice Questions) with PYQ (Previous Year Questions)"
+    "Question format: MCQ (Multiple Choice Questions) with PYQ (Previous Year Questions)",
+    "Admin panel password is 'Naeem9472' (hardcoded in frontend)"
   ],
   "known_issues": [
     "Admin panel shows 'only admin can add question' message instead of the question submission form",
-    "Newly added questions do not appear in their assigned category/topic filter"
+    "Newly added questions do not appear in their assigned category/topic filter",
+    "Submitting a question via the Admin Panel form results in a 'failed to add question' error",
+    "Deployment error on go-live for Version 11"
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- UPI logo badge icon, flat design on transparent background (upi-badge.dim_120x48.png)\n- Credit card flat icon illustration on transparent background (card-icon.dim_64x64.png)",
   "existing_features": [
     {
       "id": "feature-build-a-home-screen-with-navigation-options-start-practice-quiz-browse-by-topic-browse-by-year-and-view-score-history-display-the-app-name-and-a-brief-description-of-the-aiapget-unani-exam",
@@ -107,6 +111,86 @@
         "REQ-17"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-fix-the-admin-panel-screen-adminpanelscreen-tsx-questions-in-database-section-so-that-it-displays-admin-added-questions-fetched-from-the-backend-without-showing-an-unauthorized-error-the-frontend-must-call-getadminquestions-without-any-role-guard-that-blocks-the-request-ensuring-all-users-see-the-question-list",
+      "title": "Fix the Admin Panel screen (`AdminPanelScreen.tsx`) 'Questions in Database' section so that it displays admin-added questions fetched from the backend without showing an unauthorized error. The frontend must call `getAdminQuestions` without any role guard that blocks the request, ensuring all users see the question list.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-only-admin-can-add-question-restriction-from-the-frontend-adminpanelscreen-tsx-so-that-the-question-submission-form-is-visible-and-usable-by-all-visitors-without-any-role-or-identity-check-any-remaining-ui-guard-conditional-render-or-access-check-that-hides-the-form-behind-an-admin-role-must-be-eliminated",
+      "title": "Remove the 'only admin can add question' restriction from the frontend AdminPanelScreen.tsx so that the question submission form is visible and usable by all visitors without any role or identity check. Any remaining UI guard, conditional render, or access check that hides the form behind an admin role must be eliminated.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-password-prompt-gate-in-adminpanelscreen-tsx-that-must-be-completed-before-the-add-question-form-is-shown-the-screen-should-display-a-password-input-field-and-a-submit-button-when-the-user-first-opens-the-admin-panel-only-after-the-user-enters-the-correct-hardcoded-admin-password-e-g-unani2024-should-the-question-submission-form-and-the-questions-list-become-visible-if-the-password-is-incorrect-show-an-inline-error-message-the-unlocked-state-should-persist-for-the-duration-of-the-session-e-g-stored-in-component-state-but-reset-when-the-user-navigates-away-from-the-screen",
+      "title": "Add a password prompt/gate in AdminPanelScreen.tsx that must be completed before the add-question form is shown. The screen should display a password input field and a 'Submit' button when the user first opens the Admin Panel. Only after the user enters the correct hardcoded admin password (e.g., 'unani2024') should the question submission form and the questions list become visible. If the password is incorrect, show an inline error message. The unlocked state should persist for the duration of the session (e.g., stored in component state) but reset when the user navigates away from the screen.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-adminpanelscreen-tsx-update-the-hardcoded-admin-password-used-by-the-password-gate-from-the-current-value-e-g-unani2024-to-naeem9472-the-password-prompt-error-message-on-wrong-input-and-unlock-behaviour-must-remain-unchanged-only-the-accepted-password-string-changes",
+      "title": "In AdminPanelScreen.tsx, update the hardcoded admin password used by the password gate from the current value (e.g., 'unani2024') to 'Naeem9472'. The password prompt, error message on wrong input, and unlock behaviour must remain unchanged — only the accepted password string changes.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-diagnose-and-fix-the-failed-to-add-question-error-that-occurs-when-submitting-the-add-question-form-in-adminpanelscreen-tsx-inspect-the-backend-addquestion-update-function-in-backend-main-mo-and-ensure-it-accepts-calls-from-any-caller-authenticated-or-anonymous-without-throwing-an-authorization-or-role-error-verify-the-function-signature-parameter-types-and-return-type-are-correct-and-match-what-the-frontend-hook-useaddquestion-sends-the-form-submission-must-succeed-and-return-a-success-notification-to-the-user",
+      "title": "Diagnose and fix the 'Failed to add question' error that occurs when submitting the Add Question form in AdminPanelScreen.tsx. Inspect the backend `addQuestion` update function in backend/main.mo and ensure it accepts calls from any caller (authenticated or anonymous) without throwing an authorization or role error. Verify the function signature, parameter types, and return type are correct and match what the frontend hook `useAddQuestion` sends. The form submission must succeed and return a success notification to the user.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-after-fixing-the-backend-addquestion-function-verify-and-update-the-frontend-useaddquestion-mutation-hook-in-frontend-src-hooks-useadminqueries-ts-to-ensure-the-argument-object-it-sends-matches-the-exact-field-names-and-types-now-accepted-by-the-backend-if-any-field-mapping-is-mismatched-e-g-correctanswer-vs-correctanswerindex-numeric-vs-text-year-correct-the-frontend-payload-construction-so-the-call-succeeds-without-a-type-mismatch-rejection",
+      "title": "After fixing the backend `addQuestion` function, verify and update the frontend `useAddQuestion` mutation hook in `frontend/src/hooks/useAdminQueries.ts` to ensure the argument object it sends matches the exact field names and types now accepted by the backend. If any field mapping is mismatched (e.g., `correctAnswer` vs `correctAnswerIndex`, numeric vs text year), correct the frontend payload construction so the call succeeds without a type mismatch rejection.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-frontend-builds-successfully-with-no-typescript-compilation-errors-or-import-errors-so-that-the-full-deployment-pipeline-backend-canister-frontend-asset-bundle-completes-without-failure",
+      "title": "Ensure the frontend builds successfully with no TypeScript compilation errors or import errors, so that the full deployment pipeline (backend canister + frontend asset bundle) completes without failure.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-subscription-plans-screen-accessible-from-the-app-the-screen-must-display-two-plan-options-monthly-subscription-and-yearly-subscription-each-plan-card-should-clearly-show-the-plan-name-price-billing-cycle-and-a-list-of-included-benefits-the-yearly-plan-should-highlight-savings-compared-to-the-monthly-plan-e-g-save-20-include-a-subscribe-or-get-started-button-on-each-plan-card",
+      "title": "Add a subscription plans screen accessible from the app. The screen must display two plan options: Monthly Subscription and Yearly Subscription. Each plan card should clearly show the plan name, price, billing cycle, and a list of included benefits. The yearly plan should highlight savings compared to the monthly plan (e.g., 'Save 20%'). Include a 'Subscribe' or 'Get Started' button on each plan card.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-subscription-plans-screen-display-a-payment-methods-section-listing-all-supported-payment-methods-upi-credit-card-debit-card-net-banking-and-wallets-each-method-should-be-shown-with-a-recognizable-icon-or-label-the-upi-option-must-be-prominently-listed-when-a-user-selects-a-plan-and-clicks-subscribe-they-should-be-shown-a-payment-method-selector-ui-no-actual-transaction-processing-required-ui-flow-only",
+      "title": "On the subscription plans screen, display a payment methods section listing all supported payment methods: UPI, Credit Card, Debit Card, Net Banking, and Wallets. Each method should be shown with a recognizable icon or label. The UPI option must be prominently listed. When a user selects a plan and clicks Subscribe, they should be shown a payment method selector UI (no actual transaction processing required — UI flow only).",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-3-dot-vertical-kebab-menu-button-in-the-top-left-corner-of-the-home-screen-header-styled-like-a-professional-mobile-app-tapping-the-button-opens-a-slide-out-drawer-or-dropdown-menu-containing-navigation-links-home-practice-quiz-browse-by-topic-browse-by-year-score-history-subscription-plans-and-admin-panel-the-menu-must-be-dismissible-by-tapping-outside-or-pressing-a-close-button-apply-the-existing-parchment-teal-gold-theme-to-the-menu",
+      "title": "Add a 3-dot vertical kebab menu button in the top-left corner of the home screen header, styled like a professional mobile app. Tapping the button opens a slide-out drawer or dropdown menu containing navigation links: Home, Practice Quiz, Browse by Topic, Browse by Year, Score History, Subscription Plans, and Admin Panel. The menu must be dismissible by tapping outside or pressing a close button. Apply the existing parchment/teal/gold theme to the menu.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -177,6 +261,58 @@
       "summary": "Fix the backend so that questions added via the `addQuestion` update function are included in the results returned by `getByTopic` and `getByYear` query functions. Currently, admin-added questions are stored separately and are not merged into the main question bank that category/topic filters query against. The backend must unify all questions (both hardcoded and admin-added) into a single source that all query functions (`getQuestions`, `getByTopic`, `getByYear`, and the random quiz set function) draw from.",
       "reqIds": [
         "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Remove the authorization check on the backend `getAdminQuestions` query function so that any caller (authenticated or anonymous) can retrieve admin-added questions without receiving an 'Unauthorized: Only admins can access admin questions' error. The function must return all stored admin questions to all callers without a role check.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Remove the authorization/role check from the backend addQuestion update function in backend/main.mo so that any caller (authenticated or anonymous) can invoke it without being rejected. Also ensure getAdminQuestions has no role guard and returns all stored questions to any caller.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add an admin password prompt/gate before allowing question submission in the Admin Panel. Users must enter a correct password before the add-question form becomes accessible.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Diagnose and fix the IC0508 canister rejection error thrown by the backend `addQuestion` update function. The error shown is a 'non_replicated_rejection' with reject code 5, meaning the canister is trapping or throwing during execution. Rewrite the `addQuestion` function in backend/main.mo so it: (1) removes any remaining authorization/role/caller check that could cause a trap, (2) uses only stable or correctly typed mutable state for storing questions, (3) accepts the question record with exactly the field types the frontend sends (text fields as Text, correctAnswer as Nat, topic as Text, year as Text or Nat as appropriate), and (4) returns a simple success/error variant or Bool without any guard that would reject anonymous callers. Ensure the function compiles cleanly and does not trap at runtime under any caller identity.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Diagnose and fix the deployment error that caused the Version 11 go-live to fail. Audit the Motoko backend (backend/main.mo) for any compilation errors, type mismatches, or runtime traps — particularly in the `addQuestion` and `getAdminQuestions` functions — and resolve them so the canister compiles and deploys successfully.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add monthly and yearly subscription options with all payment methods including UPI. Add a 3-dot menu (hamburger/kebab) in the top-left corner like a professional app.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Add a backend data structure and functions to store subscription plan definitions (plan name, price, billing cycle, features list) as stable state in backend/main.mo. Expose a query function `getSubscriptionPlans` that returns all available plans. No payment processing logic is required — only plan metadata storage and retrieval.",
+      "reqIds": [
+        "REQ-32"
       ],
       "status": "pending"
     }

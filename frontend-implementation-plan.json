@@ -1,37 +1,90 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix: Admin-added questions not appearing in topic/category filters",
+  "title": "Add Subscription Plans, UPI Payment, and Top-Left 3-Dot Menu",
   "requirements": [
     {
-      "id": "REQ-17",
-      "summary": "Merge backend-stored admin questions with local static questions in all frontend topic/year filtering views so admin-added questions appear in the topic browser, year browser, and quiz generation flows",
+      "id": "REQ-29",
+      "summary": "Add a subscription plans screen with Monthly and Yearly plan cards showing pricing, features, and savings",
       "acceptanceCriteria": [
-        "When a user browses by topic (e.g., 'Ilmul Advia'), questions added via the Admin Panel appear in that topic's list alongside the static questions.",
-        "When a user browses by year, admin-added questions for that year appear in the list.",
-        "Starting a quiz from a topic or year group includes admin-added questions for that topic/year.",
-        "The UI correctly reflects the total count of questions including admin-added ones."
+        "A subscription screen exists with Monthly and Yearly plan cards",
+        "Each card shows plan name, price, billing period, and feature list",
+        "Yearly plan shows a savings badge or discount indicator compared to monthly",
+        "Each card has a Subscribe/Get Started CTA button",
+        "The screen is accessible from the 3-dot menu"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/hooks/useAdminQueries.ts",
-          "operation": "modify",
-          "description": "Add a new React Query hook `useAllQuestions` that fetches questions from both the backend via `actor.getQuestions()` and the local static `questions` array from `data/questions.ts`, then merges them into a single deduplicated array. This hook will serve as the unified question source for all filtering operations."
+          "path": "frontend/src/hooks/useSubscriptionQueries.ts",
+          "operation": "create",
+          "description": "Create React Query hook to fetch subscription plans from backend via getSubscriptionPlans query. Return the plans array and loading/error states for consumption by the subscription screen component."
         },
         {
-          "path": "frontend/src/pages/TopicBrowserScreen.tsx",
+          "path": "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "operation": "create",
+          "description": "Create subscription plans screen component displaying Monthly and Yearly plan cards using data from useSubscriptionQueries hook. Each card shows plan name, price, billing cycle, and feature list. Yearly plan includes a savings badge (e.g., 'Save 20%'). Each card has a Subscribe/Get Started button that navigates to the payment method selector. Apply parchment/teal/gold theme styling consistent with existing screens."
+        },
+        {
+          "path": "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "operation": "create",
+          "description": "Create payment method selector UI screen (mock-only, no real transactions) showing UPI, Credit Card, Debit Card, Net Banking, and Wallets options. Use generated payment icons (frontend/public/assets/generated/upi-badge.dim_120x48.png and frontend/public/assets/generated/card-icon.dim_64x64.png). Display selected plan details at the top. Apply parchment/teal/gold theme. Include a mock Submit Payment button that shows a success message without processing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Replace the direct import of the static `questions` array with the new `useAllQuestions` hook from `hooks/useAdminQueries.ts`. Update the component to handle loading and error states from the query. Ensure that the topic and year grouping logic operates on the merged question set, so that admin-added questions appear in their assigned topic/year sections."
+          "description": "Add SubscriptionPlansScreen and PaymentMethodSelectorScreen to the screen navigation state management. Add screen types 'subscription' and 'payment' to the existing navigation logic. Ensure navigation from the home screen and drawer menu to subscription screen is functional."
+        }
+      ]
+    },
+    {
+      "id": "REQ-30",
+      "summary": "Display payment methods section with UPI prominently listed and a payment method selector UI flow",
+      "acceptanceCriteria": [
+        "Payment methods section lists UPI, Credit Card, Debit Card, Net Banking, and Wallets",
+        "Each payment method has a distinct icon or label",
+        "UPI is prominently displayed in the payment methods list",
+        "Clicking Subscribe on a plan opens a payment method selector UI",
+        "The payment flow is a UI-only mock (no real transaction)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "operation": "modify",
+          "description": "Ensure the payment method selector lists all five payment options (UPI, Credit Card, Debit Card, Net Banking, Wallets) with distinct icons/labels. Reference frontend/public/assets/generated/upi-badge.dim_120x48.png for UPI and frontend/public/assets/generated/card-icon.dim_64x64.png for card payment. Position UPI prominently at the top of the list. Implement selection state and mock submission flow with success feedback."
+        },
+        {
+          "path": "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "operation": "modify",
+          "description": "Wire the Subscribe/Get Started button on each plan card to navigate to PaymentMethodSelectorScreen, passing the selected plan details (name, price, billing cycle) as navigation state or props for display on the payment screen."
+        }
+      ]
+    },
+    {
+      "id": "REQ-31",
+      "summary": "Add a 3-dot vertical kebab menu in the top-left corner with slide-out drawer navigation",
+      "acceptanceCriteria": [
+        "A vertical 3-dot (kebab) menu icon is visible in the top-left corner of the home screen header",
+        "Tapping the icon opens a drawer or dropdown navigation menu",
+        "Menu contains links to all main screens including Subscription Plans",
+        "Menu is dismissible by clicking/tapping outside it",
+        "Menu styling matches the existing parchment/teal/gold visual theme",
+        "Menu is present across all main screens (persistent header)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppHeader.tsx",
+          "operation": "create",
+          "description": "Create a reusable app header component with a 3-dot vertical kebab menu button positioned in the top-left corner. Implement a slide-out drawer or dropdown menu containing navigation links: Home, Practice Quiz, Browse by Topic, Browse by Year, Score History, Subscription Plans, and Admin Panel. Make the menu dismissible by clicking outside or a close button. Apply parchment/teal/gold theme styling. Accept an onNavigate callback prop to trigger screen changes in the parent App component."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render AppHeader component at the top of the app layout, passing a navigation callback that updates the current screen state. Ensure AppHeader is displayed across all main screens (Home, Quiz, Results, Review, Topics, History, Admin, Subscription, Payment) so the 3-dot menu is always accessible. Wire navigation from the drawer menu to all listed screens including the new SubscriptionPlansScreen."
         },
         {
           "path": "frontend/src/pages/HomeScreen.tsx",
           "operation": "modify",
-          "description": "Replace the static `questions` array reference with the `useAllQuestions` hook to calculate accurate question and topic counts that include both static and admin-added questions. Display loading state while fetching, and show the correct total counts once data is available."
-        },
-        {
-          "path": "frontend/src/pages/QuizScreen.tsx",
-          "operation": "modify",
-          "description": "If QuizScreen receives a pre-filtered question set from TopicBrowserScreen or HomeScreen, no changes are needed here. However, if QuizScreen independently filters questions (e.g., for random quiz generation), replace the static `questions` import with the `useAllQuestions` hook and update the quiz generation logic to draw from the merged question pool."
+          "description": "Remove or adjust any existing header/navigation if it conflicts with the new AppHeader. Ensure the home screen content works with the persistent AppHeader at the top without layout issues."
         }
       ]
     }

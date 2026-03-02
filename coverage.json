@@ -1,50 +1,87 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-02T17:14:32.862Z",
+  "generatedAt": "2026-03-02T23:28:07.900Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 1,
+    "total": 4,
+    "implemented": 3,
     "items": [
       {
-        "id": "REQ-16",
-        "summary": "Fix the backend so that questions added via the `addQuestion` update function are included in the results returned by `getByTopic` and `getByYear` query functions. Currently, admin-added questions are stored separately and are not merged into the main question bank that category/topic filters query against. The backend must unify all questions (both hardcoded and admin-added) into a single source that all query functions (`getQuestions`, `getByTopic`, `getByYear`, and the random quiz set function) draw from.",
+        "id": "REQ-29",
+        "summary": "Add a subscription plans screen accessible from the app. The screen must display two plan options: Monthly Subscription and Yearly Subscription. Each plan card should clearly show the plan name, price, billing cycle, and a list of included benefits. The yearly plan should highlight savings compared to the monthly plan (e.g., 'Save 20%'). Include a 'Subscribe' or 'Get Started' button on each plan card.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useSubscriptionQueries.ts",
+          "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useSubscriptionQueries.ts",
+          "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-30",
+        "summary": "On the subscription plans screen, display a payment methods section listing all supported payment methods: UPI, Credit Card, Debit Card, Net Banking, and Wallets. Each method should be shown with a recognizable icon or label. The UPI option must be prominently listed. When a user selects a plan and clicks Subscribe, they should be shown a payment method selector UI (no actual transaction processing required — UI flow only).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "frontend/src/pages/SubscriptionPlansScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+          "frontend/src/pages/SubscriptionPlansScreen.tsx"
+        ]
+      },
+      {
+        "id": "REQ-31",
+        "summary": "Add a 3-dot vertical kebab menu button in the top-left corner of the home screen header, styled like a professional mobile app. Tapping the button opens a slide-out drawer or dropdown menu containing navigation links: Home, Practice Quiz, Browse by Topic, Browse by Year, Score History, Subscription Plans, and Admin Panel. The menu must be dismissible by tapping outside or pressing a close button. Apply the existing parchment/teal/gold theme to the menu.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/AppHeader.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/HomeScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AppHeader.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/HomeScreen.tsx"
+        ]
+      },
+      {
+        "id": "REQ-32",
+        "summary": "Add a backend data structure and functions to store subscription plan definitions (plan name, price, billing cycle, features list) as stable state in backend/main.mo. Expose a query function `getSubscriptionPlans` that returns all available plans. No payment processing logic is required — only plan metadata storage and retrieval.",
         "status": "unknown",
         "plannedFiles": [],
         "matchedFiles": []
-      },
-      {
-        "id": "REQ-17",
-        "summary": "Fix the frontend Topic Browser screen (`TopicBrowserScreen.tsx`) and any other screens that filter questions by topic or year to also include questions fetched from the backend (via `getAdminQuestions` or the unified question query), not only the local static `questions.ts` data. The topic/category filter UI must merge backend-stored questions with the local question bank so that admin-added questions are visible in the topic browser and year browser.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/hooks/useAdminQueries.ts",
-          "frontend/src/pages/TopicBrowserScreen.tsx",
-          "frontend/src/pages/HomeScreen.tsx",
-          "frontend/src/pages/QuizScreen.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/hooks/useAdminQueries.ts",
-          "frontend/src/pages/TopicBrowserScreen.tsx",
-          "frontend/src/pages/HomeScreen.tsx"
-        ]
       }
     ]
   },
   "changedFiles": [
     "backend/main.mo",
-    "backend/migration.mo",
     "build-request.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/hooks/useAdminQueries.ts",
+    "frontend/public/assets/generated/card-icon.dim_64x64.png",
+    "frontend/public/assets/generated/upi-badge.dim_120x48.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AppHeader.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useSubscriptionQueries.ts",
     "frontend/src/pages/HomeScreen.tsx",
-    "frontend/src/pages/TopicBrowserScreen.tsx",
+    "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
+    "frontend/src/pages/SubscriptionPlansScreen.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

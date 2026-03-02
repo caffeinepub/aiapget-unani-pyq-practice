@@ -11,10 +11,21 @@ import { IDL } from '@icp-sdk/core/candid';
 export const Question = IDL.Record({
   'id' : IDL.Nat,
   'topic' : IDL.Text,
-  'year' : IDL.Nat,
+  'year' : IDL.Text,
   'answerOptions' : IDL.Vec(IDL.Text),
   'questionText' : IDL.Text,
   'correctAnswerIndex' : IDL.Nat,
+});
+export const BillingCycle = IDL.Variant({
+  'monthly' : IDL.Null,
+  'yearly' : IDL.Null,
+});
+export const SubscriptionPlan = IDL.Record({
+  'id' : IDL.Nat,
+  'features' : IDL.Vec(IDL.Text),
+  'name' : IDL.Text,
+  'billingCycle' : BillingCycle,
+  'price' : IDL.Float64,
 });
 export const UserRole = IDL.Variant({
   'admin' : IDL.Null,
@@ -25,15 +36,17 @@ export const UserProfile = IDL.Record({ 'name' : IDL.Text });
 
 export const idlService = IDL.Service({
   '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
-  'addQuestion' : IDL.Func([Question], [], []),
+  'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
+  'addSubscriptionPlan' : IDL.Func([SubscriptionPlan], [IDL.Bool], []),
   'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'clearArray' : IDL.Func([], [], []),
   'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
   'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
-  'getByYear' : IDL.Func([IDL.Nat], [IDL.Vec(Question)], ['query']),
+  'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
   'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
   'getQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
+  'getSubscriptionPlans' : IDL.Func([], [IDL.Vec(SubscriptionPlan)], ['query']),
   'getUserProfile' : IDL.Func(
       [IDL.Principal],
       [IDL.Opt(UserProfile)],
@@ -52,10 +65,21 @@ export const idlFactory = ({ IDL }) => {
   const Question = IDL.Record({
     'id' : IDL.Nat,
     'topic' : IDL.Text,
-    'year' : IDL.Nat,
+    'year' : IDL.Text,
     'answerOptions' : IDL.Vec(IDL.Text),
     'questionText' : IDL.Text,
     'correctAnswerIndex' : IDL.Nat,
+  });
+  const BillingCycle = IDL.Variant({
+    'monthly' : IDL.Null,
+    'yearly' : IDL.Null,
+  });
+  const SubscriptionPlan = IDL.Record({
+    'id' : IDL.Nat,
+    'features' : IDL.Vec(IDL.Text),
+    'name' : IDL.Text,
+    'billingCycle' : BillingCycle,
+    'price' : IDL.Float64,
   });
   const UserRole = IDL.Variant({
     'admin' : IDL.Null,
@@ -66,15 +90,21 @@ export const idlFactory = ({ IDL }) => {
   
   return IDL.Service({
     '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
-    'addQuestion' : IDL.Func([Question], [], []),
+    'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
+    'addSubscriptionPlan' : IDL.Func([SubscriptionPlan], [IDL.Bool], []),
     'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'clearArray' : IDL.Func([], [], []),
     'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
     'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
-    'getByYear' : IDL.Func([IDL.Nat], [IDL.Vec(Question)], ['query']),
+    'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
     'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
     'getQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
+    'getSubscriptionPlans' : IDL.Func(
+        [],
+        [IDL.Vec(SubscriptionPlan)],
+        ['query'],
+      ),
     'getUserProfile' : IDL.Func(
         [IDL.Principal],
         [IDL.Opt(UserProfile)],
