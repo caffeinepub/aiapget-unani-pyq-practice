@@ -1,90 +1,28 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Subscription Plans, UPI Payment, and Top-Left 3-Dot Menu",
+  "title": "Fix correct answer option text color and bold styling in quiz screen",
   "requirements": [
     {
-      "id": "REQ-29",
-      "summary": "Add a subscription plans screen with Monthly and Yearly plan cards showing pricing, features, and savings",
+      "id": "REQ-34",
+      "summary": "Fix the correct answer option text to be clearly visible with high-contrast dark color (deep teal or dark green) and bold font-weight when highlighted after the user clicks an answer in QuizScreen.tsx and ReviewScreen.tsx",
       "acceptanceCriteria": [
-        "A subscription screen exists with Monthly and Yearly plan cards",
-        "Each card shows plan name, price, billing period, and feature list",
-        "Yearly plan shows a savings badge or discount indicator compared to monthly",
-        "Each card has a Subscribe/Get Started CTA button",
-        "The screen is accessible from the 3-dot menu"
+        "After clicking an option in the quiz, the correct answer option displays its text in a clearly visible, high-contrast color against the highlighted background (teal/green).",
+        "The correct answer option text is rendered in bold (font-weight: bold or font-bold Tailwind class).",
+        "The fix is applied in both QuizScreen.tsx and ReviewScreen.tsx for all correct-answer highlighted states.",
+        "Incorrect options and unselected options retain their existing text color and weight.",
+        "No other UI element styling is changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/hooks/useSubscriptionQueries.ts",
-          "operation": "create",
-          "description": "Create React Query hook to fetch subscription plans from backend via getSubscriptionPlans query. Return the plans array and loading/error states for consumption by the subscription screen component."
-        },
-        {
-          "path": "frontend/src/pages/SubscriptionPlansScreen.tsx",
-          "operation": "create",
-          "description": "Create subscription plans screen component displaying Monthly and Yearly plan cards using data from useSubscriptionQueries hook. Each card shows plan name, price, billing cycle, and feature list. Yearly plan includes a savings badge (e.g., 'Save 20%'). Each card has a Subscribe/Get Started button that navigates to the payment method selector. Apply parchment/teal/gold theme styling consistent with existing screens."
-        },
-        {
-          "path": "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
-          "operation": "create",
-          "description": "Create payment method selector UI screen (mock-only, no real transactions) showing UPI, Credit Card, Debit Card, Net Banking, and Wallets options. Use generated payment icons (frontend/public/assets/generated/upi-badge.dim_120x48.png and frontend/public/assets/generated/card-icon.dim_64x64.png). Display selected plan details at the top. Apply parchment/teal/gold theme. Include a mock Submit Payment button that shows a success message without processing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/pages/QuizScreen.tsx",
           "operation": "modify",
-          "description": "Add SubscriptionPlansScreen and PaymentMethodSelectorScreen to the screen navigation state management. Add screen types 'subscription' and 'payment' to the existing navigation logic. Ensure navigation from the home screen and drawer menu to subscription screen is functional."
-        }
-      ]
-    },
-    {
-      "id": "REQ-30",
-      "summary": "Display payment methods section with UPI prominently listed and a payment method selector UI flow",
-      "acceptanceCriteria": [
-        "Payment methods section lists UPI, Credit Card, Debit Card, Net Banking, and Wallets",
-        "Each payment method has a distinct icon or label",
-        "UPI is prominently displayed in the payment methods list",
-        "Clicking Subscribe on a plan opens a payment method selector UI",
-        "The payment flow is a UI-only mock (no real transaction)"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
-          "operation": "modify",
-          "description": "Ensure the payment method selector lists all five payment options (UPI, Credit Card, Debit Card, Net Banking, Wallets) with distinct icons/labels. Reference frontend/public/assets/generated/upi-badge.dim_120x48.png for UPI and frontend/public/assets/generated/card-icon.dim_64x64.png for card payment. Position UPI prominently at the top of the list. Implement selection state and mock submission flow with success feedback."
+          "description": "Update the option rendering logic to apply dark, high-contrast text color (e.g., text-teal-900 or text-green-900) and bold font-weight (font-bold) to the correct answer option when it is highlighted after the user has submitted their answer. Ensure the text color contrasts clearly against the teal/green background highlight. Do not modify background or border colors of the correct answer highlight."
         },
         {
-          "path": "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "path": "frontend/src/pages/ReviewScreen.tsx",
           "operation": "modify",
-          "description": "Wire the Subscribe/Get Started button on each plan card to navigate to PaymentMethodSelectorScreen, passing the selected plan details (name, price, billing cycle) as navigation state or props for display on the payment screen."
-        }
-      ]
-    },
-    {
-      "id": "REQ-31",
-      "summary": "Add a 3-dot vertical kebab menu in the top-left corner with slide-out drawer navigation",
-      "acceptanceCriteria": [
-        "A vertical 3-dot (kebab) menu icon is visible in the top-left corner of the home screen header",
-        "Tapping the icon opens a drawer or dropdown navigation menu",
-        "Menu contains links to all main screens including Subscription Plans",
-        "Menu is dismissible by clicking/tapping outside it",
-        "Menu styling matches the existing parchment/teal/gold visual theme",
-        "Menu is present across all main screens (persistent header)"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/AppHeader.tsx",
-          "operation": "create",
-          "description": "Create a reusable app header component with a 3-dot vertical kebab menu button positioned in the top-left corner. Implement a slide-out drawer or dropdown menu containing navigation links: Home, Practice Quiz, Browse by Topic, Browse by Year, Score History, Subscription Plans, and Admin Panel. Make the menu dismissible by clicking outside or a close button. Apply parchment/teal/gold theme styling. Accept an onNavigate callback prop to trigger screen changes in the parent App component."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render AppHeader component at the top of the app layout, passing a navigation callback that updates the current screen state. Ensure AppHeader is displayed across all main screens (Home, Quiz, Results, Review, Topics, History, Admin, Subscription, Payment) so the 3-dot menu is always accessible. Wire navigation from the drawer menu to all listed screens including the new SubscriptionPlansScreen."
-        },
-        {
-          "path": "frontend/src/pages/HomeScreen.tsx",
-          "operation": "modify",
-          "description": "Remove or adjust any existing header/navigation if it conflicts with the new AppHeader. Ensure the home screen content works with the persistent AppHeader at the top without layout issues."
+          "description": "Update the option rendering logic to apply dark, high-contrast text color (e.g., text-teal-900 or text-green-900) and bold font-weight (font-bold) to the correct answer option when it is highlighted during review. Ensure the text color contrasts clearly against the teal/green background highlight. Do not modify background or border colors of the correct answer highlight."
         }
       ]
     }

@@ -95,7 +95,17 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
                 >
                   {OPTION_LABELS[idx]}
                 </span>
-                <span className="flex-1">{option}</span>
+                <span
+                  className={`flex-1 ${
+                    isCorrectChoice
+                      ? 'text-success font-bold'
+                      : isUserChoice && !isCorrectChoice
+                      ? 'text-destructive'
+                      : ''
+                  }`}
+                >
+                  {option}
+                </span>
                 {isCorrectChoice && <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />}
                 {isUserChoice && !isCorrectChoice && (
                   <XCircle className="w-4 h-4 text-destructive flex-shrink-0" />

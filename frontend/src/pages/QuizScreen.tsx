@@ -89,14 +89,17 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
         {/* Options */}
         <div className="space-y-3">
           {current.options.map((option, idx) => {
+            const isCorrect = idx === current.correctIndex;
+            const isSelected = idx === selectedAnswer;
+
             let optionClass =
               'w-full text-left border rounded-xl p-4 flex items-center gap-3 transition-all duration-200 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50';
 
             if (!isAnswered) {
               optionClass += ' bg-card border-border hover:border-gold hover:bg-gold/5 cursor-pointer';
-            } else if (idx === current.correctIndex) {
-              optionClass += ' bg-success/10 border-success text-success-foreground cursor-default';
-            } else if (idx === selectedAnswer) {
+            } else if (isCorrect) {
+              optionClass += ' bg-success/10 border-success cursor-default';
+            } else if (isSelected) {
               optionClass += ' bg-destructive/10 border-destructive text-destructive-foreground cursor-default';
             } else {
               optionClass += ' bg-card border-border opacity-60 cursor-default';
@@ -111,17 +114,25 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
               >
                 <span
                   className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold font-heading border transition-colors ${
-                    isAnswered && idx === current.correctIndex
+                    isAnswered && isCorrect
                       ? 'bg-success border-success text-white'
-                      : isAnswered && idx === selectedAnswer
+                      : isAnswered && isSelected
                       ? 'bg-destructive border-destructive text-white'
                       : 'border-border bg-muted text-muted-foreground'
                   }`}
                 >
                   {OPTION_LABELS[idx]}
                 </span>
-                <span className="flex-1">{option}</span>
-                {isAnswered && idx === current.correctIndex && (
+                <span
+                  className={`flex-1 ${
+                    isAnswered && isCorrect
+                      ? 'text-success font-bold'
+                      : ''
+                  }`}
+                >
+                  {option}
+                </span>
+                {isAnswered && isCorrect && (
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                 )}
               </button>

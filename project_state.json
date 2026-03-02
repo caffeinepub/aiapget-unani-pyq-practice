@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 27,
+  "projectStateVersion": 31,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
@@ -11,10 +11,10 @@
     "Admin panel shows 'only admin can add question' message instead of the question submission form",
     "Newly added questions do not appear in their assigned category/topic filter",
     "Submitting a question via the Admin Panel form results in a 'failed to add question' error",
-    "Deployment error on go-live for Version 11"
+    "Deployment error on go-live for Version 11",
+    "Correct answer option text color is not visible after clicking (font color blends with background); correct option text should be bold and use a contrasting color"
   ],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- UPI logo badge icon, flat design on transparent background (upi-badge.dim_120x48.png)\n- Credit card flat icon illustration on transparent background (card-icon.dim_64x64.png)",
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-build-a-home-screen-with-navigation-options-start-practice-quiz-browse-by-topic-browse-by-year-and-view-score-history-display-the-app-name-and-a-brief-description-of-the-aiapget-unani-exam",
@@ -191,6 +191,22 @@
         "REQ-31"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-topicbrowserscreen-tsx-identify-the-color-style-applied-to-the-start-quiz-button-rendered-in-the-browse-by-topic-section-then-apply-that-exact-same-color-background-border-and-hover-styling-to-the-equivalent-start-quiz-or-quiz-launch-button-rendered-in-the-browse-by-year-section-so-both-sections-are-visually-consistent",
+      "title": "In TopicBrowserScreen.tsx, identify the color/style applied to the 'Start Quiz' button rendered in the Browse by Topic section, then apply that exact same color, background, border, and hover styling to the equivalent 'Start Quiz' (or quiz launch) button rendered in the Browse by Year section, so both sections are visually consistent.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-quizscreen-tsx-fix-the-correct-answer-option-so-that-after-the-user-clicks-and-the-answer-is-revealed-the-text-label-of-the-correct-option-is-displayed-in-a-clearly-visible-high-contrast-font-color-e-g-dark-text-such-as-deep-teal-or-dark-green-not-white-on-white-or-invisible-and-is-rendered-in-bold-the-image-shows-that-option-b-is-highlighted-with-a-teal-green-background-and-border-but-the-option-text-is-invisible-this-must-be-corrected-so-the-text-is-legible-against-the-highlighted-background-apply-the-same-fix-to-reviewscreen-tsx-wherever-the-correct-answer-option-is-highlighted",
+      "title": "In QuizScreen.tsx, fix the correct answer option so that after the user clicks and the answer is revealed, the text label of the correct option is displayed in a clearly visible, high-contrast font color (e.g., dark text such as deep teal or dark green, not white-on-white or invisible) and is rendered in bold. The image shows that option B is highlighted with a teal/green background and border but the option text is invisible — this must be corrected so the text is legible against the highlighted background. Apply the same fix to ReviewScreen.tsx wherever the correct answer option is highlighted.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -314,6 +330,18 @@
       "reqIds": [
         "REQ-32"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Fix the 'Browse by Year' section so that the quiz option button/card color matches the styling used in the 'Browse by Topic' section.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Fix the correct answer option text color visibility after clicking — the font color is not visible when the correct option is selected/revealed. Change the font color to be clearly visible and make the correct option text bold.",
+      "reqIds": [],
       "status": "pending"
     }
   ],

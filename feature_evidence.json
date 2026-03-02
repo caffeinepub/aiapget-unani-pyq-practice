@@ -2,13 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-subscription-plans-screen-accessible-from-the-app-the-screen-must-display-two-plan-options-monthly-subscription-and-yearly-subscription-each-plan-card-should-clearly-show-the-plan-name-price-billing-cycle-and-a-list-of-included-benefits-the-yearly-plan-should-highlight-savings-compared-to-the-monthly-plan-e-g-save-20-include-a-subscribe-or-get-started-button-on-each-plan-card",
-      "featureTitle": "Add a subscription plans screen accessible from the app. The screen must display two plan options: Monthly Subscription and Yearly Subscription. Each plan card should clearly show the plan name, price, billing cycle, and a list of included benefits. The yearly plan should highlight savings compared to the monthly plan (e.g., 'Save 20%'). Include a 'Subscribe' or 'Get Started' button on each plan card.",
+      "featureId": "feature-in-quizscreen-tsx-fix-the-correct-answer-option-so-that-after-the-user-clicks-and-the-answer-is-revealed-the-text-label-of-the-correct-option-is-displayed-in-a-clearly-visible-high-contrast-font-color-e-g-dark-text-such-as-deep-teal-or-dark-green-not-white-on-white-or-invisible-and-is-rendered-in-bold-the-image-shows-that-option-b-is-highlighted-with-a-teal-green-background-and-border-but-the-option-text-is-invisible-this-must-be-corrected-so-the-text-is-legible-against-the-highlighted-background-apply-the-same-fix-to-reviewscreen-tsx-wherever-the-correct-answer-option-is-highlighted",
+      "featureTitle": "In QuizScreen.tsx, fix the correct answer option so that after the user clicks and the answer is revealed, the text label of the correct option is displayed in a clearly visible, high-contrast font color (e.g., dark text such as deep teal or dark green, not white-on-white or invisible) and is rendered in bold. The image shows that option B is highlighted with a teal/green background and border but the option text is invisible — this must be corrected so the text is legible against the highlighted background. Apply the same fix to ReviewScreen.tsx wherever the correct answer option is highlighted.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/hooks/useSubscriptionQueries.ts",
-        "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
-        "frontend/src/pages/SubscriptionPlansScreen.tsx"
+        "frontend/src/pages/QuizScreen.tsx",
+        "frontend/src/pages/ReviewScreen.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -19,48 +17,7 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-29"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-on-the-subscription-plans-screen-display-a-payment-methods-section-listing-all-supported-payment-methods-upi-credit-card-debit-card-net-banking-and-wallets-each-method-should-be-shown-with-a-recognizable-icon-or-label-the-upi-option-must-be-prominently-listed-when-a-user-selects-a-plan-and-clicks-subscribe-they-should-be-shown-a-payment-method-selector-ui-no-actual-transaction-processing-required-ui-flow-only",
-      "featureTitle": "On the subscription plans screen, display a payment methods section listing all supported payment methods: UPI, Credit Card, Debit Card, Net Banking, and Wallets. Each method should be shown with a recognizable icon or label. The UPI option must be prominently listed. When a user selects a plan and clicks Subscribe, they should be shown a payment method selector UI (no actual transaction processing required — UI flow only).",
-      "files": [
-        "frontend/src/pages/PaymentMethodSelectorScreen.tsx",
-        "frontend/src/pages/SubscriptionPlansScreen.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-30"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-3-dot-vertical-kebab-menu-button-in-the-top-left-corner-of-the-home-screen-header-styled-like-a-professional-mobile-app-tapping-the-button-opens-a-slide-out-drawer-or-dropdown-menu-containing-navigation-links-home-practice-quiz-browse-by-topic-browse-by-year-score-history-subscription-plans-and-admin-panel-the-menu-must-be-dismissible-by-tapping-outside-or-pressing-a-close-button-apply-the-existing-parchment-teal-gold-theme-to-the-menu",
-      "featureTitle": "Add a 3-dot vertical kebab menu button in the top-left corner of the home screen header, styled like a professional mobile app. Tapping the button opens a slide-out drawer or dropdown menu containing navigation links: Home, Practice Quiz, Browse by Topic, Browse by Year, Score History, Subscription Plans, and Admin Panel. The menu must be dismissible by tapping outside or pressing a close button. Apply the existing parchment/teal/gold theme to the menu.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/AppHeader.tsx",
-        "frontend/src/pages/HomeScreen.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-31"
+        "REQ-34"
       ],
       "confidence": "high"
     }

@@ -178,7 +178,7 @@ export default function TopicBrowserScreen({ onStartQuiz, onBack }: TopicBrowser
                       e.stopPropagation();
                       onStartQuiz(shuffleArray(yearQs));
                     }}
-                    className="gap-1 bg-gold/90 hover:bg-gold text-primary-foreground text-xs h-7 px-3"
+                    className="gap-1 bg-primary hover:bg-primary/90 text-xs h-7 px-3"
                   >
                     <Play className="w-3 h-3" />
                     Quiz
