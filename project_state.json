@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
+  "architectural_notes": [
+    "App domain: AIAPGET exam prep for Unani System of Medicine",
+    "Question format: MCQ (Multiple Choice Questions) with PYQ (Previous Year Questions)"
+  ],
+  "known_issues": [
+    "Admin panel shows 'only admin can add question' message instead of the question submission form",
+    "Newly added questions do not appear in their assigned category/topic filter"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-build-a-home-screen-with-navigation-options-start-practice-quiz-browse-by-topic-browse-by-year-and-view-score-history-display-the-app-name-and-a-brief-description-of-the-aiapget-unani-exam",
+      "title": "Build a home screen with navigation options: Start Practice Quiz, Browse by Topic, Browse by Year, and View Score History. Display the app name and a brief description of the AIAPGET Unani exam.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-quiz-interface-where-users-answer-mcqs-one-at-a-time-each-question-card-shows-the-question-text-four-labeled-options-a-d-and-a-question-counter-e-g-question-3-of-20-after-selecting-an-option-the-answer-is-locked-and-the-user-can-proceed-to-the-next-question-via-a-next-button-a-progress-bar-or-step-indicator-must-be-visible-throughout-the-quiz",
+      "title": "Build a quiz interface where users answer MCQs one at a time. Each question card shows the question text, four labeled options (A–D), and a question counter (e.g., 'Question 3 of 20'). After selecting an option, the answer is locked and the user can proceed to the next question via a 'Next' button. A progress bar or step indicator must be visible throughout the quiz.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-result-summary-screen-shown-at-the-end-of-each-quiz-session-display-total-questions-attempted-number-of-correct-answers-percentage-score-and-a-pass-fail-or-performance-tier-indicator-include-a-review-answers-button-and-a-start-new-quiz-button",
+      "title": "Build a result summary screen shown at the end of each quiz session. Display: total questions attempted, number of correct answers, percentage score, and a pass/fail or performance tier indicator. Include a 'Review Answers' button and a 'Start New Quiz' button.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-answer-review-screen-accessible-after-quiz-completion-for-each-question-in-the-completed-quiz-display-the-question-text-all-four-options-the-user-s-selected-answer-highlighted-and-the-correct-answer-highlighted-in-green-if-available-show-a-brief-explanation-or-reference-for-the-correct-answer",
+      "title": "Build an answer review screen accessible after quiz completion. For each question in the completed quiz, display: the question text, all four options, the user's selected answer (highlighted), and the correct answer (highlighted in green). If available, show a brief explanation or reference for the correct answer.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-topic-browser-screen-listing-all-unani-subject-categories-clicking-a-category-shows-all-questions-under-that-topic-in-a-list-view-users-can-start-a-quiz-filtered-to-only-that-topic-from-this-screen",
+      "title": "Build a topic browser screen listing all Unani subject categories. Clicking a category shows all questions under that topic in a list view. Users can start a quiz filtered to only that topic from this screen.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-score-history-screen-that-fetches-and-displays-all-past-quiz-attempts-from-the-backend-each-record-should-show-the-date-time-score-correct-total-and-percentage-display-in-reverse-chronological-order",
+      "title": "Build a score history screen that fetches and displays all past quiz attempts from the backend. Each record should show the date/time, score (correct/total), and percentage. Display in reverse chronological order.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-inspired-by-classical-unani-islamic-manuscript-aesthetics-warm-parchment-cream-background-tones-deep-teal-and-gold-accent-colors-elegant-serif-or-calligraphic-style-headings-paired-with-clean-sans-serif-body-text-and-subtle-geometric-arabesque-decorative-elements-enforce-this-theme-consistently-across-all-screens",
+      "title": "Apply a cohesive visual theme inspired by classical Unani/Islamic manuscript aesthetics: warm parchment/cream background tones, deep teal and gold accent colors, elegant serif or calligraphic-style headings paired with clean sans-serif body text, and subtle geometric/arabesque decorative elements. Enforce this theme consistently across all screens.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-a-decorative-banner-hero-image-for-the-home-screen-representing-the-unani-system-of-medicine-herbs-traditional-medicine-vessels-and-manuscript-motifs-and-an-app-logo-icon-render-these-as-static-assets-from-frontend-public-assets-generated",
+      "title": "Generate and use a decorative banner/hero image for the home screen representing the Unani system of medicine — herbs, traditional medicine vessels, and manuscript motifs — and an app logo/icon. Render these as static assets from frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-diagnose-and-fix-the-deployment-error-that-occurred-in-the-most-recent-build-ensure-the-motoko-backend-actor-compiles-without-errors-all-backend-query-and-update-functions-are-syntactically-correct-and-type-safe-and-the-frontend-builds-successfully-with-no-typescript-or-import-errors",
+      "title": "Diagnose and fix the deployment error that occurred in the most recent build. Ensure the Motoko backend actor compiles without errors, all backend query and update functions are syntactically correct and type-safe, and the frontend builds successfully with no TypeScript or import errors.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-panel-screen-accessible-from-the-home-screen-e-g-via-an-admin-button-or-link-the-panel-must-contain-a-form-allowing-submission-of-a-new-mcq-question-with-the-following-fields-question-text-textarea-four-answer-options-option-a-d-correct-answer-selector-radio-or-dropdown-topic-subject-category-dropdown-populated-with-existing-unani-topic-constants-and-exam-year-input-or-dropdown-on-submission-call-the-backend-addquestion-function-and-show-a-success-or-error-notification-the-screen-must-also-list-all-existing-questions-with-their-topic-and-year-for-admin-review",
+      "title": "Build an Admin Panel screen accessible from the home screen (e.g., via an 'Admin' button or link). The panel must contain a form allowing submission of a new MCQ question with the following fields: question text (textarea), four answer options (Option A–D), correct answer selector (radio or dropdown), topic/subject category (dropdown populated with existing Unani topic constants), and exam year (input or dropdown). On submission, call the backend `addQuestion` function and show a success or error notification. The screen must also list all existing questions with their topic and year for admin review.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-or-bypass-the-role-based-access-guard-on-the-admin-panel-screen-so-that-any-user-not-just-a-designated-admin-principal-can-see-and-use-the-question-submission-form-the-only-admin-can-add-question-gate-should-be-removed-from-the-frontend-ui-allowing-all-visitors-to-access-the-add-question-form-and-the-existing-question-list-without-restriction",
+      "title": "Remove or bypass the role-based access guard on the Admin Panel screen so that any user (not just a designated admin principal) can see and use the question submission form. The 'only admin can add question' gate should be removed from the frontend UI, allowing all visitors to access the add-question form and the existing question list without restriction.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-frontend-topic-browser-screen-topicbrowserscreen-tsx-and-any-other-screens-that-filter-questions-by-topic-or-year-to-also-include-questions-fetched-from-the-backend-via-getadminquestions-or-the-unified-question-query-not-only-the-local-static-questions-ts-data-the-topic-category-filter-ui-must-merge-backend-stored-questions-with-the-local-question-bank-so-that-admin-added-questions-are-visible-in-the-topic-browser-and-year-browser",
+      "title": "Fix the frontend Topic Browser screen (`TopicBrowserScreen.tsx`) and any other screens that filter questions by topic or year to also include questions fetched from the backend (via `getAdminQuestions` or the unified question query), not only the local static `questions.ts` data. The topic/category filter UI must merge backend-stored questions with the local question bank so that admin-added questions are visible in the topic browser and year browser.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "MCQ quiz interface for AIAPGET PYQ questions on Unani medicine",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Question bank with previous year questions categorized by topic/year",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Score tracking and result summary after each quiz session",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Answer review with explanations after quiz completion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend Motoko actor with a question bank data structure containing at least 50 AIAPGET previous year MCQs specific to the Unani System of Medicine. Each question must include: question text, four answer options (A–D), correct answer index, topic/subject category (e.g., Kulliyat, Ilmul Advia, Moalijat, Tashreeh, etc.), and year of the exam.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement backend query functions: get all questions, get questions filtered by topic, get questions filtered by year, and get a randomized quiz set of N questions. Also implement an update function to record user quiz attempt scores (total questions, correct answers, timestamp).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Admin panel to add/manage questions, with options to assign year and topic/subject category to each question",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Extend the Motoko backend actor to support admin question management: add an update function `addQuestion` that accepts a full question record (question text, four answer options, correct answer index, topic/subject category, year) and appends it to the persistent question bank. Add a query function `getAdminQuestions` to retrieve all questions for admin review. Ensure type safety and that existing query functions (getQuestions, getByTopic, getByYear, recordAttempt) continue to work correctly.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Remove or relax the admin-only guard on the backend `addQuestion` update function so that any caller can invoke it without being rejected due to role restrictions. Ensure `getAdminQuestions` also remains accessible without a role check.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Fix the backend so that questions added via the `addQuestion` update function are included in the results returned by `getByTopic` and `getByYear` query functions. Currently, admin-added questions are stored separately and are not merged into the main question bank that category/topic filters query against. The backend must unify all questions (both hardcoded and admin-added) into a single source that all query functions (`getQuestions`, `getByTopic`, `getByYear`, and the random quiz set function) draw from.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AIAPGET Unani PYQ Practice",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-02T17:14:32.862Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-16",
+        "summary": "Fix the backend so that questions added via the `addQuestion` update function are included in the results returned by `getByTopic` and `getByYear` query functions. Currently, admin-added questions are stored separately and are not merged into the main question bank that category/topic filters query against. The backend must unify all questions (both hardcoded and admin-added) into a single source that all query functions (`getQuestions`, `getByTopic`, `getByYear`, and the random quiz set function) draw from.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Fix the frontend Topic Browser screen (`TopicBrowserScreen.tsx`) and any other screens that filter questions by topic or year to also include questions fetched from the backend (via `getAdminQuestions` or the unified question query), not only the local static `questions.ts` data. The topic/category filter UI must merge backend-stored questions with the local question bank so that admin-added questions are visible in the topic browser and year browser.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useAdminQueries.ts",
+          "frontend/src/pages/TopicBrowserScreen.tsx",
+          "frontend/src/pages/HomeScreen.tsx",
+          "frontend/src/pages/QuizScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useAdminQueries.ts",
+          "frontend/src/pages/TopicBrowserScreen.tsx",
+          "frontend/src/pages/HomeScreen.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/hooks/useAdminQueries.ts",
+    "frontend/src/pages/HomeScreen.tsx",
+    "frontend/src/pages/TopicBrowserScreen.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix: Admin-added questions not appearing in topic/category filters",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "summary": "Merge backend-stored admin questions with local static questions in all frontend topic/year filtering views so admin-added questions appear in the topic browser, year browser, and quiz generation flows",
+      "acceptanceCriteria": [
+        "When a user browses by topic (e.g., 'Ilmul Advia'), questions added via the Admin Panel appear in that topic's list alongside the static questions.",
+        "When a user browses by year, admin-added questions for that year appear in the list.",
+        "Starting a quiz from a topic or year group includes admin-added questions for that topic/year.",
+        "The UI correctly reflects the total count of questions including admin-added ones."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAdminQueries.ts",
+          "operation": "modify",
+          "description": "Add a new React Query hook `useAllQuestions` that fetches questions from both the backend via `actor.getQuestions()` and the local static `questions` array from `data/questions.ts`, then merges them into a single deduplicated array. This hook will serve as the unified question source for all filtering operations."
+        },
+        {
+          "path": "frontend/src/pages/TopicBrowserScreen.tsx",
+          "operation": "modify",
+          "description": "Replace the direct import of the static `questions` array with the new `useAllQuestions` hook from `hooks/useAdminQueries.ts`. Update the component to handle loading and error states from the query. Ensure that the topic and year grouping logic operates on the merged question set, so that admin-added questions appear in their assigned topic/year sections."
+        },
+        {
+          "path": "frontend/src/pages/HomeScreen.tsx",
+          "operation": "modify",
+          "description": "Replace the static `questions` array reference with the `useAllQuestions` hook to calculate accurate question and topic counts that include both static and admin-added questions. Display loading state while fetching, and show the correct total counts once data is available."
+        },
+        {
+          "path": "frontend/src/pages/QuizScreen.tsx",
+          "operation": "modify",
+          "description": "If QuizScreen receives a pre-filtered question set from TopicBrowserScreen or HomeScreen, no changes are needed here. However, if QuizScreen independently filters questions (e.g., for random quiz generation), replace the static `questions` import with the `useAllQuestions` hook and update the quiz generation logic to draw from the merged question pool."
+        }
+      ]
+    }
+  ]
+}

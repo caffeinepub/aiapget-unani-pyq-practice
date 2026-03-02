@@ -1,0 +1,15 @@
+{
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for reading and writing quiz attempt history to the backend, encoding/decoding attempts as bigint arrays (timestamp, correct, total per attempt).",
+  "frontend/src/data/questions.ts": "Client-side question bank with 60 AIAPGET Unani PYQ MCQs across 9 topics (Kulliyat, Ilmul Advia, Moalijat, etc.), each with options, correct answer index, topic, year, and explanation.",
+  "frontend/src/App.tsx": "Root app component managing screen navigation state across Home, Quiz, Results, Review, Topics, History, and the new Admin screens; wraps the app in a single QueryClientProvider.",
+  "frontend/src/pages/HomeScreen.tsx": "Home screen that now uses `useAllQuestions` to show accurate total question and topic counts (including admin-added questions), and draws from the merged pool when starting a random practice quiz.",
+  "frontend/src/pages/QuizScreen.tsx": "Interactive MCQ quiz screen showing one question at a time with option selection, answer locking, progress bar, explanations, and next/previous navigation.",
+  "frontend/src/pages/ResultsScreen.tsx": "Quiz results screen showing score percentage, performance tier, stat grid, topic breakdown, and actions to review answers or start a new quiz; records attempt to backend.",
+  "frontend/src/pages/ReviewScreen.tsx": "Answer review screen showing each question with user's answer highlighted, correct answer in green, explanations, and a question navigator grid.",
+  "frontend/src/pages/TopicBrowserScreen.tsx": "Topic and year browser screen that now uses `useAllQuestions` to merge static and backend-added questions; shows a loading spinner while fetching, dynamically builds topic/year lists from the merged data, and starts quizzes from the full merged question pool.",
+  "frontend/src/pages/HistoryScreen.tsx": "Score history screen fetching past quiz attempts from the backend, showing summary stats and a chronological list with grades and timestamps.",
+  "frontend/src/index.css": "Global styles with Playfair Display + Inter fonts and an OKLCH color system using warm parchment/cream backgrounds, deep teal primary, and gold accents.",
+  "frontend/tailwind.config.js": "Tailwind config extending the design system with Playfair Display heading font, Inter body font, gold/teal/success color tokens, and custom border radius/shadow.",
+  "frontend/src/hooks/useAdminQueries.ts": "React Query hooks for admin operations — `useGetAdminQuestions` (admin-only), `useAddQuestion` mutation, and a new `useAllQuestions` hook that fetches backend questions via `actor.getQuestions()`, converts them from bigint/backend format to the local Question format, merges with static questions (deduplicating by text), and returns the unified list.",
+  "frontend/src/pages/AdminPanelScreen.tsx": "Question Manager screen (renamed from \"Admin Panel\") with a form open to all users to add new MCQ questions (question text, four options A–D, correct answer dropdown, topic dropdown, year dropdown) and a scrollable list of all existing questions; removed all admin-access-required messaging and replaced with generic error text."
+}
