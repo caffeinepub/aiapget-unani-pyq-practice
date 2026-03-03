@@ -1,28 +1,27 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix correct answer option text color and bold styling in quiz screen",
+  "title": "Fix 'Unauthorized: Only admins can add questions' error on Admin Panel",
   "requirements": [
     {
-      "id": "REQ-34",
-      "summary": "Fix the correct answer option text to be clearly visible with high-contrast dark color (deep teal or dark green) and bold font-weight when highlighted after the user clicks an answer in QuizScreen.tsx and ReviewScreen.tsx",
+      "id": "REQ-40",
+      "summary": "Remove the 'Unauthorized: Only admins can add questions' error banner from AdminPanelScreen and ensure the Add Question form and Questions list are fully visible and functional after entering the correct password",
       "acceptanceCriteria": [
-        "After clicking an option in the quiz, the correct answer option displays its text in a clearly visible, high-contrast color against the highlighted background (teal/green).",
-        "The correct answer option text is rendered in bold (font-weight: bold or font-bold Tailwind class).",
-        "The fix is applied in both QuizScreen.tsx and ReviewScreen.tsx for all correct-answer highlighted states.",
-        "Incorrect options and unselected options retain their existing text color and weight.",
-        "No other UI element styling is changed."
+        "After entering the correct password 'Naeem9472', the Add Question form is visible with no unauthorized error banner.",
+        "The 'Unauthorized: Only admins can add questions' red error message is never shown.",
+        "The Questions list loads and displays backend questions without any unauthorized error.",
+        "The password gate still prevents access before the correct password is entered."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/QuizScreen.tsx",
+          "path": "frontend/src/pages/AdminPanelScreen.tsx",
           "operation": "modify",
-          "description": "Update the option rendering logic to apply dark, high-contrast text color (e.g., text-teal-900 or text-green-900) and bold font-weight (font-bold) to the correct answer option when it is highlighted after the user has submitted their answer. Ensure the text color contrasts clearly against the teal/green background highlight. Do not modify background or border colors of the correct answer highlight."
+          "description": "Remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message. Remove any role-based checks that hide the Add Question form or Questions list. Ensure the password gate (password: 'Naeem9472') remains as the only authentication mechanism. After the correct password is entered, both the Add Question form and the Questions list must be fully visible with no unauthorized error banner displayed. Remove any error state handling that displays authorization-related errors from backend calls."
         },
         {
-          "path": "frontend/src/pages/ReviewScreen.tsx",
+          "path": "frontend/src/hooks/useAdminQueries.ts",
           "operation": "modify",
-          "description": "Update the option rendering logic to apply dark, high-contrast text color (e.g., text-teal-900 or text-green-900) and bold font-weight (font-bold) to the correct answer option when it is highlighted during review. Ensure the text color contrasts clearly against the teal/green background highlight. Do not modify background or border colors of the correct answer highlight."
+          "description": "Review and remove any error handling logic that displays or propagates 'Unauthorized' errors from the addQuestion or getAdminQuestions backend calls. Ensure mutations and queries do not surface authorization errors to the UI. The hooks should handle backend responses gracefully without triggering unauthorized error displays."
         }
       ]
     }

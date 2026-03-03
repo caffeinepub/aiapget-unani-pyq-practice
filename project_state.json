@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 31,
+  "projectStateVersion": 35,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
@@ -207,6 +207,38 @@
         "REQ-34"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-the-admin-panel-add-question-form-in-adminpanelscreen-tsx-add-an-optional-explanation-text-field-textarea-below-the-correct-answer-selector-the-field-should-be-clearly-labelled-explanation-optional-and-its-value-must-be-submitted-alongside-the-other-question-fields-when-the-form-is-submitted",
+      "title": "In the Admin Panel add-question form in `AdminPanelScreen.tsx`, add an optional 'Explanation' text field (textarea) below the correct answer selector. The field should be clearly labelled 'Explanation (optional)' and its value must be submitted alongside the other question fields when the form is submitted.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-useaddquestion-mutation-hook-in-frontend-src-hooks-useadminqueries-ts-to-include-the-optional-explanation-field-in-the-payload-it-sends-to-the-backend-if-the-form-s-explanation-field-is-empty-send-an-empty-optional-value-matching-the-backend-s-text-type",
+      "title": "Update the `useAddQuestion` mutation hook in `frontend/src/hooks/useAdminQueries.ts` to include the optional `explanation` field in the payload it sends to the backend. If the form's explanation field is empty, send an empty optional value (matching the backend's `?Text` type).",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-adminpanelscreen-tsx-update-the-exam-year-dropdown-to-include-all-years-from-2016-to-the-current-year-inclusive-generated-dynamically-so-it-always-includes-the-present-year-without-requiring-code-changes-in-future-years",
+      "title": "In `AdminPanelScreen.tsx`, update the exam year dropdown to include all years from 2016 to the current year (inclusive), generated dynamically so it always includes the present year without requiring code changes in future years.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-adminpanelscreen-tsx-remove-any-frontend-side-error-display-conditional-render-or-access-check-that-shows-the-unauthorized-only-admins-can-add-questions-message-or-hides-the-add-question-form-behind-a-role-check-the-password-gate-password-naeem9472-must-remain-as-the-only-gate-once-the-correct-password-is-entered-the-add-question-form-and-the-questions-list-must-both-be-fully-visible-and-functional-with-no-unauthorized-error-shown",
+      "title": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -342,6 +374,28 @@
       "id": "AR-24",
       "summary": "Fix the correct answer option text color visibility after clicking — the font color is not visible when the correct option is selected/revealed. Change the font color to be clearly visible and make the correct option text bold.",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "In the Admin Panel add-question form, add an optional 'Explanation' field for the correct answer. Also update the exam year dropdown/input to include years from 2016 to the current year.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Update the backend `addQuestion` function in `backend/main.mo` to accept an optional `explanation` field (type `?Text`) in the question record. Ensure that existing stored questions without an explanation remain valid, and that the explanation value is stored and returned by `getAdminQuestions`.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Remove the 'Unauthorized: Only admins can add questions' error banner from the Admin Panel screen. The backend `addQuestion` update function in `backend/main.mo` must accept calls from any caller (authenticated or anonymous) without performing any role or principal check that causes a rejection or trap. Remove all authorization guards from both `addQuestion` and `getAdminQuestions` in the backend so they are fully open to any caller.",
+      "reqIds": [
+        "REQ-39"
+      ],
       "status": "pending"
     }
   ],

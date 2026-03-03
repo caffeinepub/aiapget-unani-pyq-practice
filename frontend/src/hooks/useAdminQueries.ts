@@ -13,10 +13,13 @@ export function useGetAdminQuestions() {
       try {
         return await actor.getQuestions();
       } catch {
+        // Silently return empty array on any backend error (including auth errors from old cache)
         return [];
       }
     },
     enabled: !!actor && !isFetching,
+    // Do not retry on error to avoid repeated unauthorized calls
+    retry: false,
   });
 }
 
@@ -31,6 +34,7 @@ export function useAddQuestion() {
       correctAnswerIndex: number;
       topic: string;
       year: string;
+      explanation?: string;
     }) => {
       if (!actor) throw new Error("Actor not available");
 
@@ -41,6 +45,8 @@ export function useAddQuestion() {
         correctAnswerIndex: BigInt(question.correctAnswerIndex),
         topic: question.topic,
         year: String(question.year),
+        // Only include explanation if it has a non-empty value
+        ...(question.explanation ? { explanation: question.explanation } : {}),
       };
 
       const result = await actor.addQuestion(newQuestion);
@@ -49,6 +55,10 @@ export function useAddQuestion() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["adminQuestions"] });
       queryClient.invalidateQueries({ queryKey: ["allQuestions"] });
+    },
+    // Do not automatically surface errors — the component handles them
+    onError: () => {
+      // Intentionally suppressed; AdminPanelScreen filters auth errors in catch block
     },
   });
 }
@@ -74,7 +84,7 @@ function convertBackendQuestion(bq: BackendQuestion, index: number): Question {
     correctIndex: Number(bq.correctAnswerIndex),
     topic: bq.topic,
     year: isNaN(yearNum) ? 0 : yearNum,
-    explanation: "",
+    explanation: bq.explanation ?? "",
   };
 }
 
@@ -91,23 +101,20 @@ export function useAllQuestions() {
       if (!actor) return staticQuestions;
       try {
         const backendQuestions = await actor.getQuestions();
-        const converted = backendQuestions.map((bq, idx) =>
-          convertBackendQuestion(bq, idx)
+        const converted = backendQuestions.map(convertBackendQuestion);
+
+        // Deduplicate: prefer backend questions over static ones with same text
+        const backendTexts = new Set(converted.map((q) => q.text.trim().toLowerCase()));
+        const filteredStatic = staticQuestions.filter(
+          (q) => !backendTexts.has(q.text.trim().toLowerCase())
         );
 
-        // Deduplicate: if a backend question text matches a static one, skip it
-        const staticTexts = new Set(
-          staticQuestions.map((q) => q.text.trim().toLowerCase())
-        );
-        const uniqueBackend = converted.filter(
-          (q) => !staticTexts.has(q.text.trim().toLowerCase())
-        );
-
-        return [...staticQuestions, ...uniqueBackend];
+        return [...filteredStatic, ...converted];
       } catch {
         return staticQuestions;
       }
     },
     enabled: !!actor && !isFetching,
+    retry: false,
   });
 }

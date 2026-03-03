@@ -1,37 +1,56 @@
 {
   "kind": "build_request",
-  "title": "Fix correct answer option text color and bold styling in quiz screen",
-  "priority": "normal",
+  "title": "Fix 'Unauthorized: Only admins can add questions' error on Admin Panel",
+  "projectName": "AIAPGET Unani PYQ Practice",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-34",
-      "text": "In QuizScreen.tsx, fix the correct answer option so that after the user clicks and the answer is revealed, the text label of the correct option is displayed in a clearly visible, high-contrast font color (e.g., dark text such as deep teal or dark green, not white-on-white or invisible) and is rendered in bold. The image shows that option B is highlighted with a teal/green background and border but the option text is invisible — this must be corrected so the text is legible against the highlighted background. Apply the same fix to ReviewScreen.tsx wherever the correct answer option is highlighted.",
+      "id": "REQ-39",
+      "text": "Remove the 'Unauthorized: Only admins can add questions' error banner from the Admin Panel screen. The backend `addQuestion` update function in `backend/main.mo` must accept calls from any caller (authenticated or anonymous) without performing any role or principal check that causes a rejection or trap. Remove all authorization guards from both `addQuestion` and `getAdminQuestions` in the backend so they are fully open to any caller.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Unauthorized: Only admins can add questions"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The backend `addQuestion` function compiles and executes without trapping for anonymous callers.",
+        "The backend `getAdminQuestions` function returns results to any caller without a role check.",
+        "No authorization guard or caller identity check remains in either function."
+      ]
+    },
+    {
+      "id": "REQ-40",
+      "text": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "On the correct option the font colour not seen after click so change the font colour and bold the correct option"
+          "Unauthorized: Only admins can add questions"
         ]
       },
       "acceptanceCriteria": [
-        "After clicking an option in the quiz, the correct answer option displays its text in a clearly visible, high-contrast color against the highlighted background (teal/green).",
-        "The correct answer option text is rendered in bold (font-weight: bold or font-bold Tailwind class).",
-        "The fix is applied in both QuizScreen.tsx and ReviewScreen.tsx for all correct-answer highlighted states.",
-        "Incorrect options and unselected options retain their existing text color and weight.",
-        "No other UI element styling is changed."
+        "After entering the correct password 'Naeem9472', the Add Question form is visible with no unauthorized error banner.",
+        "The 'Unauthorized: Only admins can add questions' red error message is never shown.",
+        "The Questions list loads and displays backend questions without any unauthorized error.",
+        "The password gate still prevents access before the correct password is entered."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
-    "Only change text color and font-weight styling for the correct answer highlighted state — do not alter background colors, border colors, or layout."
+    "The admin password gate ('Naeem9472') must remain in place — do not remove it.",
+    "Do not modify files listed in frontend.immutablePaths.",
+    "All Motoko logic must remain in the single main actor file (backend/main.mo)."
   ],
   "nonGoals": [
-    "Changing the background or border color of the correct answer highlight.",
-    "Modifying the quiz logic or answer selection behavior.",
-    "Changing styling of incorrect or unselected options."
+    "Adding new question fields or changing the question schema.",
+    "Changing the admin password value.",
+    "Modifying the quiz, review, or history screens."
   ],
   "imageRequirements": {
     "required": [],

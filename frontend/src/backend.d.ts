@@ -17,6 +17,7 @@ export interface SubscriptionPlan {
 export interface Question {
     id: bigint;
     topic: string;
+    explanation?: string;
     year: string;
     answerOptions: Array<string>;
     questionText: string;

@@ -1,37 +1,45 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-02T23:44:57.708Z",
+  "generatedAt": "2026-03-03T00:14:24.502Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
+    "total": 2,
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-34",
-        "summary": "In QuizScreen.tsx, fix the correct answer option so that after the user clicks and the answer is revealed, the text label of the correct option is displayed in a clearly visible, high-contrast font color (e.g., dark text such as deep teal or dark green, not white-on-white or invisible) and is rendered in bold. The image shows that option B is highlighted with a teal/green background and border but the option text is invisible — this must be corrected so the text is legible against the highlighted background. Apply the same fix to ReviewScreen.tsx wherever the correct answer option is highlighted.",
+        "id": "REQ-39",
+        "summary": "Remove the 'Unauthorized: Only admins can add questions' error banner from the Admin Panel screen. The backend `addQuestion` update function in `backend/main.mo` must accept calls from any caller (authenticated or anonymous) without performing any role or principal check that causes a rejection or trap. Remove all authorization guards from both `addQuestion` and `getAdminQuestions` in the backend so they are fully open to any caller.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-40",
+        "summary": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/QuizScreen.tsx",
-          "frontend/src/pages/ReviewScreen.tsx"
+          "frontend/src/pages/AdminPanelScreen.tsx",
+          "frontend/src/hooks/useAdminQueries.ts"
         ],
         "matchedFiles": [
-          "frontend/src/pages/QuizScreen.tsx",
-          "frontend/src/pages/ReviewScreen.tsx"
+          "frontend/src/pages/AdminPanelScreen.tsx",
+          "frontend/src/hooks/useAdminQueries.ts"
         ]
       }
     ]
   },
   "changedFiles": [
+    "backend/main.mo",
     "build-request.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/QuizScreen.tsx",
-    "frontend/src/pages/ReviewScreen.tsx",
+    "frontend/src/hooks/useAdminQueries.ts",
+    "frontend/src/pages/AdminPanelScreen.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

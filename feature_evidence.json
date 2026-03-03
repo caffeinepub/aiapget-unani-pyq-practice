@@ -2,11 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-quizscreen-tsx-fix-the-correct-answer-option-so-that-after-the-user-clicks-and-the-answer-is-revealed-the-text-label-of-the-correct-option-is-displayed-in-a-clearly-visible-high-contrast-font-color-e-g-dark-text-such-as-deep-teal-or-dark-green-not-white-on-white-or-invisible-and-is-rendered-in-bold-the-image-shows-that-option-b-is-highlighted-with-a-teal-green-background-and-border-but-the-option-text-is-invisible-this-must-be-corrected-so-the-text-is-legible-against-the-highlighted-background-apply-the-same-fix-to-reviewscreen-tsx-wherever-the-correct-answer-option-is-highlighted",
-      "featureTitle": "In QuizScreen.tsx, fix the correct answer option so that after the user clicks and the answer is revealed, the text label of the correct option is displayed in a clearly visible, high-contrast font color (e.g., dark text such as deep teal or dark green, not white-on-white or invisible) and is rendered in bold. The image shows that option B is highlighted with a teal/green background and border but the option text is invisible — this must be corrected so the text is legible against the highlighted background. Apply the same fix to ReviewScreen.tsx wherever the correct answer option is highlighted.",
+      "featureId": "feature-in-adminpanelscreen-tsx-remove-any-frontend-side-error-display-conditional-render-or-access-check-that-shows-the-unauthorized-only-admins-can-add-questions-message-or-hides-the-add-question-form-behind-a-role-check-the-password-gate-password-naeem9472-must-remain-as-the-only-gate-once-the-correct-password-is-entered-the-add-question-form-and-the-questions-list-must-both-be-fully-visible-and-functional-with-no-unauthorized-error-shown",
+      "featureTitle": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
       "files": [
-        "frontend/src/pages/QuizScreen.tsx",
-        "frontend/src/pages/ReviewScreen.tsx"
+        "frontend/src/hooks/useAdminQueries.ts",
+        "frontend/src/pages/AdminPanelScreen.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,7 +17,7 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-34"
+        "REQ-40"
       ],
       "confidence": "high"
     }

@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Fix the correct answer option text in the quiz so it is visible and bold after the answer is revealed.
+**Goal:** Remove the "Unauthorized: Only admins can add questions" error from the Admin Panel by stripping all authorization guards from the backend functions and eliminating the frontend error display.
 
 **Planned changes:**
-- In `QuizScreen.tsx`, update the correct answer highlighted state to display the option text in a high-contrast, dark color (e.g., deep teal or dark green) and bold font weight, so it is legible against the teal/green highlighted background.
-- Apply the same text color and bold styling fix in `ReviewScreen.tsx` wherever the correct answer option is highlighted.
+- In `backend/main.mo`, remove all role/principal checks from `addQuestion` and `getAdminQuestions` so both functions accept calls from any caller without trapping or rejecting.
+- In `AdminPanelScreen.tsx`, remove the frontend error banner and any conditional logic that displays the "Unauthorized: Only admins can add questions" message or hides the Add Question form based on role checks.
+- Keep the password gate (`Naeem9472`) as the sole access control mechanism on the frontend.
 
-**User-visible outcome:** After selecting an answer in the quiz, the correct option's text is clearly visible (dark, high-contrast color) and bold against the highlighted background, instead of being invisible as shown in the screenshot where option B's text disappears.
+**User-visible outcome:** After entering the correct admin password, the Add Question form and Questions list are fully visible and functional with no unauthorized error banner shown.

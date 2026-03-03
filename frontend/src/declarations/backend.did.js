@@ -11,6 +11,7 @@ import { IDL } from '@icp-sdk/core/candid';
 export const Question = IDL.Record({
   'id' : IDL.Nat,
   'topic' : IDL.Text,
+  'explanation' : IDL.Opt(IDL.Text),
   'year' : IDL.Text,
   'answerOptions' : IDL.Vec(IDL.Text),
   'questionText' : IDL.Text,
@@ -65,6 +66,7 @@ export const idlFactory = ({ IDL }) => {
   const Question = IDL.Record({
     'id' : IDL.Nat,
     'topic' : IDL.Text,
+    'explanation' : IDL.Opt(IDL.Text),
     'year' : IDL.Text,
     'answerOptions' : IDL.Vec(IDL.Text),
     'questionText' : IDL.Text,

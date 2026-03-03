@@ -15,6 +15,7 @@ export type BillingCycle = { 'monthly' : null } |
 export interface Question {
   'id' : bigint,
   'topic' : string,
+  'explanation' : [] | [string],
   'year' : string,
   'answerOptions' : Array<string>,
   'questionText' : string,

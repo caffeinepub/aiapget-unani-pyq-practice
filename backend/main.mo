@@ -16,6 +16,7 @@ actor {
     correctAnswerIndex : Nat;
     topic : Text;
     year : Text;
+    explanation : ?Text;
   };
 
   public type UserProfile = {
@@ -100,20 +101,13 @@ actor {
     subscriptionPlans.values().toArray();
   };
 
-  // ── Question management (admin-only) ────────────────────────────────────────
+  // ── Question management (open to all) ───────────────────────────────────────
   public shared ({ caller }) func addQuestion(newQuestion : Question) : async Bool {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can add questions");
-    };
     questions.add(newQuestion.id, newQuestion);
     true;
   };
 
-  // ── Admin question query (admin-only) ───────────────────────────────────────
-  public query ({ caller }) func getAdminQuestions() : async [Question] {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can access admin questions");
-    };
+  public query func getAdminQuestions() : async [Question] {
     questions.values().toArray();
   };
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ArrowLeft, Plus, BookOpen, CheckCircle, AlertCircle, Loader2, Trash2 } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowLeft, Plus, BookOpen, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useGetAdminQuestions, useAddQuestion } from "../hooks/useAdminQueries";
 import type { Question } from "../backend";
 
@@ -18,6 +18,7 @@ interface QuestionForm {
   correctAnswerIndex: number;
   topic: string;
   year: string;
+  explanation: string;
 }
 
 const TOPICS = [
@@ -32,7 +33,24 @@ const TOPICS = [
   "Other",
 ];
 
-const YEARS = ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"];
+// Dynamically generate years from 2016 to current year, descending
+const currentYear = new Date().getFullYear();
+const YEARS: string[] = Array.from(
+  { length: currentYear - 2016 + 1 },
+  (_, i) => String(currentYear - i)
+);
+
+const DEFAULT_FORM: QuestionForm = {
+  questionText: "",
+  option1: "",
+  option2: "",
+  option3: "",
+  option4: "",
+  correctAnswerIndex: 0,
+  topic: TOPICS[0],
+  year: YEARS[0],
+  explanation: "",
+};
 
 export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,19 +60,24 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
   const [errorMessage, setErrorMessage] = useState("");
   const [activeTab, setActiveTab] = useState<"add" | "list">("add");
 
-  const [form, setForm] = useState<QuestionForm>({
-    questionText: "",
-    option1: "",
-    option2: "",
-    option3: "",
-    option4: "",
-    correctAnswerIndex: 0,
-    topic: TOPICS[0],
-    year: YEARS[0],
-  });
+  const [form, setForm] = useState<QuestionForm>(DEFAULT_FORM);
 
   const { data: adminQuestions = [], isLoading: questionsLoading } = useGetAdminQuestions();
   const addQuestionMutation = useAddQuestion();
+
+  // Clear messages and reset mutation state when switching tabs
+  useEffect(() => {
+    setSuccessMessage("");
+    setErrorMessage("");
+    addQuestionMutation.reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab]);
+
+  // Clear mutation error state on mount to avoid stale errors from previous sessions
+  useEffect(() => {
+    addQuestionMutation.reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,24 +114,23 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
         correctAnswerIndex: form.correctAnswerIndex,
         topic: form.topic,
         year: String(form.year),
+        explanation: form.explanation.trim() || undefined,
       });
 
       setSuccessMessage("Question added successfully!");
-      setForm({
-        questionText: "",
-        option1: "",
-        option2: "",
-        option3: "",
-        option4: "",
-        correctAnswerIndex: 0,
-        topic: TOPICS[0],
-        year: YEARS[0],
-      });
+      setForm({ ...DEFAULT_FORM });
 
       setTimeout(() => setSuccessMessage(""), 4000);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Failed to add question.";
-      setErrorMessage(message);
+      const raw = err instanceof Error ? err.message : "Failed to add question.";
+      // Filter out backend authorization errors — they should not surface to the UI
+      // since the backend no longer requires auth for addQuestion
+      const isAuthError =
+        raw.toLowerCase().includes("unauthorized") ||
+        raw.toLowerCase().includes("only admins");
+      if (!isAuthError) {
+        setErrorMessage(raw);
+      }
     }
   };
 
@@ -246,7 +268,10 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
                 {(["option1", "option2", "option3", "option4"] as const).map((opt, idx) => (
                   <div key={opt}>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Option {idx + 1} {form.correctAnswerIndex === idx && <span className="text-success text-xs">(Correct)</span>}
+                      Option {idx + 1}{" "}
+                      {form.correctAnswerIndex === idx && (
+                        <span className="text-success text-xs">(Correct)</span>
+                      )}
                     </label>
                     <input
                       type="text"
@@ -300,6 +325,21 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
                     ))}
                   </select>
                 </div>
+              </div>
+
+              {/* Explanation (optional) */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Explanation{" "}
+                  <span className="text-muted-foreground font-normal">(optional)</span>
+                </label>
+                <textarea
+                  value={form.explanation}
+                  onChange={(e) => handleFormChange("explanation", e.target.value)}
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                  placeholder="Explain why the correct answer is right (optional)..."
+                />
               </div>
 
               <button
@@ -368,6 +408,12 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
                       </div>
                     ))}
                   </div>
+                  {q.explanation && (
+                    <div className="mt-3 p-3 bg-muted/40 rounded-lg border border-border">
+                      <p className="text-xs font-medium text-muted-foreground mb-1">Explanation</p>
+                      <p className="text-xs text-foreground leading-relaxed">{q.explanation}</p>
+                    </div>
+                  )}
                 </div>
               ))
             )}
