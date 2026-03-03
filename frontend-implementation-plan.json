@@ -1,47 +1,105 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Skip Button and Countdown Timer to Quiz Screen",
+  "title": "Eye-friendly theme with high-contrast text across all screens",
   "requirements": [
     {
-      "id": "REQ-47",
-      "summary": "Add Skip button to quiz screen that advances to next question without selecting an answer and tracks skipped questions",
+      "id": "REQ-52",
+      "summary": "Update global CSS custom properties in index.css to use a softer, eye-friendly color palette with sufficient contrast ratios for accessibility",
       "acceptanceCriteria": [
-        "A 'Skip' button is visible on every question card during the quiz except it either submits/ends the quiz on the last question or is replaced by a 'Finish' action.",
-        "Clicking Skip advances to the next question without requiring an answer selection.",
-        "Skipped questions are recorded distinctly (e.g., selectedAnswer = null or a sentinel value) in the answers array passed to onComplete.",
-        "The ResultsScreen correctly counts and displays the number of skipped questions.",
-        "The Skip button is styled consistently with the existing parchment/teal/gold theme."
+        "Background colors across all screens are warm but not stark white or harsh — a soft parchment/ivory tone that does not cause glare.",
+        "Body text and heading text colors are dark with at least 4.5:1 contrast ratio against their background.",
+        "Deep teal accent color is softened/desaturated to reduce eye strain while remaining distinct.",
+        "Gold accent text meets minimum contrast when used as label or heading text.",
+        "No text appears invisible, near-invisible, or same-color-as-background on any screen."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/QuizScreen.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add a Skip button alongside the Next button in the quiz UI. The button should call a handleSkip function that records the current question as skipped (by storing null or -1 as the selectedAnswer) in the answers array, then advances to the next question using setCurrentQuestionIndex. On the last question, either hide the Skip button or merge it with the submit action. Apply the existing parchment/teal/gold button styling (matching the theme used for other buttons in the app). Ensure the Skip button is disabled when already on the last question if a separate Finish button is shown."
+          "description": "Update CSS custom properties for light mode to use softer, eye-friendly colors: replace current background/parchment tones with warmer lower-saturation values (e.g., #f7f3ec), soften dark teal accents to muted medium teal, ensure all foreground/text colors use dark values with 4.5:1+ contrast ratio against backgrounds (WCAG AA), and darken gold accent for text legibility. Retain the Unani/Islamic manuscript aesthetic while improving readability. Also update PWA theme_color and background_color in manifest.json to match the new palette."
         },
         {
-          "path": "frontend/src/pages/ResultsScreen.tsx",
+          "path": "frontend/public/manifest.json",
           "operation": "modify",
-          "description": "Update the results calculation logic to count skipped questions. Check the answers array for entries where selectedAnswer is null or -1 (the skipped sentinel value). Display the skipped count in the results UI alongside correct and incorrect counts. Ensure the skipped questions are excluded from the correct/incorrect tallies so the total adds up correctly. Style the skipped count display consistently with the existing parchment/teal/gold theme."
+          "description": "Update theme_color and background_color fields to match the new eye-friendly palette defined in index.css, ensuring consistency across PWA presentation."
         }
       ]
     },
     {
-      "id": "REQ-48",
-      "summary": "Add countdown timer to quiz screen that displays remaining time per question and auto-skips when time expires",
+      "id": "REQ-53",
+      "summary": "Audit and fix text color declarations across all screen components to ensure high-contrast, clearly visible text on all backgrounds and states",
       "acceptanceCriteria": [
-        "A countdown timer is visible on the quiz card during the quiz, showing remaining time in MM:SS format.",
-        "The timer starts at 60 seconds when each new question is displayed and counts down in real time.",
-        "When the timer reaches 0, the question is automatically skipped and the quiz advances to the next question.",
-        "The timer resets to 60 seconds whenever the user moves to a new question (via Next, Skip, or auto-skip).",
-        "The timer text changes to red when 10 or fewer seconds remain.",
-        "The timer stops when the user selects an answer or manually clicks Next/Skip."
+        "All option labels in QuizScreen and ReviewScreen are legible on both selected/highlighted and unselected states.",
+        "Correct-answer highlights show dark bold text on the green/teal highlight background (not white-on-white).",
+        "Incorrect-answer highlights show clearly readable text on the red/rose highlight background.",
+        "Card headings and body copy on HomeScreen, HistoryScreen, and SubscriptionPlansScreen all render in high-contrast dark text.",
+        "Form labels, input placeholders, and help text in AdminPanelScreen are clearly legible.",
+        "Navigation links in AppHeader dropdown are fully visible against the menu background.",
+        "Timer and counter text in QuizScreen is readable at all timer states including the red warning state."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/QuizScreen.tsx",
           "operation": "modify",
-          "description": "Add a countdown timer state (timeRemaining) initialized to 60 seconds. Use useEffect to set up an interval that decrements timeRemaining by 1 every second. Display the timer prominently at the top of the quiz card near the question counter in MM:SS format (e.g., '01:00'). When timeRemaining reaches 0, automatically trigger the skip logic (same as handleSkip from REQ-47) to advance to the next question. Reset timeRemaining to 60 whenever currentQuestionIndex changes. Clear the interval when the user selects an answer or clicks Next/Skip. Apply conditional styling: use the teal/gold theme color when timeRemaining > 10, and switch to red text when timeRemaining <= 10. Ensure the timer stops and clears when the quiz completes."
+          "description": "Audit and fix all text color declarations to ensure high-contrast visibility: ensure question text, option labels, timer text, and counter text use dark foreground colors with sufficient contrast against their backgrounds. Fix any selected/highlighted states where text color matches or is too close to the background. Ensure timer warning state (red) maintains readable text."
+        },
+        {
+          "path": "frontend/src/pages/ReviewScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for answer review items: ensure option labels are legible on both selected/highlighted and unselected states, correct-answer highlights show dark bold text on green/teal backgrounds (not white-on-white), and incorrect-answer highlights show clearly readable text on red/rose backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/ResultsScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for result display elements: ensure score percentage, performance tier text, stat numbers (correct/incorrect/skipped counts), time taken, and topic breakdown labels all use high-contrast dark text against their card/background surfaces."
+        },
+        {
+          "path": "frontend/src/pages/AdminPanelScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for form elements and question list: ensure form labels, input placeholders, help text, and existing question display text all use clearly legible high-contrast colors against their backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/TopicBrowserScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for topic/year browser sections: ensure section headings, question text within expandable items, and action button text all use high-contrast dark colors that remain visible against card and list backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/HistoryScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for history summary and attempt list: ensure summary stat headings and numbers, attempt date/score/time text, and card body copy all render in high-contrast dark text against card backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/HomeScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors across hero banner, stats section, and navigation cards: ensure hero heading/subheading, stat labels and numbers, card headings, and card descriptions all use high-contrast dark text against their respective backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for plan cards: ensure plan names, billing cycle labels, price text, feature list items, and action button text all use high-contrast colors that remain clearly visible against card backgrounds and any highlight states."
+        },
+        {
+          "path": "frontend/src/components/AppHeader.tsx",
+          "operation": "modify",
+          "description": "Audit and fix text colors for header and dropdown navigation: ensure app title, menu button icon, and all navigation links in the dropdown drawer are fully visible against the header background and dropdown menu background respectively."
+        }
+      ]
+    },
+    {
+      "id": "REQ-54",
+      "summary": "Update Tailwind color token definitions to align with the new eye-friendly palette and ensure utility classes produce accessible results",
+      "acceptanceCriteria": [
+        "Tailwind color tokens for foreground, muted-foreground, and primary-foreground all produce dark readable text.",
+        "Background tokens (background, card, popover) produce soft, low-glare surfaces.",
+        "The updated tokens are reflected consistently across all screens without needing per-component overrides.",
+        "No Tailwind utility class produces invisible or near-invisible text on its paired background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind theme color token definitions (OKLCH values for primary, foreground, muted, accent, card, and related tokens) to align with the new eye-friendly palette: use lower-saturation medium-brightness values for background tokens and softer but sufficiently dark values for text tokens. Ensure consistency with the CSS custom properties updated in REQ-52 so utility classes like text-foreground, bg-card, text-primary, and text-muted-foreground produce accessible, high-contrast results across all screens."
         }
       ]
     }

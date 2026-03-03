@@ -8,60 +8,68 @@
   :root {
     --radius: 0.75rem;
 
-    /* Parchment/cream light theme with deep teal and gold accents */
-    --background: 0.96 0.018 85;
-    --foreground: 0.18 0.03 50;
+    /* Eye-friendly warm parchment theme — soft ivory background, dark ink text, muted teal & amber accents */
 
-    --card: 0.98 0.012 80;
-    --card-foreground: 0.18 0.03 50;
+    /* Soft warm ivory — not stark white, reduces glare */
+    --background: 0.94 0.016 82;
+    /* Deep warm ink — high contrast on ivory, ~14:1 ratio */
+    --foreground: 0.16 0.028 45;
 
-    --popover: 0.98 0.012 80;
-    --popover-foreground: 0.18 0.03 50;
+    /* Card slightly lighter than background for gentle layering */
+    --card: 0.97 0.010 78;
+    --card-foreground: 0.16 0.028 45;
 
-    /* Deep teal primary */
-    --primary: 0.32 0.07 195;
-    --primary-foreground: 0.97 0.01 80;
+    --popover: 0.97 0.010 78;
+    --popover-foreground: 0.16 0.028 45;
 
-    --secondary: 0.92 0.025 85;
-    --secondary-foreground: 0.25 0.04 195;
+    /* Muted teal primary — softer than deep teal, still distinct */
+    --primary: 0.34 0.065 192;
+    /* White text on teal primary — sufficient contrast */
+    --primary-foreground: 0.98 0.005 80;
 
-    --muted: 0.92 0.018 80;
-    --muted-foreground: 0.52 0.03 60;
+    --secondary: 0.90 0.022 82;
+    --secondary-foreground: 0.22 0.038 192;
 
-    --accent: 0.88 0.04 85;
-    --accent-foreground: 0.25 0.04 195;
+    /* Muted surface — warm light grey-beige */
+    --muted: 0.90 0.016 78;
+    /* Muted foreground — dark enough for 4.5:1 on muted/card backgrounds */
+    --muted-foreground: 0.42 0.028 55;
 
-    --destructive: 0.58 0.22 25;
-    --destructive-foreground: 0.97 0.01 80;
+    --accent: 0.88 0.030 82;
+    --accent-foreground: 0.22 0.038 192;
 
-    --border: 0.86 0.025 75;
-    --input: 0.86 0.025 75;
-    --ring: 0.32 0.07 195;
+    /* Destructive — warm red, readable */
+    --destructive: 0.52 0.20 22;
+    --destructive-foreground: 0.98 0.005 80;
 
-    /* Gold accent */
-    --gold: 0.72 0.14 75;
+    --border: 0.84 0.022 72;
+    --input: 0.84 0.022 72;
+    --ring: 0.34 0.065 192;
 
-    /* Teal accent */
-    --teal: 0.52 0.1 195;
+    /* Gold — darkened for text legibility (L=0.58 gives ~4.5:1 on ivory) */
+    --gold: 0.58 0.13 72;
 
-    /* Success green */
-    --success: 0.52 0.14 155;
-    --success-foreground: 0.97 0.01 80;
+    /* Teal accent — medium teal for text use */
+    --teal: 0.44 0.09 192;
 
-    --chart-1: 0.72 0.14 75;
-    --chart-2: 0.52 0.1 195;
-    --chart-3: 0.58 0.22 25;
-    --chart-4: 0.52 0.14 155;
-    --chart-5: 0.65 0.12 300;
+    /* Success green — dark enough for text on light backgrounds */
+    --success: 0.44 0.13 152;
+    --success-foreground: 0.98 0.005 80;
 
-    --sidebar: 0.94 0.02 80;
-    --sidebar-foreground: 0.18 0.03 50;
-    --sidebar-primary: 0.32 0.07 195;
-    --sidebar-primary-foreground: 0.97 0.01 80;
-    --sidebar-accent: 0.88 0.04 85;
-    --sidebar-accent-foreground: 0.25 0.04 195;
-    --sidebar-border: 0.86 0.025 75;
-    --sidebar-ring: 0.32 0.07 195;
+    --chart-1: 0.58 0.13 72;
+    --chart-2: 0.44 0.09 192;
+    --chart-3: 0.52 0.20 22;
+    --chart-4: 0.44 0.13 152;
+    --chart-5: 0.55 0.11 295;
+
+    --sidebar: 0.92 0.018 78;
+    --sidebar-foreground: 0.16 0.028 45;
+    --sidebar-primary: 0.34 0.065 192;
+    --sidebar-primary-foreground: 0.98 0.005 80;
+    --sidebar-accent: 0.88 0.030 82;
+    --sidebar-accent-foreground: 0.22 0.038 192;
+    --sidebar-border: 0.84 0.022 72;
+    --sidebar-ring: 0.34 0.065 192;
   }
 
   .dark {
@@ -81,7 +89,7 @@
     --secondary-foreground: 0.88 0.015 80;
 
     --muted: 0.22 0.03 200;
-    --muted-foreground: 0.62 0.03 80;
+    --muted-foreground: 0.68 0.03 80;
 
     --accent: 0.28 0.04 200;
     --accent-foreground: 0.88 0.015 80;

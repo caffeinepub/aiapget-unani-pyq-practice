@@ -1,5 +1,4 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useActor } from './useActor';
 
 // Quiz attempt stored as [timestamp_seconds, correct_answers, total_questions]
 export interface QuizAttempt {
@@ -8,48 +7,57 @@ export interface QuizAttempt {
   total: number;
 }
 
-const CHUNK_SIZE = 3; // Each attempt is 3 bigints
+const STORAGE_KEY = 'aiapget_quiz_history';
 
-function encodeAttempts(attempts: QuizAttempt[]): bigint[] {
-  return attempts.flatMap((a) => [BigInt(a.timestamp), BigInt(a.correct), BigInt(a.total)]);
+function loadAttemptsFromStorage(): QuizAttempt[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    return JSON.parse(raw) as QuizAttempt[];
+  } catch {
+    return [];
+  }
 }
 
-function decodeAttempts(raw: bigint[]): QuizAttempt[] {
-  const attempts: QuizAttempt[] = [];
-  for (let i = 0; i + CHUNK_SIZE - 1 < raw.length; i += CHUNK_SIZE) {
-    attempts.push({
-      timestamp: Number(raw[i]),
-      correct: Number(raw[i + 1]),
-      total: Number(raw[i + 2]),
-    });
+function saveAttemptsToStorage(attempts: QuizAttempt[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(attempts));
+  } catch {
+    // Ignore storage errors
   }
-  return attempts;
 }
 
 export function useQuizHistory() {
-  const { actor, isFetching } = useActor();
-
   return useQuery<QuizAttempt[]>({
     queryKey: ['quizHistory'],
     queryFn: async () => {
-      if (!actor) return [];
-      const raw = await actor.retrieveArray();
-      return decodeAttempts(raw).reverse();
+      const attempts = loadAttemptsFromStorage();
+      return [...attempts].reverse();
     },
-    enabled: !!actor && !isFetching,
+    staleTime: 0,
   });
 }
 
 export function useRecordAttempt() {
-  const { actor } = useActor();
   const queryClient = useQueryClient();
 
   return useMutation({
     mutationFn: async (attempt: QuizAttempt) => {
-      if (!actor) throw new Error('Actor not initialized');
-      const existing = await actor.retrieveArray();
-      const newEntry: bigint[] = [BigInt(attempt.timestamp), BigInt(attempt.correct), BigInt(attempt.total)];
-      await actor.storeArray([...existing, ...newEntry]);
+      const existing = loadAttemptsFromStorage();
+      saveAttemptsToStorage([...existing, attempt]);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
+    },
+  });
+}
+
+export function useClearHistory() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async () => {
+      localStorage.removeItem(STORAGE_KEY);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['quizHistory'] });

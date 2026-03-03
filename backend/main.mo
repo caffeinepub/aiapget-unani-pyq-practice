@@ -5,8 +5,10 @@ import List "mo:core/List";
 import Iter "mo:core/Iter";
 import Principal "mo:core/Principal";
 import Runtime "mo:core/Runtime";
+
 import MixinAuthorization "authorization/MixinAuthorization";
 import AccessControl "authorization/access-control";
+
 
 actor {
   public type Question = {
@@ -36,11 +38,10 @@ actor {
     #yearly;
   };
 
-  var storedArray : [Nat] = [];
+  var adminQuestions : [Question] = [];
   let subscriptionPlans = Map.empty<Nat, SubscriptionPlan>();
   let accessControlState = AccessControl.initState();
   let userProfiles = Map.empty<Principal, UserProfile>();
-  let questions = Map.empty<Nat, Question>();
 
   include MixinAuthorization(accessControlState);
 
@@ -66,28 +67,6 @@ actor {
     userProfiles.add(caller, profile);
   };
 
-  // ── Array functions (admin-only) ────────────────────────────────────────────
-  public shared ({ caller }) func storeArray(array : [Nat]) : async () {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can store arrays");
-    };
-    storedArray := array;
-  };
-
-  public query ({ caller }) func retrieveArray() : async [Nat] {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can retrieve arrays");
-    };
-    storedArray;
-  };
-
-  public shared ({ caller }) func clearArray() : async () {
-    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
-      Runtime.trap("Unauthorized: Only admins can clear arrays");
-    };
-    storedArray := [];
-  };
-
   // ── Subscription plan management (admin-only) ───────────────────────────────
   public shared ({ caller }) func addSubscriptionPlan(newPlan : SubscriptionPlan) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
@@ -101,27 +80,34 @@ actor {
     subscriptionPlans.values().toArray();
   };
 
-  // ── Question management (open to all) ───────────────────────────────────────
+  // ── Question management (admin-only) ────────────────────────────────────────
   public shared ({ caller }) func addQuestion(newQuestion : Question) : async Bool {
-    questions.add(newQuestion.id, newQuestion);
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can add questions");
+    };
+    let newQuestions = Array.tabulate(
+      adminQuestions.size() + 1,
+      func(i) { if (i < adminQuestions.size()) { adminQuestions[i] } else { newQuestion } },
+    );
+    adminQuestions := newQuestions;
     true;
   };
 
   public query func getAdminQuestions() : async [Question] {
-    questions.values().toArray();
+    adminQuestions;
   };
 
   // ── Public question query functions (open to all) ───────────────────────────
   public query func getQuestions() : async [Question] {
-    questions.values().toArray();
+    adminQuestions;
   };
 
   public query func getByTopic(topic : Text) : async [Question] {
-    questions.values().toArray().filter(func(q : Question) : Bool { q.topic == topic });
+    adminQuestions.filter(func(q) { q.topic == topic });
   };
 
   public query func getByYear(year : Text) : async [Question] {
-    questions.values().toArray().filter(func(q : Question) : Bool { q.year == year });
+    adminQuestions.filter(func(q) { q.year == year });
   };
 
   // ── Attempt recording (user-only) ───────────────────────────────────────────
@@ -129,9 +115,10 @@ actor {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
       Runtime.trap("Unauthorized: Only users can record attempts");
     };
-    switch (questions.get(questionId)) {
+    switch (adminQuestions.find(func(q) { q.id == questionId })) {
       case (null) { Runtime.trap("Question not found") };
       case (?question) { question.correctAnswerIndex == answerIndex };
     };
   };
 };
+

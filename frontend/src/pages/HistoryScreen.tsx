@@ -1,9 +1,7 @@
 import { ChevronLeft, Trophy, Calendar, BarChart2, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useQuizHistory } from '../hooks/useQueries';
-import { useActor } from '../hooks/useActor';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useQuizHistory, useClearHistory } from '../hooks/useQueries';
 
 interface HistoryScreenProps {
   onBack: () => void;
@@ -22,24 +20,13 @@ function formatDate(timestamp: number): string {
 function getGrade(pct: number): { label: string; color: string } {
   if (pct >= 80) return { label: 'Excellent', color: 'text-success' };
   if (pct >= 60) return { label: 'Good', color: 'text-gold' };
-  if (pct >= 40) return { label: 'Average', color: 'text-amber-500' };
+  if (pct >= 40) return { label: 'Average', color: 'text-amber-600' };
   return { label: 'Poor', color: 'text-destructive' };
 }
 
 export default function HistoryScreen({ onBack }: HistoryScreenProps) {
   const { data: history, isLoading } = useQuizHistory();
-  const { actor } = useActor();
-  const queryClient = useQueryClient();
-
-  const clearHistory = useMutation({
-    mutationFn: async () => {
-      if (!actor) throw new Error('Actor not initialized');
-      await actor.clearArray();
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['quizHistory'] });
-    },
-  });
+  const clearHistory = useClearHistory();
 
   const avgScore =
     history && history.length > 0
@@ -62,7 +49,7 @@ export default function HistoryScreen({ onBack }: HistoryScreenProps) {
             <button
               onClick={() => clearHistory.mutate()}
               disabled={clearHistory.isPending}
-              className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+              className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-primary-foreground/80 hover:text-primary-foreground"
               aria-label="Clear history"
             >
               <Trash2 className="w-4 h-4" />
@@ -87,7 +74,7 @@ export default function HistoryScreen({ onBack }: HistoryScreenProps) {
               <div key={stat.label} className="bg-card border border-border rounded-xl p-3 text-center shadow-xs">
                 <div className="flex justify-center mb-1">{stat.icon}</div>
                 <div className="text-lg font-bold font-heading text-foreground">{stat.value}</div>
-                <div className="text-xs text-muted-foreground font-body">{stat.label}</div>
+                <div className="text-xs text-muted-foreground font-body font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -102,12 +89,12 @@ export default function HistoryScreen({ onBack }: HistoryScreenProps) {
           </div>
         ) : !history || history.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <Trophy className="w-12 h-12 text-muted-foreground/30 mb-3" />
-            <p className="text-muted-foreground font-body text-sm">No quiz attempts yet.</p>
-            <p className="text-muted-foreground/60 font-body text-xs mt-1">
+            <Trophy className="w-12 h-12 text-muted-foreground/40 mb-3" />
+            <p className="text-foreground font-body text-sm font-medium">No quiz attempts yet.</p>
+            <p className="text-muted-foreground font-body text-xs mt-1">
               Complete a quiz to see your history here.
             </p>
-            <Button onClick={onBack} className="mt-4 bg-primary hover:bg-primary/90">
+            <Button onClick={onBack} className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground">
               Start a Quiz
             </Button>
           </div>
@@ -129,9 +116,9 @@ export default function HistoryScreen({ onBack }: HistoryScreenProps) {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className={`text-lg font-bold font-heading ${grade.color}`}>{pct}%</span>
-                      <span className={`text-xs font-body ${grade.color}`}>{grade.label}</span>
+                      <span className={`text-xs font-semibold font-body ${grade.color}`}>{grade.label}</span>
                     </div>
-                    <div className="text-xs text-muted-foreground font-body mt-0.5">
+                    <div className="text-xs text-muted-foreground font-body mt-0.5 font-medium">
                       {attempt.correct}/{attempt.total} correct &nbsp;·&nbsp; {formatDate(attempt.timestamp)}
                     </div>
                   </div>
@@ -150,7 +137,7 @@ export default function HistoryScreen({ onBack }: HistoryScreenProps) {
             href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname || 'aiapget-unani-pyq')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold hover:underline"
+            className="text-gold hover:underline font-medium"
           >
             caffeine.ai
           </a>

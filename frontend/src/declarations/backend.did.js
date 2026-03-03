@@ -40,7 +40,6 @@ export const idlService = IDL.Service({
   'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
   'addSubscriptionPlan' : IDL.Func([SubscriptionPlan], [IDL.Bool], []),
   'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
-  'clearArray' : IDL.Func([], [], []),
   'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
   'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
   'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
@@ -55,9 +54,7 @@ export const idlService = IDL.Service({
     ),
   'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'recordAttempt' : IDL.Func([IDL.Nat, IDL.Nat], [IDL.Bool], []),
-  'retrieveArray' : IDL.Func([], [IDL.Vec(IDL.Nat)], ['query']),
   'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
-  'storeArray' : IDL.Func([IDL.Vec(IDL.Nat)], [], []),
 });
 
 export const idlInitArgs = [];
@@ -95,7 +92,6 @@ export const idlFactory = ({ IDL }) => {
     'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
     'addSubscriptionPlan' : IDL.Func([SubscriptionPlan], [IDL.Bool], []),
     'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
-    'clearArray' : IDL.Func([], [], []),
     'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
     'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
     'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
@@ -114,9 +110,7 @@ export const idlFactory = ({ IDL }) => {
       ),
     'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'recordAttempt' : IDL.Func([IDL.Nat, IDL.Nat], [IDL.Bool], []),
-    'retrieveArray' : IDL.Func([], [IDL.Vec(IDL.Nat)], ['query']),
     'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
-    'storeArray' : IDL.Func([IDL.Vec(IDL.Nat)], [], []),
   });
 };
 

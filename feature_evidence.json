@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-quizscreen-tsx-add-a-skip-button-alongside-the-existing-next-button-when-the-user-clicks-skip-the-current-question-is-recorded-as-skipped-no-answer-selected-and-the-quiz-advances-to-the-next-question-skipped-questions-must-be-tracked-in-the-answers-array-passed-to-oncomplete-so-the-resultsscreen-can-display-a-skipped-count-the-skip-button-must-be-disabled-or-hidden-on-the-last-question-where-the-user-must-submit-or-skip-to-end-the-quiz-apply-the-existing-parchment-teal-gold-theme-styling-to-the-skip-button",
-      "featureTitle": "In QuizScreen.tsx, add a 'Skip' button alongside the existing 'Next' button. When the user clicks 'Skip', the current question is recorded as skipped (no answer selected) and the quiz advances to the next question. Skipped questions must be tracked in the answers array passed to onComplete so the ResultsScreen can display a skipped count. The Skip button must be disabled or hidden on the last question (where the user must submit or skip to end the quiz). Apply the existing parchment/teal/gold theme styling to the Skip button.",
+      "featureId": "feature-update-the-global-css-custom-properties-in-frontend-src-index-css-to-use-a-softer-eye-friendly-color-palette-replace-the-current-parchment-cream-background-with-a-slightly-warmer-but-lower-saturation-tone-e-g-f7f3ec-or-similar-reduce-the-harshness-of-dark-teal-accents-by-softening-them-to-a-muted-medium-teal-and-ensure-all-foreground-body-text-colors-use-dark-values-with-a-contrast-ratio-of-at-least-4-5-1-against-their-backgrounds-wcag-aa-minimum-the-gold-accent-should-be-darkened-enough-to-remain-legible-as-text",
+      "featureTitle": "Update the global CSS custom properties in `frontend/src/index.css` to use a softer, eye-friendly color palette: replace the current parchment/cream background with a slightly warmer but lower-saturation tone (e.g., #f7f3ec or similar), reduce the harshness of dark teal accents by softening them to a muted medium teal, and ensure all foreground/body text colors use dark values with a contrast ratio of at least 4.5:1 against their backgrounds (WCAG AA minimum). The gold accent should be darkened enough to remain legible as text.",
       "files": [
-        "frontend/src/pages/QuizScreen.tsx"
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,15 +16,18 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-47"
+        "REQ-52"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-in-quizscreen-tsx-add-a-visible-countdown-timer-displayed-prominently-at-the-top-of-the-quiz-card-e-g-near-the-question-counter-the-timer-should-count-down-from-a-fixed-duration-of-60-seconds-per-question-when-the-timer-reaches-zero-the-current-question-is-automatically-skipped-and-the-quiz-advances-to-the-next-question-the-timer-must-reset-to-60-seconds-each-time-a-new-question-is-shown-display-the-remaining-time-in-mm-ss-format-e-g-01-00-style-the-timer-with-the-existing-teal-gold-theme-turn-the-timer-text-red-when-10-or-fewer-seconds-remain-to-warn-the-user",
-      "featureTitle": "In QuizScreen.tsx, add a visible countdown timer displayed prominently at the top of the quiz card (e.g., near the question counter). The timer should count down from a fixed duration of 60 seconds per question. When the timer reaches zero, the current question is automatically skipped and the quiz advances to the next question. The timer must reset to 60 seconds each time a new question is shown. Display the remaining time in MM:SS format (e.g., '01:00'). Style the timer with the existing teal/gold theme; turn the timer text red when 10 or fewer seconds remain to warn the user.",
+      "featureId": "feature-audit-and-fix-text-color-declarations-in-quizscreen-tsx-reviewscreen-tsx-resultsscreen-tsx-adminpanelscreen-tsx-topicbrowserscreen-tsx-historyscreen-tsx-homescreen-tsx-subscriptionplansscreen-tsx-and-appheader-tsx-to-ensure-every-text-element-question-text-option-labels-headings-stat-numbers-form-labels-menu-links-uses-a-clearly-visible-high-contrast-color-against-its-background-replace-any-instance-where-text-color-matches-or-is-too-close-to-the-background-color-particularly-on-highlighted-selected-states-card-surfaces-and-header-areas",
+      "featureTitle": "Audit and fix text color declarations in `QuizScreen.tsx`, `ReviewScreen.tsx`, `ResultsScreen.tsx`, `AdminPanelScreen.tsx`, `TopicBrowserScreen.tsx`, `HistoryScreen.tsx`, `HomeScreen.tsx`, `SubscriptionPlansScreen.tsx`, and `AppHeader.tsx` to ensure every text element (question text, option labels, headings, stat numbers, form labels, menu links) uses a clearly visible, high-contrast color against its background. Replace any instance where text color matches or is too close to the background color — particularly on highlighted/selected states, card surfaces, and header areas.",
       "files": [
-        "frontend/src/pages/QuizScreen.tsx"
+        "frontend/src/pages/HistoryScreen.tsx",
+        "frontend/src/pages/QuizScreen.tsx",
+        "frontend/src/pages/ResultsScreen.tsx",
+        "frontend/src/pages/ReviewScreen.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -35,7 +38,7 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-48"
+        "REQ-53"
       ],
       "confidence": "high"
     }

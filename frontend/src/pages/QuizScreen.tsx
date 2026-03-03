@@ -137,7 +137,7 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
           </button>
           <div className="flex-1">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-body opacity-90">
+              <span className="text-sm font-body font-medium">
                 Question {currentIndex + 1} of {questions.length}
               </span>
               <div className="flex items-center gap-2">
@@ -145,14 +145,14 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
                 <div
                   className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold font-heading transition-colors ${
                     isTimeLow
-                      ? 'bg-red-500/90 text-white animate-pulse'
-                      : 'bg-white/15 text-primary-foreground'
+                      ? 'bg-red-600 text-white animate-pulse'
+                      : 'bg-white/20 text-primary-foreground'
                   }`}
                 >
                   <Clock className="w-3 h-3" />
                   <span>{formatTime(timeRemaining)}</span>
                 </div>
-                <span className="text-xs font-body opacity-70 bg-white/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-body font-medium bg-white/15 text-primary-foreground px-2 py-0.5 rounded-full">
                   {current.topic}
                 </span>
               </div>
@@ -190,13 +190,13 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
               'w-full text-left border rounded-xl p-4 flex items-center gap-3 transition-all duration-200 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50';
 
             if (!isAnswered) {
-              optionClass += ' bg-card border-border hover:border-gold hover:bg-gold/5 cursor-pointer';
+              optionClass += ' bg-card border-border text-foreground hover:border-gold hover:bg-gold/5 cursor-pointer';
             } else if (isCorrect) {
-              optionClass += ' bg-success/10 border-success cursor-default';
+              optionClass += ' bg-success/15 border-success cursor-default';
             } else if (isSelected) {
-              optionClass += ' bg-destructive/10 border-destructive text-destructive-foreground cursor-default';
+              optionClass += ' bg-destructive/10 border-destructive cursor-default';
             } else {
-              optionClass += ' bg-card border-border opacity-60 cursor-default';
+              optionClass += ' bg-card border-border text-foreground opacity-55 cursor-default';
             }
 
             return (
@@ -212,7 +212,7 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
                       ? 'bg-success border-success text-white'
                       : isAnswered && isSelected
                       ? 'bg-destructive border-destructive text-white'
-                      : 'border-border bg-muted text-muted-foreground'
+                      : 'border-border bg-muted text-foreground'
                   }`}
                 >
                   {OPTION_LABELS[idx]}
@@ -221,7 +221,9 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
                   className={`flex-1 ${
                     isAnswered && isCorrect
                       ? 'text-success font-bold'
-                      : ''
+                      : isAnswered && isSelected && !isCorrect
+                      ? 'text-destructive font-medium'
+                      : 'text-foreground'
                   }`}
                 >
                   {option}
@@ -264,7 +266,7 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
               <Button
                 variant="outline"
                 onClick={handleSkip}
-                className="gap-1.5 border-gold/60 text-gold hover:bg-gold/10 hover:border-gold"
+                className="gap-1.5 border-gold text-gold hover:bg-gold/10 hover:border-gold"
               >
                 <SkipForward className="w-4 h-4" />
                 {isLast ? 'Skip & Finish' : 'Skip'}
@@ -274,7 +276,7 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
             <Button
               onClick={handleNext}
               disabled={!isAnswered}
-              className="gap-2 bg-primary hover:bg-primary/90"
+              className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               {isLast ? 'Finish Quiz' : 'Next'}
               {!isLast && <ChevronRight className="w-4 h-4" />}

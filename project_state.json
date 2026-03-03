@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 41,
+  "projectStateVersion": 47,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
@@ -15,7 +15,7 @@
     "Submitting a question via the Admin Panel form results in a 'failed to add question' error",
     "Deployment error on go-live for Version 11",
     "Correct answer option text color is not visible after clicking (font color blends with background); correct option text should be bold and use a contrasting color",
-    "Admin-added questions are deleted/reset after every new deployment because they are not stored in stable state"
+    "Admin-added questions are lost again after page refresh or version change — stable storage persistence still not working correctly"
   ],
   "isFixRequest": false,
   "existing_features": [
@@ -290,6 +290,30 @@
         "REQ-48"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-expand-the-static-question-bank-in-frontend-src-data-questions-ts-by-adding-a-significant-number-of-additional-aiapget-unani-pyq-previous-year-questions-distributed-across-multiple-exam-years-2016-through-the-most-recent-available-year-each-new-question-must-include-question-text-four-answer-options-a-d-correct-answer-index-topic-subject-category-using-the-existing-topic-constants-defined-in-the-file-exam-year-and-an-optional-explanation-where-relevant-questions-must-be-authentic-unani-medicine-mcqs-covering-subjects-such-as-kulliyat-ilmul-advia-moalijat-tashreeh-ilmul-saidla-ilmul-amraz-and-other-unani-subject-categories-already-present-in-the-codebase-after-adding-the-browse-by-year-view-in-topicbrowserscreen-tsx-must-correctly-list-and-filter-these-new-questions-under-their-respective-years",
+      "title": "Expand the static question bank in `frontend/src/data/questions.ts` by adding a significant number of additional AIAPGET Unani PYQ (Previous Year Questions) distributed across multiple exam years (2016 through the most recent available year). Each new question must include: question text, four answer options (A–D), correct answer index, topic/subject category (using the existing topic constants defined in the file), exam year, and an optional explanation where relevant. Questions must be authentic Unani medicine MCQs covering subjects such as Kulliyat, Ilmul Advia, Moalijat, Tashreeh, Ilmul Saidla, Ilmul Amraz, and other Unani subject categories already present in the codebase. After adding, the Browse by Year view in `TopicBrowserScreen.tsx` must correctly list and filter these new questions under their respective years.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-css-custom-properties-in-frontend-src-index-css-to-use-a-softer-eye-friendly-color-palette-replace-the-current-parchment-cream-background-with-a-slightly-warmer-but-lower-saturation-tone-e-g-f7f3ec-or-similar-reduce-the-harshness-of-dark-teal-accents-by-softening-them-to-a-muted-medium-teal-and-ensure-all-foreground-body-text-colors-use-dark-values-with-a-contrast-ratio-of-at-least-4-5-1-against-their-backgrounds-wcag-aa-minimum-the-gold-accent-should-be-darkened-enough-to-remain-legible-as-text",
+      "title": "Update the global CSS custom properties in `frontend/src/index.css` to use a softer, eye-friendly color palette: replace the current parchment/cream background with a slightly warmer but lower-saturation tone (e.g., #f7f3ec or similar), reduce the harshness of dark teal accents by softening them to a muted medium teal, and ensure all foreground/body text colors use dark values with a contrast ratio of at least 4.5:1 against their backgrounds (WCAG AA minimum). The gold accent should be darkened enough to remain legible as text.",
+      "reqIds": [
+        "REQ-52"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-and-fix-text-color-declarations-in-quizscreen-tsx-reviewscreen-tsx-resultsscreen-tsx-adminpanelscreen-tsx-topicbrowserscreen-tsx-historyscreen-tsx-homescreen-tsx-subscriptionplansscreen-tsx-and-appheader-tsx-to-ensure-every-text-element-question-text-option-labels-headings-stat-numbers-form-labels-menu-links-uses-a-clearly-visible-high-contrast-color-against-its-background-replace-any-instance-where-text-color-matches-or-is-too-close-to-the-background-color-particularly-on-highlighted-selected-states-card-surfaces-and-header-areas",
+      "title": "Audit and fix text color declarations in `QuizScreen.tsx`, `ReviewScreen.tsx`, `ResultsScreen.tsx`, `AdminPanelScreen.tsx`, `TopicBrowserScreen.tsx`, `HistoryScreen.tsx`, `HomeScreen.tsx`, `SubscriptionPlansScreen.tsx`, and `AppHeader.tsx` to ensure every text element (question text, option labels, headings, stat numbers, form labels, menu links) uses a clearly visible, high-contrast color against its background. Replace any instance where text color matches or is too close to the background color — particularly on highlighted/selected states, card surfaces, and header areas.",
+      "reqIds": [
+        "REQ-53"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -481,6 +505,42 @@
       "id": "AR-33",
       "summary": "Add a 'Skip' button during the quiz so users can skip a question and move to the next one. Add a countdown clock/timer visible during the quiz.",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "In `backend/main.mo`, ensure the mutable array (or equivalent data structure) used to store admin-added questions submitted via `addQuestion` is declared with the `stable` keyword. All questions added through the Admin Panel must survive canister upgrades and redeployments. If the backend currently uses a non-stable var or a buffer that is not copied to stable storage, migrate it to a `stable var` array of the question record type. After any upgrade, all previously added questions must still be returned by `getAdminQuestions`, `getQuestions`, `getByTopic`, and `getByYear`.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "If `backend/main.mo` uses `preupgrade` and `postupgrade` system hooks for state migration, verify that the `preupgrade` hook copies the current admin questions mutable buffer/array into a stable staging variable, and the `postupgrade` hook restores it back into the working mutable state. Ensure both hooks are correct, complete, and do not accidentally overwrite or clear the stored questions. Update `migration.mo` only if a schema change (e.g., adding the `explanation` field) requires explicit record migration to avoid type errors on upgrade.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Add more PYQ (Previous Year Questions) to the question bank, organized/categorized by exam year.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-37",
+      "summary": "Make the app theme more eye-friendly and ensure all text is clearly visible — improve contrast, readability, and reduce visual strain across all screens.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-40",
+      "summary": "Update `frontend/tailwind.config.js` color token definitions (and any OKLCH values used for primary, foreground, muted, accent, and card tokens) to align with the new eye-friendly palette: use lower-saturation, medium-brightness values for backgrounds and softer but sufficiently dark values for text tokens. Ensure the Tailwind theme tokens are consistent with the CSS custom properties updated in REQ-52 so utility classes like `text-foreground`, `bg-card`, `text-primary`, and `text-muted-foreground` all produce accessible, eye-friendly results.",
+      "reqIds": [
+        "REQ-54"
+      ],
       "status": "pending"
     }
   ],

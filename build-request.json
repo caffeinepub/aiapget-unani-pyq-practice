@@ -1,59 +1,83 @@
 {
   "kind": "build_request",
-  "title": "Add Skip Button and Countdown Timer to Quiz Screen",
-  "projectName": "AIAPGET Unani PYQ",
+  "title": "Eye-friendly theme with high-contrast text across all screens",
+  "projectName": "Unani PYQ Practice",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-47",
-      "text": "In QuizScreen.tsx, add a 'Skip' button alongside the existing 'Next' button. When the user clicks 'Skip', the current question is recorded as skipped (no answer selected) and the quiz advances to the next question. Skipped questions must be tracked in the answers array passed to onComplete so the ResultsScreen can display a skipped count. The Skip button must be disabled or hidden on the last question (where the user must submit or skip to end the quiz). Apply the existing parchment/teal/gold theme styling to the Skip button.",
+      "id": "REQ-52",
+      "text": "Update the global CSS custom properties in `frontend/src/index.css` to use a softer, eye-friendly color palette: replace the current parchment/cream background with a slightly warmer but lower-saturation tone (e.g., #f7f3ec or similar), reduce the harshness of dark teal accents by softening them to a muted medium teal, and ensure all foreground/body text colors use dark values with a contrast ratio of at least 4.5:1 against their backgrounds (WCAG AA minimum). The gold accent should be darkened enough to remain legible as text.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-13"
         ],
         "quotes": [
-          "Add a skip button and clock durin quiz"
+          "Make the theme eye friendly and keep text visible"
         ]
       },
       "acceptanceCriteria": [
-        "A 'Skip' button is visible on every question card during the quiz except it either submits/ends the quiz on the last question or is replaced by a 'Finish' action.",
-        "Clicking Skip advances to the next question without requiring an answer selection.",
-        "Skipped questions are recorded distinctly (e.g., selectedAnswer = null or a sentinel value) in the answers array passed to onComplete.",
-        "The ResultsScreen correctly counts and displays the number of skipped questions.",
-        "The Skip button is styled consistently with the existing parchment/teal/gold theme."
+        "Background colors across all screens are warm but not stark white or harsh — a soft parchment/ivory tone that does not cause glare.",
+        "Body text and heading text colors are dark with at least 4.5:1 contrast ratio against their background.",
+        "Deep teal accent color is softened/desaturated to reduce eye strain while remaining distinct.",
+        "Gold accent text meets minimum contrast when used as label or heading text.",
+        "No text appears invisible, near-invisible, or same-color-as-background on any screen."
       ]
     },
     {
-      "id": "REQ-48",
-      "text": "In QuizScreen.tsx, add a visible countdown timer displayed prominently at the top of the quiz card (e.g., near the question counter). The timer should count down from a fixed duration of 60 seconds per question. When the timer reaches zero, the current question is automatically skipped and the quiz advances to the next question. The timer must reset to 60 seconds each time a new question is shown. Display the remaining time in MM:SS format (e.g., '01:00'). Style the timer with the existing teal/gold theme; turn the timer text red when 10 or fewer seconds remain to warn the user.",
+      "id": "REQ-53",
+      "text": "Audit and fix text color declarations in `QuizScreen.tsx`, `ReviewScreen.tsx`, `ResultsScreen.tsx`, `AdminPanelScreen.tsx`, `TopicBrowserScreen.tsx`, `HistoryScreen.tsx`, `HomeScreen.tsx`, `SubscriptionPlansScreen.tsx`, and `AppHeader.tsx` to ensure every text element (question text, option labels, headings, stat numbers, form labels, menu links) uses a clearly visible, high-contrast color against its background. Replace any instance where text color matches or is too close to the background color — particularly on highlighted/selected states, card surfaces, and header areas.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-13"
         ],
         "quotes": [
-          "Add a skip button and clock durin quiz"
+          "keep text visible"
         ]
       },
       "acceptanceCriteria": [
-        "A countdown timer is visible on the quiz card during the quiz, showing remaining time in MM:SS format.",
-        "The timer starts at 60 seconds when each new question is displayed and counts down in real time.",
-        "When the timer reaches 0, the question is automatically skipped and the quiz advances to the next question.",
-        "The timer resets to 60 seconds whenever the user moves to a new question (via Next, Skip, or auto-skip).",
-        "The timer text changes to red when 10 or fewer seconds remain.",
-        "The timer stops when the user selects an answer or manually clicks Next/Skip."
+        "All option labels in QuizScreen and ReviewScreen are legible on both selected/highlighted and unselected states.",
+        "Correct-answer highlights show dark bold text on the green/teal highlight background (not white-on-white).",
+        "Incorrect-answer highlights show clearly readable text on the red/rose highlight background.",
+        "Card headings and body copy on HomeScreen, HistoryScreen, and SubscriptionPlansScreen all render in high-contrast dark text.",
+        "Form labels, input placeholders, and help text in AdminPanelScreen are clearly legible.",
+        "Navigation links in AppHeader dropdown are fully visible against the menu background.",
+        "Timer and counter text in QuizScreen is readable at all timer states including the red warning state."
+      ]
+    },
+    {
+      "id": "REQ-54",
+      "text": "Update `frontend/tailwind.config.js` color token definitions (and any OKLCH values used for primary, foreground, muted, accent, and card tokens) to align with the new eye-friendly palette: use lower-saturation, medium-brightness values for backgrounds and softer but sufficiently dark values for text tokens. Ensure the Tailwind theme tokens are consistent with the CSS custom properties updated in REQ-52 so utility classes like `text-foreground`, `bg-card`, `text-primary`, and `text-muted-foreground` all produce accessible, eye-friendly results.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-13"
+        ],
+        "quotes": [
+          "Make the theme eye friendly and keep text visible"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Tailwind color tokens for foreground, muted-foreground, and primary-foreground all produce dark readable text.",
+        "Background tokens (background, card, popover) produce soft, low-glare surfaces.",
+        "The updated tokens are reflected consistently across all screens without needing per-component overrides.",
+        "No Tailwind utility class produces invisible or near-invisible text on its paired background."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files listed under frontend.immutablePaths.",
-    "Maintain the existing parchment/teal/gold visual theme on all new UI elements."
+    "Do not change the overall Unani/Islamic manuscript aesthetic — retain the parchment, teal, and gold color family; only adjust saturation/brightness/contrast for readability.",
+    "Do not modify files listed in frontend.immutablePaths.",
+    "The password gate in AdminPanelScreen.tsx (password: 'Naeem9472') must remain unchanged.",
+    "PWA manifest colors (theme_color, background_color) should be updated to match the new palette if changed."
   ],
   "nonGoals": [
-    "Global quiz-level timer (total time for the entire quiz session is not required, only per-question timer).",
-    "Backend changes for storing skip data or timer results.",
-    "Configurable timer duration — 60 seconds per question is fixed."
+    "Adding or removing any features or screens.",
+    "Changing the layout or component structure of any screen.",
+    "Introducing a dark mode toggle.",
+    "Modifying backend Motoko code.",
+    "Changing fonts or typography families."
   ],
   "imageRequirements": {
     "required": [],

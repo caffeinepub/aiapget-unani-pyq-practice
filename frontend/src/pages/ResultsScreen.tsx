@@ -16,7 +16,7 @@ interface ResultsScreenProps {
 function getPerformanceTier(pct: number): { label: string; color: string; emoji: string } {
   if (pct >= 80) return { label: 'Excellent', color: 'text-success', emoji: '🏆' };
   if (pct >= 60) return { label: 'Good', color: 'text-gold', emoji: '⭐' };
-  if (pct >= 40) return { label: 'Average', color: 'text-amber-500', emoji: '📚' };
+  if (pct >= 40) return { label: 'Average', color: 'text-amber-600', emoji: '📚' };
   return { label: 'Needs Improvement', color: 'text-destructive', emoji: '💪' };
 }
 
@@ -62,7 +62,7 @@ export default function ResultsScreen({
           <div className="text-5xl mb-2">{tier.emoji}</div>
           <div className={`text-4xl font-bold font-heading ${tier.color}`}>{percentage}%</div>
           <div className={`text-lg font-semibold font-heading mt-1 ${tier.color}`}>{tier.label}</div>
-          <div className="text-sm text-muted-foreground font-body mt-2">
+          <div className="text-sm text-foreground font-body mt-2 font-medium">
             {correct} out of {total} correct
           </div>
 
@@ -76,13 +76,13 @@ export default function ResultsScreen({
           {[
             { icon: <CheckCircle className="w-5 h-5 text-success" />, label: 'Correct', value: correct, color: 'text-success' },
             { icon: <XCircle className="w-5 h-5 text-destructive" />, label: 'Incorrect', value: incorrect, color: 'text-destructive' },
-            { icon: <Minus className="w-5 h-5 text-muted-foreground" />, label: 'Skipped', value: skipped, color: 'text-muted-foreground' },
+            { icon: <Minus className="w-5 h-5 text-muted-foreground" />, label: 'Skipped', value: skipped, color: 'text-foreground' },
             { icon: <Trophy className="w-5 h-5 text-gold" />, label: 'Time', value: `${minutes}m ${seconds}s`, color: 'text-gold' },
           ].map((stat) => (
             <div key={stat.label} className="bg-card border border-border rounded-xl p-3 text-center shadow-xs">
               <div className="flex justify-center mb-1">{stat.icon}</div>
               <div className={`text-xl font-bold font-heading ${stat.color}`}>{stat.value}</div>
-              <div className="text-xs text-muted-foreground font-body">{stat.label}</div>
+              <div className="text-xs text-muted-foreground font-body font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -100,11 +100,11 @@ export default function ResultsScreen({
               const topicPct = Math.round((topicCorrect / topicQs.length) * 100);
               return (
                 <div key={topic} className="flex items-center gap-3">
-                  <span className="text-xs font-body text-muted-foreground w-32 truncate">{topic}</span>
+                  <span className="text-xs font-body text-foreground w-32 truncate font-medium">{topic}</span>
                   <div className="flex-1">
                     <Progress value={topicPct} className="h-2" />
                   </div>
-                  <span className="text-xs font-body text-foreground w-16 text-right">
+                  <span className="text-xs font-body text-foreground w-16 text-right font-semibold">
                     {topicCorrect}/{topicQs.length}
                   </span>
                 </div>
@@ -125,7 +125,7 @@ export default function ResultsScreen({
           </Button>
           <Button
             onClick={onNewQuiz}
-            className="flex-1 gap-2 bg-primary hover:bg-primary/90"
+            className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             <RotateCcw className="w-4 h-4" />
             Start New Quiz
@@ -141,7 +141,7 @@ export default function ResultsScreen({
             href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname || 'aiapget-unani-pyq')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold hover:underline"
+            className="text-gold hover:underline font-medium"
           >
             caffeine.ai
           </a>

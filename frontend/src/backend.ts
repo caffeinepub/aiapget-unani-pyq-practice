@@ -122,7 +122,6 @@ export interface backendInterface {
     addQuestion(newQuestion: Question): Promise<boolean>;
     addSubscriptionPlan(newPlan: SubscriptionPlan): Promise<boolean>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
-    clearArray(): Promise<void>;
     getAdminQuestions(): Promise<Array<Question>>;
     getByTopic(topic: string): Promise<Array<Question>>;
     getByYear(year: string): Promise<Array<Question>>;
@@ -133,9 +132,7 @@ export interface backendInterface {
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
     recordAttempt(questionId: bigint, answerIndex: bigint): Promise<boolean>;
-    retrieveArray(): Promise<Array<bigint>>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
-    storeArray(array: Array<bigint>): Promise<void>;
 }
 import type { BillingCycle as _BillingCycle, Question as _Question, SubscriptionPlan as _SubscriptionPlan, UserProfile as _UserProfile, UserRole as _UserRole } from "./declarations/backend.did.d.ts";
 export class Backend implements backendInterface {
@@ -193,20 +190,6 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.assignCallerUserRole(arg0, to_candid_UserRole_n7(this._uploadFile, this._downloadFile, arg1));
-            return result;
-        }
-    }
-    async clearArray(): Promise<void> {
-        if (this.processError) {
-            try {
-                const result = await this.actor.clearArray();
-                return result;
-            } catch (e) {
-                this.processError(e);
-                throw new Error("unreachable");
-            }
-        } else {
-            const result = await this.actor.clearArray();
             return result;
         }
     }
@@ -350,20 +333,6 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async retrieveArray(): Promise<Array<bigint>> {
-        if (this.processError) {
-            try {
-                const result = await this.actor.retrieveArray();
-                return result;
-            } catch (e) {
-                this.processError(e);
-                throw new Error("unreachable");
-            }
-        } else {
-            const result = await this.actor.retrieveArray();
-            return result;
-        }
-    }
     async saveCallerUserProfile(arg0: UserProfile): Promise<void> {
         if (this.processError) {
             try {
@@ -375,20 +344,6 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.saveCallerUserProfile(arg0);
-            return result;
-        }
-    }
-    async storeArray(arg0: Array<bigint>): Promise<void> {
-        if (this.processError) {
-            try {
-                const result = await this.actor.storeArray(arg0);
-                return result;
-            } catch (e) {
-                this.processError(e);
-                throw new Error("unreachable");
-            }
-        } else {
-            const result = await this.actor.storeArray(arg0);
             return result;
         }
     }

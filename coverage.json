@@ -1,37 +1,57 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-03T00:54:29.043Z",
+  "generatedAt": "2026-03-03T02:09:04.698Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
+    "total": 3,
     "implemented": 2,
     "items": [
       {
-        "id": "REQ-47",
-        "summary": "In QuizScreen.tsx, add a 'Skip' button alongside the existing 'Next' button. When the user clicks 'Skip', the current question is recorded as skipped (no answer selected) and the quiz advances to the next question. Skipped questions must be tracked in the answers array passed to onComplete so the ResultsScreen can display a skipped count. The Skip button must be disabled or hidden on the last question (where the user must submit or skip to end the quiz). Apply the existing parchment/teal/gold theme styling to the Skip button.",
+        "id": "REQ-52",
+        "summary": "Update the global CSS custom properties in `frontend/src/index.css` to use a softer, eye-friendly color palette: replace the current parchment/cream background with a slightly warmer but lower-saturation tone (e.g., #f7f3ec or similar), reduce the harshness of dark teal accents by softening them to a muted medium teal, and ensure all foreground/body text colors use dark values with a contrast ratio of at least 4.5:1 against their backgrounds (WCAG AA minimum). The gold accent should be darkened enough to remain legible as text.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/QuizScreen.tsx",
-          "frontend/src/pages/ResultsScreen.tsx"
+          "frontend/src/index.css",
+          "frontend/public/manifest.json"
         ],
         "matchedFiles": [
-          "frontend/src/pages/QuizScreen.tsx"
+          "frontend/src/index.css"
         ]
       },
       {
-        "id": "REQ-48",
-        "summary": "In QuizScreen.tsx, add a visible countdown timer displayed prominently at the top of the quiz card (e.g., near the question counter). The timer should count down from a fixed duration of 60 seconds per question. When the timer reaches zero, the current question is automatically skipped and the quiz advances to the next question. The timer must reset to 60 seconds each time a new question is shown. Display the remaining time in MM:SS format (e.g., '01:00'). Style the timer with the existing teal/gold theme; turn the timer text red when 10 or fewer seconds remain to warn the user.",
+        "id": "REQ-53",
+        "summary": "Audit and fix text color declarations in `QuizScreen.tsx`, `ReviewScreen.tsx`, `ResultsScreen.tsx`, `AdminPanelScreen.tsx`, `TopicBrowserScreen.tsx`, `HistoryScreen.tsx`, `HomeScreen.tsx`, `SubscriptionPlansScreen.tsx`, and `AppHeader.tsx` to ensure every text element (question text, option labels, headings, stat numbers, form labels, menu links) uses a clearly visible, high-contrast color against its background. Replace any instance where text color matches or is too close to the background color — particularly on highlighted/selected states, card surfaces, and header areas.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/QuizScreen.tsx"
+          "frontend/src/pages/QuizScreen.tsx",
+          "frontend/src/pages/ReviewScreen.tsx",
+          "frontend/src/pages/ResultsScreen.tsx",
+          "frontend/src/pages/AdminPanelScreen.tsx",
+          "frontend/src/pages/TopicBrowserScreen.tsx",
+          "frontend/src/pages/HistoryScreen.tsx",
+          "frontend/src/pages/HomeScreen.tsx",
+          "frontend/src/pages/SubscriptionPlansScreen.tsx",
+          "frontend/src/components/AppHeader.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/QuizScreen.tsx"
+          "frontend/src/pages/QuizScreen.tsx",
+          "frontend/src/pages/ReviewScreen.tsx",
+          "frontend/src/pages/ResultsScreen.tsx",
+          "frontend/src/pages/HistoryScreen.tsx"
         ]
+      },
+      {
+        "id": "REQ-54",
+        "summary": "Update `frontend/tailwind.config.js` color token definitions (and any OKLCH values used for primary, foreground, muted, accent, and card tokens) to align with the new eye-friendly palette: use lower-saturation, medium-brightness values for backgrounds and softer but sufficiently dark values for text tokens. Ensure the Tailwind theme tokens are consistent with the CSS custom properties updated in REQ-52 so utility classes like `text-foreground`, `bg-card`, `text-primary`, and `text-muted-foreground` all produce accessible, eye-friendly results.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": []
       }
     ]
   },
@@ -40,7 +60,11 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/src/index.css",
+    "frontend/src/pages/HistoryScreen.tsx",
     "frontend/src/pages/QuizScreen.tsx",
+    "frontend/src/pages/ResultsScreen.tsx",
+    "frontend/src/pages/ReviewScreen.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

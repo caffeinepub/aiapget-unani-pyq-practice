@@ -39,7 +39,6 @@ export interface backendInterface {
     addQuestion(newQuestion: Question): Promise<boolean>;
     addSubscriptionPlan(newPlan: SubscriptionPlan): Promise<boolean>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
-    clearArray(): Promise<void>;
     getAdminQuestions(): Promise<Array<Question>>;
     getByTopic(topic: string): Promise<Array<Question>>;
     getByYear(year: string): Promise<Array<Question>>;
@@ -50,7 +49,5 @@ export interface backendInterface {
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
     recordAttempt(questionId: bigint, answerIndex: bigint): Promise<boolean>;
-    retrieveArray(): Promise<Array<bigint>>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
-    storeArray(array: Array<bigint>): Promise<void>;
 }

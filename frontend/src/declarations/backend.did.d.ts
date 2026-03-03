@@ -37,7 +37,6 @@ export interface _SERVICE {
   'addQuestion' : ActorMethod<[Question], boolean>,
   'addSubscriptionPlan' : ActorMethod<[SubscriptionPlan], boolean>,
   'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
-  'clearArray' : ActorMethod<[], undefined>,
   'getAdminQuestions' : ActorMethod<[], Array<Question>>,
   'getByTopic' : ActorMethod<[string], Array<Question>>,
   'getByYear' : ActorMethod<[string], Array<Question>>,
@@ -48,9 +47,7 @@ export interface _SERVICE {
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
   'isCallerAdmin' : ActorMethod<[], boolean>,
   'recordAttempt' : ActorMethod<[bigint, bigint], boolean>,
-  'retrieveArray' : ActorMethod<[], Array<bigint>>,
   'saveCallerUserProfile' : ActorMethod<[UserProfile], undefined>,
-  'storeArray' : ActorMethod<[Array<bigint>], undefined>,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

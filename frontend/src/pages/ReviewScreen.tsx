@@ -33,7 +33,7 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
           </button>
           <div className="flex-1">
             <h1 className="font-heading font-bold text-base">Answer Review</h1>
-            <p className="text-xs opacity-80 font-body">
+            <p className="text-xs font-medium opacity-85 font-body">
               Question {currentIndex + 1} of {questions.length}
             </p>
           </div>
@@ -75,11 +75,11 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
 
             let cls = 'w-full text-left border rounded-xl p-4 flex items-center gap-3 font-body text-sm';
             if (isCorrectChoice) {
-              cls += ' bg-success/10 border-success';
+              cls += ' bg-success/15 border-success';
             } else if (isUserChoice && !isCorrectChoice) {
               cls += ' bg-destructive/10 border-destructive';
             } else {
-              cls += ' bg-card border-border opacity-60';
+              cls += ' bg-card border-border opacity-55';
             }
 
             return (
@@ -90,18 +90,18 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
                       ? 'bg-success border-success text-white'
                       : isUserChoice
                       ? 'bg-destructive border-destructive text-white'
-                      : 'border-border bg-muted text-muted-foreground'
+                      : 'border-border bg-muted text-foreground'
                   }`}
                 >
                   {OPTION_LABELS[idx]}
                 </span>
                 <span
-                  className={`flex-1 ${
+                  className={`flex-1 font-medium ${
                     isCorrectChoice
                       ? 'text-success font-bold'
                       : isUserChoice && !isCorrectChoice
-                      ? 'text-destructive'
-                      : ''
+                      ? 'text-destructive font-semibold'
+                      : 'text-foreground'
                   }`}
                 >
                   {option}
@@ -140,13 +140,13 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
           {currentIndex < questions.length - 1 ? (
             <Button
               onClick={() => setCurrentIndex((i) => i + 1)}
-              className="gap-2 bg-primary hover:bg-primary/90"
+              className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Next
               <ChevronRight className="w-4 h-4" />
             </Button>
           ) : (
-            <Button onClick={onBack} className="gap-2 bg-primary hover:bg-primary/90">
+            <Button onClick={onBack} className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground">
               Done
             </Button>
           )}
@@ -172,8 +172,8 @@ export default function ReviewScreen({ questions, answers, onBack }: ReviewScree
                       : skipped
                       ? 'bg-muted text-muted-foreground'
                       : correct
-                      ? 'bg-success/20 text-success border border-success/30'
-                      : 'bg-destructive/20 text-destructive border border-destructive/30'
+                      ? 'bg-success/20 text-success border border-success/40'
+                      : 'bg-destructive/15 text-destructive border border-destructive/30'
                   }`}
                 >
                   {idx + 1}
