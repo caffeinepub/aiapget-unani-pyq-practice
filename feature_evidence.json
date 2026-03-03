@@ -2,11 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-adminpanelscreen-tsx-remove-any-frontend-side-error-display-conditional-render-or-access-check-that-shows-the-unauthorized-only-admins-can-add-questions-message-or-hides-the-add-question-form-behind-a-role-check-the-password-gate-password-naeem9472-must-remain-as-the-only-gate-once-the-correct-password-is-entered-the-add-question-form-and-the-questions-list-must-both-be-fully-visible-and-functional-with-no-unauthorized-error-shown",
-      "featureTitle": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
+      "featureId": "feature-convert-the-frontend-into-a-progressive-web-app-pwa-by-adding-a-web-app-manifest-file-manifest-json-or-manifest-webmanifest-in-the-frontend-public-directory-the-manifest-must-include-app-name-aiapget-unani-pyq-practice-short-name-unani-pyq-start-url-display-mode-standalone-background-color-matching-the-parchment-theme-e-g-f5f0e8-theme-color-matching-the-deep-teal-accent-and-icon-references-for-at-least-192x192-and-512x512-sizes-reference-the-manifest-in-frontend-index-html-via-a-link-rel-manifest-tag",
+      "featureTitle": "Convert the frontend into a Progressive Web App (PWA) by adding a Web App Manifest file (manifest.json or manifest.webmanifest) in the frontend/public directory. The manifest must include: app name ('AIAPGET Unani PYQ Practice'), short name ('Unani PYQ'), start URL, display mode 'standalone', background color matching the parchment theme (e.g., #f5f0e8), theme color matching the deep teal accent, and icon references for at least 192x192 and 512x512 sizes. Reference the manifest in frontend/index.html via a <link rel='manifest'> tag.",
       "files": [
-        "frontend/src/hooks/useAdminQueries.ts",
-        "frontend/src/pages/AdminPanelScreen.tsx"
+        "frontend/index.html",
+        "frontend/public/manifest.json"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,7 +17,64 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-40"
+        "REQ-41"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-register-a-service-worker-in-the-frontend-to-enable-offline-support-and-caching-the-service-worker-must-cache-all-critical-static-assets-html-js-css-images-on-install-so-the-app-loads-when-the-device-is-offline-use-a-cache-first-strategy-for-static-assets-and-a-network-first-strategy-for-api-canister-calls-register-the-service-worker-in-frontend-src-main-tsx-or-via-a-separate-registration-script-loaded-in-frontend-index-html",
+      "featureTitle": "Register a Service Worker in the frontend to enable offline support and caching. The service worker must cache all critical static assets (HTML, JS, CSS, images) on install so the app loads when the device is offline. Use a cache-first strategy for static assets and a network-first strategy for API/canister calls. Register the service worker in frontend/src/main.tsx or via a separate registration script loaded in frontend/index.html.",
+      "files": [
+        "frontend/public/sw.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-42"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-pwa-icon-assets-for-the-home-screen-and-splash-screen-generate-a-192x192-and-a-512x512-version-of-the-app-icon-based-on-the-existing-app-logo-unani-motif-and-place-them-at-frontend-public-assets-generated-icon-192-png-and-frontend-public-assets-generated-icon-512-png-respectively-reference-these-paths-in-the-manifest-icons-array",
+      "featureTitle": "Add PWA icon assets for the home screen and splash screen. Generate a 192x192 and a 512x512 version of the app icon (based on the existing app logo/Unani motif) and place them at frontend/public/assets/generated/icon-192.png and frontend/public/assets/generated/icon-512.png respectively. Reference these paths in the manifest icons array.",
+      "files": [
+        "frontend/public/manifest.json"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-43"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-necessary-meta-tags-to-frontend-index-html-for-ios-pwa-support-apple-mobile-web-app-capable-apple-mobile-web-app-status-bar-style-set-to-black-translucent-or-matching-the-teal-theme-apple-mobile-web-app-title-and-apple-touch-icon-pointing-to-the-192x192-icon-also-set-the-meta-name-theme-color-to-match-the-app-s-deep-teal-accent-color-so-the-browser-toolbar-matches-the-app-theme-on-android",
+      "featureTitle": "Add the necessary meta tags to frontend/index.html for iOS PWA support: apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style (set to 'black-translucent' or matching the teal theme), apple-mobile-web-app-title, and apple-touch-icon pointing to the 192x192 icon. Also set the <meta name='theme-color'> to match the app's deep teal accent color so the browser toolbar matches the app theme on Android.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-44"
       ],
       "confidence": "high"
     }

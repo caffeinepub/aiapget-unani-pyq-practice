@@ -1,16 +1,33 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-03-03T00:14:24.497Z",
-  "summary": "Both REQ-39 and REQ-40 appear to be implemented. The backend addQuestion and getAdminQuestions functions have had their authorization guards removed (open to all callers). The frontend AdminPanelScreen.tsx filters out authorization error messages and keeps only the password gate. Minor truncation prevents full verification of the frontend file, but evidence is strong for both requirements.",
-  "missing_requirements": [],
+  "generatedAt": "2026-03-03T00:33:22.362Z",
+  "summary": "The diff implements all four PWA requirements (REQ-41 through REQ-44). The manifest.json, sw.js, and updated index.html are present with the required fields. The only notable discrepancy is that the apple-touch-icon href uses '/assets/generated/icon-192.dim_192x192.png' rather than '/assets/generated/icon-192.png' as specified in REQ-44's acceptance criteria. The icon files themselves are not visible in the diff (they are binary/image files), so their presence cannot be fully confirmed from the diff alone.",
+  "missing_requirements": [
+    {
+      "id": "REQ-43",
+      "requirement": "icon-192.dim_192x192.png and icon-512.dim_512x512.png must be generated and placed in frontend/public/assets/generated/",
+      "reason": "Binary image files are not shown in the diff summary. The diff lists only 2 added files (manifest.json and sw.js), with no image files listed. There is no evidence the actual PNG icon files were added.",
+      "evidence": [
+        "frontend/public/manifest.json"
+      ]
+    },
+    {
+      "id": "REQ-44",
+      "requirement": "frontend/index.html contains <link rel='apple-touch-icon' href='/assets/generated/icon-192.png'>",
+      "reason": "The apple-touch-icon href in index.html points to '/assets/generated/icon-192.dim_192x192.png' rather than '/assets/generated/icon-192.png' as specified in the acceptance criteria.",
+      "evidence": [
+        "frontend/index.html"
+      ]
+    }
+  ],
   "hallucinated_features": [],
-  "confidence": 0.91,
+  "confidence": 0.8,
   "changed_files": [
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/src/hooks/useAdminQueries.ts",
-    "frontend/src/pages/AdminPanelScreen.tsx",
+    "frontend/index.html",
+    "frontend/public/manifest.json",
+    "frontend/public/sw.js",
     "project_state.json"
   ]
 }

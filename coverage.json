@@ -1,45 +1,74 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-03T00:14:24.502Z",
+  "generatedAt": "2026-03-03T00:33:22.367Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 1,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
-        "id": "REQ-39",
-        "summary": "Remove the 'Unauthorized: Only admins can add questions' error banner from the Admin Panel screen. The backend `addQuestion` update function in `backend/main.mo` must accept calls from any caller (authenticated or anonymous) without performing any role or principal check that causes a rejection or trap. Remove all authorization guards from both `addQuestion` and `getAdminQuestions` in the backend so they are fully open to any caller.",
-        "status": "unknown",
-        "plannedFiles": [],
-        "matchedFiles": []
-      },
-      {
-        "id": "REQ-40",
-        "summary": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
+        "id": "REQ-41",
+        "summary": "Convert the frontend into a Progressive Web App (PWA) by adding a Web App Manifest file (manifest.json or manifest.webmanifest) in the frontend/public directory. The manifest must include: app name ('AIAPGET Unani PYQ Practice'), short name ('Unani PYQ'), start URL, display mode 'standalone', background color matching the parchment theme (e.g., #f5f0e8), theme color matching the deep teal accent, and icon references for at least 192x192 and 512x512 sizes. Reference the manifest in frontend/index.html via a <link rel='manifest'> tag.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/AdminPanelScreen.tsx",
-          "frontend/src/hooks/useAdminQueries.ts"
+          "frontend/public/manifest.json",
+          "frontend/index.html"
         ],
         "matchedFiles": [
-          "frontend/src/pages/AdminPanelScreen.tsx",
-          "frontend/src/hooks/useAdminQueries.ts"
+          "frontend/public/manifest.json",
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-42",
+        "summary": "Register a Service Worker in the frontend to enable offline support and caching. The service worker must cache all critical static assets (HTML, JS, CSS, images) on install so the app loads when the device is offline. Use a cache-first strategy for static assets and a network-first strategy for API/canister calls. Register the service worker in frontend/src/main.tsx or via a separate registration script loaded in frontend/index.html.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/sw.js",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/sw.js"
+        ]
+      },
+      {
+        "id": "REQ-43",
+        "summary": "Add PWA icon assets for the home screen and splash screen. Generate a 192x192 and a 512x512 version of the app icon (based on the existing app logo/Unani motif) and place them at frontend/public/assets/generated/icon-192.png and frontend/public/assets/generated/icon-512.png respectively. Reference these paths in the manifest icons array.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/manifest.json"
+        ],
+        "matchedFiles": [
+          "frontend/public/manifest.json"
+        ]
+      },
+      {
+        "id": "REQ-44",
+        "summary": "Add the necessary meta tags to frontend/index.html for iOS PWA support: apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style (set to 'black-translucent' or matching the teal theme), apple-mobile-web-app-title, and apple-touch-icon pointing to the 192x192 icon. Also set the <meta name='theme-color'> to match the app's deep teal accent color so the browser toolbar matches the app theme on Android.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
         ]
       }
     ]
   },
   "changedFiles": [
-    "backend/main.mo",
     "build-request.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/hooks/useAdminQueries.ts",
-    "frontend/src/pages/AdminPanelScreen.tsx",
+    "frontend/index.html",
+    "frontend/public/assets/generated/icon-192.dim_192x192.png",
+    "frontend/public/assets/generated/icon-512.dim_512x512.png",
+    "frontend/public/manifest.json",
+    "frontend/public/sw.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

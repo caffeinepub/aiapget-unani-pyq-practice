@@ -1,59 +1,108 @@
 {
   "kind": "build_request",
-  "title": "Fix 'Unauthorized: Only admins can add questions' error on Admin Panel",
-  "projectName": "AIAPGET Unani PYQ Practice",
-  "priority": "high",
+  "title": "Upgrade app to Progressive Web App (PWA) for mobile installation",
+  "projectName": "AIAPGET Unani PYQ",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-39",
-      "text": "Remove the 'Unauthorized: Only admins can add questions' error banner from the Admin Panel screen. The backend `addQuestion` update function in `backend/main.mo` must accept calls from any caller (authenticated or anonymous) without performing any role or principal check that causes a rejection or trap. Remove all authorization guards from both `addQuestion` and `getAdminQuestions` in the backend so they are fully open to any caller.",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Unauthorized: Only admins can add questions"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The backend `addQuestion` function compiles and executes without trapping for anonymous callers.",
-        "The backend `getAdminQuestions` function returns results to any caller without a role check.",
-        "No authorization guard or caller identity check remains in either function."
-      ]
-    },
-    {
-      "id": "REQ-40",
-      "text": "In `AdminPanelScreen.tsx`, remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message or hides the Add Question form behind a role check. The password gate (password: 'Naeem9472') must remain as the only gate. Once the correct password is entered, the Add Question form and the Questions list must both be fully visible and functional with no unauthorized error shown.",
+      "id": "REQ-41",
+      "text": "Convert the frontend into a Progressive Web App (PWA) by adding a Web App Manifest file (manifest.json or manifest.webmanifest) in the frontend/public directory. The manifest must include: app name ('AIAPGET Unani PYQ Practice'), short name ('Unani PYQ'), start URL, display mode 'standalone', background color matching the parchment theme (e.g., #f5f0e8), theme color matching the deep teal accent, and icon references for at least 192x192 and 512x512 sizes. Reference the manifest in frontend/index.html via a <link rel='manifest'> tag.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-recent"
         ],
         "quotes": [
-          "Unauthorized: Only admins can add questions"
+          "upgrade the app to be a proper PWA (Progressive Web App)",
+          "Yes"
         ]
       },
       "acceptanceCriteria": [
-        "After entering the correct password 'Naeem9472', the Add Question form is visible with no unauthorized error banner.",
-        "The 'Unauthorized: Only admins can add questions' red error message is never shown.",
-        "The Questions list loads and displays backend questions without any unauthorized error.",
-        "The password gate still prevents access before the correct password is entered."
+        "A manifest.json file exists in frontend/public with all required PWA fields (name, short_name, start_url, display: standalone, background_color, theme_color, icons).",
+        "frontend/index.html includes <link rel='manifest' href='/manifest.json'> in the <head>.",
+        "The app can be added to the home screen on Android (Chrome) and iOS (Safari) via the browser's native 'Add to Home Screen' prompt.",
+        "When launched from the home screen icon, the app opens in standalone mode without browser chrome."
+      ]
+    },
+    {
+      "id": "REQ-42",
+      "text": "Register a Service Worker in the frontend to enable offline support and caching. The service worker must cache all critical static assets (HTML, JS, CSS, images) on install so the app loads when the device is offline. Use a cache-first strategy for static assets and a network-first strategy for API/canister calls. Register the service worker in frontend/src/main.tsx or via a separate registration script loaded in frontend/index.html.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "better offline support",
+          "Yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A service worker file (e.g., sw.js) is present in frontend/public.",
+        "The service worker is registered in the app entry point.",
+        "Static assets are cached on service worker install.",
+        "The app shell loads correctly when the device has no network connection.",
+        "Canister/API calls are attempted over the network and fail gracefully when offline."
+      ]
+    },
+    {
+      "id": "REQ-43",
+      "text": "Add PWA icon assets for the home screen and splash screen. Generate a 192x192 and a 512x512 version of the app icon (based on the existing app logo/Unani motif) and place them at frontend/public/assets/generated/icon-192.png and frontend/public/assets/generated/icon-512.png respectively. Reference these paths in the manifest icons array.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "splash screen",
+          "native app feel",
+          "Yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "icon-192.dim_192x192.png and icon-512.dim_512x512.png are generated and placed in frontend/public/assets/generated/.",
+        "The manifest.json icons array references both files with correct sizes and type 'image/png'.",
+        "The icons display correctly on the Android home screen and iOS home screen when the app is installed."
+      ]
+    },
+    {
+      "id": "REQ-44",
+      "text": "Add the necessary meta tags to frontend/index.html for iOS PWA support: apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style (set to 'black-translucent' or matching the teal theme), apple-mobile-web-app-title, and apple-touch-icon pointing to the 192x192 icon. Also set the <meta name='theme-color'> to match the app's deep teal accent color so the browser toolbar matches the app theme on Android.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "native app feel",
+          "Yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/index.html contains <meta name='apple-mobile-web-app-capable' content='yes'>.",
+        "frontend/index.html contains <meta name='apple-mobile-web-app-status-bar-style'>.",
+        "frontend/index.html contains <meta name='apple-mobile-web-app-title' content='Unani PYQ'>.",
+        "frontend/index.html contains <link rel='apple-touch-icon' href='/assets/generated/icon-192.png'>.",
+        "frontend/index.html contains <meta name='theme-color'> with the teal accent color value."
       ]
     }
   ],
   "constraints": [
-    "The admin password gate ('Naeem9472') must remain in place — do not remove it.",
-    "Do not modify files listed in frontend.immutablePaths.",
-    "All Motoko logic must remain in the single main actor file (backend/main.mo)."
+    "Do not modify any files listed under frontend.immutablePaths (useInternetIdentity.ts, useActor.ts, main.tsx, components/ui).",
+    "Service worker must not intercept or cache ICP canister HTTP calls in a way that causes stale data or authentication failures.",
+    "All existing screens, navigation, and backend integration must continue to work unchanged."
   ],
   "nonGoals": [
-    "Adding new question fields or changing the question schema.",
-    "Changing the admin password value.",
-    "Modifying the quiz, review, or history screens."
+    "Native mobile app (React Native, Flutter, or app store submission).",
+    "Background sync or push notification support.",
+    "Any changes to the backend Motoko actor.",
+    "Changes to quiz logic, question data, or existing UI screens."
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents (icon-192.dim_192x192.png)",
+      "Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents, high resolution (icon-512.dim_512x512.png)"
+    ],
     "edits": []
   }
 }

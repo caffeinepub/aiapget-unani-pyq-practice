@@ -1,27 +1,84 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix 'Unauthorized: Only admins can add questions' error on Admin Panel",
+  "title": "Upgrade app to Progressive Web App (PWA) for mobile installation",
   "requirements": [
     {
-      "id": "REQ-40",
-      "summary": "Remove the 'Unauthorized: Only admins can add questions' error banner from AdminPanelScreen and ensure the Add Question form and Questions list are fully visible and functional after entering the correct password",
+      "id": "REQ-41",
+      "summary": "Add Web App Manifest file for PWA installation support",
       "acceptanceCriteria": [
-        "After entering the correct password 'Naeem9472', the Add Question form is visible with no unauthorized error banner.",
-        "The 'Unauthorized: Only admins can add questions' red error message is never shown.",
-        "The Questions list loads and displays backend questions without any unauthorized error.",
-        "The password gate still prevents access before the correct password is entered."
+        "A manifest.json file exists in frontend/public with all required PWA fields (name, short_name, start_url, display: standalone, background_color, theme_color, icons).",
+        "frontend/index.html includes <link rel='manifest' href='/manifest.json'> in the <head>.",
+        "The app can be added to the home screen on Android (Chrome) and iOS (Safari) via the browser's native 'Add to Home Screen' prompt.",
+        "When launched from the home screen icon, the app opens in standalone mode without browser chrome."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/AdminPanelScreen.tsx",
-          "operation": "modify",
-          "description": "Remove any frontend-side error display, conditional render, or access check that shows the 'Unauthorized: Only admins can add questions' message. Remove any role-based checks that hide the Add Question form or Questions list. Ensure the password gate (password: 'Naeem9472') remains as the only authentication mechanism. After the correct password is entered, both the Add Question form and the Questions list must be fully visible with no unauthorized error banner displayed. Remove any error state handling that displays authorization-related errors from backend calls."
+          "path": "frontend/public/manifest.json",
+          "operation": "create",
+          "description": "Create a Web App Manifest file with name 'AIAPGET Unani PYQ Practice', short_name 'Unani PYQ', start_url '/', display 'standalone', background_color '#f5f0e8' (parchment theme), theme_color matching the deep teal accent from the design system, and icons array referencing frontend/public/assets/generated/icon-192.dim_192x192.png and frontend/public/assets/generated/icon-512.dim_512x512.png with sizes 192x192 and 512x512 respectively."
         },
         {
-          "path": "frontend/src/hooks/useAdminQueries.ts",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Review and remove any error handling logic that displays or propagates 'Unauthorized' errors from the addQuestion or getAdminQuestions backend calls. Ensure mutations and queries do not surface authorization errors to the UI. The hooks should handle backend responses gracefully without triggering unauthorized error displays."
+          "description": "Add <link rel='manifest' href='/manifest.json'> to the <head> section to enable PWA installation prompts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-42",
+      "summary": "Register a Service Worker for offline support and asset caching",
+      "acceptanceCriteria": [
+        "A service worker file (e.g., sw.js) is present in frontend/public.",
+        "The service worker is registered in the app entry point.",
+        "Static assets are cached on service worker install.",
+        "The app shell loads correctly when the device has no network connection.",
+        "Canister/API calls are attempted over the network and fail gracefully when offline."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/sw.js",
+          "operation": "create",
+          "description": "Create a service worker that caches all critical static assets (HTML, JS, CSS, images from frontend/public/assets/) on install. Implement a cache-first strategy for static assets (fonts, images, stylesheets, scripts) and a network-first strategy for API/canister calls to avoid stale authentication or data issues. Include fetch event handlers and cache version management for updates."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Register the service worker by adding a registration call after the React app mounts. Check for 'serviceWorker' in navigator and register '/sw.js' with proper error handling. Only register in production builds to avoid development caching issues."
+        }
+      ]
+    },
+    {
+      "id": "REQ-43",
+      "summary": "Add PWA icon assets for home screen and splash screen",
+      "acceptanceCriteria": [
+        "icon-192.dim_192x192.png and icon-512.dim_512x512.png are generated and placed in frontend/public/assets/generated/.",
+        "The manifest.json icons array references both files with correct sizes and type 'image/png'.",
+        "The icons display correctly on the Android home screen and iOS home screen when the app is installed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/manifest.json",
+          "operation": "modify",
+          "description": "Ensure the icons array in manifest.json references the generated PWA icons at frontend/public/assets/generated/icon-192.dim_192x192.png and frontend/public/assets/generated/icon-512.dim_512x512.png with correct sizes (192x192 and 512x512) and type 'image/png'. The generated icons feature a circular app icon with Unani medicine motif—ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents."
+        }
+      ]
+    },
+    {
+      "id": "REQ-44",
+      "summary": "Add iOS PWA meta tags and theme-color for native app appearance",
+      "acceptanceCriteria": [
+        "frontend/index.html contains <meta name='apple-mobile-web-app-capable' content='yes'>.",
+        "frontend/index.html contains <meta name='apple-mobile-web-app-status-bar-style'>.",
+        "frontend/index.html contains <meta name='apple-mobile-web-app-title' content='Unani PYQ'>.",
+        "frontend/index.html contains <link rel='apple-touch-icon' href='/assets/generated/icon-192.png'>.",
+        "frontend/index.html contains <meta name='theme-color'> with the teal accent color value."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add iOS-specific PWA meta tags to the <head> section: <meta name='apple-mobile-web-app-capable' content='yes'>, <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>, <meta name='apple-mobile-web-app-title' content='Unani PYQ'>, and <link rel='apple-touch-icon' href='/assets/generated/icon-192.dim_192x192.png'>. Also add <meta name='theme-color' content='[deep-teal-value]'> matching the app's teal accent color from the theme system to ensure consistent browser toolbar theming on Android."
         }
       ]
     }

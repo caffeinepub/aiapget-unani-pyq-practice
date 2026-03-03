@@ -1,11 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 35,
+  "projectStateVersion": 37,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
     "Question format: MCQ (Multiple Choice Questions) with PYQ (Previous Year Questions)",
-    "Admin panel password is 'Naeem9472' (hardcoded in frontend)"
+    "Admin panel password is 'Naeem9472' (hardcoded in frontend)",
+    "App is being upgraded to PWA (Progressive Web App) for mobile installability and offline support"
   ],
   "known_issues": [
     "Admin panel shows 'only admin can add question' message instead of the question submission form",
@@ -14,7 +15,8 @@
     "Deployment error on go-live for Version 11",
     "Correct answer option text color is not visible after clicking (font color blends with background); correct option text should be bold and use a contrasting color"
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents (icon-192.dim_192x192.png)\n- Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents, high resolution (icon-512.dim_512x512.png)",
   "existing_features": [
     {
       "id": "feature-build-a-home-screen-with-navigation-options-start-practice-quiz-browse-by-topic-browse-by-year-and-view-score-history-display-the-app-name-and-a-brief-description-of-the-aiapget-unani-exam",
@@ -239,6 +241,38 @@
         "REQ-40"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-convert-the-frontend-into-a-progressive-web-app-pwa-by-adding-a-web-app-manifest-file-manifest-json-or-manifest-webmanifest-in-the-frontend-public-directory-the-manifest-must-include-app-name-aiapget-unani-pyq-practice-short-name-unani-pyq-start-url-display-mode-standalone-background-color-matching-the-parchment-theme-e-g-f5f0e8-theme-color-matching-the-deep-teal-accent-and-icon-references-for-at-least-192x192-and-512x512-sizes-reference-the-manifest-in-frontend-index-html-via-a-link-rel-manifest-tag",
+      "title": "Convert the frontend into a Progressive Web App (PWA) by adding a Web App Manifest file (manifest.json or manifest.webmanifest) in the frontend/public directory. The manifest must include: app name ('AIAPGET Unani PYQ Practice'), short name ('Unani PYQ'), start URL, display mode 'standalone', background color matching the parchment theme (e.g., #f5f0e8), theme color matching the deep teal accent, and icon references for at least 192x192 and 512x512 sizes. Reference the manifest in frontend/index.html via a <link rel='manifest'> tag.",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-a-service-worker-in-the-frontend-to-enable-offline-support-and-caching-the-service-worker-must-cache-all-critical-static-assets-html-js-css-images-on-install-so-the-app-loads-when-the-device-is-offline-use-a-cache-first-strategy-for-static-assets-and-a-network-first-strategy-for-api-canister-calls-register-the-service-worker-in-frontend-src-main-tsx-or-via-a-separate-registration-script-loaded-in-frontend-index-html",
+      "title": "Register a Service Worker in the frontend to enable offline support and caching. The service worker must cache all critical static assets (HTML, JS, CSS, images) on install so the app loads when the device is offline. Use a cache-first strategy for static assets and a network-first strategy for API/canister calls. Register the service worker in frontend/src/main.tsx or via a separate registration script loaded in frontend/index.html.",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-pwa-icon-assets-for-the-home-screen-and-splash-screen-generate-a-192x192-and-a-512x512-version-of-the-app-icon-based-on-the-existing-app-logo-unani-motif-and-place-them-at-frontend-public-assets-generated-icon-192-png-and-frontend-public-assets-generated-icon-512-png-respectively-reference-these-paths-in-the-manifest-icons-array",
+      "title": "Add PWA icon assets for the home screen and splash screen. Generate a 192x192 and a 512x512 version of the app icon (based on the existing app logo/Unani motif) and place them at frontend/public/assets/generated/icon-192.png and frontend/public/assets/generated/icon-512.png respectively. Reference these paths in the manifest icons array.",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-necessary-meta-tags-to-frontend-index-html-for-ios-pwa-support-apple-mobile-web-app-capable-apple-mobile-web-app-status-bar-style-set-to-black-translucent-or-matching-the-teal-theme-apple-mobile-web-app-title-and-apple-touch-icon-pointing-to-the-192x192-icon-also-set-the-meta-name-theme-color-to-match-the-app-s-deep-teal-accent-color-so-the-browser-toolbar-matches-the-app-theme-on-android",
+      "title": "Add the necessary meta tags to frontend/index.html for iOS PWA support: apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style (set to 'black-translucent' or matching the teal theme), apple-mobile-web-app-title, and apple-touch-icon pointing to the 192x192 icon. Also set the <meta name='theme-color'> to match the app's deep teal accent color so the browser toolbar matches the app theme on Android.",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -396,6 +430,12 @@
       "reqIds": [
         "REQ-39"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Upgrade the app to a Progressive Web App (PWA) with offline support, splash screen, and native app feel so users can install it on mobile devices from their browser.",
+      "reqIds": [],
       "status": "pending"
     }
   ],
