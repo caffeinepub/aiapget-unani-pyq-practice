@@ -1,15 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  ArrowLeft,
-  Building2,
-  CheckCircle2,
-  CreditCard,
-  Loader2,
-  Smartphone,
-  Wallet,
-} from "lucide-react";
+import { ArrowLeft, CheckCircle2, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import type { Screen } from "../App";
 
@@ -20,57 +10,38 @@ interface PaymentMethodSelectorScreenProps {
   onNavigate: (screen: Screen) => void;
 }
 
-type PaymentMethod = "upi" | "credit" | "debit" | "netbanking" | "wallet";
+const RAZORPAY_LINK = "https://razorpay.me/@aiapgetunani";
 
-const PAYMENT_METHODS: {
-  id: PaymentMethod;
-  label: string;
-  desc: string;
-  icon: React.ReactNode;
-  badge?: string;
-}[] = [
+const PAYMENT_OPTIONS = [
   {
     id: "upi",
-    label: "UPI",
-    desc: "Pay via any UPI app instantly",
-    icon: (
-      <img
-        src="/assets/generated/upi-badge.dim_120x48.png"
-        alt="UPI"
-        className="h-7 object-contain"
-      />
-    ),
-    badge: "Recommended",
+    label: "UPI (Google Pay, PhonePe, Paytm, BHIM)",
+    description: "Pay instantly with any UPI app",
+    icon: "🏦",
   },
   {
-    id: "credit",
-    label: "Credit Card",
-    desc: "Visa, Mastercard, RuPay, Amex",
-    icon: (
-      <img
-        src="/assets/generated/card-icon.dim_64x64.png"
-        alt="Card"
-        className="h-7 w-7 object-contain"
-      />
-    ),
-  },
-  {
-    id: "debit",
-    label: "Debit Card",
-    desc: "All major bank debit cards",
-    icon: <CreditCard className="w-6 h-6 text-primary" />,
+    id: "card",
+    label: "Credit / Debit Card",
+    description: "Visa, Mastercard, RuPay",
+    icon: "💳",
   },
   {
     id: "netbanking",
     label: "Net Banking",
-    desc: "All major Indian banks",
-    icon: <Building2 className="w-6 h-6 text-primary" />,
+    description: "All major Indian banks supported",
+    icon: "🏛️",
   },
   {
     id: "wallet",
     label: "Wallets",
-    desc: "Paytm, PhonePe, Amazon Pay",
-    icon: <Wallet className="w-6 h-6 text-primary" />,
+    description: "Paytm, Mobikwik, Freecharge & more",
+    icon: "👛",
+  },
+  {
+    id: "emi",
+    label: "EMI",
+    description: "Easy monthly instalments via card or bank",
+    icon: "📅",
   },
 ];
 
@@ -80,46 +51,38 @@ export default function PaymentMethodSelectorScreen({
   planCycle,
   onNavigate,
 }: PaymentMethodSelectorScreenProps) {
-  const [selected, setSelected] = useState<PaymentMethod>("upi");
-  const [upiId, setUpiId] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [cardExpiry, setCardExpiry] = useState("");
-  const [cardCvv, setCardCvv] = useState("");
-  const [cardName, setCardName] = useState("");
-  const [bank, setBank] = useState("");
-  const [walletApp, setWalletApp] = useState("");
-  const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handlePay = async () => {
-    setIsProcessing(true);
-    // Mock payment processing delay
-    await new Promise((r) => setTimeout(r, 2000));
-    setIsProcessing(false);
+  const handlePay = () => {
+    // Open Razorpay payment link in a new tab
+    window.open(RAZORPAY_LINK, "_blank", "noopener,noreferrer");
+    // Show success/confirmation state after redirect
     setIsSuccess(true);
   };
 
   if (isSuccess) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
-        <div className="bg-card border border-border rounded-2xl p-8 max-w-sm w-full text-center shadow-lg space-y-4">
+        <div
+          className="bg-card border border-border rounded-2xl p-8 max-w-sm w-full text-center shadow-lg space-y-4"
+          data-ocid="payment.success_state"
+        >
           <div className="flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-success/15 flex items-center justify-center">
-              <CheckCircle2 className="w-9 h-9 text-success" />
+            <div className="w-16 h-16 rounded-full bg-green-500/15 flex items-center justify-center">
+              <CheckCircle2 className="w-9 h-9 text-green-500" />
             </div>
           </div>
           <h2 className="text-xl font-heading font-bold text-foreground">
-            Payment Successful!
+            Payment Page Opened!
           </h2>
           <p className="text-sm text-muted-foreground font-body">
-            You're now subscribed to the{" "}
-            <strong className="text-foreground">{planName}</strong>. Enjoy
-            unlimited access to all AIAPGET Unani PYQ materials.
+            Complete the payment on the Razorpay page. Once confirmed, your{" "}
+            <strong className="text-foreground">{planName}</strong> plan will be
+            activated.
           </p>
           <div className="bg-muted rounded-xl p-3 text-sm font-body text-muted-foreground">
             <p>
-              Amount paid:{" "}
-              <strong className="text-foreground">{planPrice}</strong>
+              Amount: <strong className="text-foreground">{planPrice}</strong>
             </p>
             <p>
               Billing:{" "}
@@ -129,6 +92,18 @@ export default function PaymentMethodSelectorScreen({
             </p>
           </div>
           <Button
+            data-ocid="payment.primary_button"
+            variant="outline"
+            className="w-full font-body"
+            onClick={() =>
+              window.open(RAZORPAY_LINK, "_blank", "noopener,noreferrer")
+            }
+          >
+            <ExternalLink className="w-4 h-4 mr-2" />
+            Reopen Payment Page
+          </Button>
+          <Button
+            data-ocid="payment.secondary_button"
             className="w-full font-body bg-gold hover:bg-gold/90 text-white border-0"
             onClick={() => onNavigate({ name: "home" })}
           >
@@ -145,6 +120,7 @@ export default function PaymentMethodSelectorScreen({
         {/* Back */}
         <button
           type="button"
+          data-ocid="payment.link"
           onClick={() => onNavigate({ name: "subscription" })}
           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-body"
         >
@@ -170,233 +146,59 @@ export default function PaymentMethodSelectorScreen({
           </div>
         </div>
 
-        {/* Payment Methods */}
-        <div>
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest font-body mb-3">
-            Select Payment Method
-          </h3>
+        {/* Payment Options */}
+        <div
+          className="bg-card border border-border rounded-2xl p-5 space-y-4"
+          data-ocid="payment.section"
+        >
+          <div className="text-center space-y-1">
+            <h3 className="text-base font-heading font-bold text-foreground">
+              Choose Payment Method
+            </h3>
+            <p className="text-xs text-muted-foreground font-body">
+              Powered by Razorpay — 100% secure &amp; encrypted
+            </p>
+          </div>
+
+          {/* Payment method list */}
           <div className="space-y-2">
-            {PAYMENT_METHODS.map((method) => (
-              <button
-                type="button"
-                key={method.id}
-                onClick={() => setSelected(method.id)}
-                className={`w-full flex items-center gap-3 p-3.5 rounded-xl border-2 text-left transition-all duration-150 focus:outline-none ${
-                  selected === method.id
-                    ? "border-gold bg-gold/5 shadow-sm"
-                    : "border-border bg-card hover:border-gold/40"
-                }`}
+            {PAYMENT_OPTIONS.map((option) => (
+              <div
+                key={option.id}
+                data-ocid={`payment.${option.id}.card`}
+                className="flex items-center gap-3 bg-muted/50 border border-border rounded-xl px-4 py-3"
               >
-                {/* Radio dot */}
-                <div
-                  className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-colors ${
-                    selected === method.id
-                      ? "border-gold"
-                      : "border-muted-foreground"
-                  }`}
-                >
-                  {selected === method.id && (
-                    <div className="w-2 h-2 rounded-full bg-gold" />
-                  )}
-                </div>
-
-                {/* Icon */}
-                <div className="w-10 flex items-center justify-center flex-shrink-0">
-                  {method.icon}
-                </div>
-
-                {/* Label */}
+                <span className="text-2xl">{option.icon}</span>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-body font-semibold text-foreground">
-                      {method.label}
-                    </span>
-                    {method.badge && (
-                      <span className="text-[10px] bg-gold/20 text-gold border border-gold/40 px-1.5 py-0.5 rounded-full font-body font-semibold">
-                        {method.badge}
-                      </span>
-                    )}
-                  </div>
+                  <p className="text-sm font-semibold text-foreground font-body leading-tight">
+                    {option.label}
+                  </p>
                   <p className="text-xs text-muted-foreground font-body">
-                    {method.desc}
+                    {option.description}
                   </p>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
+
+          <p className="text-xs text-center text-muted-foreground font-body">
+            All options are available on the next screen via Razorpay.
+          </p>
         </div>
 
-        {/* Dynamic input fields */}
-        <div className="bg-card border border-border rounded-xl p-4 space-y-3">
-          {selected === "upi" && (
-            <div className="space-y-2">
-              <Label htmlFor="upi-id" className="font-body text-sm">
-                UPI ID
-              </Label>
-              <div className="flex items-center gap-2">
-                <Smartphone className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                <Input
-                  id="upi-id"
-                  placeholder="yourname@upi"
-                  value={upiId}
-                  onChange={(e) => setUpiId(e.target.value)}
-                  className="font-body"
-                />
-              </div>
-              <p className="text-xs text-muted-foreground font-body">
-                Enter your UPI ID (e.g. name@okaxis, name@paytm)
-              </p>
-            </div>
-          )}
-
-          {(selected === "credit" || selected === "debit") && (
-            <div className="space-y-3">
-              <div className="space-y-1.5">
-                <Label htmlFor="card-name" className="font-body text-sm">
-                  Cardholder Name
-                </Label>
-                <Input
-                  id="card-name"
-                  placeholder="Name on card"
-                  value={cardName}
-                  onChange={(e) => setCardName(e.target.value)}
-                  className="font-body"
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="card-number" className="font-body text-sm">
-                  Card Number
-                </Label>
-                <Input
-                  id="card-number"
-                  placeholder="1234 5678 9012 3456"
-                  value={cardNumber}
-                  onChange={(e) =>
-                    setCardNumber(
-                      e.target.value
-                        .replace(/\D/g, "")
-                        .replace(/(.{4})/g, "$1 ")
-                        .trim()
-                        .slice(0, 19),
-                    )
-                  }
-                  className="font-body"
-                  maxLength={19}
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-1.5">
-                  <Label htmlFor="card-expiry" className="font-body text-sm">
-                    Expiry (MM/YY)
-                  </Label>
-                  <Input
-                    id="card-expiry"
-                    placeholder="MM/YY"
-                    value={cardExpiry}
-                    onChange={(e) => {
-                      const v = e.target.value.replace(/\D/g, "").slice(0, 4);
-                      setCardExpiry(
-                        v.length > 2 ? `${v.slice(0, 2)}/${v.slice(2)}` : v,
-                      );
-                    }}
-                    className="font-body"
-                    maxLength={5}
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="card-cvv" className="font-body text-sm">
-                    CVV
-                  </Label>
-                  <Input
-                    id="card-cvv"
-                    placeholder="•••"
-                    type="password"
-                    value={cardCvv}
-                    onChange={(e) =>
-                      setCardCvv(e.target.value.replace(/\D/g, "").slice(0, 4))
-                    }
-                    className="font-body"
-                    maxLength={4}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-
-          {selected === "netbanking" && (
-            <div className="space-y-2">
-              <Label htmlFor="bank-select" className="font-body text-sm">
-                Select Bank
-              </Label>
-              <select
-                id="bank-select"
-                value={bank}
-                onChange={(e) => setBank(e.target.value)}
-                className="w-full border border-border rounded-lg px-3 py-2 text-sm font-body bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-gold/50"
-              >
-                <option value="">-- Choose your bank --</option>
-                <option value="sbi">State Bank of India</option>
-                <option value="hdfc">HDFC Bank</option>
-                <option value="icici">ICICI Bank</option>
-                <option value="axis">Axis Bank</option>
-                <option value="kotak">Kotak Mahindra Bank</option>
-                <option value="pnb">Punjab National Bank</option>
-                <option value="bob">Bank of Baroda</option>
-                <option value="other">Other Bank</option>
-              </select>
-            </div>
-          )}
-
-          {selected === "wallet" && (
-            <div className="space-y-2">
-              <p className="font-body text-sm font-medium text-foreground">
-                Select Wallet
-              </p>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  "Paytm",
-                  "PhonePe",
-                  "Amazon Pay",
-                  "Google Pay",
-                  "Mobikwik",
-                  "Freecharge",
-                ].map((w) => (
-                  <button
-                    type="button"
-                    key={w}
-                    onClick={() => setWalletApp(w)}
-                    className={`py-2 px-2 rounded-lg border text-xs font-body font-medium transition-colors ${
-                      walletApp === w
-                        ? "border-gold bg-gold/10 text-gold"
-                        : "border-border bg-background text-foreground hover:border-gold/40"
-                    }`}
-                  >
-                    {w}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Pay Button */}
+        {/* Pay Now Button */}
         <Button
           onClick={handlePay}
-          disabled={isProcessing}
-          className="w-full font-body text-base py-6 bg-gold hover:bg-gold/90 text-white border-0 rounded-xl"
+          data-ocid="payment.submit_button"
+          className="w-full font-body text-base py-6 bg-gold hover:bg-gold/90 text-white border-0 rounded-xl flex items-center justify-center gap-2"
         >
-          {isProcessing ? (
-            <span className="flex items-center gap-2">
-              <Loader2 className="w-4 h-4 animate-spin" />
-              Processing Payment…
-            </span>
-          ) : (
-            `Pay ${planPrice}`
-          )}
+          <ExternalLink className="w-5 h-5" />
+          Pay {planPrice} via Razorpay
         </Button>
 
         <p className="text-center text-xs text-muted-foreground font-body">
-          🔒 This is a demo UI. No real payment will be processed.
+          🔒 You will be redirected to Razorpay's secure payment page to
+          complete the transaction.
         </p>
       </main>
     </div>
