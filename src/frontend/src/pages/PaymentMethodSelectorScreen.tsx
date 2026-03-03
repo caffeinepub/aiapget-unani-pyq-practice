@@ -163,10 +163,12 @@ export default function PaymentMethodSelectorScreen({
           {/* Payment method list */}
           <div className="space-y-2">
             {PAYMENT_OPTIONS.map((option) => (
-              <div
+              <button
                 key={option.id}
-                data-ocid={`payment.${option.id}.card`}
-                className="flex items-center gap-3 bg-muted/50 border border-border rounded-xl px-4 py-3"
+                type="button"
+                data-ocid={`payment.${option.id}.button`}
+                onClick={handlePay}
+                className="w-full flex items-center gap-3 bg-muted/50 border border-border rounded-xl px-4 py-3 hover:border-gold/60 hover:bg-muted/80 active:scale-[0.98] transition-all duration-150 cursor-pointer text-left"
               >
                 <span className="text-2xl">{option.icon}</span>
                 <div className="flex-1 min-w-0">
@@ -177,12 +179,13 @@ export default function PaymentMethodSelectorScreen({
                     {option.description}
                   </p>
                 </div>
-              </div>
+                <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+              </button>
             ))}
           </div>
 
           <p className="text-xs text-center text-muted-foreground font-body">
-            All options are available on the next screen via Razorpay.
+            Tap any option to pay via Razorpay's secure page.
           </p>
         </div>
 
