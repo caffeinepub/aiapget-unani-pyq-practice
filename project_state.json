@@ -1,22 +1,23 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 37,
+  "projectStateVersion": 41,
   "summary": "MCQ practice app for AIAPGET (All India Ayush Post Graduate Entrance Test) Previous Year Questions (PYQ) focused on Unani System of Medicine. Users can practice multiple choice questions to prepare for the exam.",
   "architectural_notes": [
     "App domain: AIAPGET exam prep for Unani System of Medicine",
     "Question format: MCQ (Multiple Choice Questions) with PYQ (Previous Year Questions)",
     "Admin panel password is 'Naeem9472' (hardcoded in frontend)",
-    "App is being upgraded to PWA (Progressive Web App) for mobile installability and offline support"
+    "App is being upgraded to PWA (Progressive Web App) for mobile installability and offline support",
+    "Admin-added questions must be stored in stable variables in backend/main.mo to survive canister upgrades and redeployments"
   ],
   "known_issues": [
     "Admin panel shows 'only admin can add question' message instead of the question submission form",
     "Newly added questions do not appear in their assigned category/topic filter",
     "Submitting a question via the Admin Panel form results in a 'failed to add question' error",
     "Deployment error on go-live for Version 11",
-    "Correct answer option text color is not visible after clicking (font color blends with background); correct option text should be bold and use a contrasting color"
+    "Correct answer option text color is not visible after clicking (font color blends with background); correct option text should be bold and use a contrasting color",
+    "Admin-added questions are deleted/reset after every new deployment because they are not stored in stable state"
   ],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents (icon-192.dim_192x192.png)\n- Circular app icon with Unani medicine motif — ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents, high resolution (icon-512.dim_512x512.png)",
   "existing_features": [
     {
       "id": "feature-build-a-home-screen-with-navigation-options-start-practice-quiz-browse-by-topic-browse-by-year-and-view-score-history-display-the-app-name-and-a-brief-description-of-the-aiapget-unani-exam",
@@ -273,6 +274,22 @@
         "REQ-44"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-quizscreen-tsx-add-a-skip-button-alongside-the-existing-next-button-when-the-user-clicks-skip-the-current-question-is-recorded-as-skipped-no-answer-selected-and-the-quiz-advances-to-the-next-question-skipped-questions-must-be-tracked-in-the-answers-array-passed-to-oncomplete-so-the-resultsscreen-can-display-a-skipped-count-the-skip-button-must-be-disabled-or-hidden-on-the-last-question-where-the-user-must-submit-or-skip-to-end-the-quiz-apply-the-existing-parchment-teal-gold-theme-styling-to-the-skip-button",
+      "title": "In QuizScreen.tsx, add a 'Skip' button alongside the existing 'Next' button. When the user clicks 'Skip', the current question is recorded as skipped (no answer selected) and the quiz advances to the next question. Skipped questions must be tracked in the answers array passed to onComplete so the ResultsScreen can display a skipped count. The Skip button must be disabled or hidden on the last question (where the user must submit or skip to end the quiz). Apply the existing parchment/teal/gold theme styling to the Skip button.",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-quizscreen-tsx-add-a-visible-countdown-timer-displayed-prominently-at-the-top-of-the-quiz-card-e-g-near-the-question-counter-the-timer-should-count-down-from-a-fixed-duration-of-60-seconds-per-question-when-the-timer-reaches-zero-the-current-question-is-automatically-skipped-and-the-quiz-advances-to-the-next-question-the-timer-must-reset-to-60-seconds-each-time-a-new-question-is-shown-display-the-remaining-time-in-mm-ss-format-e-g-01-00-style-the-timer-with-the-existing-teal-gold-theme-turn-the-timer-text-red-when-10-or-fewer-seconds-remain-to-warn-the-user",
+      "title": "In QuizScreen.tsx, add a visible countdown timer displayed prominently at the top of the quiz card (e.g., near the question counter). The timer should count down from a fixed duration of 60 seconds per question. When the timer reaches zero, the current question is automatically skipped and the quiz advances to the next question. The timer must reset to 60 seconds each time a new question is shown. Display the remaining time in MM:SS format (e.g., '01:00'). Style the timer with the existing teal/gold theme; turn the timer text red when 10 or fewer seconds remain to warn the user.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -435,6 +452,34 @@
     {
       "id": "AR-29",
       "summary": "Upgrade the app to a Progressive Web App (PWA) with offline support, splash screen, and native app feel so users can install it on mobile devices from their browser.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Fix data persistence issue: admin-added questions are being lost/removed after every new deployment/version update. Questions added via the Admin Panel must persist across canister upgrades using stable storage in backend/main.mo.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "In `backend/main.mo`, ensure all admin-added questions are stored in a `stable` variable so they survive canister upgrades. The mutable array or data structure used to hold questions submitted via `addQuestion` must be declared with the `stable` keyword (or migrated into stable storage via `preupgrade`/`postupgrade` hooks). After a canister upgrade or redeployment, all previously added questions must still be present and returned by `getAdminQuestions`, `getQuestions`, `getByTopic`, and `getByYear`.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "If the backend uses `preupgrade` and `postupgrade` system hooks for stable state migration, verify that both hooks correctly copy the mutable admin questions array into stable storage before upgrade and restore it afterwards. Add or update `migration.mo` only if a schema change requires explicit data migration. Ensure no data is lost between versions.",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Add a 'Skip' button during the quiz so users can skip a question and move to the next one. Add a countdown clock/timer visible during the quiz.",
       "reqIds": [],
       "status": "pending"
     }

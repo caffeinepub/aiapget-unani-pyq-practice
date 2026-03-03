@@ -1,14 +1,18 @@
 # Specification
 
 ## Summary
-**Goal:** Upgrade the AIAPGET Unani PYQ frontend into a Progressive Web App (PWA) so users can install it on their mobile home screen and use it offline.
+**Goal:** Add a Skip button and a per-question countdown timer to the QuizScreen in the AIAPGET Unani PYQ app.
 
 **Planned changes:**
-- Add a `manifest.json` in `frontend/public` with app name, short name, start URL, standalone display mode, parchment background color, deep teal theme color, and icon references (192x192 and 512x512)
-- Link the manifest in `frontend/index.html` via `<link rel="manifest">`
-- Add iOS PWA meta tags to `frontend/index.html`: `apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`, `apple-mobile-web-app-title`, `apple-touch-icon`, and `theme-color`
-- Register a service worker (`sw.js`) in `frontend/public` and wire up registration in the app entry point
-- Implement cache-first strategy for static assets and network-first for API/canister calls in the service worker
-- Add PWA icon assets (`icon-192.png` and `icon-512.png`) to `frontend/public/assets/generated/`
+- Add a "Skip" button next to the existing "Next" button on the quiz card; clicking it records the question as skipped (no answer) and advances to the next question
+- Hide or repurpose the Skip button on the last question so the quiz can still be completed
+- Track skipped questions in the answers array passed to `onComplete` so the ResultsScreen can display a skipped count
+- Update ResultsScreen to show the number of skipped questions
+- Add a countdown timer displayed prominently at the top of the quiz card, counting down from 60 seconds per question in MM:SS format
+- Auto-skip the current question when the timer reaches zero and advance to the next question
+- Reset the timer to 60 seconds on every new question (via Next, Skip, or auto-skip)
+- Stop the timer when the user selects an answer or manually clicks Next/Skip
+- Turn the timer text red when 10 or fewer seconds remain
+- Style both the Skip button and timer consistently with the existing parchment/teal/gold theme
 
-**User-visible outcome:** Users on Android (Chrome) and iOS (Safari) can install the app to their home screen and launch it in standalone mode. The app shell loads correctly when offline, and canister calls fail gracefully without network.
+**User-visible outcome:** During the quiz, users see a live 60-second countdown timer and a Skip button on each question. They can skip questions freely, the timer auto-skips if they run out of time, and the results screen shows how many questions were skipped.

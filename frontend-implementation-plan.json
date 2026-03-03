@@ -1,84 +1,47 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Upgrade app to Progressive Web App (PWA) for mobile installation",
+  "title": "Add Skip Button and Countdown Timer to Quiz Screen",
   "requirements": [
     {
-      "id": "REQ-41",
-      "summary": "Add Web App Manifest file for PWA installation support",
+      "id": "REQ-47",
+      "summary": "Add Skip button to quiz screen that advances to next question without selecting an answer and tracks skipped questions",
       "acceptanceCriteria": [
-        "A manifest.json file exists in frontend/public with all required PWA fields (name, short_name, start_url, display: standalone, background_color, theme_color, icons).",
-        "frontend/index.html includes <link rel='manifest' href='/manifest.json'> in the <head>.",
-        "The app can be added to the home screen on Android (Chrome) and iOS (Safari) via the browser's native 'Add to Home Screen' prompt.",
-        "When launched from the home screen icon, the app opens in standalone mode without browser chrome."
+        "A 'Skip' button is visible on every question card during the quiz except it either submits/ends the quiz on the last question or is replaced by a 'Finish' action.",
+        "Clicking Skip advances to the next question without requiring an answer selection.",
+        "Skipped questions are recorded distinctly (e.g., selectedAnswer = null or a sentinel value) in the answers array passed to onComplete.",
+        "The ResultsScreen correctly counts and displays the number of skipped questions.",
+        "The Skip button is styled consistently with the existing parchment/teal/gold theme."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/manifest.json",
-          "operation": "create",
-          "description": "Create a Web App Manifest file with name 'AIAPGET Unani PYQ Practice', short_name 'Unani PYQ', start_url '/', display 'standalone', background_color '#f5f0e8' (parchment theme), theme_color matching the deep teal accent from the design system, and icons array referencing frontend/public/assets/generated/icon-192.dim_192x192.png and frontend/public/assets/generated/icon-512.dim_512x512.png with sizes 192x192 and 512x512 respectively."
+          "path": "frontend/src/pages/QuizScreen.tsx",
+          "operation": "modify",
+          "description": "Add a Skip button alongside the Next button in the quiz UI. The button should call a handleSkip function that records the current question as skipped (by storing null or -1 as the selectedAnswer) in the answers array, then advances to the next question using setCurrentQuestionIndex. On the last question, either hide the Skip button or merge it with the submit action. Apply the existing parchment/teal/gold button styling (matching the theme used for other buttons in the app). Ensure the Skip button is disabled when already on the last question if a separate Finish button is shown."
         },
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/pages/ResultsScreen.tsx",
           "operation": "modify",
-          "description": "Add <link rel='manifest' href='/manifest.json'> to the <head> section to enable PWA installation prompts."
+          "description": "Update the results calculation logic to count skipped questions. Check the answers array for entries where selectedAnswer is null or -1 (the skipped sentinel value). Display the skipped count in the results UI alongside correct and incorrect counts. Ensure the skipped questions are excluded from the correct/incorrect tallies so the total adds up correctly. Style the skipped count display consistently with the existing parchment/teal/gold theme."
         }
       ]
     },
     {
-      "id": "REQ-42",
-      "summary": "Register a Service Worker for offline support and asset caching",
+      "id": "REQ-48",
+      "summary": "Add countdown timer to quiz screen that displays remaining time per question and auto-skips when time expires",
       "acceptanceCriteria": [
-        "A service worker file (e.g., sw.js) is present in frontend/public.",
-        "The service worker is registered in the app entry point.",
-        "Static assets are cached on service worker install.",
-        "The app shell loads correctly when the device has no network connection.",
-        "Canister/API calls are attempted over the network and fail gracefully when offline."
+        "A countdown timer is visible on the quiz card during the quiz, showing remaining time in MM:SS format.",
+        "The timer starts at 60 seconds when each new question is displayed and counts down in real time.",
+        "When the timer reaches 0, the question is automatically skipped and the quiz advances to the next question.",
+        "The timer resets to 60 seconds whenever the user moves to a new question (via Next, Skip, or auto-skip).",
+        "The timer text changes to red when 10 or fewer seconds remain.",
+        "The timer stops when the user selects an answer or manually clicks Next/Skip."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/sw.js",
-          "operation": "create",
-          "description": "Create a service worker that caches all critical static assets (HTML, JS, CSS, images from frontend/public/assets/) on install. Implement a cache-first strategy for static assets (fonts, images, stylesheets, scripts) and a network-first strategy for API/canister calls to avoid stale authentication or data issues. Include fetch event handlers and cache version management for updates."
-        },
-        {
-          "path": "frontend/src/main.tsx",
+          "path": "frontend/src/pages/QuizScreen.tsx",
           "operation": "modify",
-          "description": "Register the service worker by adding a registration call after the React app mounts. Check for 'serviceWorker' in navigator and register '/sw.js' with proper error handling. Only register in production builds to avoid development caching issues."
-        }
-      ]
-    },
-    {
-      "id": "REQ-43",
-      "summary": "Add PWA icon assets for home screen and splash screen",
-      "acceptanceCriteria": [
-        "icon-192.dim_192x192.png and icon-512.dim_512x512.png are generated and placed in frontend/public/assets/generated/.",
-        "The manifest.json icons array references both files with correct sizes and type 'image/png'.",
-        "The icons display correctly on the Android home screen and iOS home screen when the app is installed."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/manifest.json",
-          "operation": "modify",
-          "description": "Ensure the icons array in manifest.json references the generated PWA icons at frontend/public/assets/generated/icon-192.dim_192x192.png and frontend/public/assets/generated/icon-512.dim_512x512.png with correct sizes (192x192 and 512x512) and type 'image/png'. The generated icons feature a circular app icon with Unani medicine motif—ornate geometric arabesque border, central herb/vessel illustration on a deep teal background with gold accents."
-        }
-      ]
-    },
-    {
-      "id": "REQ-44",
-      "summary": "Add iOS PWA meta tags and theme-color for native app appearance",
-      "acceptanceCriteria": [
-        "frontend/index.html contains <meta name='apple-mobile-web-app-capable' content='yes'>.",
-        "frontend/index.html contains <meta name='apple-mobile-web-app-status-bar-style'>.",
-        "frontend/index.html contains <meta name='apple-mobile-web-app-title' content='Unani PYQ'>.",
-        "frontend/index.html contains <link rel='apple-touch-icon' href='/assets/generated/icon-192.png'>.",
-        "frontend/index.html contains <meta name='theme-color'> with the teal accent color value."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Add iOS-specific PWA meta tags to the <head> section: <meta name='apple-mobile-web-app-capable' content='yes'>, <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>, <meta name='apple-mobile-web-app-title' content='Unani PYQ'>, and <link rel='apple-touch-icon' href='/assets/generated/icon-192.dim_192x192.png'>. Also add <meta name='theme-color' content='[deep-teal-value]'> matching the app's teal accent color from the theme system to ensure consistent browser toolbar theming on Android."
+          "description": "Add a countdown timer state (timeRemaining) initialized to 60 seconds. Use useEffect to set up an interval that decrements timeRemaining by 1 every second. Display the timer prominently at the top of the quiz card near the question counter in MM:SS format (e.g., '01:00'). When timeRemaining reaches 0, automatically trigger the skip logic (same as handleSkip from REQ-47) to advance to the next question. Reset timeRemaining to 60 whenever currentQuestionIndex changes. Clear the interval when the user selects an answer or clicks Next/Skip. Apply conditional styling: use the teal/gold theme color when timeRemaining > 10, and switch to red text when timeRemaining <= 10. Ensure the timer stops and clears when the quiz completes."
         }
       ]
     }

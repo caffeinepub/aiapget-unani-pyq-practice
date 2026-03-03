@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, CheckCircle, Clock, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import type { Question } from '../data/questions';
@@ -11,11 +11,20 @@ interface QuizScreenProps {
 }
 
 const OPTION_LABELS = ['A', 'B', 'C', 'D'];
+const TIMER_SECONDS = 60;
+
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const s = (seconds % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
 
 export default function QuizScreen({ questions, onComplete, onBack }: QuizScreenProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>(new Array(questions.length).fill(-1));
   const [startTime] = useState(() => Date.now());
+  const [timeRemaining, setTimeRemaining] = useState(TIMER_SECONDS);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const current = questions[currentIndex];
   const selectedAnswer = answers[currentIndex];
@@ -23,14 +32,83 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
   const isLast = currentIndex === questions.length - 1;
   const progress = ((currentIndex + (isAnswered ? 1 : 0)) / questions.length) * 100;
 
+  // Reset timer when question changes
+  useEffect(() => {
+    setTimeRemaining(TIMER_SECONDS);
+  }, [currentIndex]);
+
+  // Countdown timer
+  useEffect(() => {
+    // Stop timer if question is already answered
+    if (isAnswered) {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+      return;
+    }
+
+    timerRef.current = setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev <= 1) {
+          // Auto-skip when time runs out
+          clearInterval(timerRef.current!);
+          timerRef.current = null;
+          // Use setTimeout to avoid state update during render
+          setTimeout(() => {
+            handleSkipOrAutoSkip();
+          }, 0);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, isAnswered]);
+
+  const stopTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
+  const handleSkipOrAutoSkip = () => {
+    // answers[currentIndex] stays -1 (skipped sentinel)
+    if (isLast) {
+      onComplete(answers, startTime);
+    } else {
+      setCurrentIndex((i) => i + 1);
+    }
+  };
+
   const handleSelect = (optionIndex: number) => {
     if (isAnswered) return;
+    stopTimer();
     const newAnswers = [...answers];
     newAnswers[currentIndex] = optionIndex;
     setAnswers(newAnswers);
   };
 
   const handleNext = () => {
+    stopTimer();
+    if (isLast) {
+      onComplete(answers, startTime);
+    } else {
+      setCurrentIndex((i) => i + 1);
+    }
+  };
+
+  const handleSkip = () => {
+    stopTimer();
+    // Leave answers[currentIndex] as -1 (skipped)
     if (isLast) {
       onComplete(answers, startTime);
     } else {
@@ -39,8 +117,11 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
   };
 
   const handlePrev = () => {
+    stopTimer();
     if (currentIndex > 0) setCurrentIndex((i) => i - 1);
   };
+
+  const isTimeLow = timeRemaining <= 10;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -59,9 +140,22 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
               <span className="text-sm font-body opacity-90">
                 Question {currentIndex + 1} of {questions.length}
               </span>
-              <span className="text-xs font-body opacity-70 bg-white/10 px-2 py-0.5 rounded-full">
-                {current.topic}
-              </span>
+              <div className="flex items-center gap-2">
+                {/* Countdown Timer */}
+                <div
+                  className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold font-heading transition-colors ${
+                    isTimeLow
+                      ? 'bg-red-500/90 text-white animate-pulse'
+                      : 'bg-white/15 text-primary-foreground'
+                  }`}
+                >
+                  <Clock className="w-3 h-3" />
+                  <span>{formatTime(timeRemaining)}</span>
+                </div>
+                <span className="text-xs font-body opacity-70 bg-white/10 px-2 py-0.5 rounded-full">
+                  {current.topic}
+                </span>
+              </div>
             </div>
             <Progress value={progress} className="h-1.5 bg-white/20" />
           </div>
@@ -153,7 +247,7 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
         )}
 
         {/* Navigation */}
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex items-center justify-between pt-2 gap-2">
           <Button
             variant="outline"
             onClick={handlePrev}
@@ -164,14 +258,28 @@ export default function QuizScreen({ questions, onComplete, onBack }: QuizScreen
             Previous
           </Button>
 
-          <Button
-            onClick={handleNext}
-            disabled={!isAnswered}
-            className="gap-2 bg-primary hover:bg-primary/90"
-          >
-            {isLast ? 'Finish Quiz' : 'Next'}
-            {!isLast && <ChevronRight className="w-4 h-4" />}
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* Skip Button — hidden once answered */}
+            {!isAnswered && (
+              <Button
+                variant="outline"
+                onClick={handleSkip}
+                className="gap-1.5 border-gold/60 text-gold hover:bg-gold/10 hover:border-gold"
+              >
+                <SkipForward className="w-4 h-4" />
+                {isLast ? 'Skip & Finish' : 'Skip'}
+              </Button>
+            )}
+
+            <Button
+              onClick={handleNext}
+              disabled={!isAnswered}
+              className="gap-2 bg-primary hover:bg-primary/90"
+            >
+              {isLast ? 'Finish Quiz' : 'Next'}
+              {!isLast && <ChevronRight className="w-4 h-4" />}
+            </Button>
+          </div>
         </div>
       </main>
     </div>

@@ -1,60 +1,36 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-03T00:33:22.367Z",
+  "generatedAt": "2026-03-03T00:54:29.043Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 4,
-    "implemented": 4,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-41",
-        "summary": "Convert the frontend into a Progressive Web App (PWA) by adding a Web App Manifest file (manifest.json or manifest.webmanifest) in the frontend/public directory. The manifest must include: app name ('AIAPGET Unani PYQ Practice'), short name ('Unani PYQ'), start URL, display mode 'standalone', background color matching the parchment theme (e.g., #f5f0e8), theme color matching the deep teal accent, and icon references for at least 192x192 and 512x512 sizes. Reference the manifest in frontend/index.html via a <link rel='manifest'> tag.",
+        "id": "REQ-47",
+        "summary": "In QuizScreen.tsx, add a 'Skip' button alongside the existing 'Next' button. When the user clicks 'Skip', the current question is recorded as skipped (no answer selected) and the quiz advances to the next question. Skipped questions must be tracked in the answers array passed to onComplete so the ResultsScreen can display a skipped count. The Skip button must be disabled or hidden on the last question (where the user must submit or skip to end the quiz). Apply the existing parchment/teal/gold theme styling to the Skip button.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/manifest.json",
-          "frontend/index.html"
+          "frontend/src/pages/QuizScreen.tsx",
+          "frontend/src/pages/ResultsScreen.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/manifest.json",
-          "frontend/index.html"
+          "frontend/src/pages/QuizScreen.tsx"
         ]
       },
       {
-        "id": "REQ-42",
-        "summary": "Register a Service Worker in the frontend to enable offline support and caching. The service worker must cache all critical static assets (HTML, JS, CSS, images) on install so the app loads when the device is offline. Use a cache-first strategy for static assets and a network-first strategy for API/canister calls. Register the service worker in frontend/src/main.tsx or via a separate registration script loaded in frontend/index.html.",
+        "id": "REQ-48",
+        "summary": "In QuizScreen.tsx, add a visible countdown timer displayed prominently at the top of the quiz card (e.g., near the question counter). The timer should count down from a fixed duration of 60 seconds per question. When the timer reaches zero, the current question is automatically skipped and the quiz advances to the next question. The timer must reset to 60 seconds each time a new question is shown. Display the remaining time in MM:SS format (e.g., '01:00'). Style the timer with the existing teal/gold theme; turn the timer text red when 10 or fewer seconds remain to warn the user.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/sw.js",
-          "frontend/src/main.tsx"
+          "frontend/src/pages/QuizScreen.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/sw.js"
-        ]
-      },
-      {
-        "id": "REQ-43",
-        "summary": "Add PWA icon assets for the home screen and splash screen. Generate a 192x192 and a 512x512 version of the app icon (based on the existing app logo/Unani motif) and place them at frontend/public/assets/generated/icon-192.png and frontend/public/assets/generated/icon-512.png respectively. Reference these paths in the manifest icons array.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/manifest.json"
-        ],
-        "matchedFiles": [
-          "frontend/public/manifest.json"
-        ]
-      },
-      {
-        "id": "REQ-44",
-        "summary": "Add the necessary meta tags to frontend/index.html for iOS PWA support: apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style (set to 'black-translucent' or matching the teal theme), apple-mobile-web-app-title, and apple-touch-icon pointing to the 192x192 icon. Also set the <meta name='theme-color'> to match the app's deep teal accent color so the browser toolbar matches the app theme on Android.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/index.html"
-        ],
-        "matchedFiles": [
-          "frontend/index.html"
+          "frontend/src/pages/QuizScreen.tsx"
         ]
       }
     ]
@@ -64,11 +40,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.html",
-    "frontend/public/assets/generated/icon-192.dim_192x192.png",
-    "frontend/public/assets/generated/icon-512.dim_512x512.png",
-    "frontend/public/manifest.json",
-    "frontend/public/sw.js",
+    "frontend/src/pages/QuizScreen.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
