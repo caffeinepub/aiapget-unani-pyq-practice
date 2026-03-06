@@ -1,26 +1,39 @@
 # AIAPGET Unani PYQ Practice
 
 ## Current State
-- Full-stack MCQ practice app with static questions and backend-stored questions
-- `TopicBrowserScreen` handles both "Browse by Year" and "Browse by Topic" modes
-- `useAllQuestions` hook fetches from backend and merges with static questions
-- Bug: `useAllQuestions` is `enabled: !!actor`, so query never runs until actor resolves — meanwhile `TopicBrowserScreen` uses `data = []` as default, showing empty lists
-- Bug: `adminQuestions` in backend uses `var` (not `stable`), so added questions are lost on every deploy
+- Full MCQ practice app for Unani system of medicine
+- Admin panel with password protection (Naeem9472) for adding/removing questions
+- Subscription system: 7-day free trial, monthly (₹100), yearly (₹800)
+- Payment flow: Razorpay link → user submits UTR → admin approves/rejects via Payments tab
+- Device binding per subscription
+- Questions stored in `var adminQuestions` (heap) — LOST on every canister upgrade
+- Payment records stored ONLY in localStorage — NOT shared across devices, lost if admin clears storage
 
 ## Requested Changes (Diff)
 
 ### Add
-- Nothing new
+- `stable var adminQuestions` in backend so questions persist permanently across upgrades
+- `PaymentRecord` type in backend with fields: id, date, plan, amount, utrId, paymentMethod, userId, userName, deviceId, status (#pending | #approved | #rejected), approvedAt, rejectedAt
+- `stable var paymentRecords` in backend to store all payment submissions
+- Backend functions: `submitPaymentRecord`, `getPaymentRecords`, `approvePayment`, `rejectPayment`, `resetDeviceBinding`, `getPaymentRecordsByUser`
+- Admin panel Payments tab reads from backend (not just localStorage) — shows all users' payment records
+- When admin approves: backend record updated to #approved; localStorage subscription activated for that user
+- When admin rejects: backend record updated to #rejected; user sees rejection notice
 
 ### Modify
-- `TopicBrowserScreen.tsx`: Change default from `[]` to `staticQuestions` so questions show immediately even while actor loads
-- `useAdminQueries.ts` (`useAllQuestions`): Change `enabled: !!actor` to `enabled: true` so the query runs immediately and returns staticQuestions when actor is null
-- Backend `main.mo`: Change `var adminQuestions` and `var subscriptionSettings` to `stable var` so questions persist across canister upgrades
+- `var adminQuestions` → `stable var adminQuestions` (critical fix)
+- `var subscriptionSettings` → `stable var subscriptionSettings`
+- Payment submission in PaymentMethodSelectorScreen: also calls backend `submitPaymentRecord`
+- Admin panel `handleApprovePayment` and `handleRejectPayment`: also call backend `approvePayment` / `rejectPayment`
+- Admin panel Payments tab: loads from backend via `getPaymentRecords` on mount, merges with localStorage for backward compatibility
 
 ### Remove
-- Nothing
+- Nothing removed — localStorage fallback kept for backward compatibility
 
 ## Implementation Plan
-1. Fix `TopicBrowserScreen.tsx` — import and use `staticQuestions` as default for `useAllQuestions` data
-2. Fix `useAllQuestions` in `useAdminQueries.ts` — set `enabled: true` so it runs immediately  
-3. Fix backend `main.mo` — use `stable var` for `adminQuestions` and `subscriptionSettings`
+1. Regenerate backend with stable vars and PaymentRecord stable storage + full CRUD
+2. Update backend.d.ts bindings (auto-generated)
+3. Update useAdminQueries hook: add usePaymentRecords, useSubmitPaymentRecord, useApprovePayment, useRejectPayment, useResetDeviceBinding hooks
+4. Update AdminPanelScreen Payments tab: fetch records from backend, show all records, approve/reject via backend
+5. Update PaymentMethodSelectorScreen: call submitPaymentRecord on backend when UTR submitted
+6. Validate and deploy

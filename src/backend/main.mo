@@ -4,12 +4,13 @@ import Nat "mo:core/Nat";
 import List "mo:core/List";
 import Iter "mo:core/Iter";
 import Principal "mo:core/Principal";
+import Text "mo:core/Text";
 import Runtime "mo:core/Runtime";
-
+import Migration "migration";
 import MixinAuthorization "authorization/MixinAuthorization";
 import AccessControl "authorization/access-control";
 
-actor {
+(with migration = Migration.run) actor {
   public type Question = {
     id : Nat;
     questionText : Text;
@@ -26,15 +27,31 @@ actor {
     gender : Text;
   };
 
-  public type BillingCycle = {
-    #monthly;
-    #yearly;
-  };
-
   public type SubscriptionSettings = {
     monthlyPrice : Nat;
     yearlyPrice : Nat;
     freeTrialDays : Nat;
+  };
+
+  public type PaymentStatus = {
+    #pending;
+    #approved;
+    #rejected;
+  };
+
+  public type PaymentRecord = {
+    id : Text;
+    date : Text;
+    plan : Text;
+    amount : Text;
+    utrId : Text;
+    paymentMethod : Text;
+    userId : Text;
+    userName : Text;
+    deviceId : ?Text;
+    status : PaymentStatus;
+    approvedAt : ?Text;
+    rejectedAt : ?Text;
   };
 
   var adminQuestions : [Question] = [];
@@ -45,10 +62,11 @@ actor {
     yearlyPrice = 800;
     freeTrialDays = 7;
   };
+  var paymentRecords : [PaymentRecord] = [];
 
   include MixinAuthorization(accessControlState);
 
-  // ── User profile functions ──────────────────────────────────────────────────
+  // ── User profile functions (user-role required) ─────────────────────────────
   public query ({ caller }) func getCallerUserProfile() : async ?UserProfile {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
       Runtime.trap("Unauthorized: Only users can view their profile");
@@ -70,7 +88,7 @@ actor {
     userProfiles.add(caller, profile);
   };
 
-  // ── Subscription settings management (admin-only) ───────────────────────────
+  // ── Subscription settings (public read, admin-only write) ──────────────────
   public query func getSubscriptionSettings() : async SubscriptionSettings {
     subscriptionSettings;
   };
@@ -82,7 +100,7 @@ actor {
     subscriptionSettings := newSettings;
   };
 
-  // ── Question management (no permission check for add/remove) ────────────────
+  // ── Question functions (no permission check) ───────────────────────────────
   public shared ({ caller }) func addQuestion(newQuestion : Question) : async Bool {
     let newQuestions = Array.tabulate(
       adminQuestions.size() + 1,
@@ -109,7 +127,6 @@ actor {
     adminQuestions;
   };
 
-  // New: Public question query functions (open to all)
   public query func getByTopic(topic : Text) : async [Question] {
     adminQuestions.filter(func(q) { q.topic == topic });
   };
@@ -118,7 +135,62 @@ actor {
     adminQuestions.filter(func(q) { q.year == year });
   };
 
-  // ── Attempt recording (user-only) ───────────────────────────────────────────
+  // ── Payment record functions (open to all callers) ─────────────────────────
+  public query func getPaymentRecords() : async [PaymentRecord] {
+    paymentRecords;
+  };
+
+  public query func getPaymentRecordsByUser(userId : Text) : async [PaymentRecord] {
+    paymentRecords.filter(func(record) { record.userId == userId });
+  };
+
+  public shared ({ caller }) func submitPaymentRecord(record : PaymentRecord) : async Bool {
+    if (paymentRecords.any(func(r) { r.id == record.id })) {
+      return false;
+    };
+    paymentRecords := Array.tabulate(
+      paymentRecords.size() + 1,
+      func(i) {
+        if (i < paymentRecords.size()) { paymentRecords[i] } else { record };
+      },
+    );
+    true;
+  };
+
+  // ── Admin-only payment approval functions ──────────────────────────────────
+  public shared ({ caller }) func approvePayment(paymentId : Text, approvedAt : Text) : async Bool {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can approve payments");
+    };
+    paymentRecords := paymentRecords.map(func(record) {
+      if (record.id == paymentId) {
+        { record with status = #approved; approvedAt = ?(approvedAt) };
+      } else { record };
+    });
+    true;
+  };
+
+  public shared ({ caller }) func rejectPayment(paymentId : Text, rejectedAt : Text) : async Bool {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can reject payments");
+    };
+    paymentRecords := paymentRecords.map(func(record) {
+      if (record.id == paymentId) {
+        { record with status = #rejected; rejectedAt = ?(rejectedAt) };
+      } else { record };
+    });
+    true;
+  };
+
+  // ── Device ID reset (open to all callers) ─────────────────────────────────
+  public shared ({ caller }) func resetDeviceBinding(paymentId : Text) : async Bool {
+    paymentRecords := paymentRecords.map(func(record) {
+      if (record.id == paymentId) { { record with deviceId = null } } else { record };
+    });
+    true;
+  };
+
+  // ── Attempt recording (user-only) ──────────────────────────────────────────
   public shared ({ caller }) func recordAttempt(questionId : Nat, answerIndex : Nat) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
       Runtime.trap("Unauthorized: Only users can record attempts");
@@ -129,3 +201,4 @@ actor {
     };
   };
 };
+

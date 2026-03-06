@@ -7,6 +7,20 @@ export interface None {
     __kind__: "None";
 }
 export type Option<T> = Some<T> | None;
+export interface PaymentRecord {
+    id: string;
+    status: PaymentStatus;
+    userName: string;
+    paymentMethod: string;
+    userId: string;
+    date: string;
+    approvedAt?: string;
+    plan: string;
+    rejectedAt?: string;
+    deviceId?: string;
+    utrId: string;
+    amount: string;
+}
 export interface Question {
     id: bigint;
     topic: string;
@@ -26,6 +40,11 @@ export interface SubscriptionSettings {
     monthlyPrice: bigint;
     freeTrialDays: bigint;
 }
+export enum PaymentStatus {
+    pending = "pending",
+    approved = "approved",
+    rejected = "rejected"
+}
 export enum UserRole {
     admin = "admin",
     user = "user",
@@ -33,18 +52,24 @@ export enum UserRole {
 }
 export interface backendInterface {
     addQuestion(newQuestion: Question): Promise<boolean>;
+    approvePayment(paymentId: string, approvedAt: string): Promise<boolean>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     getAdminQuestions(): Promise<Array<Question>>;
     getByTopic(topic: string): Promise<Array<Question>>;
     getByYear(year: string): Promise<Array<Question>>;
     getCallerUserProfile(): Promise<UserProfile | null>;
     getCallerUserRole(): Promise<UserRole>;
+    getPaymentRecords(): Promise<Array<PaymentRecord>>;
+    getPaymentRecordsByUser(userId: string): Promise<Array<PaymentRecord>>;
     getQuestions(): Promise<Array<Question>>;
     getSubscriptionSettings(): Promise<SubscriptionSettings>;
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
     recordAttempt(questionId: bigint, answerIndex: bigint): Promise<boolean>;
+    rejectPayment(paymentId: string, rejectedAt: string): Promise<boolean>;
     removeQuestion(id: bigint): Promise<boolean>;
+    resetDeviceBinding(paymentId: string): Promise<boolean>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
+    submitPaymentRecord(record: PaymentRecord): Promise<boolean>;
     updateSubscriptionSettings(newSettings: SubscriptionSettings): Promise<void>;
 }

@@ -11,12 +11,16 @@ import {
   X,
 } from "lucide-react";
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Question } from "../backend";
 import {
   useAddQuestion,
+  useApprovePayment,
   useGetAdminQuestions,
+  usePaymentRecords,
+  useRejectPayment,
   useRemoveQuestion,
+  useResetDeviceBinding,
 } from "../hooks/useAdminQueries";
 
 const ADMIN_PASSWORD = "Naeem9472";
@@ -51,6 +55,8 @@ interface PaymentRecord {
   userName: string;
   deviceId?: string;
   status?: "pending" | "approved" | "rejected";
+  approvedAt?: string;
+  rejectedAt?: string;
 }
 
 interface QuestionForm {
@@ -95,6 +101,14 @@ const DEFAULT_FORM: QuestionForm = {
   explanation: "",
 };
 
+function loadLocalPaymentRecords(): PaymentRecord[] {
+  try {
+    return JSON.parse(localStorage.getItem("aiapget_payment_records") ?? "[]");
+  } catch {
+    return [];
+  }
+}
+
 export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -105,35 +119,59 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
     "add" | "list" | "pricing" | "payments"
   >("add");
 
-  const loadPaymentRecords = (): PaymentRecord[] => {
-    try {
-      return JSON.parse(
-        localStorage.getItem("aiapget_payment_records") ?? "[]",
-      );
-    } catch {
-      return [];
-    }
-  };
+  // Backend payment records — source of truth for admin
+  const {
+    data: backendPaymentRecords,
+    isLoading: backendPaymentsLoading,
+    refetch: refetchBackendPayments,
+  } = usePaymentRecords();
 
-  // Payment records state — mutable so approve/reject updates re-render
-  const [paymentRecords, setPaymentRecords] =
-    useState<PaymentRecord[]>(loadPaymentRecords);
+  const approvePaymentMutation = useApprovePayment();
+  const rejectPaymentMutation = useRejectPayment();
+  const resetDeviceBindingMutation = useResetDeviceBinding();
 
-  // Reload payment records every time the payments tab is opened
+  // localStorage records as local fallback state
+  const [localPaymentRecords, setLocalPaymentRecords] = useState<
+    PaymentRecord[]
+  >(loadLocalPaymentRecords);
+
+  // Reload local records when switching to payments tab
   useEffect(() => {
     if (activeTab === "payments") {
-      try {
-        const records: PaymentRecord[] = JSON.parse(
-          localStorage.getItem("aiapget_payment_records") ?? "[]",
-        );
-        setPaymentRecords(records);
-      } catch {
-        setPaymentRecords([]);
-      }
+      setLocalPaymentRecords(loadLocalPaymentRecords());
+      refetchBackendPayments();
     }
-  }, [activeTab]);
+  }, [activeTab, refetchBackendPayments]);
+
+  // Merge backend records with localStorage records — backend takes precedence
+  const paymentRecords = useMemo<PaymentRecord[]>(() => {
+    const backendList: PaymentRecord[] = (backendPaymentRecords ?? []).map(
+      (r) => ({
+        id: r.id,
+        date: r.date,
+        plan: r.plan,
+        amount: r.amount,
+        utrId: r.utrId,
+        paymentMethod: r.paymentMethod,
+        userId: r.userId,
+        userName: r.userName,
+        deviceId: r.deviceId,
+        status: r.status as "pending" | "approved" | "rejected",
+        approvedAt: r.approvedAt,
+        rejectedAt: r.rejectedAt,
+      }),
+    );
+
+    const backendIds = new Set(backendList.map((r) => r.id));
+    // Include localStorage records not already in backend
+    const localOnly = localPaymentRecords.filter((r) => !backendIds.has(r.id));
+
+    return [...backendList, ...localOnly];
+  }, [backendPaymentRecords, localPaymentRecords]);
 
   const handleApprovePayment = (record: PaymentRecord) => {
+    const approvedAt = new Date().toISOString();
+
     // Activate subscription for this user and bind to their device
     const days = record.plan === "yearly" ? 365 : 30;
     const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
@@ -146,7 +184,7 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
       boundDeviceId, // Lock to the device that submitted payment
     };
 
-    // Update the subscription key for the current device
+    // Update the subscription key for the current device (localStorage gate still reads this)
     const subKey =
       record.userId && record.userId !== "unknown"
         ? `aiapget_subscription_${record.userId}`
@@ -172,12 +210,20 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
       );
     }
 
-    // Update payment record status
-    const updated = loadPaymentRecords().map((r) =>
-      r.id === record.id ? { ...r, status: "approved" as const } : r,
+    // Update localStorage payment record status
+    const updatedLocal = loadLocalPaymentRecords().map((r) =>
+      r.id === record.id
+        ? { ...r, status: "approved" as const, approvedAt }
+        : r,
     );
-    localStorage.setItem("aiapget_payment_records", JSON.stringify(updated));
-    setPaymentRecords(updated);
+    localStorage.setItem(
+      "aiapget_payment_records",
+      JSON.stringify(updatedLocal),
+    );
+    setLocalPaymentRecords(updatedLocal);
+
+    // Also call backend to persist approval
+    approvePaymentMutation.mutate({ paymentId: record.id, approvedAt });
   };
 
   const handleResetDeviceBinding = (record: PaymentRecord) => {
@@ -202,20 +248,37 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
       }
     } catch {}
 
-    // Update payment record to remove device binding info
-    const updated = loadPaymentRecords().map((r) =>
+    // Update localStorage payment record to remove device binding info
+    const updatedLocal = loadLocalPaymentRecords().map((r) =>
       r.id === record.id ? { ...r, deviceId: undefined } : r,
     );
-    localStorage.setItem("aiapget_payment_records", JSON.stringify(updated));
-    setPaymentRecords(updated);
+    localStorage.setItem(
+      "aiapget_payment_records",
+      JSON.stringify(updatedLocal),
+    );
+    setLocalPaymentRecords(updatedLocal);
+
+    // Also call backend
+    resetDeviceBindingMutation.mutate(record.id);
   };
 
   const handleRejectPayment = (record: PaymentRecord) => {
-    const updated = loadPaymentRecords().map((r) =>
-      r.id === record.id ? { ...r, status: "rejected" as const } : r,
+    const rejectedAt = new Date().toISOString();
+
+    // Update localStorage
+    const updatedLocal = loadLocalPaymentRecords().map((r) =>
+      r.id === record.id
+        ? { ...r, status: "rejected" as const, rejectedAt }
+        : r,
     );
-    localStorage.setItem("aiapget_payment_records", JSON.stringify(updated));
-    setPaymentRecords(updated);
+    localStorage.setItem(
+      "aiapget_payment_records",
+      JSON.stringify(updatedLocal),
+    );
+    setLocalPaymentRecords(updatedLocal);
+
+    // Also call backend
+    rejectPaymentMutation.mutate({ paymentId: record.id, rejectedAt });
   };
 
   // Pricing state
@@ -502,7 +565,7 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
             }`}
           >
             <CreditCard className="w-4 h-4 inline mr-1.5" />
-            Payments ({paymentRecords.length})
+            Payments ({backendPaymentsLoading ? "…" : paymentRecords.length})
           </button>
         </div>
 
@@ -806,9 +869,25 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
                   Reject each payment.
                 </p>
               </div>
+              {backendPaymentsLoading && (
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  Syncing…
+                </div>
+              )}
             </div>
 
-            {paymentRecords.length === 0 ? (
+            {backendPaymentsLoading && paymentRecords.length === 0 ? (
+              <div
+                data-ocid="admin.payments.loading_state"
+                className="bg-card rounded-2xl border border-border p-12 text-center"
+              >
+                <Loader2 className="w-8 h-8 animate-spin text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground text-sm">
+                  Loading payment records…
+                </p>
+              </div>
+            ) : !backendPaymentsLoading && paymentRecords.length === 0 ? (
               <div
                 data-ocid="admin.payments.empty_state"
                 className="bg-card rounded-2xl border border-border p-12 text-center"

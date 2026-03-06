@@ -27,6 +27,25 @@ export const UserProfile = IDL.Record({
   'name' : IDL.Text,
   'gender' : IDL.Text,
 });
+export const PaymentStatus = IDL.Variant({
+  'pending' : IDL.Null,
+  'approved' : IDL.Null,
+  'rejected' : IDL.Null,
+});
+export const PaymentRecord = IDL.Record({
+  'id' : IDL.Text,
+  'status' : PaymentStatus,
+  'userName' : IDL.Text,
+  'paymentMethod' : IDL.Text,
+  'userId' : IDL.Text,
+  'date' : IDL.Text,
+  'approvedAt' : IDL.Opt(IDL.Text),
+  'plan' : IDL.Text,
+  'rejectedAt' : IDL.Opt(IDL.Text),
+  'deviceId' : IDL.Opt(IDL.Text),
+  'utrId' : IDL.Text,
+  'amount' : IDL.Text,
+});
 export const SubscriptionSettings = IDL.Record({
   'yearlyPrice' : IDL.Nat,
   'monthlyPrice' : IDL.Nat,
@@ -36,12 +55,19 @@ export const SubscriptionSettings = IDL.Record({
 export const idlService = IDL.Service({
   '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
   'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
+  'approvePayment' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
   'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
   'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
   'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
   'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+  'getPaymentRecords' : IDL.Func([], [IDL.Vec(PaymentRecord)], ['query']),
+  'getPaymentRecordsByUser' : IDL.Func(
+      [IDL.Text],
+      [IDL.Vec(PaymentRecord)],
+      ['query'],
+    ),
   'getQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
   'getSubscriptionSettings' : IDL.Func([], [SubscriptionSettings], ['query']),
   'getUserProfile' : IDL.Func(
@@ -51,8 +77,11 @@ export const idlService = IDL.Service({
     ),
   'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'recordAttempt' : IDL.Func([IDL.Nat, IDL.Nat], [IDL.Bool], []),
+  'rejectPayment' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
   'removeQuestion' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+  'resetDeviceBinding' : IDL.Func([IDL.Text], [IDL.Bool], []),
   'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
+  'submitPaymentRecord' : IDL.Func([PaymentRecord], [IDL.Bool], []),
   'updateSubscriptionSettings' : IDL.Func([SubscriptionSettings], [], []),
 });
 
@@ -78,6 +107,25 @@ export const idlFactory = ({ IDL }) => {
     'name' : IDL.Text,
     'gender' : IDL.Text,
   });
+  const PaymentStatus = IDL.Variant({
+    'pending' : IDL.Null,
+    'approved' : IDL.Null,
+    'rejected' : IDL.Null,
+  });
+  const PaymentRecord = IDL.Record({
+    'id' : IDL.Text,
+    'status' : PaymentStatus,
+    'userName' : IDL.Text,
+    'paymentMethod' : IDL.Text,
+    'userId' : IDL.Text,
+    'date' : IDL.Text,
+    'approvedAt' : IDL.Opt(IDL.Text),
+    'plan' : IDL.Text,
+    'rejectedAt' : IDL.Opt(IDL.Text),
+    'deviceId' : IDL.Opt(IDL.Text),
+    'utrId' : IDL.Text,
+    'amount' : IDL.Text,
+  });
   const SubscriptionSettings = IDL.Record({
     'yearlyPrice' : IDL.Nat,
     'monthlyPrice' : IDL.Nat,
@@ -87,12 +135,19 @@ export const idlFactory = ({ IDL }) => {
   return IDL.Service({
     '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
     'addQuestion' : IDL.Func([Question], [IDL.Bool], []),
+    'approvePayment' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
     'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'getAdminQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
     'getByTopic' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
     'getByYear' : IDL.Func([IDL.Text], [IDL.Vec(Question)], ['query']),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
     'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+    'getPaymentRecords' : IDL.Func([], [IDL.Vec(PaymentRecord)], ['query']),
+    'getPaymentRecordsByUser' : IDL.Func(
+        [IDL.Text],
+        [IDL.Vec(PaymentRecord)],
+        ['query'],
+      ),
     'getQuestions' : IDL.Func([], [IDL.Vec(Question)], ['query']),
     'getSubscriptionSettings' : IDL.Func([], [SubscriptionSettings], ['query']),
     'getUserProfile' : IDL.Func(
@@ -102,8 +157,11 @@ export const idlFactory = ({ IDL }) => {
       ),
     'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'recordAttempt' : IDL.Func([IDL.Nat, IDL.Nat], [IDL.Bool], []),
+    'rejectPayment' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
     'removeQuestion' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+    'resetDeviceBinding' : IDL.Func([IDL.Text], [IDL.Bool], []),
     'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
+    'submitPaymentRecord' : IDL.Func([PaymentRecord], [IDL.Bool], []),
     'updateSubscriptionSettings' : IDL.Func([SubscriptionSettings], [], []),
   });
 };

@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import type { Screen } from "../App";
+import { PaymentStatus } from "../backend";
+import { useSubmitPaymentRecord } from "../hooks/useAdminQueries";
 import { getDeviceId } from "../utils/deviceId";
 
 interface PaymentMethodSelectorScreenProps {
@@ -134,6 +136,7 @@ export default function PaymentMethodSelectorScreen({
   const [utrId, setUtrId] = useState("");
   const [utrError, setUtrError] = useState("");
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
+  const submitPaymentMutation = useSubmitPaymentRecord();
 
   const razorpayLink = getRazorpayLink(planPrice);
 
@@ -156,11 +159,52 @@ export default function PaymentMethodSelectorScreen({
       setUtrError("UTR / Transaction ID must be at least 8 characters.");
       return;
     }
-    submitPaymentForVerification(planCycle, {
+    const paymentId = submitPaymentForVerification(planCycle, {
       utrId: trimmed,
       paymentMethod: selectedMethod ?? "unknown",
       amount: planPrice,
     });
+
+    // Helper to safely read localStorage user session
+    const getUserId = () => {
+      try {
+        return (
+          JSON.parse(localStorage.getItem("aiapget_user_session") ?? "{}").id ??
+          "unknown"
+        );
+      } catch {
+        return "unknown";
+      }
+    };
+    const getUserName = () => {
+      try {
+        return (
+          JSON.parse(localStorage.getItem("aiapget_user_session") ?? "{}")
+            .name ?? "Unknown"
+        );
+      } catch {
+        return "Unknown";
+      }
+    };
+
+    // Also submit payment record to backend for persistent storage
+    const paymentRecord = {
+      id: paymentId,
+      date: new Date().toISOString(),
+      plan: planCycle,
+      amount: planPrice,
+      utrId: trimmed,
+      paymentMethod: selectedMethod ?? "unknown",
+      status: PaymentStatus.pending,
+      deviceId: getDeviceId() || undefined,
+      userId: getUserId(),
+      userName: getUserName(),
+      approvedAt: undefined,
+      rejectedAt: undefined,
+    };
+    // Fire and forget — localStorage is the primary fallback, backend is source of truth for admin
+    submitPaymentMutation.mutateAsync(paymentRecord).catch(() => {});
+
     // Mark that we should show a success banner on home
     localStorage.setItem("aiapget_payment_submitted", "true");
     setPendingVerification(true);
