@@ -1,23 +1,7 @@
-import Map "mo:core/Map";
-import Principal "mo:core/Principal";
-import AccessControl "authorization/access-control";
+import List "mo:core/List";
+import Array "mo:core/Array";
 
 module {
-  type OldActor = {
-    adminQuestions : [Question];
-    accessControlState : AccessControl.AccessControlState;
-    userProfiles : Map.Map<Principal, UserProfile>;
-    subscriptionSettings : SubscriptionSettings;
-  };
-
-  type NewActor = {
-    adminQuestions : [Question];
-    accessControlState : AccessControl.AccessControlState;
-    userProfiles : Map.Map<Principal, UserProfile>;
-    subscriptionSettings : SubscriptionSettings;
-    paymentRecords : [PaymentRecord];
-  };
-
   type Question = {
     id : Nat;
     questionText : Text;
@@ -61,11 +45,35 @@ module {
     rejectedAt : ?Text;
   };
 
+  public type UserSubscription = {
+    userId : Text;
+    planType : Text;
+    status : Text;
+    deviceId : Text;
+    startDate : Text;
+    expiryDate : Text;
+    paymentRef : Text;
+    lastLoginDevice : Text;
+    userName : Text;
+  };
+
+  public type OldActor = {
+    adminQuestions : [Question];
+    paymentRecords : [PaymentRecord];
+    userSubscriptions : List.List<UserSubscription>;
+    subscriptionSettings : SubscriptionSettings;
+  };
+
+  public type NewActor = {
+    adminQuestions : [Question];
+    paymentRecords : [PaymentRecord];
+    userSubscriptions : List.List<UserSubscription>;
+    subscriptionSettings : SubscriptionSettings;
+    userSubscriptionsArray : [UserSubscription];
+  };
+
   public func run(old : OldActor) : NewActor {
-    let emptyPayments : [PaymentRecord] = [];
-    {
-      old with
-      paymentRecords = emptyPayments
-    };
+    let userSubscriptionsArray = old.userSubscriptions.toArray();
+    { old with userSubscriptionsArray };
   };
 };

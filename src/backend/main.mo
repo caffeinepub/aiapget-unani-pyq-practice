@@ -1,17 +1,20 @@
 import Array "mo:core/Array";
 import Map "mo:core/Map";
-import Nat "mo:core/Nat";
 import List "mo:core/List";
-import Iter "mo:core/Iter";
-import Principal "mo:core/Principal";
+import Nat "mo:core/Nat";
 import Text "mo:core/Text";
+import Iterate "mo:core/Iter";
+import Principal "mo:core/Principal";
 import Runtime "mo:core/Runtime";
 import Migration "migration";
+
 import MixinAuthorization "authorization/MixinAuthorization";
 import AccessControl "authorization/access-control";
 
-(with migration = Migration.run) actor {
-  public type Question = {
+// Data migration on upgrades
+(with migration = Migration.run)
+actor {
+  type Question = {
     id : Nat;
     questionText : Text;
     answerOptions : [Text];
@@ -21,25 +24,25 @@ import AccessControl "authorization/access-control";
     explanation : ?Text;
   };
 
-  public type UserProfile = {
+  type UserProfile = {
     name : Text;
     age : Nat;
     gender : Text;
   };
 
-  public type SubscriptionSettings = {
+  type SubscriptionSettings = {
     monthlyPrice : Nat;
     yearlyPrice : Nat;
     freeTrialDays : Nat;
   };
 
-  public type PaymentStatus = {
+  type PaymentStatus = {
     #pending;
     #approved;
     #rejected;
   };
 
-  public type PaymentRecord = {
+  type PaymentRecord = {
     id : Text;
     date : Text;
     plan : Text;
@@ -54,22 +57,41 @@ import AccessControl "authorization/access-control";
     rejectedAt : ?Text;
   };
 
-  var adminQuestions : [Question] = [];
+  public type UserSubscription = {
+    userId : Text;
+    planType : Text;
+    status : Text;
+    deviceId : Text;
+    startDate : Text;
+    expiryDate : Text;
+    paymentRef : Text;
+    lastLoginDevice : Text;
+    userName : Text;
+  };
+
+  // Stable variables
+  stable var adminQuestions : [Question] = [];
+  stable var paymentRecords : [PaymentRecord] = [];
+  var userSubscriptions = List.empty<UserSubscription>();
   let accessControlState = AccessControl.initState();
+
   let userProfiles = Map.empty<Principal, UserProfile>();
-  var subscriptionSettings : SubscriptionSettings = {
+  stable var subscriptionSettings : SubscriptionSettings = {
     monthlyPrice = 100;
     yearlyPrice = 800;
     freeTrialDays = 7;
   };
-  var paymentRecords : [PaymentRecord] = [];
+
+  // Migration implementation
+  stable var userSubscriptionsArray : [UserSubscription] = [];
 
   include MixinAuthorization(accessControlState);
 
-  // ── User profile functions (user-role required) ─────────────────────────────
+  // ─── User Profile Functions (Require User Role) ───────────────────────────
+
   public query ({ caller }) func getCallerUserProfile() : async ?UserProfile {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
-      Runtime.trap("Unauthorized: Only users can view their profile");
+      Runtime.trap("Unauthorized: Only users can view profiles");
     };
     userProfiles.get(caller);
   };
@@ -88,7 +110,7 @@ import AccessControl "authorization/access-control";
     userProfiles.add(caller, profile);
   };
 
-  // ── Subscription settings (public read, admin-only write) ──────────────────
+  // ── Subscription Settings (Public Read, Admin-Only Write) ────────────────
   public query func getSubscriptionSettings() : async SubscriptionSettings {
     subscriptionSettings;
   };
@@ -100,13 +122,13 @@ import AccessControl "authorization/access-control";
     subscriptionSettings := newSettings;
   };
 
-  // ── Question functions (no permission check) ───────────────────────────────
+  // ── Question Functions (No Admin Check per User Request) ──────────────────
+
   public shared ({ caller }) func addQuestion(newQuestion : Question) : async Bool {
-    let newQuestions = Array.tabulate(
+    adminQuestions := Array.tabulate(
       adminQuestions.size() + 1,
       func(i) { if (i < adminQuestions.size()) { adminQuestions[i] } else { newQuestion } },
     );
-    adminQuestions := newQuestions;
     true;
   };
 
@@ -135,7 +157,7 @@ import AccessControl "authorization/access-control";
     adminQuestions.filter(func(q) { q.year == year });
   };
 
-  // ── Payment record functions (open to all callers) ─────────────────────────
+  // ── Payment Record Functions (Open to All Callers) ───────────────────────
   public query func getPaymentRecords() : async [PaymentRecord] {
     paymentRecords;
   };
@@ -157,15 +179,13 @@ import AccessControl "authorization/access-control";
     true;
   };
 
-  // ── Admin-only payment approval functions ──────────────────────────────────
+  // ── Admin-Only Payment Approval Functions ────────────────────────────────
   public shared ({ caller }) func approvePayment(paymentId : Text, approvedAt : Text) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
       Runtime.trap("Unauthorized: Only admins can approve payments");
     };
     paymentRecords := paymentRecords.map(func(record) {
-      if (record.id == paymentId) {
-        { record with status = #approved; approvedAt = ?(approvedAt) };
-      } else { record };
+      if (record.id == paymentId) { { record with status = #approved; approvedAt = ?(approvedAt) } } else { record };
     });
     true;
   };
@@ -175,30 +195,107 @@ import AccessControl "authorization/access-control";
       Runtime.trap("Unauthorized: Only admins can reject payments");
     };
     paymentRecords := paymentRecords.map(func(record) {
-      if (record.id == paymentId) {
-        { record with status = #rejected; rejectedAt = ?(rejectedAt) };
-      } else { record };
+      if (record.id == paymentId) { { record with status = #rejected; rejectedAt = ?(rejectedAt) } } else { record };
     });
     true;
   };
 
-  // ── Device ID reset (open to all callers) ─────────────────────────────────
+  // ── Device ID Reset (Admin-Only) ─────────────────────────────────────────
   public shared ({ caller }) func resetDeviceBinding(paymentId : Text) : async Bool {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can reset device bindings");
+    };
     paymentRecords := paymentRecords.map(func(record) {
       if (record.id == paymentId) { { record with deviceId = null } } else { record };
     });
     true;
   };
 
-  // ── Attempt recording (user-only) ──────────────────────────────────────────
+  // ── Attempt Recording (Requires User Role) ───────────────────────────────
   public shared ({ caller }) func recordAttempt(questionId : Nat, answerIndex : Nat) : async Bool {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
       Runtime.trap("Unauthorized: Only users can record attempts");
     };
     switch (adminQuestions.find(func(q) { q.id == questionId })) {
-      case (null) { Runtime.trap("Question not found") };
+      case (null) {
+        Runtime.trap("Question not found");
+        false;
+      };
       case (?question) { question.correctAnswerIndex == answerIndex };
     };
   };
-};
 
+  // ─── Subscription Management ─────────────────────────────────────────────
+
+  public shared ({ caller }) func activateSubscription(sub : UserSubscription) : async Bool {
+    let existing = userSubscriptions.findIndex(func(s) { s.userId == sub.userId });
+    switch (existing) {
+      case (null) {
+        userSubscriptions.add(sub);
+        true;
+      };
+      case (?i) {
+        let newUserSubscriptions = List.empty<UserSubscription>();
+        var j = 0;
+        for (subscription in userSubscriptions.values()) {
+          if (j == i) {
+            newUserSubscriptions.add(sub);
+          } else {
+            newUserSubscriptions.add(subscription);
+          };
+          j += 1;
+        };
+        userSubscriptions := newUserSubscriptions;
+        true;
+      };
+    };
+  };
+
+  public query func getSubscriptionByUser(userId : Text) : async ?UserSubscription {
+    userSubscriptions.find(func(s) { s.userId == userId });
+  };
+
+  public query func getAllSubscriptions() : async [UserSubscription] {
+    userSubscriptions.toArray();
+  };
+
+  public shared ({ caller }) func resetSubscriptionDevice(userId : Text) : async Bool {
+    let newUserSubscriptions = userSubscriptions.map<UserSubscription, UserSubscription>(
+      func(sub) {
+        if (sub.userId == userId) { { sub with deviceId = "RESET_REQUESTED" } } else { sub };
+      }
+    );
+    userSubscriptions := newUserSubscriptions;
+    true;
+  };
+
+  public shared ({ caller }) func updateLastLoginDevice(userId : Text, deviceId : Text) : async Bool {
+    let newUserSubscriptions = userSubscriptions.map<UserSubscription, UserSubscription>(
+      func(sub) {
+        if (sub.userId == userId) { { sub with lastLoginDevice = deviceId } } else { sub };
+      }
+    );
+    userSubscriptions := newUserSubscriptions;
+    true;
+  };
+
+  public shared ({ caller }) func cancelSubscription(userId : Text) : async Bool {
+    let newUserSubscriptions = userSubscriptions.map<UserSubscription, UserSubscription>(
+      func(sub) {
+        if (sub.userId == userId) { { sub with status = "cancelled" } } else { sub };
+      }
+    );
+    userSubscriptions := newUserSubscriptions;
+    true;
+  };
+
+  // Migration implementation
+  system func preupgrade() {
+    userSubscriptionsArray := userSubscriptions.toArray();
+  };
+
+  system func postupgrade() {
+    userSubscriptions := List.fromArray(userSubscriptionsArray);
+    userSubscriptionsArray := [];
+  };
+};

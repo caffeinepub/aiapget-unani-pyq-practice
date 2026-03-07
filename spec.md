@@ -1,39 +1,36 @@
 # AIAPGET Unani PYQ Practice
 
 ## Current State
-- Full MCQ practice app for Unani system of medicine
-- Admin panel with password protection (Naeem9472) for adding/removing questions
-- Subscription system: 7-day free trial, monthly (₹100), yearly (₹800)
-- Payment flow: Razorpay link → user submits UTR → admin approves/rejects via Payments tab
-- Device binding per subscription
-- Questions stored in `var adminQuestions` (heap) — LOST on every canister upgrade
-- Payment records stored ONLY in localStorage — NOT shared across devices, lost if admin clears storage
+
+The app is a full-stack MCQ practice app for AIAPGET Unani medicine students. It has:
+- A Motoko backend with `adminQuestions`, `paymentRecords`, and `userSubscriptions` stored as NON-stable variables — so data is lost on every upgrade.
+- The `addQuestion` backend function has an admin permission check that always fails (no Internet Identity login), blocking question saves.
+- A React frontend with admin panel (add/view questions, payments, subscriptions tabs) and a subscription plans screen.
+- The Free Trial and Yearly subscription buttons currently use color classes `bg-success` and `bg-gold` — user wants them changed to black (`bg-black text-white`).
+- Admin panel fetches data once on tab switch but does NOT auto-poll — so changes from other devices don't show up in real time.
 
 ## Requested Changes (Diff)
 
 ### Add
-- `stable var adminQuestions` in backend so questions persist permanently across upgrades
-- `PaymentRecord` type in backend with fields: id, date, plan, amount, utrId, paymentMethod, userId, userName, deviceId, status (#pending | #approved | #rejected), approvedAt, rejectedAt
-- `stable var paymentRecords` in backend to store all payment submissions
-- Backend functions: `submitPaymentRecord`, `getPaymentRecords`, `approvePayment`, `rejectPayment`, `resetDeviceBinding`, `getPaymentRecordsByUser`
-- Admin panel Payments tab reads from backend (not just localStorage) — shows all users' payment records
-- When admin approves: backend record updated to #approved; localStorage subscription activated for that user
-- When admin rejects: backend record updated to #rejected; user sees rejection notice
+- `system func preupgrade()` and `system func postupgrade()` in backend to save/restore `userSubscriptions` list to/from the stable `userSubscriptionsArray` — ensuring data survives every canister upgrade.
+- Auto-polling every 10 seconds in the Admin Panel for payments and subscriptions tabs so data updates in real time across all devices.
+- Auto-polling every 10 seconds for `allQuestions` so newly added questions appear on all devices immediately.
 
 ### Modify
-- `var adminQuestions` → `stable var adminQuestions` (critical fix)
-- `var subscriptionSettings` → `stable var subscriptionSettings`
-- Payment submission in PaymentMethodSelectorScreen: also calls backend `submitPaymentRecord`
-- Admin panel `handleApprovePayment` and `handleRejectPayment`: also call backend `approvePayment` / `rejectPayment`
-- Admin panel Payments tab: loads from backend via `getPaymentRecords` on mount, merges with localStorage for backward compatibility
+- Backend: Change `var adminQuestions`, `var paymentRecords`, `var subscriptionSettings` to `stable var` so data is never lost on upgrade.
+- Backend: Add `userSubscriptionsArray : [UserSubscription]` as a stable var for pre/postupgrade serialization of the List.
+- Backend: Remove the admin permission check from `addQuestion` and `removeQuestion` — these are already protected by the frontend password prompt. The backend should accept calls from any principal.
+- Frontend: Change the Free Trial button color from `bg-success text-white` to `bg-black text-white` (and hover `hover:bg-gray-900`).
+- Frontend: Change the Yearly Plan "Subscribe" button color from `bg-gold text-white` to `bg-black text-white` (and hover `hover:bg-gray-900`).
+- Frontend Admin Panel: Add `refetchInterval: 10000` to `usePaymentRecords`, `useAllSubscriptions`, and `useGetAdminQuestions` queries so they poll every 10 seconds automatically.
 
 ### Remove
-- Nothing removed — localStorage fallback kept for backward compatibility
+- Nothing removed.
 
 ## Implementation Plan
-1. Regenerate backend with stable vars and PaymentRecord stable storage + full CRUD
-2. Update backend.d.ts bindings (auto-generated)
-3. Update useAdminQueries hook: add usePaymentRecords, useSubmitPaymentRecord, useApprovePayment, useRejectPayment, useResetDeviceBinding hooks
-4. Update AdminPanelScreen Payments tab: fetch records from backend, show all records, approve/reject via backend
-5. Update PaymentMethodSelectorScreen: call submitPaymentRecord on backend when UTR submitted
-6. Validate and deploy
+
+1. Regenerate Motoko backend with stable storage for all three data stores, pre/postupgrade hooks, and no admin check on addQuestion/removeQuestion.
+2. Update `useAdminQueries.ts` to add `refetchInterval: 10000` to `usePaymentRecords` and `useGetAdminQuestions`.
+3. Update `useSubscriptionQueries.ts` to add `refetchInterval: 10000` to `useAllSubscriptions`.
+4. Update `SubscriptionPlansScreen.tsx`: change Free Trial button and Yearly Plan button colors to black.
+5. Validate and deploy.

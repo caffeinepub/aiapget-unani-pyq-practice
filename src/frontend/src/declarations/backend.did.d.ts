@@ -49,12 +49,26 @@ export interface UserProfile {
 export type UserRole = { 'admin' : null } |
   { 'user' : null } |
   { 'guest' : null };
+export interface UserSubscription {
+  'status' : string,
+  'userName' : string,
+  'lastLoginDevice' : string,
+  'expiryDate' : string,
+  'userId' : string,
+  'deviceId' : string,
+  'paymentRef' : string,
+  'planType' : string,
+  'startDate' : string,
+}
 export interface _SERVICE {
   '_initializeAccessControlWithSecret' : ActorMethod<[string], undefined>,
+  'activateSubscription' : ActorMethod<[UserSubscription], boolean>,
   'addQuestion' : ActorMethod<[Question], boolean>,
   'approvePayment' : ActorMethod<[string, string], boolean>,
   'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
+  'cancelSubscription' : ActorMethod<[string], boolean>,
   'getAdminQuestions' : ActorMethod<[], Array<Question>>,
+  'getAllSubscriptions' : ActorMethod<[], Array<UserSubscription>>,
   'getByTopic' : ActorMethod<[string], Array<Question>>,
   'getByYear' : ActorMethod<[string], Array<Question>>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
@@ -62,6 +76,7 @@ export interface _SERVICE {
   'getPaymentRecords' : ActorMethod<[], Array<PaymentRecord>>,
   'getPaymentRecordsByUser' : ActorMethod<[string], Array<PaymentRecord>>,
   'getQuestions' : ActorMethod<[], Array<Question>>,
+  'getSubscriptionByUser' : ActorMethod<[string], [] | [UserSubscription]>,
   'getSubscriptionSettings' : ActorMethod<[], SubscriptionSettings>,
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
   'isCallerAdmin' : ActorMethod<[], boolean>,
@@ -69,8 +84,10 @@ export interface _SERVICE {
   'rejectPayment' : ActorMethod<[string, string], boolean>,
   'removeQuestion' : ActorMethod<[bigint], boolean>,
   'resetDeviceBinding' : ActorMethod<[string], boolean>,
+  'resetSubscriptionDevice' : ActorMethod<[string], boolean>,
   'saveCallerUserProfile' : ActorMethod<[UserProfile], undefined>,
   'submitPaymentRecord' : ActorMethod<[PaymentRecord], boolean>,
+  'updateLastLoginDevice' : ActorMethod<[string, string], boolean>,
   'updateSubscriptionSettings' : ActorMethod<[SubscriptionSettings], undefined>,
 }
 export declare const idlService: IDL.ServiceClass;
