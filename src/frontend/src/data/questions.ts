@@ -18,6 +18,27 @@ export const TOPICS = [
   "Ilmul Qabalat",
   "Hifzane Sehat",
   "Tahaffuzi wa Samaji Tib",
+  "Ilmul Nafsiyat",
+  "Ilmul Saidla",
+  "Niswan wa Atfal",
+  "Ain, Uzn, Anf, Halaq",
+  "Qanoon wa Tibb",
+  "Nazariyat wa Usool",
+  "Ilmul Tashkhees",
+  "Mabadia wa Arkan",
+  "Akhlat wa Mizaj",
+  "Tadbeer wa Ilaj",
+  "Amraz Jild",
+  "Amraz Qalb wa Awiye Damawiya",
+  "Amraz Kuliya wa Masalak Baul",
+  "Amraz Jauz Hazm",
+  "Amraz Asab",
+  "Amraz Tifl",
+  "Amraz Mushtaraka",
+  "Khas Ilaj",
+  "Marham wa Zimad",
+  "Ilmul Haywanat",
+  "Ilaj bil Tadbeer",
 ];
 
 export const YEARS = [
@@ -1790,5 +1811,3535 @@ export const questions: Question[] = [
     year: 2025,
     explanation:
       "Mufarrih refers to exhilarant drugs that elevate mood, strengthen the heart, and produce a sense of well-being in Unani medicine.",
+  },
+
+  // AIAPGET 2025 Official Paper Questions
+  {
+    id: 141,
+    text: "In which of the following Seasons Diet should be minimized?",
+    options: ["Rabi", "Khareef", "Shita", "Saif"],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "In Saif (summer season), diet should be minimized according to Unani medicine because the digestive power (Quwwat-e-Hazima) is weakened in summer as the internal heat disperses outward, making the body less capable of digesting heavy food.",
+  },
+  {
+    id: 142,
+    text: 'Statement I: Since the quantity of "Nutfah" is very little, hence it may disappear within no time.\nStatement II: It is the magical performance of "Balgham", which leads to this tiny particle to become a complete human body.',
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "Both statements are correct. Nutfah (semen/sperm) is indeed a very small quantity and can disappear quickly if not preserved. According to Unani embryology, Balgham (phlegm) plays a vital role in the development of Nutfah, helping it grow into a complete human body by providing the moist, sticky medium needed for cell formation.",
+  },
+  {
+    id: 143,
+    text: "Match List I with List II:\n(A) Jasha — Gas that passes from stomach through mouth\n(B) Qai — With movement of stomach, water of stomach is also expelled\n(C) Matli — Occurs before vomiting; felt that there will be movement of stomach\n(D) Tahawwo — Food etc. are not expelled out with the movement of stomach",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+    ],
+    correctIndex: 1,
+    topic: "Amraz Jauz Hazm",
+    year: 2025,
+    explanation:
+      "Jasha is gas passing from stomach through mouth (belching) — (IV). Qai (vomiting) involves expulsion of stomach contents with water — (III). Matli (nausea) is the sensation before vomiting — (I). Tahawwo is stomach movement without food expulsion — (II). Correct match: A-IV, B-III, C-I, D-II.",
+  },
+  {
+    id: 144,
+    text: "Which of the following are correct about umbilical cord? (A) Battledore placenta (B) Membranous placenta (C) Vilamentous placenta (D) True knot (E) False knot",
+    options: [
+      "(A), (B), (C), (D) only",
+      "(A), (C), (D), (E) only",
+      "(B), (C), (D), (E) only",
+      "(A), (B), (D), (E) only",
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "Correct abnormalities associated with umbilical cord: Battledore placenta (cord at placental margin), Vilamentous placenta (cord in membranes), True knot, and False knot. Membranous placenta is a placental anomaly, not an umbilical cord abnormality. Hence A, C, D, E are correct.",
+  },
+  {
+    id: 145,
+    text: "Match the Unani scholars with their books:\n(A) Rabban Tabari (B) Zakariya Razi (C) Ibn Sina (D) Ibn Rushd\n(I) Kitab al-Kulliyat (II) Alqanun Fi-al-tibb (III) Firdaus-al-Hikmat (IV) Kitab-al-Hawi",
+    options: [
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Rabban Tabari wrote Firdaus-al-Hikmat (III) — one of the earliest medical encyclopedias. Zakariya Razi authored Kitab-al-Hawi (IV) — a monumental encyclopedia. Ibn Sina wrote Alqanun Fi-al-tibb (II) — the Canon of Medicine. Ibn Rushd authored Kitab al-Kulliyat (I) — covering general principles of medicine.",
+  },
+  {
+    id: 146,
+    text: "Statement I: Fasd (Venesection) is not permitted in any kind of fever.\nStatement II: Fasd (Venesection) is permitted by hummiyat-e-ufooniyah (infectious fevers) but not hummiyat-e-safravi (bilious fevers).",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Both statements are incorrect. Fasd (venesection) IS permitted in certain fevers — particularly hummiyat-e-dam (blood fevers) and hummiyat-e-safravi when there is plethora (excess). Statement I is wrong because Fasd can be used in some fevers. Statement II is also wrong as Fasd can be indicated in safravi fevers too when conditions are met.",
+  },
+  {
+    id: 147,
+    text: "Which of the following drug is Tuberus root?",
+    options: ["Waj Turki", "Chobchini", "Saad kufi", "Reshae Bargad"],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Reshae Bargad refers to the roots of the Banyan tree (Ficus benghalensis). In Unani pharmacy, it is classified as a tuberous root preparation. Waj Turki (Acorus calamus) and Chobchini (Smilax china) are rhizomes, while Saad kufi (Cyperus rotundus) is a tuber. Reshae Bargad specifically denotes the prop/aerial roots which are the tuberous root form used medicinally.",
+  },
+  {
+    id: 148,
+    text: "Huqna (enema) with ice-cold water after hummiyat-e-muharriqa (acute/high fevers) is a type of:",
+    options: [
+      "Huqna-e-mus'hila (laxative enema)",
+      "Huqna-e-mughazzia (nutritive enema)",
+      "Huqna-e-muhallila (resolvent enema)",
+      "Huqna-e-mubaddila-e-mizaj (enema which modifies temperament)",
+    ],
+    correctIndex: 3,
+    topic: "Ilaj bil Tadbeer",
+    year: 2025,
+    explanation:
+      "Ice-cold water enema after high fevers is Huqna-e-mubaddila-e-mizaj (temperament-modifying enema). Its purpose is to cool the body and change the hot temperament. This type of enema specifically alters the mizaj (temperament) of the body and affected organs, reducing hyperthermia in acute febrile conditions.",
+  },
+  {
+    id: 149,
+    text: "Which of the following is a type of principles of Drug action in Unani medicine?",
+    options: ["Distribution", "Excretion", "Irritation", "Concentration"],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Irritation (Tahyeej) is a recognized principle of drug action in Unani pharmacology. Drugs act through various principles including irritation/stimulation of tissues. Distribution and Excretion are modern pharmacokinetic terms. Concentration is a physical property. According to Unani principles, Irritation is one of the primary mechanisms by which drugs exert their effects.",
+  },
+  {
+    id: 150,
+    text: "What is the second name of Mizaj Mutadil tibbi (relative balanced temperament)?",
+    options: [
+      "Su-i-Mizaj",
+      "Mizaj Mutadil Haqique",
+      "Mizaj-e-Sanwi",
+      "Ad'l Fi al-Qismat",
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Mizaj Mutadil Tibbi (relative/practical balanced temperament) is also called Ad'l Fi al-Qismat (balance in proportional distribution). This temperament is practically achievable and found in healthy humans. It is distinct from Mizaj Mutadil Haqique (true/theoretical perfect balance) which is only a philosophical ideal.",
+  },
+  {
+    id: 151,
+    text: "Which of the following is seen in case of Naum (sleep)? (A) Similar to Sukoon Nafsani (B) Excess causes Hararat (C) Excess causes Ratoobat (D) Similar to Harkate Badani (E) Excess decreases digestion",
+    options: ["(A) and (C)", "(B) and (D)", "(C) and (E)", "(A) and (E)"],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Naum (sleep) is similar to Sukoon Nafsani (mental/psychic rest) — (A) correct. Its excess causes Ratoobat (moisture/dampness) leading to phlegmatic conditions — (C) correct. Sleep does not cause Hararat; excessive sleep promotes dampness not heat. Sleep is opposite to Harkate Badani (physical movement), not similar. Answer: A and C.",
+  },
+  {
+    id: 152,
+    text: "Statement I: Humma Mawaziba is that infective fever where episodes of fever occur daily.\nStatement II: There is indigestion in Humma Mawaziba; Gastric insufficiency is very specific to this fever.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Both statements are correct. Humma Mawaziba is the quotidian (daily) infective fever where fever episodes occur every day. It is also specifically characterized by indigestion and gastric insufficiency (Dua-e-Ma'ida), which is a hallmark differentiating feature of this fever type from other infective fevers.",
+  },
+  {
+    id: 153,
+    text: "Match the NSAID classes with drugs:\n(A) Pyrrolo-pyrrole derivatives (B) Propionic acid derivatives (C) Aryl-acetic acid derivatives (D) Pyrazolone derivatives\n(I) Ketoprofen (II) Oxyphenbutazone (III) Ketorolac (IV) Aceclofenac",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+      "(A)-(III), (B)-(I), (C)-(IV), (D)-(II)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+    ],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Pyrrolo-pyrrole derivatives: Ketorolac (III). Propionic acid derivatives: Ketoprofen (I). Aryl-acetic acid derivatives: Aceclofenac (IV). Pyrazolone derivatives: Oxyphenbutazone (II). These are chemical classifications of NSAIDs. Correct answer: A-III, B-I, C-IV, D-II.",
+  },
+  {
+    id: 154,
+    text: "Statement I: Grey Turner's sign is seen in acute pancreatitis.\nStatement II: Cullen's sign is seen in subphrenic abscess.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Statement I is correct: Grey Turner's sign (flank ecchymosis/bluish discoloration) is a sign of acute hemorrhagic pancreatitis due to retroperitoneal bleeding tracking to flank. Statement II is incorrect: Cullen's sign (periumbilical bruising) is also a sign of acute pancreatitis (not subphrenic abscess). Both signs indicate severe hemorrhagic pancreatitis.",
+  },
+  {
+    id: 155,
+    text: "Which of the following drug is used as antiseptic in urine infection?",
+    options: ["Kabab Cheeni", "Yabrooj", "Rewand Cheeni", "Qalai"],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Kabab Cheeni (Cubeb / Piper cubeba) is used as a urinary antiseptic in Unani medicine. It has demonstrated antimicrobial properties specific to the urinary tract and is traditionally indicated in UTI and gonorrhea. It acts as a mucosal antiseptic for the genitourinary system.",
+  },
+  {
+    id: 156,
+    text: "Ma'ur Raeb is prepared from:",
+    options: ["Seed (Tukhm)", "Dahi (Curd)", "Shahad (Honey)", "Phal (Fruit)"],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "Ma'ur Raeb is a Unani medicinal preparation made from Dahi (curd/yogurt). It is prepared by processing curd using specific Unani pharmaceutical techniques. This preparation is used in gastrointestinal conditions and as a nutritive medicine in Unani practice.",
+  },
+  {
+    id: 157,
+    text: "The pain that occurs in Asab Warki Azeem (sciatic nerve) is called:",
+    options: ["Wajaul Warik", "Irqun Nasa", "Niqris", "Daaul Feel"],
+    correctIndex: 1,
+    topic: "Amraz Asab",
+    year: 2025,
+    explanation:
+      "Irqun Nasa is the Unani term for sciatica — pain along the course of Asab Warki Azeem (sciatic nerve). The pain radiates from the lumbar region through the buttock and down the leg. Wajaul Warik is hip joint pain, Niqris is gout (podagra), and Daaul Feel is elephantiasis (lymphedema).",
+  },
+  {
+    id: 158,
+    text: "How did Allama Najeebuddin Samarqandi classify the Hummiyat (fevers)?",
+    options: [
+      "Humma Yaum, Humma Diq and Humma Ufooni",
+      "Humma Ufooni and Ghair Ufooni",
+      "Humma Diq, Humma Ufooni and Humma Tafeeha",
+      "Humma Saleema and Humma Khabeesa",
+    ],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Allama Najeebuddin Samarqandi classified Hummiyat into three types: Humma Yaum (ephemeral fever — lasts one day, arising from spirits/ruh), Humma Diq (hectic fever — arising from solid organs/azae raisa), and Humma Ufooni (putrid/infective fever — arising from humors/akhlat). This classification is from his famous work Aghraz-al-Tibb.",
+  },
+  {
+    id: 159,
+    text: "Statement I: The primary cause of myocardial infarction is rupture of an atherosclerotic plaque in a coronary artery.\nStatement II: Cardiac troponins lack specificity for myocardial infarction and can also be elevated in conditions such as pulmonary embolism.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 0,
+    topic: "Amraz Qalb wa Awiye Damawiya",
+    year: 2025,
+    explanation:
+      "Both statements are correct. MI is primarily caused by atherosclerotic plaque rupture leading to thrombus formation and coronary occlusion (Statement I correct). Cardiac troponins (cTnI and cTnT) are highly sensitive but not completely specific — they are also elevated in pulmonary embolism, myocarditis, renal failure, sepsis (Statement II correct).",
+  },
+  {
+    id: 160,
+    text: "Attraction of WBCs towards the injured tissue occurs by:",
+    options: ["Ameboid movement", "Phagocytosis", "Diapedesis", "Chemotaxis"],
+    correctIndex: 3,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Chemotaxis is the directional movement of WBCs towards chemical attractants (chemokines, C5a, IL-8, LTB4) released at the injury/infection site. Ameboid movement is the locomotion mechanism WBCs use. Diapedesis is extravasation through vessel walls. Phagocytosis is engulfment of pathogens. The attraction/homing signal is chemotaxis.",
+  },
+  {
+    id: 161,
+    text: "Alamat of Ghalba Sawda excludes:",
+    options: [
+      "Sozish at Fam Me'da",
+      "Ghilzat Dam",
+      "Excessive Fikr",
+      "Polydepsia",
+    ],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Ghalba Sawda (dominance of black bile) causes symptoms like Ghilzat Dam (thick/dense blood), Excessive Fikr/Waswas (melancholy, obsessive thinking), Polydepsia (due to dryness of sawda temperament), fear, sadness, and Su-ul-Fikr. Sozish at Fam Me'da (burning sensation at the mouth of stomach) is a symptom of Ghalba Safra (yellow bile dominance), not Sawda, because Safra has hot temperament causing burning sensations. Hence Sozish at Fam Me'da is excluded from Ghalba Sawda.",
+  },
+  {
+    id: 162,
+    text: "Which one of the following is very useful investigation for small bowel disease?",
+    options: [
+      "Barium meal follow through",
+      "NCCT abdomen",
+      "Capsule endoscopy",
+      "Ultrasonography",
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Capsule endoscopy is the most useful investigation for small bowel disease. The patient swallows a small camera-capsule that takes thousands of images traversing the GI tract. It is particularly useful for obscure GI bleeding, Crohn's disease, small bowel tumors, and polyps — conditions difficult to visualize by conventional endoscopy or barium studies. Barium meal follow through is older and less sensitive; NCCT misses mucosal lesions; USG has limited small bowel utility.",
+  },
+  {
+    id: 163,
+    text: "Khameera is prepared by the following sequence:\n(A) Qiwam is stirred vigorously\n(B) Preparation of Joshanda of crude drugs\n(C) Addition of Aromatic drugs like Musk, Amber Zafran in luke warm Qiwam\n(D) Joshanda is prepared in Qiwam form\n(E) Mixing of powder of madni drugs in khamira",
+    options: [
+      "(B), (D), (C), (A), (E)",
+      "(C), (B), (D), (E), (A)",
+      "(A), (B), (C), (D), (E)",
+      "(A), (E), (D), (B), (C)",
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "The correct sequence for preparation of Khameera: (B) Joshanda (decoction) of crude drugs is prepared first → (D) Joshanda is concentrated into Qiwam (syrup) form → (C) Aromatic drugs like Musk, Amber, Zafran are added in lukewarm Qiwam → (A) Qiwam is stirred vigorously for uniform mixing → (E) Powders of madni (mineral) drugs are mixed into the khamira. This sequence ensures heat-sensitive aromatics are not destroyed and minerals are uniformly dispersed.",
+  },
+  {
+    id: 164,
+    text: "Following are correct statements related to Spleen:\n(A) Spleen is normally Non-palpable.\n(B) Spleen has to enlarge 2 to 3 times its usual size to become palpable.\n(C) Enlargement takes place in a inferior and anterior direction before it becomes palpable subcostally.\n(D) Once the spleen has become palpable, the direction of further enlargement is downwards and towards the right iliac fossa.",
+    options: [
+      "(A), (B) and (C) only",
+      "(A), (B) and (D) only",
+      "(A), (C) and (D) only",
+      "(B), (C) and (D) only",
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Correct statements about spleen: (A) TRUE — Spleen is normally non-palpable as it lies under the left costal margin. (B) TRUE — Spleen must enlarge 2-3 times its normal size before becoming palpable subcostally. (D) TRUE — Once palpable, further splenic enlargement proceeds downward and toward the right iliac fossa following the direction of the 9th rib. Statement (C) is incorrect: splenic enlargement takes place in an inferomedial direction (not inferior and anterior), following the line of the 9th rib.",
+  },
+  {
+    id: 165,
+    text: "Shrapnell's Membrane is situated:",
+    options: [
+      "Situated above the lateral process of malleus between notch of Rivinus notch and anterior, posterior malleal fold",
+      "Situated above the medial process of malleus between notch of Tympanic membrane",
+      "Situated above the lateral and inferior process of pass (PARS) Tensa and Umbo",
+      "Situated above the medial process of malleus between notch of Pinna and Pars Tensa with Umbo",
+    ],
+    correctIndex: 0,
+    topic: "Amraz Uzn wa Anf wa Halaq",
+    year: 2025,
+    explanation:
+      "Shrapnell's membrane (Pars Flaccida) is the small, triangular, lax portion of the tympanic membrane. It is situated above the lateral process of the malleus, between the notch of Rivinus (Incisura tympanica) superiorly and the anterior and posterior malleal folds inferiorly. It is called 'flaccida' because it lacks the fibrous layer present in Pars Tensa, making it lax. It is clinically important as attic cholesteatoma originates from this area.",
+  },
+  {
+    id: 166,
+    text: 'Statement I: Ibn Nafis wrote the "talkhees" of Abul Hasan Ali bin Sahl book "Firdus al-Hikmat" by the name of "Mojaz-al-Qanun".\nStatement II: Nafis bin Auz Kirmani wrote the "Sharah" of "Mojaz-al-Qanun", which became popular by the name "Sharah Nafisi".',
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Statement I is INCORRECT: Ibn Nafis wrote Mojaz-al-Qanun as a summary of Ibn Sina's Al-Qanun Fi al-Tibb (not of Firdus al-Hikmat which was written by Ali ibn Rabban al-Tabari). Statement II is CORRECT: Nafis bin Auz Kirmani (15th century) wrote a detailed commentary (Sharah) on Mojaz-al-Qanun, which became famous as 'Sharah Nafisi' and is an important reference in Unani medicine.",
+  },
+  {
+    id: 167,
+    text: "Choose the correct answer from the options given below:\n(A) Patch testing is the investigation of choice for delayed, cell-mediated, type IV hypersensitivity reactions to topical agents.\n(B) Patch testing investigates delayed hypersensitivity reactions to a topically applied agent.\n(C) Potential allergens are applied as patches to the back under occlusion for 48 hours.\n(D) After 48 hours the patches are removed and readings are undertaken at time points of up to 7 days, typical being at 96 hours.\n(E) Important to determine clinical relevance of allergic reactions before giving avoidance advice.",
+    options: [
+      "(B), (C), (D), (E)",
+      "(A), (C), (D), (E)",
+      "(B), (C), (D)",
+      "(A), (C), (D)",
+    ],
+    correctIndex: 1,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "Correct statements about patch testing: (A) TRUE — patch test is gold standard for Type IV (delayed/cell-mediated) hypersensitivity to topical agents (contact dermatitis). (C) TRUE — allergens applied to upper back under occlusion for 48 hours. (D) TRUE — patches removed at 48 hrs, readings taken at 96 hrs (and up to 7 days) to capture delayed reactions. (E) TRUE — determining clinical relevance is essential before avoidance advice. Statement (B) is less specific than (A). Correct combination: A, C, D, E.",
+  },
+  {
+    id: 168,
+    text: "According to Jalinus (Galen), which are those two organs whose temperament is in accordance with the composition of Body?",
+    options: [
+      "Qalb, Kabid",
+      "Qalb, Dimagh",
+      "Kabid, Dimagh",
+      "Qalb, Khusyatain",
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "According to Jalinus (Galen), Qalb (heart) and Dimagh (brain) are the two principal organs (Azae Raisa) whose temperament corresponds to the overall temperament/composition of the body (Mizaj-e-Badan). The heart has warm and moist temperament representing vitality, while the brain has cold and moist temperament. Together, their combination reflects the body's general constitutional temperament. This concept is foundational in Unani physiology.",
+  },
+  {
+    id: 169,
+    text: "Match List I with List II (Types of Abnormal Pelvis):\n(A) Nutritional defects\n(B) Bone disease\n(C) Injured pelvis\n(D) Developmental defects",
+    options: [
+      "(A)-(I) Fracture, (B)-(II) Naegele's, (C)-(III) Spondylolisthesis, (D)-(IV) Rachitic",
+      "(A)-(II) Naegele's, (B)-(III) Spondylolisthesis, (C)-(I) Fracture, (D)-(IV) Rachitic",
+      "(A)-(IV) Rachitic, (B)-(II) Naegele's, (C)-(III) Spondylolisthesis, (D)-(I) Fracture",
+      "(A)-(IV) Rachitic pelvis, (B)-(III) Spondylolisthesis, (C)-(I) Fracture of pelvis, (D)-(II) Naegele's pelvis",
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "Correct matching: (A) Nutritional defects → (IV) Rachitic pelvis (Vitamin D deficiency/rickets deforms the growing pelvis). (B) Bone disease → (III) Spondylolisthesis of pelvis (forward slipping of lumbar vertebra onto sacrum). (C) Injured pelvis → (I) Fracture of pelvis (direct injury). (D) Developmental defects → (II) Naegele's pelvis (congenital absence/fusion of one sacral ala, causing obliquely contracted pelvis).",
+  },
+  {
+    id: 170,
+    text: "Secondary villi are formed on:",
+    options: ["13th day", "12th day", "10th day", "16th day"],
+    correctIndex: 3,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "Development of chorionic villi: Primary villi (solid cytotrophoblast cores) form around day 13-14. Secondary villi form when mesoderm grows into the primary villi core around day 16. Tertiary villi form when blood vessels differentiate within the mesodermal core around day 21. Hence secondary villi are formed on approximately the 16th day of embryonic development.",
+  },
+  {
+    id: 171,
+    text: "Purpura, Petechial haemorrhages in the skin, nails and mucous membranes and splinter haemorrhages are features of which of the following condition?",
+    options: [
+      "Right sided heart failure",
+      "Mitral Stenosis",
+      "Sub-acute bacterial endocarditis",
+      "Acute Pericarditis",
+    ],
+    correctIndex: 2,
+    topic: "Amraz Qalb wa Awiye Damawiya",
+    year: 2025,
+    explanation:
+      "Sub-acute bacterial endocarditis (SBE) classically presents with: Petechiae (skin, conjunctiva, mucous membranes), Splinter haemorrhages (linear dark streaks under nails due to microemboli), Purpura, Osler's nodes (painful nodules on finger pads), Janeway lesions (painless on palms/soles), and Roth spots (retinal haemorrhages). These result from immune complex deposition and septic microemboli from infected heart valves.",
+  },
+  {
+    id: 172,
+    text: "Which of the followings are galls?\n(A) Bussad\n(B) Mayeen\n(C) Kakda sengi\n(D) Mazoo\n(E) Zare ward",
+    options: [
+      "(A), (B), (C) Only",
+      "(A), (C), (D) Only",
+      "(C), (D), (E) Only",
+      "(B), (C), (D) Only",
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Galls (Afsh) are abnormal growths on plants caused by insects, fungi, or bacteria. (B) Mayeen — a type of gall from oak trees. (C) Kakda sengi — a type of gall. (D) Mazoo (Oak gall/Quercus infectoria) — the most famous gall, widely used in Unani medicine as a qabiz (astringent). Bussad (A) is coral (Marjan), not a gall. Zare ward (E) is rosebuds/petals, not a gall. Hence B, C, D are galls.",
+  },
+  {
+    id: 173,
+    text: "Which of the following medicine is specifically used in Zeequn Nafs (Asthma/Dyspnoea)?",
+    options: [
+      "Habbe Dabba Atfal",
+      "Dawaul Mauz",
+      "Intisaabi",
+      "Habbe Kakda Singi",
+    ],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Intisaabi is a classical Unani compound formulation specifically indicated for Zeequn Nafs (dyspnoea/asthma). It acts as a bronchodilator, expectorant, and mucolytic, helping relieve bronchospasm and clear mucus from airways. Habbe Dabba Atfal is for children's diseases. Dawaul Mauz is a general tonic. Habbe Kakda Singi is for respiratory conditions but Intisaabi is the specific drug for Zeequn Nafs.",
+  },
+  {
+    id: 174,
+    text: '"Phossy Jaw" occurs in:',
+    options: [
+      "Acute Arsenic Poisoning",
+      "Chronic Phosphorus Poisoning",
+      "Mercury Poisoning",
+      "Croton Tiglium Poisoning",
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Samoom",
+    year: 2025,
+    explanation:
+      "'Phossy Jaw' (phosphonecrosis of the jaw) is a classic occupational disease caused by chronic exposure to white/yellow phosphorus, historically seen in match factory workers. It presents with necrosis of the mandible and maxilla — the jawbone glows greenish in the dark. It is specifically associated with CHRONIC (not acute) phosphorus poisoning. Arsenic causes Mees' lines; Mercury causes erethism; Croton Tiglium is a purgative.",
+  },
+  {
+    id: 175,
+    text: "Find out the correct statement regarding Typhoid fever:\n(A) Widal test may be positive but it lacks specificity.\n(B) Lesion may be found at Peyer's patches.\n(C) Secondary bacteraemia never occurs.\n(D) Zenker's degeneration may be seen all over the abdomen.",
+    options: [
+      "(A), (B) and (C) only",
+      "(A), (C) and (D) only",
+      "(A) and (D) only",
+      "(A), (B) and (D) only",
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Regarding Typhoid fever: (A) TRUE — Widal test may be positive but lacks specificity due to cross-reactions with other conditions. (B) TRUE — Peyer's patches in the terminal ileum are the primary site of typhoid lesions, undergoing hyperplasia and ulceration. (C) As per the answer key provided in the question paper — this combination (A, B, C) is the accepted answer. (D) Zenker's degeneration (waxy degeneration) affects rectus abdominis muscle specifically in typhoid, not all over the abdomen, making D incorrect.",
+  },
+  {
+    id: 176,
+    text: "A very specific type of loose motion, where the reason is eruptions or ulcerations in the inner layers of the stomach, is called:",
+    options: ["Maddatul Batan", "Zarab", "Khilfa", "Zalaqul Ama'a"],
+    correctIndex: 0,
+    topic: "Amraz Jauz Hazm",
+    year: 2025,
+    explanation:
+      "Maddatul Batan is a specific Unani term for diarrhoea that arises specifically due to eruptions (busorat) or ulcerations in the inner mucosal layers of the stomach or intestines. This distinguishes it from: Zarab (diarrhoea due to weakness of intestinal retentive faculty), Khilfa (diarrhoea due to excess humors), and Zalaqul Ama'a (diarrhoea due to slipperiness of intestinal wall).",
+  },
+  {
+    id: 177,
+    text: "Statement I: If an organ is free of morbid matter, and there is no danger of inşibāb, then natul-e-har should be done first followed by natul-e-bārid.\nStatement II: If an organ is free of morbid matter, and there is no danger of inşibāb, then natul-e-bārid should be done first followed by natul-e-har.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ],
+    correctIndex: 3,
+    topic: "Ilaj bil Tadbeer",
+    year: 2025,
+    explanation:
+      "In Unani Ilaj bil Tadbeer, when an organ is free of morbid matter (khali az madda) and there is no danger of Inşibāb (absorption of morbid matter), the correct sequence is: Natul-e-Barid (cold affusion) FIRST followed by Natul-e-Har (hot affusion). Cold water first constricts vessels and prevents inşibāb; hot water subsequently relaxes and promotes circulation. Statement I reverses this sequence, so Statement I is incorrect and Statement II is correct.",
+  },
+  {
+    id: 178,
+    text: "Which of the following local Anaesthetics has low potency, short duration action?",
+    options: ["Procaine", "Lignocaine", "Prilocaine", "Tetracaine"],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Procaine (Novocaine) is the oldest synthetic local anaesthetic with LOW potency and SHORT duration of action (30-60 minutes). It is rapidly hydrolyzed by plasma cholinesterases. Lignocaine has intermediate potency and duration. Prilocaine has intermediate potency and duration. Tetracaine has HIGH potency and LONG duration — used for spinal and topical anaesthesia. Procaine's short-acting, low-potency profile makes it the correct answer.",
+  },
+  {
+    id: 179,
+    text: "Which degree of artificial heat is recommended in drying of leaves and flowers?",
+    options: [
+      "10-20 Degree Centigrade",
+      "60-70 Degree Centigrade",
+      "30-40 Degree Centigrade",
+      "80-90 Degree Centigrade",
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "In Unani Ilmul Saidla (pharmacy), the recommended temperature for artificial drying of leaves and flowers is 30-40°C. This gentle temperature preserves volatile oils, heat-sensitive active constituents, natural colors, and aromatic properties. Higher temperatures (60-70°C or 80-90°C) are used for roots, barks, and seeds that can withstand more heat. Very low temperatures (10-20°C) are insufficient for effective drying.",
+  },
+  {
+    id: 180,
+    text: "Match List I (Gynaecological conditions) with List II (Unani drugs used):\n(A) Pruritus vulvae\n(B) Vaginitis\n(C) Pelvic Inflammatory Disease (PID)\n(D) Dysmenorrhea and Amenorrhea",
+    options: [
+      "(A)-(I) Rasaut/Sandal Surkh/Kafoor/Phitkari, (B)-(III) Sibr saqutari/Heera kasees/Zafran, (C)-(IV) Gule Neem/Giloe/Sarphookah, (D)-(II) Tukhm methi/Kanocha/Alsi/Aspaghol",
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(II)",
+    ],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Correct matching: (A) Pruritus vulvae → Rasaut, Sandal Surkh, Kafoor, Phitkari (astringent, cooling, antiseptic drugs for vulval itching). (B) Vaginitis → Sibr saqutari zard, Heera kasees, Zafran Kashmiri (antimicrobial, anti-inflammatory). (C) PID → Gule Neem, Giloe sabz, Sarphookah, Gule Mundi, Barg-e-Shahtarah (anti-inflammatory, immunomodulatory). (D) Dysmenorrhea/Amenorrhea → Tukhm methi, Tukhm Kanocha, Alsi, Tukhm Khatmi, Aspaghol, Murdarsang (emmenagogues and uterine tonics).",
+  },
+  {
+    id: 181,
+    text: '"Urine is red like fluid of flesh and usually there is backache and lower back pain" is found in:',
+    options: [
+      "Huzaal-e-Kulya",
+      "Zoaf-e-Kulya",
+      "Waram-e-Kulya",
+      "Reehul Kulya",
+    ],
+    correctIndex: 2,
+    topic: "Amraz Kulya wa Masana",
+    year: 2025,
+    explanation:
+      "Waram-e-Kulya (inflammation/nephritis of kidney) presents with: urine that is red/blood-tinged resembling meat washings (haematuria), accompanied by backache and lower back pain (lumbar pain). This is the classical Unani description of kidney inflammation. Huzaal-e-Kulya = renal wasting/atrophy; Zoaf-e-Kulya = renal weakness (functional); Reehul Kulya = renal colic with gas.",
+  },
+  {
+    id: 182,
+    text: '"The stool reverts back to Stomach and expelled out in vomiting" is typically found in:',
+    options: ["Qoolanj", "Eilaaoos", "Maghas", "Zaheer"],
+    correctIndex: 1,
+    topic: "Amraz Jauz Hazm",
+    year: 2025,
+    explanation:
+      "Eilaaoos (Ileus) in Unani medicine refers to intestinal obstruction where fecal matter regurgitates backward into the stomach and is expelled through vomiting (feculent vomiting — a classic sign of mechanical or paralytic ileus). Qoolanj is colic without fecal vomiting; Maghas is tympanites/bloating; Zaheer is dysentery (mucus and blood in stool with tenesmus).",
+  },
+  {
+    id: 183,
+    text: "In involution, uterus reaches to non-pregnant stage at:",
+    options: ["2nd week", "3rd week", "4th week", "6th week"],
+    correctIndex: 3,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "Uterine involution timeline: immediately after delivery ~1000g; end of 1st week ~500g; 2nd week ~300g; 6th week returns to normal non-pregnant size (~60-80g). Complete involution, where the uterus reaches its pre-pregnant state, occurs by the 6th week postpartum. This is a well-established obstetric fact.",
+  },
+  {
+    id: 184,
+    text: "At birth the normal Umbilical cord contains:",
+    options: [
+      "Vitelline duct",
+      "Two Umbilical arteries + One Umbilical vein",
+      "Two Umbilical veins + One Umbilical artery",
+      "The ductus venosus only",
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "At birth, the normal umbilical cord contains TWO umbilical arteries (carrying deoxygenated blood from fetus to placenta) and ONE umbilical vein (carrying oxygenated blood from placenta to fetus), all embedded in Wharton's jelly. Remembered as '2 arteries, 1 vein'. A single umbilical artery is associated with congenital anomalies. The vitelline duct and ductus venosus are separate structures not present in the cord at birth.",
+  },
+  {
+    id: 185,
+    text: "Stages of clinical features of acute suppurative otitis media in correct sequence:\n(A) Stage of Perforation\n(B) Stage of Healing\n(C) Stage of Exudation\n(D) Stage of Hyperaemia\n(E) Stage of Complication",
+    options: [
+      "(D), (C), (A), (E), (B)",
+      "(D), (C), (A), (B), (E)",
+      "(C), (D), (A), (B), (E)",
+      "(D), (A), (C), (B), (E)",
+    ],
+    correctIndex: 1,
+    topic: "Amraz Uzn wa Anf wa Halaq",
+    year: 2025,
+    explanation:
+      "Acute Suppurative Otitis Media (ASOM) progresses through five classic stages: (D) Stage of Hyperaemia — initial congestion and redness of TM; (C) Stage of Exudation — fluid accumulation, bulging TM; (A) Stage of Perforation — spontaneous TM rupture with purulent discharge; (B) Stage of Healing — TM heals if treated; (E) Stage of Complication — if untreated, complications like mastoiditis occur. Sequence: D → C → A → B → E.",
+  },
+  {
+    id: 186,
+    text: "Causes of pruritus in pregnancy:\n(A) PUPPP\n(B) Acute cholestasis\n(C) Pemphigoid gestationis\n(D) Prurigo gestationis\n(E) Pruritic folliculitis",
+    options: [
+      "(A), (B), (C), (D), (E) only",
+      "(A), (B), (C), (D) only",
+      "(A), (C), (D), (E) only",
+      "(B), (C), (D), (E) only",
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Qabalat",
+    year: 2025,
+    explanation:
+      "All five are recognized causes of pruritus specific to pregnancy: (A) PUPPP (Pruritic Urticarial Papules and Plaques of Pregnancy) — most common, 3rd trimester; (B) Intrahepatic cholestasis of pregnancy — intense pruritus, risk of fetal distress; (C) Pemphigoid gestationis — autoimmune blistering disorder; (D) Prurigo gestationis — excoriated papules; (E) Pruritic folliculitis of pregnancy — follicular pustules. All A-E are dermatoses of pregnancy causing pruritus.",
+  },
+  {
+    id: 187,
+    text: "In which condition Cyanosis is NOT seen in the mucous membrane of the mouth?",
+    options: [
+      "Pulmonary oedema",
+      "Patent Ductus Arteriosus",
+      "Tetralogy of Fallot",
+      "Cold exposure",
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Central cyanosis (visible in mucous membranes of mouth and tongue) occurs with reduced arterial O2 saturation: Pulmonary oedema causes hypoxaemia → central cyanosis. PDA with Eisenmenger's → right-to-left shunt → central cyanosis. Tetralogy of Fallot → right-to-left shunt → central cyanosis. Cold exposure causes peripheral vasoconstriction and PERIPHERAL cyanosis in extremities only — arterial oxygen saturation remains normal, so mucous membranes of mouth stay pink (no central cyanosis).",
+  },
+  {
+    id: 188,
+    text: "Identify the sequence of strong effect to weak effect of drug action:\n(A) Muhammir\n(B) Muqarrih\n(C) Munaffit\n(D) Lādhi'\n(E) Mubaththir",
+    options: [
+      "(A), (B), (C), (D), (E)",
+      "(E), (D), (A), (C), (B)",
+      "(B), (C), (A), (D), (E)",
+      "(C), (B), (D), (A), (E)",
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "In Unani pharmacology, the sequence from STRONGEST to WEAKEST local drug effect: (B) Muqarrih (ulcerant/corrosive — strongest, causes ulceration) → (C) Munaffit (vesicant — causes blisters) → (A) Muhammir (rubefacient — causes redness) → (D) Lādhi' (irritant — mild irritation) → (E) Mubaththir (prurient — weakest, causes itching). This classical hierarchy from Ibn Sina's Qanun describes graduated intensity of locally acting drugs.",
+  },
+  {
+    id: 189,
+    text: "Which among the condition is related to Milk Hygiene?\n(A) Q-Fever\n(B) Y-Fever\n(C) Salmonellosis\n(D) Brucellosis\n(E) Byssinosis",
+    options: [
+      "(A), (B), (C), (D) Only",
+      "(A), (C), (D) Only",
+      "(A), (B), (D), (E) Only",
+      "(B), (C), (D), (E) Only",
+    ],
+    correctIndex: 1,
+    topic: "Amraz Amma",
+    year: 2025,
+    explanation:
+      "Milk-borne diseases: (A) Q-Fever (Coxiella burnetii) — transmitted via raw/unpasteurized milk from infected cattle/goats. (C) Salmonellosis — Salmonella contamination of milk and dairy products. (D) Brucellosis (Undulant fever) — classic milk-borne disease from Brucella in raw milk. 'Y-Fever' (B) is not a recognized medical condition. Byssinosis (E) is an occupational lung disease from cotton/flax dust inhalation — no relation to milk. Hence A, C, D only.",
+  },
+  {
+    id: 190,
+    text: "Which of the following drugs have cold and dry temperament?\n(A) Asrol\n(B) Turb\n(C) Gajar\n(D) Kishneez\n(E) Jozmasal",
+    options: [
+      "(A), (B), (C) Only",
+      "(B), (D), (E) Only",
+      "(A), (D), (E) Only",
+      "(A), (B), (D) Only",
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Temperament (Mizaj) of drugs: (A) Asrol (Rauwolfia serpentina) — cold and dry; used for hypertension. (D) Kishneez (Coriander) — cold and dry; used as carminative, antipyretic. (E) Jozmasal (Nutmeg) — cold and dry in classical Unani texts. (B) Turb (Radish) — hot and dry temperament. (C) Gajar (Carrot) — hot and moist temperament. Drugs with cold and dry mizaj: A, D, E.",
+  },
+  {
+    id: 191,
+    text: "How many coats (tunics) does the eyeball have?",
+    options: ["3", "6", "9", "12"],
+    correctIndex: 0,
+    topic: "Amraz Ayn",
+    year: 2025,
+    explanation:
+      "The eyeball has THREE concentric coats/tunics: (1) Outer fibrous coat — Cornea (anterior 1/6th) and Sclera (posterior 5/6th); (2) Middle vascular coat (Uveal tract) — Choroid, Ciliary body, and Iris; (3) Inner nervous coat — the Retina (containing rods and cones). These three layers enclose the lens, vitreous, and aqueous humour. This is fundamental ophthalmic anatomy.",
+  },
+  {
+    id: 192,
+    text: "Complications of Stapedectomy:",
+    options: [
+      "Frontal Headache and Nasal obstruction",
+      "Headache and Otalgia",
+      "Incus dislocation and Vertigo",
+      "Vertigo and Epistaxis",
+    ],
+    correctIndex: 2,
+    topic: "Amraz Uzn wa Anf wa Halaq",
+    year: 2025,
+    explanation:
+      "Stapedectomy (removal of stapes for otosclerosis) complications include: Incus dislocation — during ossicular chain manipulation, the incus may get dislocated causing conductive hearing loss. Vertigo — post-operative vertigo is common due to labyrinthine irritation or perilymph fistula. Other complications include perilymph gusher, sensorineural hearing loss, facial nerve injury, and tinnitus. Frontal headache, nasal obstruction, and epistaxis are not complications of stapedectomy.",
+  },
+  {
+    id: 193,
+    text: "Sharyanj, Surji, Shahdi, Rous-i-ibrah, Ajir are types of:",
+    options: ["Favus", "Scabies", "Leprosy", "Tinea"],
+    correctIndex: 0,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "In Unani Ilmul Amraz, Favus (Qaraʿ) is a fungal infection of the scalp characterized by scutula (cup-shaped crusts). Unani scholars classified different types of Favus including: Sharyanj, Surji, Shahdi (honey-colored), Rous-i-ibrah (needle-point type), and Ajir — all being clinical variants distinguished by appearance, color, and pattern of scalp lesions. This classification is from classical Unani dermatology.",
+  },
+  {
+    id: 194,
+    text: "Most common site of carcinoma of stomach is:",
+    options: [
+      "Pyloric region",
+      "Body of stomach",
+      "Fundus",
+      "Oesophagogastric junction",
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "The pyloric region (pylorus and pyloric antrum) is the most common site of gastric carcinoma, accounting for approximately 50-60% of cases. The incisura angularis and lesser curvature are also common sites. The body accounts for ~20%, and cardia/OG junction for 10-20%. In Indian studies and traditional teaching, pyloric region remains the most common site.",
+  },
+  {
+    id: 195,
+    text: "'Burooze Rahem' is also called as:",
+    options: [
+      "Mailan-e-Rahem",
+      "Unq-ur-Rahem",
+      "Zalaq-ur-Rahem",
+      "Ekhtenaq-ur-Rahem",
+    ],
+    correctIndex: 2,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Burooze Rahem (uterine prolapse) in Unani gynecology is also called Zalaq-ur-Rahem (slipping/sliding of the uterus — descent and protrusion through the vaginal opening). Mailan-e-Rahem = uterine version/displacement (tipping sideways or forward/backward). Unq-ur-Rahem = cervix uteri (neck of uterus — an anatomical term, not a disease). Ekhtenaq-ur-Rahem = uterine suffocation/hysteria (a different condition).",
+  },
+  {
+    id: 196,
+    text: "Which statement about the vestibule of Nose is correct?\n(A) Anterior and inferior part contains sebaceous glands, hair follicles and vibrissae.\n(B) Posterior and Lateral part contains sweat glands.\n(C) Anterior and inferior part called frontal sinus.",
+    options: [
+      "(A) and (B) only",
+      "(B) and (C) only",
+      "(A) and (C) only",
+      "(A) only",
+    ],
+    correctIndex: 3,
+    topic: "Amraz Uzn wa Anf wa Halaq",
+    year: 2025,
+    explanation:
+      "The vestibule of the nose (most anterior part of nasal cavity, lined by keratinized squamous epithelium): Only Statement (A) is correct — the anterior and inferior part contains sebaceous glands, hair follicles, and vibrissae (coarse hairs filtering inhaled particles). Statement (B) is incorrect — there are no sweat glands in the posterior/lateral vestibule. Statement (C) is incorrect — the frontal sinus is a separate paranasal sinus in the frontal bone, not part of the vestibule.",
+  },
+  {
+    id: 197,
+    text: "Motadil (normal/moderate) condition of which indicator of pulse is NOT considered normal (Tabayee)?",
+    options: [
+      "Miqdaar-e-Imbisaat",
+      "Kaifiyat-e-Qara'a",
+      "Khalaa wa Imtila",
+      "Zamana Harkat",
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "In Unani pulse examination (Ilm-ul-Nabz), Kaifiyat-e-Qara'a (quality of striking force — hardness/softness) — when this is Motadil (moderate/intermediate between hard and soft), it is NOT considered the ideal Tabayee (physiological normal) condition. Other pulse parameters like Miqdaar-e-Imbisaat (size), Khalaa wa Imtila (emptiness/fullness), and Zamana Harkat (timing) all have recognized Motadil states that are considered Tabayee/normal.",
+  },
+  {
+    id: 198,
+    text: 'The temperament of "Balgham-i-Hamiz" (Sour Phlegm) inclines towards:',
+    options: [
+      "Hotness and Dryness",
+      "Hotness and Moistness",
+      "Coldness and Dryness",
+      "Coldness and Moistness",
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Balgham (phlegm) has a basically cold and moist temperament. Balgham-i-Hamiz (sour/acidic phlegm) has undergone fermentation/souring, which changes its character — the moistness decreases and dryness increases due to fermentation while retaining its cold quality. Hence Balgham-i-Hamiz inclines towards COLDNESS and DRYNESS (Sard aur Khushk). The sourness indicates fermentative change reducing normal moisture.",
+  },
+  {
+    id: 199,
+    text: "Which receptor of hormone is situated in nucleus?",
+    options: [
+      "Adrenal medullary hormone",
+      "Cortisol",
+      "Parathormone",
+      "Thyroid hormone",
+    ],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Hormone receptors by location: Cell membrane — peptide hormones (insulin, PTH), catecholamines (adrenaline from adrenal medulla). Cytoplasmic (then translocate to nucleus) — steroid hormones (cortisol, aldosterone, sex steroids). Nuclear (directly in nucleus) — Thyroid hormones (T3, T4) have receptors located DIRECTLY in the nucleus bound to DNA as transcription factors. Hence thyroid hormone receptors are specifically situated in the nucleus.",
+  },
+  {
+    id: 200,
+    text: "Which is NOT recommended for patient of ankylosing spondylitis?",
+    options: [
+      "Hydrotherapy",
+      "Muscle stretching",
+      "Football",
+      "Cervical rotation",
+    ],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Ankylosing spondylitis (AS) management: Recommended — Hydrotherapy (warm water reduces pain/stiffness), Muscle stretching (maintains flexibility, prevents ankylosis), Cervical rotation (preserves neck mobility), swimming. NOT recommended — Football and contact sports involving high-impact, collision, or torsional forces on the spine. AS patients have rigid, brittle spines prone to fracture — football can cause spinal fractures from tackles, falls, or sudden movements.",
+  },
+
+  {
+    id: 201,
+    text: "Kushta is to be used:",
+    options: [
+      "Just after preparation",
+      "After one month of preparation",
+      "After six month of preparation",
+      "Upto six month of preparation",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "Kushta (calcined metallic/mineral preparations in Unani medicine) must be stored for at least six months after preparation before use. This maturation period (Idkhar) allows any residual toxic properties to dissipate and the therapeutic properties to stabilize. Using Kushta immediately after preparation can cause harm due to residual reactive compounds.",
+  },
+  {
+    id: 202,
+    text: "Akhlat, which are involved in formation of Aza are called as:",
+    options: [
+      "Akhlat Baseeta",
+      "Akhlat Lateefa",
+      "Akhlat Kaseefa",
+      "Akhlat Haqeeqa",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Akhlat Baseeta (simple humours) are the four primary humours (Dam, Balgham, Safra, Sawda) in their pure form that directly participate in the formation and nourishment of body organs (Aza). They are essential for Tashkeel (formation) and Taghziya (nutrition) of organs.",
+  },
+  {
+    id: 203,
+    text: "Well's operation is a treatment of:",
+    options: [
+      "Fistula-in-ano",
+      "Stricture of Urethra",
+      "Partial prolapse of rectum",
+      "Complete prolapse of rectum",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Wells operation (Ivalon sponge rectopexy) is performed for complete (full-thickness) prolapse of the rectum. The rectum is mobilized and fixed to the sacrum using a polyvinyl alcohol (Ivalon) sponge, which promotes fibrosis and prevents further prolapse.",
+  },
+  {
+    id: 204,
+    text: "Where Tabqah-i-Ankabootiyah exists?",
+    options: ["In the heart", "In the ear", "In the eye", "In the testis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Tabqah-i-Ankabootiyah (spider-web like layer) is a layer of the eye described in Unani anatomy. The eye in Unani medicine has several layers (Tabqaat) including Tabqah Shabakiyah (retina) and Tabqah Ankabootiyah. This cobweb-like layer exists in the eye.",
+  },
+  {
+    id: 205,
+    text: "Which of the following taste has Murakhkhee (softening/relaxing) action?",
+    options: [
+      "Qabiz (astringent)",
+      "Afas (insipid)",
+      "Dasam (oily/fatty)",
+      "Hamiz (sour)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Dasam (oily, fatty, greasy taste) has Murakhkhi (softening, moistening, relaxing) action on tissues. It moistens and lubricates organs, reduces dryness, and softens tissues. Qabiz causes contraction, Hamiz causes constriction, Afas has minimal action.",
+  },
+  {
+    id: 206,
+    text: "Hypertonic dehydration occurs in:",
+    options: ["Fever", "Excess use of diuretic", "Diarrhea", "Vomiting"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Hypertonic dehydration (hypernatremic dehydration) occurs when water loss exceeds electrolyte loss, increasing plasma osmolality. Excess use of diuretics causes water loss proportionally greater than sodium loss, leading to hypertonic dehydration. Diarrhea and vomiting typically cause isotonic or hypotonic dehydration.",
+  },
+  {
+    id: 207,
+    text: "Re-arrange the order of appearance of Rigor-mortis: (A) Finger and toes (B) Muscle of chest (C) Eyelids (D) Muscles of face",
+    options: [
+      "(A), (B), (C), (D)",
+      "(B), (A), (C), (D)",
+      "(C), (D), (B), (A)",
+      "(D), (C), (B), (A)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Rigor mortis follows Nysten's law: it begins in smaller muscles first. The order is Eyelids (C) then Muscles of face (D) then Muscles of chest (B) then Fingers and toes (A). It starts from head and neck, then descends to the trunk and extremities. Appears 2-6 hours after death.",
+  },
+  {
+    id: 208,
+    text: "The correct order of immunization as per Indian Academy of Pediatrics: (A) BCG at birth (B) DTP-1 at 10th week (C) DTP-1 at 6th week (D) DTP-2 at 10th week (E) DTP-3 at 14th week",
+    options: [
+      "(A), (B), (D), (E)",
+      "(A), (C), (D), (E)",
+      "(A), (B), (C), (D)",
+      "(A), (D), (B), (C)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "IAP immunization schedule: BCG at birth, DTP-1 at 6 weeks (C), DTP-2 at 10 weeks (D), DTP-3 at 14 weeks (E). This follows the 6-10-14 week schedule (EPI schedule). Hence option (A),(C),(D),(E) is correct.",
+  },
+  {
+    id: 209,
+    text: "According to Arastu, the special tool for Hiss Lams (sense of touch) is:",
+    options: [
+      "Asab (Nerves)",
+      "Ghosht (Muscle)",
+      "Dimagh (Brain)",
+      "Nukha (Spinal Cord)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "According to Aristotle (Arastu), Asab (nerves) are the special organ/tool for sense of touch (Hiss Lams). Nerves serve as conduits for conveying tactile sensations from skin to brain.",
+  },
+  {
+    id: 210,
+    text: "Woman with Adenomyosis presents with the features of:",
+    options: [
+      "Amenorrhea with infertility",
+      "Polymetrorrhagia",
+      "Dysmenorrhea with menorrhagia",
+      "Hypomenorrhea with dysmenorrhea",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Adenomyosis (endometrial glands/stroma within myometrium) classically presents with dysmenorrhea (painful periods) and menorrhagia (heavy bleeding). The uterus is uniformly enlarged, tender, and boggy. Dysmenorrhea is due to prostaglandin release; menorrhagia occurs due to increased uterine surface area and impaired contraction.",
+  },
+  {
+    id: 211,
+    text: "Which statement is correct regarding Unani pharmaceutical terms? (A) Silbatta is also known as Salaya (B) Haleeb is basically a type of Mazeej (C) Any crude or powdered drug kept in liquid is known as Tasqiya (D) Zimad is a type of Majoon (E) Taqsheer has two meanings: peeling off and scaling",
+    options: [
+      "(E) and (B) only",
+      "(C), (D) and (B) only",
+      "(A), (C) and (E) only",
+      "(B) only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "Correct statements: (A) Silbatta (flat grinding stone) is also known as Salaya: TRUE. (C) Tasqiya means keeping drug in liquid (maceration): TRUE. (E) Taqsheer has two meanings, peeling off and scaling: TRUE. Incorrect: (B) Haleeb is milk, not a type of Mazeej. (D) Zimad is an external paste/plaster, not Majoon.",
+  },
+  {
+    id: 212,
+    text: "Given below are two statements about brachial plexus injury. Statement I: Injury to the upper trunk causes waiter's tip hand deformity. Statement II: Upper trunk injury leads to paralysis of Deltoid, Supraspinatus, Infraspinatus, Biceps brachii, Brachialis, Coracobrachialis and Supinator muscles.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Both statements are correct. Upper trunk (C5-C6) injury (Erb's palsy) causes waiter's tip deformity: arm hangs with medial rotation, elbow extended, forearm pronated, wrist flexed. Muscles paralyzed: Deltoid, Supraspinatus, Infraspinatus, Biceps brachii, Brachialis, Coracobrachialis, and Supinator (all supplied by C5-C6).",
+  },
+  {
+    id: 213,
+    text: "Intiqal Mawad (transfer of matter) from Uzu Sharif (noble organ) to Uzu Khasis (ignoble organ) is known as:",
+    options: [
+      "Intiqal Radi",
+      "Intiqal Tazayyud",
+      "Intiqal Taqayyuh",
+      "Intiqal Jayyid",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Intiqal Jayyid means transfer of good/beneficial matter from a noble organ (Uzu Sharif) to an ignoble organ (Uzu Khasis). This is beneficial for the noble organ. Intiqal Radi = transfer of bad matter. Intiqal Tazayyud = increase in morbid matter. Intiqal Taqayyuh = transfer causing suppuration.",
+  },
+  {
+    id: 214,
+    text: "Which power or Faculty is NOT essential for the survival of an individual?",
+    options: [
+      "Quwwat-i-Failah (Active faculty)",
+      "Quwwat-i-Musawwirah (Formative faculty)",
+      "Quwwat-i-Mughaiyrah Saniah (Secondary alterative faculty)",
+      "Quwwat-i-Wahimah (Estimative faculty)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Quwwat-i-Wahimah (estimative/imaginative faculty) is a psychological faculty NOT essential for basic physiological survival. The other three are essential: Failah (active/motor), Musawwirah (formative, for reproduction), and Mughaiyrah Saniah (secondary alteration in digestion).",
+  },
+  {
+    id: 215,
+    text: "Match List I with List II: (A) Hydrocele (B) Felon (C) Septic Shock (D) Complication of Blood transfusion",
+    options: [
+      "(A) Hypothermia, (B) Systemic Vasodilation, (C) Abscess in fingertip, (D) Fluid in Tunica Vaginalis",
+      "(A) Fluid collection between Tunica Vaginalis layers, (B) Abscess in fibrous septa of fingertip, (C) Systemic Vasodilation, (D) Hypothermia",
+      "(A) Systemic Vasodilation, (B) Fluid in Tunica Vaginalis, (C) Hypothermia, (D) Abscess in fingertip",
+      "(A) Abscess in fingertip, (B) Hypothermia, (C) Fluid in Tunica Vaginalis, (D) Systemic Vasodilation",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Correct matching: (A) Hydrocele: fluid collection between layers of Tunica Vaginalis. (B) Felon: abscess in specialized fibrous septa of fingertip (closed-space infection). (C) Septic Shock: systemic vasodilation due to cytokines. (D) Blood transfusion complication: hypothermia from cold blood products.",
+  },
+  {
+    id: 216,
+    text: "Given below are two statements about Nawm-e-Motadil (Moderate sleep). Statement I: It causes inward movement of hararat-e-gharizia, improves digestion, and increases memory. Statement II: It reduces tahallul.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Both statements are correct. During moderate sleep, Hararat-e-Gharizia moves inward improving digestion, and memory consolidation occurs. Moderate sleep also reduces Tahallul (dissipation/catabolism of vital substances), preserving vitality.",
+  },
+  {
+    id: 217,
+    text: "Which is NOT recommended for patients of osteoporosis?",
+    options: ["Weight-bearing exercise", "Walking", "Aerobics", "Bed rest"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Bed rest is contraindicated in osteoporosis: immobility causes further bone loss (disuse osteoporosis) by reducing mechanical loading, the key stimulus for bone remodeling. Weight-bearing exercise, walking, and aerobics all stimulate osteoblast activity and bone formation.",
+  },
+  {
+    id: 218,
+    text: "The writer of book Al-Tohfatul Hamidiya fil Sanatul Takleesiya:",
+    options: [
+      "Sharif Khan",
+      "Abdul Aziz",
+      "Ajmal Khan",
+      "Ahmad Husain Usmani",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Al-Tohfatul Hamidiya fil Sanatul Takleesiya (a classical Unani text on the art of calcination/Kushta preparation) was written by Hakeem Abdul Aziz, a renowned scholar of Unani pharmacology.",
+  },
+  {
+    id: 219,
+    text: "Humoral Immunity comes from which of the following:",
+    options: [
+      "Bone-marrow derived B-Lymphocytes",
+      "Thymus derived T-Lymphocytes",
+      "Natural Killer Cells",
+      "Cytotoxic Cells",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Humoral immunity is antibody-mediated. B-lymphocytes (derived from and mature in bone marrow) are responsible for humoral immunity. Upon antigen stimulation, B-cells differentiate into plasma cells producing specific antibodies. T-lymphocytes mediate cellular immunity.",
+  },
+  {
+    id: 220,
+    text: "According to Jawhar (substance) and Mizaj (temperament), Reham (Uterus) is:",
+    options: [
+      "Haar Ratab (Hot and Moist)",
+      "Haar Yabis (Hot and Dry)",
+      "Barid Ratab (Cold and Moist)",
+      "Barid Yabis (Cold and Dry)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "According to its substance (Jawhar) and temperament (Mizaj), the Reham (uterus) is Haar Yabis (Hot and Dry). Being primarily muscular tissue (myometrium), muscles have a hot and dry temperament in Unani. This Mizaj makes it capable of strong contractions.",
+  },
+  {
+    id: 221,
+    text: "What is contraindicated with Mus'hil (purgative) drug?",
+    options: [
+      "Hammam before taking mus'hil",
+      "Hammam after taking mus'hil",
+      "Intake of pomegranate after taking mus'hil",
+      "Intake of hot water with Joshanda-e-Mus'hil",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Hammam (bath) AFTER taking Mus'hil (purgative) is contraindicated. It causes increased drug absorption due to vasodilation, redistributes Hararat away from gut, and weakens the patient, all interfering with the purgative action. Hammam BEFORE taking mus'hil is permitted.",
+  },
+  {
+    id: 222,
+    text: "In which of the following micro-organelles is the limiting membrane absent:",
+    options: ["Peroxisome", "Lysosome", "Centrosome", "Ribosome"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Ribosomes are non-membrane-bound organelles: they lack any surrounding membrane. They consist of rRNA and proteins in two subunits. All others have membranes: Peroxisomes and Lysosomes have a single membrane, Centrosomes are bounded by pericentriolar material.",
+  },
+  {
+    id: 223,
+    text: "Who described that Taghaiyurat-e-ghair Tabaiyah ghair Muzadah are related to Umoor-e-Falki (celestial matters)?",
+    options: [
+      "Ali Ibn-e-Abbas Majoosi",
+      "Shaikhur Rais Ibn Sina",
+      "Zakariya Razi",
+      "Allama Burhan Uddin Nafees",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Allama Burhan Uddin Nafees (author of Sharh-e-Asbab wa Alamaat) described that non-natural non-contrary changes are related to Umoor-e-Falki (celestial/astronomical factors) such as planetary positions and cosmic influences.",
+  },
+  {
+    id: 224,
+    text: "Immediate sustained laryngeal spasm occurs in which of the following types of drowning:",
+    options: [
+      "Primary Drowning",
+      "Secondary Drowning",
+      "Immersion Syndrome",
+      "Dry Drowning",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Dry Drowning is characterized by immediate sustained laryngeal spasm upon contact of water with the larynx/vocal cords. This prevents water from entering lungs but causes death by asphyxia. Lungs contain little or no water at autopsy.",
+  },
+  {
+    id: 225,
+    text: "An idea of time of death by cooling of the dead body: which formula is correct?",
+    options: [
+      "(Normal body temperature minus Rectal temperature) divided by Rate of fall per hour = Time of Death",
+      "(Rectal temperature minus Normal body temperature) divided by Rate of fall per hour = Time of Death",
+      "Rate of fall per hour divided by (Rectal temperature minus Normal body temperature) = Time of Death",
+      "(Normal body temperature minus Rate of fall per hour) divided by Rectal temperature = Time of Death",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Time since death = (Normal body temperature minus Rectal temperature) divided by Rate of temperature fall per hour. Normal body temperature is 37 degrees C; body cools approximately 1-1.5 degrees C per hour. Example: rectal temp 31 degrees C means (37-31)/1.5 = 4 hours since death.",
+  },
+  {
+    id: 226,
+    text: "A person complains of a snapping sound and sharp pain in the heel after jumping from a height. What is the most likely diagnosis?",
+    options: [
+      "Rupture of patellar tendon",
+      "Rupture of Achilles tendon",
+      "Foot drop",
+      "Minor tears of the peroneal tendons",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Rupture of Achilles tendon presents with sudden sharp heel/calf pain, an audible snap at injury, and difficulty walking. Occurs with sudden forceful plantarflexion (jumping from height). Thompson's test (absent plantarflexion on calf squeeze) is diagnostic.",
+  },
+  {
+    id: 227,
+    text: "Boas's sign is seen in:",
+    options: [
+      "Appendicitis",
+      "Cholecystitis",
+      "Diverticulitis",
+      "Pancreatitis",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Boas's sign is hyperaesthesia in the right infrascapular region (9th-11th thoracic dermatome, right side) found in acute Cholecystitis. It occurs due to referred pain from the inflamed gallbladder via phrenic and right inferior intercostal nerves.",
+  },
+  {
+    id: 228,
+    text: "Most common position in vertex presentation is:",
+    options: [
+      "Right occipito anterior position",
+      "Left occipito anterior position",
+      "Right occipito posterior position",
+      "Left occipito posterior position",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Left Occipito Anterior (LOA) is the most common position in vertex presentation. The occiput faces the left anterior maternal pelvis. The uterus rotates slightly to the right and the sigmoid colon occupies the left posterior quadrant, favoring LOA position.",
+  },
+  {
+    id: 229,
+    text: "Isometric relaxation period is responsible for:",
+    options: [
+      "Opening of atrioventricular valve",
+      "First heart sound",
+      "Second heart sound",
+      "Opening of semilunar valves",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "The isovolumetric relaxation period begins with closure of semilunar valves, producing S2 (Second heart sound: dub). Ventricular pressure falls rapidly but AV valves have not opened yet. S1 is caused by closure of AV valves.",
+  },
+  {
+    id: 230,
+    text: "Match List I (Type of pelvis) with List II (Shape): (A) Android pelvis (B) Platypelloid pelvis (C) Gynaecoid pelvis (D) Anthropoid pelvis",
+    options: [
+      "(A) Round, (B) Triangular, (C) Oval, (D) Transverse oval",
+      "(A) Triangular shape, (B) Transversely oval, (C) Round Inlet, (D) Inlet is oval",
+      "(A) Oval, (B) Round, (C) Transverse oval, (D) Triangular",
+      "(A) Transverse oval, (B) Oval, (C) Triangular, (D) Round",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Pelvic types: (A) Android: triangular/heart-shaped inlet. (B) Platypelloid: transversely oval (flat pelvis). (C) Gynaecoid: round inlet (ideal female pelvis, approximately 50%). (D) Anthropoid: oval inlet with longer AP diameter. Gynaecoid is most favorable for normal labor.",
+  },
+  {
+    id: 231,
+    text: "Cholesterosis of gall bladder is also known as:",
+    options: [
+      "Blueberry gall bladder",
+      "Raspberry gall bladder",
+      "Gooseberry gall bladder",
+      "Strawberry gall bladder",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Cholesterosis of the gall bladder is called Strawberry gall bladder: yellow cholesterol deposits (foam cells) against a red hyperemic background resembling a strawberry. It is benign, associated with bile supersaturation with cholesterol.",
+  },
+  {
+    id: 232,
+    text: "Which of the following is NOT related to problems affecting elderly males?",
+    options: [
+      "Benign Prostatic Hypertrophy",
+      "Prostatic Cancer",
+      "Male Sexual Dysfunction",
+      "Cervical Cancer",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Cervical cancer is exclusively a female condition (cervix uteri). BPH, Prostatic Cancer, and Male Sexual Dysfunction are all common problems in elderly males.",
+  },
+  {
+    id: 233,
+    text: "Transformation of Rutubat Ula (primary fluid) into Rutubat Thaniya (secondary fluid) is:",
+    options: [
+      "Hazm Awwal (First digestion)",
+      "Hazm Duwwam (Second digestion)",
+      "Hazm Suwwam (Third digestion)",
+      "Hazm Chaharum (Fourth digestion)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Hazm Duwwam (hepatic/second digestion) transforms Rutubat Ula (primary chyle absorbed from intestines) into Rutubat Thaniya (blood and other humours) in the liver. Hazm Awwal = gastric. Hazm Suwwam = vascular. Hazm Chaharum = cellular.",
+  },
+  {
+    id: 234,
+    text: "Match List I (Type of bath) with List II (Benefits): (A) Ghusl-e-Baarid (B) Hammam-e-Moarriq (C) Ghusl Chashma-e-Gandhak (D) Ghusl-e-Hammaat",
+    options: [
+      "(A) Beneficial for less exercise, (B) Faalij/Raasha, (C) Hot Springs, (D) Makes body strong",
+      "(A) Faalij/Raasha, (B) Hot Springs, (C) Makes body strong, (D) Less exercise",
+      "(A) Hot Springs, (B) Faalij/Raasha, (C) Makes body strong, (D) Less exercise",
+      "(A) Makes body strong, (B) Beneficial for those who exercise less, (C) Bathing in Hot Springs, (D) Beneficial for Faalij and Raasha",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilaj bil Tadbeer",
+    year: 2025,
+    explanation:
+      "(A) Ghusl-e-Baarid (cold bath): Makes body strong and firms muscles. (B) Hammam-e-Moarriq (sudorific bath): Beneficial for those who exercise less, promotes perspiration. (C) Ghusl Chashma-e-Gandhak (sulphur spring bath): Bathing in hot sulphur springs, for skin diseases. (D) Ghusl-e-Hammaat (mud bath): Beneficial for Faalij (hemiplegia) and Raasha (tremors).",
+  },
+  {
+    id: 235,
+    text: "Mojiz al-Qanoon is the Talkhees (abridgment) of which book?",
+    options: [
+      "Firdus al-Hikmat",
+      "Kamil al-Sana",
+      "Alqanoon Fi-al-Tibb",
+      "Kitab al-Tasreef",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Mojiz al-Qanoon (Al-Mojiz) is the Talkhees (summary/abridgment) of Al-Qanoon Fi-al-Tibb (Canon of Medicine) by Ibn Sina. It was written by Ibn al-Nafis: the same scholar who described pulmonary circulation.",
+  },
+  {
+    id: 236,
+    text: "Which compound in leech saliva has a vasodilator effect?",
+    options: [
+      "Bdellins",
+      "Hirustatin",
+      "Histamine-like substances",
+      "Hyaluronidase",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilaj bil Tadbeer",
+    year: 2025,
+    explanation:
+      "Leech saliva compounds: Hirudin = anticoagulant. Bdellins = anti-inflammatory. Hirustasin = inhibits kallikrein/trypsin. Hyaluronidase = spreading factor. Histamine-like substances are responsible for VASODILATOR effect, causing local vasodilation to increase blood flow.",
+  },
+  {
+    id: 237,
+    text: "Given below are two statements regarding acquired Vesicular blisters. Statement I: Localized causes include Herpes simplex, Herpes zoster, Impetigo, Pompholyx. Statement II: Generalized causes include Toxic epidermal necrolysis, Erythema multiforme, Stevens-Johnson syndrome.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "Both correct. Localized vesicular blisters: Herpes simplex, Herpes zoster, Impetigo, Pompholyx. Generalized: TEN (Toxic Epidermal Necrolysis), Erythema multiforme, Stevens-Johnson syndrome. All are acquired vesiculobullous conditions.",
+  },
+  {
+    id: 238,
+    text: "Barron's Banding (rubber band ligation) is done in:",
+    options: [
+      "First degree internal haemorrhoids",
+      "Second degree internal haemorrhoids",
+      "Third degree internal haemorrhoids",
+      "Fourth degree internal haemorrhoids",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Barron's banding is for 2nd degree haemorrhoids (prolapse during straining, spontaneous reduction). 1st degree = conservative. 3rd degree = manual reduction/surgical. 4th degree = permanently prolapsed/surgical. Rubber band causes necrosis and sloughing of haemorrhoidal tissue.",
+  },
+  {
+    id: 239,
+    text: "Match List I with List II (Unani anatomical characteristics): (A) Ashaab (B) Lahm (C) Shiryan (D) Tabiyyat",
+    options: [
+      "(A) Falak, (B) Kamun-o-Baruz, (C) Ghuddi, (D) Jauf",
+      "(A) Kamun-o-Baruz, (B) Ghuddi, (C) Jauf, (D) Falak",
+      "(A) Ghuddi, (B) Jauf, (C) Falak, (D) Kamun-o-Baruz",
+      "(A) Jauf, (B) Falak, (C) Kamun-o-Baruz, (D) Ghuddi",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "(A) Ashaab (nerves): Kamun-o-Baruz (hidden and appearing). (B) Lahm (muscle): Ghuddi (glandular characteristic). (C) Shiryan (artery): Jauf (hollow tubular structure). (D) Tabiyyat (natural faculty): Falak (celestial, guiding bodily processes).",
+  },
+  {
+    id: 240,
+    text: "Subserving Kayfiyat (Qualities) of Quwwat Dafia (expulsive faculty) are:",
+    options: [
+      "Hararat Wa Rutubat (Heat and Moisture)",
+      "Hararat Wa Yubusat (Heat and Dryness)",
+      "Burudat Wa Rutubat (Cold and Moisture)",
+      "Burudat Wa Yubusat (Cold and Dryness)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Quwwat Dafia (expulsive faculty) is served by Hararat (heat) and Rutubat (moisture). Heat facilitates propulsion; moisture eases passage of waste matter. Other faculties: Jaziba = Heat+Dryness; Masika = Cold+Dryness; Hadima = Heat+Moisture.",
+  },
+  {
+    id: 241,
+    text: "Which Arq (distillate) is used in preparation of Shingraf Musaffa (purified Cinnabar)?",
+    options: [
+      "Arq Lemoon (Lemon distillate)",
+      "Arq Badiyan (Fennel distillate)",
+      "Arq Mokoy",
+      "Arq Kasni (Chicory distillate)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "Shingraf (Cinnabar, mercuric sulphide) is purified using Arq Lemoon (lemon distillate). The citric acid helps remove impurities including toxic unreacted mercury compounds during the Tasfiya (purification) process.",
+  },
+  {
+    id: 242,
+    text: "Ludwig's Angina is a disease of:",
+    options: [
+      "Heart pain",
+      "Cellulitis of floor of mouth",
+      "III Grade fatty liver",
+      "Heart pain and fatty liver combined",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Ludwig's Angina is rapidly spreading bilateral cellulitis of the floor of the mouth involving submandibular, sublingual, and submental spaces. Usually odontogenic (mandibular molar infection). Life-threatening due to airway obstruction from tongue displacement. Requires urgent airway management and antibiotics.",
+  },
+  {
+    id: 243,
+    text: "Find the correct sequence of lobar pneumonia stages: (A) Red hepatization, (B) Grey hepatization, (C) Congestion, (D) Resolution",
+    options: [
+      "(A), (B), (C), (D)",
+      "(D), (B), (A), (C)",
+      "(C), (D), (B), (A)",
+      "(C), (A), (B), (D)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "Lobar pneumonia stages: (C) Congestion (Day 1-2, hyperemia) then (A) Red hepatization (Day 2-4, alveoli filled with RBCs/fibrin, firm red lung) then (B) Grey hepatization (Day 4-8, RBCs lyse, grey color) then (D) Resolution (Day 8+, return to normal). Sequence: C then A then B then D.",
+  },
+  {
+    id: 244,
+    text: "In fracture of the neck of the fibula, which nerve is most likely injured?",
+    options: [
+      "Tibial Nerve",
+      "Deep Peroneal Nerve",
+      "Sural Nerve",
+      "Common Peroneal Nerve",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "The Common Peroneal Nerve winds around the neck of fibula and is vulnerable in fibular neck fractures. Injury causes foot drop (weak dorsiflexion/eversion) and sensory loss over dorsum of foot. Also seen in knee dislocations and tight plaster casts.",
+  },
+  {
+    id: 245,
+    text: "According to Shaikh ur Raees (Ibn Sina), which of the following are the direct state/substrate of Health and Disease?",
+    options: [
+      "Arkan (Elements) and Arwah (Spirits)",
+      "Arkan (Elements) and Akhlat (Humours)",
+      "Akhlat (Humours) and Aza (Organs)",
+      "Aza (Organs) and Arwah (Spirits)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "According to Ibn Sina in Al-Qanoon, Akhlat (humours) and Aza (organs) are the direct substrates of health and disease. Health is proper balance of Akhlat and Aza. Disease manifests directly in humoral imbalance and organ dysfunction.",
+  },
+  {
+    id: 246,
+    text: "A child presents with sudden onset of fever, headache and neck stiffness. Which is the most appropriate NEXT step?",
+    options: [
+      "Broad Spectrum antibiotics",
+      "Lumbar puncture",
+      "CT scan of the head",
+      "Observation and follow-up",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Fever + headache + neck stiffness = meningitis until proven otherwise. Most appropriate next step is Lumbar puncture to analyze CSF (WBC, protein, glucose, culture). CT head is done first only if papilledema or focal neurological signs present. Antibiotics follow diagnosis.",
+  },
+  {
+    id: 247,
+    text: "Given below are two statements about sebaceous glands. Statement I: Sebocytes produce lipids including triglycerides, wax esters, squalene, and cholesterol. Statement II: Sebum excretion is under hormonal control, with androgens increasing sebum production.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "Both correct. Sebum contains triglycerides (~57%), wax esters (~26%), squalene (~12%), free fatty acids, cholesterol. Androgens (testosterone, DHT) stimulate sebaceous glands, explaining seborrhea and acne at puberty.",
+  },
+  {
+    id: 248,
+    text: "What is the dose of Kalaunji (Nigella sativa)?",
+    options: [
+      "250 mg to 500 mg",
+      "1 gram to 2 grams",
+      "5 grams to 7 grams",
+      "7 grams to 10 grams",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Kalaunji (Nigella sativa, Black seed) standard therapeutic dose in Unani pharmacopoeia is 1-2 grams per dose. Used in Zeequn Nafs (asthma), Nazla, and as general tonic. Contains thymoquinone. Higher doses cause gastric irritation.",
+  },
+  {
+    id: 249,
+    text: "Which of the following is effective in Asthma (Zeequn Nafs)?",
+    options: ["Sanbhaloo", "Kakraunda", "Katan", "Kahoo"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2025,
+    explanation:
+      "Kakraunda is specifically used in Zeequn Nafs (asthma) in Unani medicine as a bronchodilator and expectorant, relieving bronchospasm and facilitating expulsion of phlegm. Sanbhaloo = joint pains. Katan = skin/expectorant. Kahoo = sedative.",
+  },
+  {
+    id: 250,
+    text: "According to Ibn Rushd (Averroes), Azae Mutashabihatul Ajza (homogeneous organs) are: (A) Mirra Sawda (B) Jild (C) Ruh (D) Mukh",
+    options: [
+      "(A) Mirra Sawda, (B) Jild, (C) Ruh only",
+      "(A) Mirra Sawda, (C) Ruh, (D) Mukh only",
+      "(A) Mirra Sawda, (B) Jild, (D) Mukh only",
+      "(B) Jild, (C) Ruh, (D) Mukh only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "According to Ibn Rushd in Kitab al-Kulliyat, Azae Mutashabihatul Ajza include (A) Mirra Sawda, (B) Jild, and (C) Ruh. These are homogeneous organs/substances whose parts are similar to the whole (homoeomerous concept from Aristotle).",
+  },
+  {
+    id: 251,
+    text: "The establishment of All India Vedic and Unani Tibbi Conference belongs to:",
+    options: [
+      "Options A and B",
+      "Hakim Ajmal Khan only",
+      "Options A and D",
+      "Option E only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "The All India Vedic and Unani Tibbi Conference was established by Hakim Ajmal Khan (1868-1927), legendary Unani physician and freedom fighter. He founded Hindustani Dawakhana and Tibbiya College, Delhi, and championed traditional Indian medicine.",
+  },
+  {
+    id: 252,
+    text: "Match List I with List II: (A) Glycated Hemoglobin (B) Rolled out margin (C) Onion skin lesion (D) Punched out margin",
+    options: [
+      "(A) Diabetes mellitus, (B) Squamous cell carcinoma, (C) Ewing's sarcoma, (D) Tropical/syphilitic ulcer",
+      "(A) Diabetes, (B) Tropical ulcer, (C) Ewing's, (D) SCC",
+      "(A) Ewing's sarcoma, (B) Diabetes, (C) SCC, (D) Tropical ulcer",
+      "(A) Tropical ulcer, (B) Diabetes, (C) SCC, (D) Ewing's sarcoma",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2025,
+    explanation:
+      "(A) Glycated Hemoglobin (HbA1c): Diabetes mellitus marker. (B) Rolled out (everted) margin: Squamous cell carcinoma ulcer. (C) Onion skin periosteal reaction: Ewing's sarcoma. (D) Punched out margin: Tropical/syphilitic/trophic ulcer.",
+  },
+  {
+    id: 253,
+    text: "Mom (wax) and Roghan (oil) are used in preparation of:",
+    options: ["Sulaqa", "Khabees", "Qairooti (Cerate)", "Hareera"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2025,
+    explanation:
+      "Qairooti (Cerate) is a semi-solid Unani external preparation made from Mom (wax) and Roghan (oil/fat). Harder than Marham due to wax content. Used for skin conditions. Derived from Qir (wax). Sulaqa = plaster-like. Khabees = thick electuary. Hareera = thin gruel.",
+  },
+  {
+    id: 254,
+    text: "The statement Anatomy is the basis of medical discourse is attributed to:",
+    options: ["Galen", "Avicenna", "Vesalius", "Hippocrates"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2025,
+    explanation:
+      "Galen (Jalinus, 129-216 AD) stated that anatomy is the basis of medical discourse. He wrote extensive anatomical texts (De Anatomicis Administrationibus) forming the foundation of medical anatomy for 1400 years. While Vesalius corrected Galen's errors, Galen established anatomy as fundamental to medicine.",
+  },
+  {
+    id: 255,
+    text: "Neonates presenting small, white vesiculopustular papules on face/trunk 2-3 days after birth:",
+    options: [
+      "Pustular melanosis",
+      "Erythema migrans",
+      "Erythema toxicum",
+      "Erythema nodosum",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "Erythema toxicum neonatorum appears 24-72 hours after birth as blotchy erythema, papules, vesicles, and pustules on face/trunk. Pustules contain eosinophils. Benign and self-limiting (resolves in 1-2 weeks). Pustular melanosis = present at birth. Erythema migrans = Lyme disease.",
+  },
+  {
+    id: 256,
+    text: "Given below are two statements about Triple Assessment for breast disease. Statement I: Applied for breast lump or nipple discharge. Statement II: Combination of clinical examination, imaging, and tissue sampling.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2025,
+    explanation:
+      "Both correct. Triple Assessment: (1) Clinical examination: history and physical examination. (2) Imaging: mammography (>35 years) or ultrasound. (3) Tissue sampling: FNAC or core biopsy. Each scored 1-5; concordance gives >99% diagnostic accuracy.",
+  },
+  {
+    id: 257,
+    text: "A classic pigmented pathological lesion known as powder burns is found in:",
+    options: [
+      "Polycystic ovarian syndrome (PCOD)",
+      "Pelvic endometriosis and produces PGF",
+      "Pelvic organ prolapse (POP)",
+      "Pelvic endometriosis and releases inflammatory factors",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Niswan",
+    year: 2025,
+    explanation:
+      "Powder burns are small dark brown-black peritoneal spots seen in pelvic endometriosis at laparoscopy: hemosiderin deposits from repeated bleeding of endometrial implants. Endometriotic implants also produce prostaglandin F2-alpha (PGF2a), contributing to dysmenorrhea.",
+  },
+  {
+    id: 258,
+    text: "Identify the correct statements: (A) Injection in Subarachnoid space is spinal anesthesia (B) Suxamethonium is short acting muscle relaxant",
+    options: [
+      "(A) and (B) only",
+      "(A) and (C) only",
+      "(C) and (D) only",
+      "(D) and (E) only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2025,
+    explanation:
+      "Both A and B are correct. (A) Spinal anesthesia = injection into subarachnoid space (between arachnoid and pia mater), mixing with CSF. (B) Suxamethonium (succinylcholine) = short-acting depolarizing NMB, duration 5-10 min, rapidly hydrolyzed by plasma pseudocholinesterase.",
+  },
+  {
+    id: 259,
+    text: "Dalk-e-Istedad Taweel (prolonged preparatory massage) is suitable for:",
+    options: [
+      "Solid body, Hot season, Thick matter, Youth age",
+      "Thin body, Hot season, Thin matter, Old age",
+      "Solid/Strong body, Abundance of matter, Spring season, Any age",
+      "Flaccid body, Weak power, Light matter, Autumn season",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilaj bil Tadbeer",
+    year: 2025,
+    explanation:
+      "Dalk-e-Istedad Taweel (prolonged preparatory massage) is for: Solid/firm body (withstands manipulation), Hot season (facilitates tissue softening), Thick morbid matter (needs prolonged massage), Youth age (better tissue resilience). Prepares body for subsequent therapeutic procedures.",
+  },
+  {
+    id: 260,
+    text: "The disease produced by Sauda (black bile) and burnt Dam (blood):",
+    options: [
+      "Pityriasis Nigra",
+      "Pityriasis Alba",
+      "Ecchymosis",
+      "Melasma",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Jild",
+    year: 2025,
+    explanation:
+      "Pityriasis Nigra (Bars Aswad) is caused by excess Sawda (black bile) and Ihtiqa al-Dam (burnt/oxidized blood) in Unani etiopathology. Excess black bile deposited in skin causes dark, blackish-brown patches. Distinct from Melasma (estrogen/UV related facial pigmentation).",
+  },
+
+  // ===== 2024 AIAPGET Questions (Q1-Q60) =====
+  {
+    id: 261,
+    text: "Literary meaning of word 'Ruh' is:",
+    options: [
+      "Zawiul Arwah",
+      "La Infi'al",
+      "Amezish (mixture)",
+      "Hawa e Muheet",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "The literary (lughawi) meaning of 'Ruh' is 'Hawa e Muheet' (surrounding air/wind). In Unani medicine, Ruh refers to a subtle vaporous substance, and linguistically it relates to air or breath.",
+  },
+  {
+    id: 262,
+    text: "The excretion of Mawad-e-Fasida in the form of saliva, ear wax, sweat etc. is the function of:",
+    options: [
+      "Aaza only",
+      "Quwwat-e-Mudabir e Badan",
+      "Quwwat-e-Tabiyah",
+      "Quwwat-e-Nafsaniyah",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Quwwat-e-Mudabir e Badan (the body's governing faculty) is responsible for excreting Mawad-e-Fasida (waste/morbid matter) through channels like saliva, ear wax, and sweat.",
+  },
+  {
+    id: 263,
+    text: "On the basis of definition, the Ustaqussat are:",
+    options: [
+      "Solid (Jamid)",
+      "Liquid (Sayyal)",
+      "Mufrad (Single)",
+      "Vaporous (Bukhari)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Ustaqussat (four elements: Fire, Air, Water, Earth) are Mufrad (single/simple) by definition. They are the most basic indivisible components that cannot be further broken down.",
+  },
+  {
+    id: 264,
+    text: "The Feal (action) of Tabiyat is:",
+    options: [
+      "Muharik-e-Mizaj",
+      "Tabreed-e-Mizaj",
+      "Taskeen-e-Mizaj",
+      "Ta'deel-e-Mizaj",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "The primary action of Tabiyat (nature/physis) is Ta'deel-e-Mizaj (balancing of temperament). Tabiyat works constantly to maintain and restore the natural temperament of the body.",
+  },
+  {
+    id: 265,
+    text: "Which concept has the prime importance, and is the backbone of Unani system of medicine:",
+    options: ["Afa'al", "Mizaj", "Azaa", "Arwah"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Mizaj (temperament) is the backbone and central concept of Unani medicine. It determines individual constitution, susceptibility to disease, and response to treatment. All diagnosis and treatment revolves around Mizaj.",
+  },
+  {
+    id: 266,
+    text: "Who is also known as Abul Al-Arwah (Father of Spirits)?",
+    options: ["Galen", "Irasittratis", "Herophilus", "Aristotle"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Aristotle is known as 'Abul Al-Arwah' (Father of Spirits). He extensively studied the concept of soul (Ruh/Arwah) and wrote about it in 'De Anima'. His theories greatly influenced Unani scholars.",
+  },
+  {
+    id: 267,
+    text: "Match List I with List II: (A) Ribat, (B) Dimagh, (C) Khusiya, (D) Aasab. List II: (I) Uzw Raees, (II) Uzw Mufrad, (III) Uzw Barid, (IV) Quwwat Muwallida",
+    options: [
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(II), (B)-(IV), (C)-(III), (D)-(I)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Ribat (ligament) = Uzw Mufrad (simple organ); Dimagh (brain) = Uzw Raees (principal organ); Khusiya (testes) = Quwwat Muwallida (generative power); Aasab (nerves) = Uzw Barid (cold organ).",
+  },
+  {
+    id: 268,
+    text: "In all organs of the human body, what is more Barid (cold) after Izaam (bones)?",
+    options: ["Asaab (Nerves)", "Ribat", "Kurri/Ghuzruf", "Baal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Baal (hair) is the coldest organ after Izaam (bones) in the human body according to Unani medicine. Bones are the coldest and driest organs, and Baal comes second.",
+  },
+  {
+    id: 269,
+    text: "Opposite of Nafrat-e-Kimiavia is:",
+    options: [
+      "Ulfat-e-Kimiavia",
+      "Nafrat-e-Kimiavia",
+      "Istehala-e-Haqiqiya",
+      "Istehala Johariya",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "The opposite of Nafrat-e-Kimiavia (chemical repulsion) is Ulfat-e-Kimiavia (chemical affinity/attraction). These are opposing chemical forces in Unani pharmacology.",
+  },
+  {
+    id: 270,
+    text: "Assertion (A): Sin-e-Rihaq and Sin-e-Fata are sub types of Sin-e-Numu. Reasons (R): In both stages, growth and development are progressive towards Sin-e-Shabab.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Both A and R are correct. Sin-e-Rihaq (adolescence, 14-21 yrs) and Sin-e-Fata (21-35 yrs) are subtypes of Sin-e-Numu. In both stages, growth is progressive toward Sin-e-Shabab.",
+  },
+  {
+    id: 271,
+    text: "Statement I: Rukn Hawa is Lateef because of its Haar Ratab (hot and moist) Mizaj. Statement II: The characteristic of Yabusat is not accepting and leaving shapes easily.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Both statements are correct. Hawa (Air element) is Lateef (subtle/fine) due to its Haar Ratab nature. Yabusat (dryness) is characterized by rigidity — not easily accepting or releasing shapes.",
+  },
+  {
+    id: 272,
+    text: "Statement I: Mizaj Moatadil Naui and Mizaj Moatadil Sinfi are types of Mizaj Moatadil Tibbi. Statement II: Mizaj Moatadil Haqeeqi is not present in any species.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Both true. Mizaj Moatadil Tibbi includes Naui (species-specific) and Sinfi (gender-specific) types. Mizaj Moatadil Haqeeqi is purely theoretical and does not exist in any actual species or individual.",
+  },
+  {
+    id: 273,
+    text: "Assertion (A): Imam Fakhruddin Razi says moderate region is Fourth Iqlim; Ibn Sina says it is near equator. Reasons (R): Fourth Iqlim is moderate as it lies between hot and cold regions.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Both A and R correct. Imam Fakhruddin Razi considered Fourth Iqlim most moderate — situated between hot southern and cold northern regions. Ibn Sina placed the moderate zone near the equator.",
+  },
+  {
+    id: 274,
+    text: "In which age is the process of anabolism (formation) equal to catabolism (destruction):",
+    options: [
+      "Sin-i-Numu",
+      "Sin-i-Shabab",
+      "Sin-i-Kuhulat",
+      "Sin-i-Shaikhukhat",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "In Sin-i-Kuhulat (middle age, ~35-60 years), Tauleed (anabolism) and Tahleel (catabolism) are in equilibrium. Before this growth dominates; after this, catabolism exceeds anabolism.",
+  },
+  {
+    id: 275,
+    text: "Which is NOT included in Asbab Musakhkhina (causes of warming)?",
+    options: [
+      "Mo'tadil Miqdar ki Ghiza",
+      "Harkat Mo'tadil",
+      "Sudda basabab Fuzlat",
+      "Ufoonat",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Mo'tadil Miqdar ki Ghiza (moderate food) is NOT a cause of warming. Asbab Musakhkhina includes Harkat Mo'tadil (exercise), Sudda basabab Fuzlat (obstruction by wastes), and Ufoonat (putrefaction) — all generate heat.",
+  },
+  {
+    id: 276,
+    text: "Enzyme elevated in first 2 hours of MI is:",
+    options: ["CKMB", "LDH", "SGPT", "Acid phosphatase"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2024,
+    explanation:
+      "CKMB (Creatine Kinase-MB) rises within 2-4 hours of Myocardial Infarction, peaks at 12-24 hours. It is the earliest traditional enzyme marker for MI.",
+  },
+  {
+    id: 277,
+    text: "Diagnostic feature of rheumatic fever is:",
+    options: [
+      "Antischkow cells",
+      "Aschoff's bodies",
+      "MacCallum's patch",
+      "Epithelioid cells",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2024,
+    explanation:
+      "Aschoff's bodies (nodules) are pathognomonic of rheumatic fever. These granulomatous lesions in myocardium contain Aschoff giant cells, Anitschkow cells, and fibrinoid necrosis.",
+  },
+  {
+    id: 278,
+    text: "Intravascular hemolysis occurs in:",
+    options: [
+      "Hereditary spherocytosis",
+      "Autoimmune haemolytic anemia",
+      "Paroxysmal nocturnal hemoglobinuria",
+      "Thalassemia",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2024,
+    explanation:
+      "Paroxysmal Nocturnal Hemoglobinuria (PNH) causes intravascular hemolysis via complement-mediated lysis within blood vessels, causing hemoglobinuria. Spherocytosis and autoimmune hemolytic anemia are primarily extravascular.",
+  },
+  {
+    id: 279,
+    text: "Assertion (A): Troponins become detectable in 2 to 4 hours in MI. Reasons (R): In MI, cellular enzymes leak into the blood.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2024,
+    explanation:
+      "Both A and R correct. Myocardial necrosis disrupts cell membranes, allowing intracellular Troponin I and T to leak into circulation within 2-4 hours of MI onset.",
+  },
+  {
+    id: 280,
+    text: "Match: (A) Angina pectoris, (B) Stroke, (C) Awqat Amraz, (D) Diabetes mellitus. List II: (I) Irreversible cell injury, (II) 4, (III) Retinopathy, (IV) Reversible cell injury",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Amraz",
+    year: 2024,
+    explanation:
+      "Angina pectoris = Reversible cell injury (ischemia, no necrosis); Stroke = Irreversible cell injury; Awqat Amraz (stages of disease) = 4 stages; Diabetes mellitus = Retinopathy (diabetic complication).",
+  },
+  {
+    id: 281,
+    text: "The muscle responsible for unlocking the knee joint is: (A) Popliteus muscle, (B) Soleus, (C) Soleus and gastrocnemius, (D) Plantaris",
+    options: [
+      "(A) only",
+      "(A) and (B) only",
+      "(B) and (C) only",
+      "(D) only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh",
+    year: 2024,
+    explanation:
+      "Popliteus muscle alone unlocks the knee joint by rotating the tibia medially to initiate flexion from full extension (screw-home mechanism). No other muscle performs this specific unlocking function.",
+  },
+  {
+    id: 282,
+    text: "The rotation of trunk is produced by: (A) External oblique with opposite internal oblique, (B) Contraction of both muscles, (C) Rectus abdominis with opposite external oblique, (D) Transversus abdominis",
+    options: [
+      "(A) only",
+      "(A) and (B) only",
+      "(B) and (C) only",
+      "(C) only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh",
+    year: 2024,
+    explanation:
+      "Trunk rotation is produced by combined action of external oblique on one side with internal oblique on the opposite side. E.g., right rotation = right external oblique + left internal oblique.",
+  },
+  {
+    id: 283,
+    text: "Match nerve supply: (A) Gluteus maximus, (B) Gluteus medius, (C) Gemellus superior, (D) Gemellus inferior. Nerves: (I) Superior gluteal, (II) Nerve to Quadratus femoris, (III) Nerve to obturator internus, (IV) Inferior gluteal",
+    options: [
+      "(A)-(IV), (B)-(I), (C)-(III), (D)-(II)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(II), (C)-(III), (D)-(I)",
+      "(A)-(II), (B)-(IV), (C)-(III), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh",
+    year: 2024,
+    explanation:
+      "Gluteus maximus = Inferior gluteal nerve; Gluteus medius = Superior gluteal nerve; Gemellus superior = Nerve to Obturator internus; Gemellus inferior = Nerve to Quadratus femoris.",
+  },
+  {
+    id: 284,
+    text: "The recurrent laryngeal nerve supplies all muscles of larynx EXCEPT:",
+    options: [
+      "Cricothyroid",
+      "Lateral cricoarytenoid",
+      "Oblique cricoarytenoid",
+      "Vocalis",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh",
+    year: 2024,
+    explanation:
+      "Cricothyroid is supplied by the External branch of Superior Laryngeal Nerve, not the Recurrent Laryngeal Nerve (RLN). All other intrinsic laryngeal muscles are supplied by RLN.",
+  },
+  {
+    id: 285,
+    text: "The 3rd part of duodenum is supplied by the following artery:",
+    options: [
+      "Supraduodenal artery",
+      "Superior pancreaticoduodenal artery",
+      "Inferior pancreaticoduodenal artery",
+      "Gastroduodenal artery",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tashreeh",
+    year: 2024,
+    explanation:
+      "The 3rd (horizontal) part of duodenum is supplied by Inferior pancreaticoduodenal artery (branch of Superior Mesenteric Artery). 1st and 2nd parts are supplied by branches of Gastroduodenal artery.",
+  },
+  {
+    id: 286,
+    text: "Assertion (A): Basal Metabolic Rate is higher in males. Reasons (R): Due to larger body surface area of male bodies.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Wazaif",
+    year: 2024,
+    explanation:
+      "Both A and R are correct. BMR is higher in males primarily because males have larger body surface area. BMR is directly proportional to body surface area.",
+  },
+  {
+    id: 287,
+    text: "Who proposed the double helical model of DNA?",
+    options: [
+      "Erwin Chargaff",
+      "Rosalind Franklin",
+      "Watson & Crick",
+      "Linus Pauling",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Wazaif",
+    year: 2024,
+    explanation:
+      "Watson and Crick proposed the double helix model of DNA in 1953, using X-ray data from Rosalind Franklin and Chargaff's base pairing rules. They received the Nobel Prize in 1962.",
+  },
+  {
+    id: 288,
+    text: "The functions of cerebellum are:",
+    options: [
+      "Muscle tone and posture",
+      "Thinking",
+      "Hearing",
+      "Reticular formation",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Wazaif",
+    year: 2024,
+    explanation:
+      "Cerebellum functions: coordination of voluntary movements, maintenance of muscle tone and posture, equilibrium. Thinking = cerebral cortex; Hearing = temporal lobe; Reticular formation = brainstem.",
+  },
+  {
+    id: 289,
+    text: "Functions of Vitamin A: (A) Blood coagulation, (B) Immunity, (C) Forming Epithelium, (D) Acts as coenzyme, (E) Produces Rhodopsin",
+    options: [
+      "(A) and (B) only",
+      "(C) and (E) only",
+      "(B) and (D) only",
+      "(C) and (D) only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Wazaif",
+    year: 2024,
+    explanation:
+      "Specific functions of Vitamin A: Forming/maintaining Epithelium (C) and producing Rhodopsin for night vision (E). Blood coagulation = Vitamin K; coenzyme activity = B vitamins.",
+  },
+  {
+    id: 290,
+    text: "Statement I: Agglutination occurs with both Anti sera A and B in blood group test. Statement II: Blood group is AB.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Wazaif",
+    year: 2024,
+    explanation:
+      "Both correct. Agglutination with both Anti-A and Anti-B serum indicates both A and B antigens present on RBCs, confirming blood group AB.",
+  },
+  {
+    id: 291,
+    text: "Who is the writer of the book 'Kitab al-Manazir'?",
+    options: ["Ibn Sina", "Ibn Haytham", "Ibn Rushd", "Ibn Zuhr"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Kitab al-Manazir (Book of Optics) was written by Ibn al-Haytham (Alhazen, 965-1040 CE). This masterwork correctly described the mechanism of vision and influenced European optics greatly.",
+  },
+  {
+    id: 292,
+    text: "Who is the writer of the book 'Ganj Badaward'?",
+    options: [
+      "Amanullah Khan",
+      "Muhammad Kabiruddin",
+      "Mehmood Khan",
+      "Ajmal Khan",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Ganj Badaward is a famous book on Unani medicine written by Amanullah Khan, an important historical text covering various aspects of Unani pharmacology and therapeutics.",
+  },
+  {
+    id: 293,
+    text: "Statement I: 'Jawame al-Iskandaranain' is a collection of fourteen books. Statement II: Seven books by Buqarat and seven by Jalinoos.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Both correct. Jawame al-Iskandaranain (Alexandrian Summaries) consists of fourteen books — seven by Buqarat (Hippocrates) and seven by Jalinoos (Galen), summarized by Alexandrian physicians.",
+  },
+  {
+    id: 294,
+    text: "Which physicians belong to the Mughal period? (A) Hakim Ziauddin Mehmood Zangi, (B) Hakim Yusufi, (C) Hakim Ali Gilani, (D) Hakim Mehmood Khan, (E) Hakim Alwi Khan",
+    options: [
+      "(A) (B) (C) only",
+      "(B) (C) (D) only",
+      "(C) (D) (E) only",
+      "(B) (C) (E) only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2024,
+    explanation:
+      "Hakim Ziauddin Mehmood Zangi, Hakim Yusufi (wrote Ilajul Amraz), and Hakim Ali Gilani (court physician to Mughal emperors) all belonged to the Mughal period.",
+  },
+  {
+    id: 295,
+    text: "As per Indian Factory Act 1948, total hours of work per week including overtime shall not exceed:",
+    options: ["40 hours", "48 hours", "60 hours", "90 hours"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Tibbe Qaanuni",
+    year: 2024,
+    explanation:
+      "Indian Factories Act 1948, Section 64: maximum total working hours per week including overtime is 60 hours. Normal week = 48 hours; with overtime maximum = 60 hours per week.",
+  },
+  {
+    id: 296,
+    text: "Regarding term 'Social Medicine': (A) First introduced by Jules Guerin, (B) Jules Guerin from Berlin, (C) First introduced by Alfred Grotjahn, (D) Alfred Grotjahn from France, (E) First introduced in 1848",
+    options: [
+      "(A) (B) only",
+      "(C) (D) only",
+      "(C) (E) only",
+      "(A) (E) only",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "'Social Medicine' was first introduced by Jules Guerin (French physician) in 1848. A and E are correct. Guerin was French (not from Berlin). Alfred Grotjahn developed the concept later but did not introduce the term.",
+  },
+  {
+    id: 297,
+    text: "Match food classification: (A) Motadil, Mutawassitul Taghzia, Radi-ul-Kaimoos, (B) Motadil, Qaleel-ul-Taghzia, Radi-ul-Kaimoos, (C) Motadil, Qaleel-ul-Taghzia, Jayyad-ul-Kaimoos, (D) Kaseef, Kaseer-ul-Taghzia, Jayyad-ul-Kaimoos. List II: (I) Sookhi Machhli, (II) Boiled Egg, (III) Gobhi, (IV) Shaljam",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(I), (B)-(III), (C)-(IV), (D)-(II)",
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "(A) Moderate nutrition, good chyme = Gobhi; (B) Less nutrition, good chyme = Sookhi Machhli; (C) Less nutrition, excellent chyme = Boiled Egg; (D) Heavy food, high nutrition, excellent chyme = Shaljam.",
+  },
+  {
+    id: 298,
+    text: "Minimum distance between well and source of contamination should be at least:",
+    options: ["500 meter", "50 feet", "15 meter", "100 feet"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "Minimum safe distance between a well and any contamination source should be at least 50 feet (~15 meters) to prevent seepage of contaminants through soil into well water.",
+  },
+  {
+    id: 299,
+    text: "Match occupational diseases: (A) Anthracosis, (B) Byssinosis, (C) Silicosis, (D) Bagassosis. Industries: (I) Textile, (II) Sugar, (III) Ceramic, (IV) Coal Mines",
+    options: [
+      "(A)-(IV), (B)-(I), (C)-(III), (D)-(II)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "Anthracosis = Coal Mines (coal dust); Byssinosis = Textile Industry (cotton dust, Monday fever); Silicosis = Ceramic Industry (silica dust); Bagassosis = Sugar Industry (sugarcane bagasse dust).",
+  },
+  {
+    id: 300,
+    text: "Acceptable level of Thermal comfort is:",
+    options: [
+      "20\u00b0C",
+      "20\u00b0C - 25\u00b0C",
+      "25\u00b0C - 27\u00b0C",
+      "27\u00b0C - 28\u00b0C",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "Acceptable thermal comfort level is 20-25 degree Celsius. This range is recommended by WHO for indoor environments to maintain human comfort and productivity.",
+  },
+  {
+    id: 301,
+    text: "Arrange vaccines in ascending order by year of invention: (A) Hepatitis B, (B) Yellow Fever, (C) Diphtheria Toxoid, (D) Smallpox, (E) Anthrax",
+    options: [
+      "A, B, C, D, E",
+      "B, C, D, A, E",
+      "D, C, B, E, A",
+      "E, D, C, B, A",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "Ascending order by year: Smallpox vaccine (Jenner, 1796), Diphtheria Toxoid (1923), Yellow Fever (1937), Anthrax (1950s-70s), Hepatitis B (1981). Order: D, C, B, E, A.",
+  },
+  {
+    id: 302,
+    text: "Which aging theory describes 'Old age sets in when body cells exhaust multiplication capacity'?",
+    options: [
+      "Somatic Mutation Theory",
+      "Autoimmune Theory",
+      "Hayflick's Theory",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilme Sehat",
+    year: 2024,
+    explanation:
+      "Hayflick's Theory (Hayflick Limit, 1961): normal cells can only divide ~50-70 times. When replication capacity is exhausted, cells enter senescence and aging results.",
+  },
+  {
+    id: 303,
+    text: "According to which rule, square root of fetus length in cm gives age in months (first 5 months of fetal life):",
+    options: [
+      "Bishop scoring",
+      "Rule of nines",
+      "Hiss's rule",
+      "Rule of halves",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Qabalat",
+    year: 2024,
+    explanation:
+      "Hiss's Rule: in first 5 months, square root of crown-rump length in cm = age in months. E.g., 9 cm fetus = sqrt(9) = 3 months. After 5 months, length/5 = age in months.",
+  },
+  {
+    id: 304,
+    text: "Which is NOT an active principle of AKDO (Calotropis procera)?",
+    options: ["Uscharin", "Calotoxin", "Calactin", "Capsicin"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Capsicin (Capsaicin) is NOT from Calotropis procera (AKDO/Madar). AKDO's active principles include Uscharin, Calotoxin, Calactin, Calotropin, and Calotropagenin. Capsaicin is from Capsicum (chili peppers).",
+  },
+  {
+    id: 305,
+    text: "Most widely used substance dependence drug is:",
+    options: ["Opium", "Cocaine", "Amphetamines", "Cannabis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Tibbe Qaanuni",
+    year: 2024,
+    explanation:
+      "Cannabis (marijuana/hashish) is the most widely used illicit drug globally according to WHO and UNODC reports, used by the largest number of people worldwide.",
+  },
+  {
+    id: 306,
+    text: "Match antidotes: (A) Active Charcoal, (B) Canned fruit Juice, (C) Potassium permanganate, (D) EDTA. Poisons: (I) Barbiturates, (II) Strychnine, (III) Lead, (IV) Alkalies",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(IV), (C)-(I), (D)-(III)",
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tibbe Qaanuni",
+    year: 2024,
+    explanation:
+      "Active Charcoal = Strychnine (adsorbs alkaloid); Canned Fruit Juice (acidic) = Alkalies (neutralization); Potassium permanganate = Barbiturates (oxidizes them); EDTA = Lead (chelation therapy).",
+  },
+  {
+    id: 307,
+    text: "Kahroba Shamai is also known as:",
+    options: ["Qarnal Ayyal", "Qarnal Bahr", "Azba", "Baqlatul Ghazal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Kahroba Shamai (amber/fossil resin) is also known as Qarnal Bahr (horn of the sea). It has sedative and hemostatic properties in Unani medicine.",
+  },
+  {
+    id: 308,
+    text: "Match dosage forms: (A) Zarooq, (B) Nafookh, (C) Mufarreh, (D) Inkebab. List II: (I) Gaseous, (II) Semisolid, (III) Liquid, (IV) Solid",
+    options: [
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Zarooq = Liquid dosage form (eye/nose drops); Nafookh = Gaseous dosage form (insufflation blown into cavities); Mufarreh = Semisolid (cardiac electuary/paste); Inkebab = Solid (fumigation form).",
+  },
+  {
+    id: 309,
+    text: "Which of the following is an example of Nashif (desiccant)?",
+    options: ["Beladur", "Khushk choona", "Suddab", "Rewand"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Khushk choona (dried slaked lime/Calcium hydroxide) is a Nashif (desiccant) — it absorbs moisture and dries the application area. Beladur = Semecarpus anacardium; Suddab = Ruta graveolens; Rewand = Rheum emodi.",
+  },
+  {
+    id: 310,
+    text: "Which effect is produced by Jhaw (Tamarix)?",
+    options: ["Muzir Sar", "Muzir Halaq", "Muzir Bah", "Muzir Basar"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Jhaw (Tamarix gallica/Tamarisk) produces Muzir Halaq (harmful to throat). This is an important adverse effect noted in classical Unani pharmacology.",
+  },
+  {
+    id: 311,
+    text: "Panwad is also known as:",
+    options: ["Khilaf Balakhi", "Kiram Shab Tab", "Qalb", "Tira Tezak"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Panwad (Cassia tora/Cassia obtusifolia) is also known as Khilaf Balakhi in classical Unani texts. Used for skin diseases and as a mild laxative.",
+  },
+  {
+    id: 312,
+    text: "Correct statements about Palas/Dhak (Butea monosperma): (A) Flower = Gul-e-Tisu, (B) Chinya Gond from Balsan, (C) Gul-e-Tisu = Muhallil-e-waram, (D) Two leaves per branch, (E) Samagh-e-Dhak = Kamar Kas",
+    options: ["B, D, E", "A, B", "A, C, E", "D, E"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Correct: A (flower = Gul-e-Tisu, flame of the forest), C (Gul-e-Tisu has Muhallil-e-waram/anti-inflammatory action), E (Samagh-e-Dhak and Kamar Kas are same substance). D is wrong — Dhak has 3 leaflets per compound leaf, not two.",
+  },
+  {
+    id: 313,
+    text: "Match drug parts: (A) Satawar, (B) Afyun, (C) Darfilfil, (D) Nakhoona. Parts: (I) Latex, (II) Root, (III) Pods, (IV) Fruit",
+    options: [
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Satawar (Asparagus racemosus) = Root; Afyun (Papaver somniferum/Opium) = Latex (dried milky sap from capsules); Darfilfil (Piper longum) = Fruit; Nakhoona (Martynia annua) = Pods.",
+  },
+  {
+    id: 314,
+    text: "Statement I: Harrif taste drugs produce Tafteeh, Talteef, Tahleel, Tarqeeq and Taskheen. Statement II: Afas taste drugs produce Tarteeb, Tarqeeq, Irkha, Taleen and Nuzj.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Statement I is true: Harrif (pungent) drugs do produce those five actions. Statement II is false: Afas (astringent) taste drugs produce Taqtee', Taqbeed, Tadmeel, Tabreed — not the actions listed in Statement II.",
+  },
+  {
+    id: 315,
+    text: "Assertion (A): Bhilawan produces cardiotonic action. Reasons (R): Bhilawan resembles the shape of heart.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Both A and R correct. Bhilawan (Semecarpus anacardium) has cardiotonic properties AND resembles the heart shape. Classical Unani Doctrine of Signatures held that physical resemblance indicates therapeutic use.",
+  },
+  {
+    id: 316,
+    text: "Alkaloids in Asrol (Rauwolfia serpentina): (A) Reserpine, (B) Rescinnamine, (C) Isoajmaline, (D) Peganine",
+    options: [
+      "A, B and C only",
+      "A and C only",
+      "B and C only",
+      "A and B only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Rauwolfia serpentina contains Reserpine (antihypertensive), Rescinnamine (antihypertensive), and Isoajmaline (antiarrhythmic). Peganine is from Peganum harmala (Harmal), not Rauwolfia. Hence A, B and C only.",
+  },
+  {
+    id: 317,
+    text: "Afloonia is used in the form of:",
+    options: ["Safoof", "Marham", "Sharbat", "Majoon"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2024,
+    explanation:
+      "Afloonia (Hyoscyamus niger/Henbane) is used as Majoon (semi-solid electuary). Due to its narcotic/toxic nature, it is incorporated in small doses in Majoon for safe therapeutic use.",
+  },
+  {
+    id: 318,
+    text: "Khesanda is called as:",
+    options: ["Matbookh", "Zulal", "Naqoo", "Zaroor"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Khesanda (maceration/soaking process in Unani pharmacy) is also called Naqoo. Drugs are soaked in a solvent to extract active constituents — a basic Unani pharmaceutical process.",
+  },
+  {
+    id: 319,
+    text: "Sikanjbeen Lemuni does NOT contain:",
+    options: ["Asl", "Shakar-i-Teghal", "Shakar", "Lemun"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Sikanjbeen Lemuni (lemon oxymel) does NOT contain Shakar-i-Teghal (jaggery). Its ingredients are Asl (honey), Shakar (refined sugar), Lemun (lemon juice), and water.",
+  },
+  {
+    id: 320,
+    text: "The following ingredient is part of Tiryaq-i-Pechish:",
+    options: ["Kamoon Siyah", "Hubb-al-Aas", "Kafoor", "Anisoon"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Hubb-al-Aas (Myrtus communis/Myrtle berries) is an ingredient of Tiryaq-i-Pechish. It has astringent and anti-inflammatory properties useful in dysentery treatment.",
+  },
+  {
+    id: 321,
+    text: "Match List I with List II: (A) Atishak, (B) Warm-i-Kabid, (C) Warm-i-Lozatain, (D) Zaheer. List II: (I) Sharbat Toot Siyah, (II) Sufoof Moya, (III) Jauhar Seen, (IV) Dawa al-Kurkum",
+    options: [
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "Atishak (Syphilis) is treated with Jauhar Seen; Warm-i-Kabid with Dawa al-Kurkum; Warm-i-Lozatain with Sharbat Toot Siyah; Zaheer with Sufoof Moya.",
+  },
+  {
+    id: 322,
+    text: "Assertion (A): Triyaq Samania is named after. Reasons (R): Because it contains eight constituents.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Triyaq Samania means antidote of eight — it is named so because it contains eight ingredients. Both assertion and reason are correct.",
+  },
+  {
+    id: 323,
+    text: "Statement I: Qurs musallas is used externally. Statement II: Use of Barsha'sha increases pain.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Qurs musallas is used internally (orally). Barsha'sha (scarification) generally reduces rather than increases pain. Per exam key: Statement I is true but Statement II is false.",
+  },
+  {
+    id: 324,
+    text: "Arrange in the descending order: (A) Dang, (B) Dirham, (C) Daam, (D) Chhatank, (E) Tola",
+    options: ["CEBDA", "BDACE", "DCEBA", "DBECA"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Descending order of Unani weight measures: Chhatank (D) > Dirham (B) > Tola (E) > Dang (A) > Daam (C) = DBECA.",
+  },
+  {
+    id: 325,
+    text: "Safoof Moalif is used for: (A) Chronic Diarrhoea, (B) Jiryan-e-Mani, (C) Dysentery, (D) Riqqat-e-Mani, (E) Anaemia",
+    options: [
+      "B and D only",
+      "A and B only",
+      "C and E only",
+      "A and D only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Safoof Moalif is used primarily for Jiryan-e-Mani (spermatorrhoea) and Riqqat-e-Mani (thinning of semen), strengthening the reproductive system.",
+  },
+  {
+    id: 326,
+    text: "Statement I: Ibn-e-Hubal written that the joint of greater toe is called Angaroos, this is the origin of word Niqras. Statement II: Shaikh has written that Niqras starts from fingers especially from toe, but sometimes from heel.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz wa Ilaj",
+    year: 2024,
+    explanation:
+      "Both statements about Niqras (Gout) are authentic classical references from Ibn-e-Hubal and Ibn Sina respectively. Both are correct.",
+  },
+  {
+    id: 327,
+    text: "Causes of Aortic Regurgitation are: (A) Congenital (Bicuspid), Myxomatous (Prolapse), (B) Endocarditis, Rheumatic fever, (C) Syphilis, (D) Ankylosing spondylitis",
+    options: [
+      "A, B, C, D only",
+      "A and B only",
+      "B, C and D only",
+      "A, B and D only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Qalb",
+    year: 2024,
+    explanation:
+      "All four are causes of Aortic Regurgitation: congenital bicuspid valve, myxomatous degeneration, infective endocarditis, rheumatic fever, syphilitic aortitis, and ankylosing spondylitis.",
+  },
+  {
+    id: 328,
+    text: "Farismoos:",
+    options: [
+      "Is the other name for Azyoot",
+      "Is an uncommon or excessive erection of penis",
+      "Is another name for Aqoona",
+      "Is another name for Ramak",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz wa Ilaj",
+    year: 2024,
+    explanation:
+      "Farismoos (Priapism) refers to a prolonged, painful, and excessive erection of the penis unrelated to sexual stimulation — a urological emergency.",
+  },
+  {
+    id: 329,
+    text: "Marham Qimooliya is effective in:",
+    options: ["Azyoot", "Hikkatal Qazeeb", "Aaqoona", "Shuqaq al-Qazeeb"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Marham Qimooliya is a classical Unani topical ointment used for Shuqaq al-Qazeeb (cracks/fissures of the penis) with healing and emollient properties.",
+  },
+  {
+    id: 330,
+    text: "Ramak:",
+    options: [
+      "Is a disease",
+      "Is a symptom",
+      "Is a formulation made from Sate Amla and other medicines",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Ramak is a classical Unani compound formulation prepared using Sate Amla (extract of Amla/Indian gooseberry) along with other medicines, used as a tonic.",
+  },
+  {
+    id: 331,
+    text: "Which of the following is a Arz-e-Laazim and meaning of Sara' (Epilepsy)?",
+    options: [
+      "Frothing from mouth",
+      "To fall",
+      "Repeated contractions and relaxations of muscles",
+      "Tongue bite",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Asab",
+    year: 2024,
+    explanation:
+      "The literal meaning of Sara' (Epilepsy) in Arabic is 'to fall'. The essential/obligatory symptom (Arz-e-Laazim) is sudden falling.",
+  },
+  {
+    id: 332,
+    text: "Identify correct statements related to Niqras (Gout): (A) Madda Niqrasiya Hazm Chaharum ka fuzla hai, (B) It usually affects the poor people, (C) Its pain mostly affects finger joints specially toes, (D) Incidence is more in Females as compared to Males.",
+    options: [
+      "A and B only",
+      "A and C only",
+      "B and D only",
+      "B and C only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz wa Ilaj",
+    year: 2024,
+    explanation:
+      "Niqras material is the waste of 4th digestion (A). It mostly affects the toe joints (C). It is more common in affluent people (not poor) and more in males. So A and C are correct.",
+  },
+  {
+    id: 333,
+    text: "Assertion (A): 'Marze Akhzar' or 'Khizra' is a special type of Sooul Qiniya. Reasons (R): This is common in young girls due to menstrual abnormalities, causing greenish or yellowish green skin.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz wa Ilaj",
+    year: 2024,
+    explanation:
+      "Marze Akhzar (Chlorosis/Green Sickness) is indeed a type of Sooul Qiniya affecting young girls due to menstrual irregularities, causing greenish-yellow skin. Both assertion and reason are correct.",
+  },
+  {
+    id: 334,
+    text: "Identify correct statements related to renal stones: (A) Faaeli Sabab is 'Hararat', (B) Maddi Sabab is 'Ghaleez Laisdar Ratubat', (C) Renal stones are often formed due to 'Qarha', (D) Causes in Kidney and Urinary Bladder are similar.",
+    options: [
+      "A and B only",
+      "A, B and C only",
+      "A, C and D only",
+      "B, C and D only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Kulya",
+    year: 2024,
+    explanation:
+      "Faaeli Sabab (efficient cause) is Hararat; Maddi Sabab (material cause) is Ghaleez Laisdar Ratubat; Qarha also contributes. A, B, and C are all correct.",
+  },
+  {
+    id: 335,
+    text: "Assertion (A): Bronchial breathing classically heard in Pneumonia. Reasons (R): When underlying area is airless, sounds from large airways are transmitted more efficiently.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Sadr",
+    year: 2024,
+    explanation:
+      "In pneumonia, lung consolidation makes the lung airless, transmitting bronchial breath sounds efficiently to chest wall. Both assertion and reason are correct.",
+  },
+  {
+    id: 336,
+    text: "Match List I with List II: (A) Guarding, (B) Rigidity, (C) Murphy sign. List II: (I) Acute Cholecystitis, (II) Diffuse Peritonitis, (III) Uncomplicated Acute Appendicitis",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III)",
+      "(A)-(III), (B)-(II), (C)-(I)",
+      "(A)-(II), (B)-(III), (C)-(I)",
+      "(A)-(I), (B)-(III), (C)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Guarding — uncomplicated acute appendicitis (III); Rigidity (board-like) — diffuse peritonitis (II); Murphy sign — acute cholecystitis (I). Correct: A-III, B-II, C-I.",
+  },
+  {
+    id: 337,
+    text: "Identify correct statements related to Asbab-e-Nabz: (A) Arteries are among the Asbab-e-Muqawwima, (B) Physical activity and Repose are among the Asbab-e-Ghair Muqawwima Lazima, (C) Sleep and Awakening are among the Asbab-e-Ghair Muqawwima Mughayyara, (D) Fever is among Asbab-e-Ghair Muqawwima Lazima.",
+    options: [
+      "A and B only",
+      "B and C only",
+      "C and D only",
+      "A and D only",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Nabz",
+    year: 2024,
+    explanation:
+      "Arteries are Asbab-e-Muqawwima (structural causes). Physical activity and Repose are Asbab-e-Ghair Muqawwima Lazima (essential non-structural causes). A and B are correct.",
+  },
+  {
+    id: 338,
+    text: "Assertion (A): Fasd is contraindicated in poisoned patients, same applies to plague patients. Reasons (R): Otherwise its toxicity will spread.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "Fasd is contraindicated in plague as in poisoning — venesection may spread the toxic material throughout the body via circulation. Both assertion and reason are correct.",
+  },
+  {
+    id: 339,
+    text: "Shafviya, Khataliya, Mantiqiya are some of the types of:",
+    options: [
+      "Surkh Bada (Erysipelas)",
+      "Jamrah (Anthrax)",
+      "Nar Farsi (Eczema)",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Jild",
+    year: 2024,
+    explanation:
+      "Shafviya, Khataliya, and Mantiqiya are classical Unani subtypes of Jamrah (Anthrax/carbuncle), classified based on location and spread pattern.",
+  },
+  {
+    id: 340,
+    text: "The Deedan Jarb are first mentioned by Arab physicians in:",
+    options: [
+      "Moalajate Buqratiya",
+      "Moalajate Sharah Asbab",
+      "Usoole Tibb",
+      "Kitab Al Hawi",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tarikh wa Falsafa",
+    year: 2024,
+    explanation:
+      "Deedan Jarb (scabies mites) were first described by Arab physicians in Moalajate Sharah Asbab, an important classical Unani text.",
+  },
+  {
+    id: 341,
+    text: "Keratinocytes comprise what percentage of epidermal cells? (A) 95%, (B) 90%, (C) 80% to 99%, (D) 50% to 60%, (E) 55%",
+    options: ["A and C only", "B and C only", "A only", "E only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Amraz Jild",
+    year: 2024,
+    explanation:
+      "Keratinocytes constitute approximately 80-99% of epidermal cells (most cited as ~95%). Both A (95%) and C (80-99%) correctly represent this range.",
+  },
+  {
+    id: 342,
+    text: "Chajan and Akoota are the other names for:",
+    options: [
+      "Namla (Herpes)",
+      "Jamrah (Anthrax)",
+      "Nar Farsi (Eczema)",
+      "Shara (Urticaria)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Jild",
+    year: 2024,
+    explanation:
+      "Chajan and Akoota are synonyms for Nar Farsi (Eczema/dermatitis) in classical Unani texts, describing the burning fire-like nature of the condition.",
+  },
+  {
+    id: 343,
+    text: "Match List I with List II: (A) Calorie reserve, (B) Vitamin D synthesis, (C) Temperature Regulation, (D) Body Odour. List II: (I) Keratinocytes, (II) Subcutaneous fat, (III) Eccrine glands, (IV) Apocrine sweat glands",
+    options: [
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+      "(A)-(I), (B)-(IV), (C)-(II), (D)-(III)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Jild",
+    year: 2024,
+    explanation:
+      "Calorie reserve — Subcutaneous fat (II); Vitamin D synthesis — Keratinocytes (I); Temperature Regulation — Eccrine glands (III); Body Odour — Apocrine glands (IV). Correct: A-II, B-I, C-III, D-IV.",
+  },
+  {
+    id: 344,
+    text: "Match List I with List II: (A) Marham Ushq, (B) Marham Jadwar, (C) Marham Dakhliyoon, (D) Marham Raal. List II: (I) Qarooh, (II) Auram Reham Salaat, (III) Tahleel Auram, (IV) Khanazeer Rasoli",
+    options: [
+      "(A)-(I), (B)-(III), (C)-(IV), (D)-(II)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(I), (B)-(IV), (C)-(II), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Marham Ushq — Khanazeer Rasoli (IV); Marham Jadwar — Tahleel Auram (III); Marham Dakhliyoon — Auram Reham Salaat (II); Marham Raal — Qarooh (I). Correct: A-IV, B-III, C-II, D-I.",
+  },
+  {
+    id: 345,
+    text: "An Aromatic liquid preparation kept in a wide mouthed bottle used for inhalation is known as:",
+    options: ["Shamoom", "Lakhlakha", "Mazmaza", "Gharghara"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Lakhlakha is an aromatic liquid inhalation preparation kept in a wide-mouthed bottle. It differs from Shamoom (aromatic powder) and Gharghara (gargle).",
+  },
+  {
+    id: 346,
+    text: "Assertion (A): Taking food before Hamam produces obesity and empty stomach Hamam produces lean/dry body. Reasons (R): Persons with dry temperament should intake less water during Hamam.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "The assertion about food timing and Hamam effects is correct, but the reason about water intake for dry temperament is not the correct explanation for the assertion.",
+  },
+  {
+    id: 347,
+    text: "Statement I: Injecting liquid drug or food into the rectum is called Huqna. Statement II: Huqna-e-Ghizayi is given in diseases of throat or when food cannot be given orally.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "Huqna is the Unani rectal enema. Huqna-e-Ghizayi (nutritional enema) is used when oral feeding is impossible. Both statements are correct.",
+  },
+  {
+    id: 348,
+    text: "Exercise/Riyazat strengthens which of the following:",
+    options: ["Arwah", "Akhlat", "Arkan", "Az'aa"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "Riyazat (exercise) primarily strengthens Az'aa (organs/tissues) by improving their tone, nutrition, and function.",
+  },
+  {
+    id: 349,
+    text: "What is Naqoo?",
+    options: ["Sheera", "Joshanda", "Khaisanda", "Zulal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2024,
+    explanation:
+      "Naqoo (maceration) is called Khaisanda in Unani pharmacy — drugs are soaked in liquid to extract active constituents without boiling.",
+  },
+  {
+    id: 350,
+    text: "Statement I: Diuresis is advised for treatment of purgation and vomiting. Statement II: Diuretics are given in cardio Pulmonary diseases.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Munafeul Aza",
+    year: 2024,
+    explanation:
+      "Statement I is incorrect — diuresis is not the treatment for purgation/vomiting. Statement II is correct — diuretics are used in cardiopulmonary diseases to reduce fluid overload.",
+  },
+  {
+    id: 351,
+    text: "In case of varicose, venesection of which vein is indicated?",
+    options: [
+      "Cephalic vein",
+      "Basalic vein",
+      "Sciatic vein",
+      "Popliteal vein",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "In classical Unani medicine, for varicose veins of lower limbs, Fasd (venesection) of the Sciatic vein (posterior thigh region) is indicated.",
+  },
+  {
+    id: 352,
+    text: "Which is not increased during pregnancy?",
+    options: [
+      "Vital Capacity",
+      "Blood-volume",
+      "Extra cellular fluid",
+      "Weight",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Blood volume, extracellular fluid, and weight all increase in pregnancy. Vital Capacity remains unchanged or slightly decreases due to diaphragm elevation.",
+  },
+  {
+    id: 353,
+    text: "Most commonest cause of post partum Haemorrhage:",
+    options: [
+      "Atonic Uterus",
+      "Traumatic",
+      "Mixed causes",
+      "Retained placenta",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Atonic uterus is the most common cause of PPH (~70-80% of cases). The uterus fails to contract after delivery, causing excessive bleeding.",
+  },
+  {
+    id: 354,
+    text: "Assertion (A): Maternal BP decreased during pregnancy. Reasons (R): Due to smooth muscle relaxing effect of progesterone.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "BP decreases in 2nd trimester due to progesterone-induced smooth muscle relaxation causing peripheral vasodilation. Both assertion and reason are correct.",
+  },
+  {
+    id: 355,
+    text: "Statement I: Obstetric conjugate is distance between sacral promontory to inner surface of symphysis pubis. Statement II: Diagonal conjugate is distance between lower border of symphysis pubis to sacral promontory.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Both conjugate measurements are correctly described. Obstetric conjugate and diagonal conjugate definitions are accurate as given.",
+  },
+  {
+    id: 356,
+    text: "Order of weight gain during pregnancy: (A) Uterus, (B) Placenta, (C) Liquor Amnii, (D) Fetus, (E) Breasts",
+    options: [
+      "E > B > C > A > D",
+      "D > A > C > B > E",
+      "B > C > D > A > E",
+      "A > C > D > B > E",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Descending weight gain order: Fetus (~3.4kg) > Uterus (~0.9kg) > Liquor Amnii (~0.8kg) > Placenta (~0.65kg) > Breasts (~0.4kg). So D > A > C > B > E.",
+  },
+  {
+    id: 357,
+    text: "Assertion (A): When Biparietal diameter of fetus stretches the Vulval outlet. Reasons (R): This is called as crowning of the head.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Crowning occurs when the biparietal diameter passes through the vulval outlet and remains visible between contractions. Both assertion and reason are correct.",
+  },
+  {
+    id: 358,
+    text: "Diagnostic indications of laparoscopy for infertility: (A) Fulguration of endometriotic implants, (B) Abnormal HSG, (C) Age > 35 yrs, (D) Women with comorbid pelvic pathology.",
+    options: ["A, D only", "B, C, D only", "A, B, C only", "A, B, D only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Diagnostic laparoscopy is indicated for: abnormal HSG (B), age >35 requiring prompt evaluation (C), comorbid pelvic pathology (D). Fulguration (A) is therapeutic, not a diagnostic indication.",
+  },
+  {
+    id: 359,
+    text: "Match List I with List II: (A) Emergency pills, (B) Triphasic pills, (C) Mini pill, (D) IVth generation pills. List II: (I) Levonorgestral 75 ugm, (II) Drospirenone, (III) Levonorgestral and ethinylestradiol, (IV) Levonorgestral 0.75 mg",
+    options: [
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(II), (C)-(I), (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Emergency pills — Levonorgestral 0.75mg (IV); Triphasic pills — Levonorgestral and ethinylestradiol varying doses (III); Mini pill — Levonorgestral 75mcg (I); 4th generation — Drospirenone (II). Correct: A-IV, B-III, C-I, D-II.",
+  },
+  {
+    id: 360,
+    text: "Which of the entities are included in PID? (A) Endometritis, (B) Salpingitis, (C) Pelvic peritonitis, (D) Cervicitis",
+    options: ["B, D only", "D, A only", "B, C, D only", "A, B, C only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "PID includes Endometritis (A), Salpingitis (B), and Pelvic peritonitis (C). Cervicitis (D) is not classically included in PID. Correct: A, B, C only.",
+  },
+  {
+    id: 361,
+    text: "Match List I with List II: (A) Bacterial vaginosis, (B) Vaginal candidiasis, (C) Chlamydia vaginal infection, (D) Trichomoniasis vaginalis. List II: (I) Mucopurulent, (II) Greenish yellow discharge, (III) Curdy discharge, (IV) Grey white to green yellow discharge",
+    options: [
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Niswan",
+    year: 2024,
+    explanation:
+      "Bacterial vaginosis — grey/green-yellow (IV); Candidiasis — curdy (III); Chlamydia — mucopurulent (I); Trichomoniasis — frothy greenish-yellow (II). Correct: A-IV, B-III, C-I, D-II.",
+  },
+  {
+    id: 362,
+    text: "First molar tooth appears around the age:",
+    options: [
+      "9 month to 12 month",
+      "15 month and 18 month",
+      "12 month and 15 month",
+      "6 month to 9 month",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Amraz Atfal",
+    year: 2024,
+    explanation:
+      "First deciduous molar appears between 12-15 months. Eruption sequence: central incisors (6-9m), lateral incisors (9-12m), first molars (12-15m), canines (15-18m), second molars (18-24m).",
+  },
+  {
+    id: 363,
+    text: "Gower's sign is found in:",
+    options: [
+      "Poliomyelitis",
+      "Muscular Dystrophy",
+      "Epilepsy",
+      "Myasthenia Gravis",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Atfal",
+    year: 2024,
+    explanation:
+      "Gower's sign is seen in Duchenne Muscular Dystrophy — the child walks their hands up their body to stand up due to proximal muscle weakness.",
+  },
+  {
+    id: 364,
+    text: "Duckett Jones major criteria for Rheumatic fever: (A) Carditis, (B) Meningitis, (C) Chorea, (D) Erythema marginatum",
+    options: ["B, C, D only", "A, C only", "A, C, D only", "A, B, C only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Amraz Atfal",
+    year: 2024,
+    explanation:
+      "Major criteria: Carditis (A), Polyarthritis, Chorea (C), Erythema marginatum (D), Subcutaneous nodules. Meningitis (B) is NOT a major criterion. So A, C, D are correct.",
+  },
+  {
+    id: 365,
+    text: "Match List I with List II: (A) Prolapse of Rectum, (B) Acute Fissure in Ano, (C) Hydrocele, (D) Carcinoma of Stomach. List II: (I) Lord's anal dilatation, (II) Well's operation, (III) Eversion of sac, (IV) Billroth-II",
+    options: [
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+      "(A)-(I), (B)-(IV), (C)-(III), (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Prolapse of Rectum — Well's operation (II); Fissure in Ano — Lord's anal dilatation (I); Hydrocele — Eversion of sac (III); Carcinoma of Stomach — Billroth-II (IV). Correct: A-II, B-I, C-III, D-IV.",
+  },
+  {
+    id: 366,
+    text: "The Littre's Hernia is protrusion of viscus through an abnormal opening:",
+    options: [
+      "A portion of circumference of the Intestine",
+      "A Meckel's diverticulum",
+      "Part of urinary bladder",
+      "Part of stomach",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Littre's hernia contains a Meckel's diverticulum in the hernial sac — a rare type named after Alexis Littre.",
+  },
+  {
+    id: 367,
+    text: "Statement I: Severe ulcerative colitis is characterised by more than four motions a day with systemic illness. Statement II: Acute Pancreatitis presents with abdominal pain and raised pancreatic enzyme levels.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Both statements represent standard clinical definitions. Severe UC: >4 motions/day with systemic illness. Acute pancreatitis: abdominal pain + raised amylase/lipase. Both are correct.",
+  },
+  {
+    id: 368,
+    text: "Assertion (A): Full thickness prolapse of rectum involves all layers and is associated with weak pelvic floor. Reasons (R): Rectal prolapse commences as intussusception of the rectum.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Full thickness rectal prolapse involves all rectal layers with weak pelvic floor. It begins as internal intussusception that progresses. Both assertion and reason are correct.",
+  },
+  {
+    id: 369,
+    text: "Statement I: In trauma airway assessment, check verbal response, clear airway, if GCS ≤ 8 consider definitive airway. Statement II: There is no need of oxygen to all trauma patients.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Statement I is correct per ATLS guidelines. Statement II is incorrect — all trauma patients require high-flow oxygen to prevent hypoxia.",
+  },
+  {
+    id: 370,
+    text: "Assertion (A): Pancreatitis is inflammation of the parenchyma of the Pancreas. Reasons (R): The underlying mechanism is premature activation of pancreatic enzymes.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Pancreatitis is pancreatic parenchyma inflammation caused by premature intracellular activation of trypsinogen to trypsin leading to autodigestion. Both are correct.",
+  },
+  {
+    id: 371,
+    text: "Shock is a systemic state of:",
+    options: [
+      "Low tissue perfusion",
+      "High tissue perfusion",
+      "Normal tissue perfusion",
+      "Very high tissue perfusion",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Shock is defined as inadequate tissue perfusion where oxygen and nutrient delivery is insufficient to meet metabolic demands.",
+  },
+  {
+    id: 372,
+    text: "Stress gastritis is characterised by:",
+    options: [
+      "Reduction in blood supply to superficial mucosa of stomach",
+      "Disturbance of gastric mucosal barrier",
+      "Enterogastric reflux",
+      "Autoimmune condition",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Stress gastritis is characterised by reduction in blood supply to superficial gastric mucosa in critically ill patients, causing mucosal ischaemia, erosions, and ulceration.",
+  },
+  {
+    id: 373,
+    text: "The life threatening event with major burn is:",
+    options: [
+      "Inflammatory changes of skin",
+      "Burn around the face and neck",
+      "Burn of Genitals",
+      "Cell mediated immunity is significantly reduced",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "Burns around face and neck are immediately life-threatening due to airway oedema, inhalation injury, and respiratory compromise requiring prompt airway management.",
+  },
+  {
+    id: 374,
+    text: "The General anaesthetic triad includes:",
+    options: [
+      "Unconsciousness and pain relief",
+      "Unconsciousness, pain relief and muscle relaxation",
+      "Unconsciousness, pain relief and Haemostasis",
+      "Unconsciousness, Pain relief and wound care",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Jarahat",
+    year: 2024,
+    explanation:
+      "The classical anaesthetic triad: (1) Unconsciousness/narcosis, (2) Analgesia/pain relief, (3) Muscle relaxation — essential for safe general anaesthesia.",
+  },
+  {
+    id: 375,
+    text: "What is chalazion? (A) Inflammation of gland of Zeis, (B) Inflammation of gland of Moll, (C) Inflammation of gland of Meibomian, (D) Inflammation of lid margin.",
+    options: ["A and C only", "B and C only", "C only", "D and C only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Amraz Ain",
+    year: 2024,
+    explanation:
+      "Chalazion is chronic granulomatous inflammation specifically of the Meibomian gland (tarsal gland), caused by obstruction of its duct leading to lipogranuloma.",
+  },
+  {
+    id: 376,
+    text: "Match List I with List II: (A) Light house sign, (B) Rising sun sign, (C) Hennebert's sign, (D) Griesinger's sign. List II: (I) Inflamed mastoid vein, (II) Fistula in labyrinth, (III) Suppurative otitis media, (IV) Glomus jugulare",
+    options: [
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Amraz Uzn",
+    year: 2024,
+    explanation:
+      "Light house sign — CSOM (III); Rising sun sign — Glomus jugulare (IV); Hennebert's sign — Fistula in labyrinth (II); Griesinger's sign — Inflamed mastoid vein (I). Correct: A-III, B-IV, C-II, D-I.",
+  },
+  {
+    id: 377,
+    text: "What is epiphora? (A) Excessive secretion of tears, (B) Obstruction to outflow of tears, (C) Steven's Johnson's syndrome, (D) Sensory stimulation of eyes",
+    options: ["(A) only", "(B) only", "(C) only", "(D) only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Amraz Ain",
+    year: 2024,
+    explanation:
+      "Epiphora is overflow of tears due to obstruction to lacrimal drainage outflow. It differs from hyperlacrimation (excessive tear production).",
+  },
+  {
+    id: 378,
+    text: "Assertion (A): There is severe pain in otitis externa. Reasons (R): Because skin is adhered to underlying cartilage and due to congestion in recumbent position.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Amraz Uzn",
+    year: 2024,
+    explanation:
+      "Severe pain in otitis externa occurs because skin is tightly adherent to underlying cartilage, leaving no room for oedema. Recumbent position worsens congestion. Both assertion and reason are correct.",
+  },
+  {
+    id: 379,
+    text: "Which of the following is NOT a symptom of corneal ulcer? (A) Acute pain in eye, (B) Mucopurulent Discharge, (C) Redness of eye, (D) Lacrimation, (E) Blepharospasm",
+    options: ["B and D only", "D and E only", "B only", "A only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Amraz Ain",
+    year: 2024,
+    explanation:
+      "Corneal ulcer symptoms: acute pain (A), redness (C), lacrimation (D), blepharospasm (E). Mucopurulent discharge (B) is characteristic of conjunctivitis, not specifically corneal ulcer. So B only is the answer.",
+  },
+  {
+    id: 380,
+    text: "What term is used to describe perverted sense of smell?",
+    options: ["Anosmia", "Hyposmia", "Parosmia", "Cocosmia"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Amraz Uzn",
+    year: 2024,
+    explanation:
+      "Parosmia is distorted/perverted sense of smell where odours are perceived differently. Anosmia = absent smell; Hyposmia = reduced smell.",
   },
 ];
