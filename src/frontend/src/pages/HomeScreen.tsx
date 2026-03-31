@@ -19,6 +19,7 @@ import { useAllQuestions } from "../hooks/useAdminQueries";
 
 interface HomeScreenProps {
   onNavigate: (screen: Screen) => void;
+  subscriptionSyncKey?: number;
 }
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -68,10 +69,19 @@ function getSubscriptionInfo() {
   }
 }
 
-export default function HomeScreen({ onNavigate }: HomeScreenProps) {
+export default function HomeScreen({
+  onNavigate,
+  subscriptionSyncKey,
+}: HomeScreenProps) {
   const { data: allQuestions = staticQuestions } = useAllQuestions();
   const [showPaymentBanner, setShowPaymentBanner] = useState(false);
-  const [subscriptionInfo] = useState(getSubscriptionInfo);
+  const [subscriptionInfo, setSubscriptionInfo] = useState(getSubscriptionInfo);
+
+  // Re-read subscription info whenever App.tsx signals a backend sync
+  // biome-ignore lint/correctness/useExhaustiveDependencies: subscriptionSyncKey is a prop used as an external trigger
+  useEffect(() => {
+    setSubscriptionInfo(getSubscriptionInfo());
+  }, [subscriptionSyncKey]);
 
   useEffect(() => {
     if (localStorage.getItem("aiapget_payment_submitted") === "true") {

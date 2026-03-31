@@ -140,6 +140,8 @@ function AppContent() {
   const [screen, setScreen] = useState<Screen>({ name: "home" });
   // Trigger re-evaluation of the gate by bumping this counter
   const [_gateKey, setGateKey] = useState(0);
+  // Incremented after backend sync writes to localStorage so HomeScreen re-reads
+  const [subscriptionSyncKey, setSubscriptionSyncKey] = useState(0);
 
   const navigateTo = (s: Screen) => setScreen(s);
 
@@ -181,6 +183,7 @@ function AppContent() {
         }
       } catch {}
       setSubscriptionStatus(getSubscriptionStatus());
+      setSubscriptionSyncKey((k) => k + 1);
       return;
     }
 
@@ -206,6 +209,7 @@ function AppContent() {
 
       localStorage.setItem("aiapget_subscription", JSON.stringify(syncedSub));
       setSubscriptionStatus(getSubscriptionStatus());
+      setSubscriptionSyncKey((k) => k + 1);
     }
 
     // Update last login device (fire and forget)
@@ -286,7 +290,12 @@ function AppContent() {
       )}
 
       <div className="flex-1">
-        {screen.name === "home" && <HomeScreen onNavigate={navigateTo} />}
+        {screen.name === "home" && (
+          <HomeScreen
+            onNavigate={navigateTo}
+            subscriptionSyncKey={subscriptionSyncKey}
+          />
+        )}
 
         {screen.name === "quiz" && (
           <QuizScreen

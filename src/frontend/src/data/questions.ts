@@ -5342,4 +5342,1795 @@ export const questions: Question[] = [
     explanation:
       "Parosmia is distorted/perverted sense of smell where odours are perceived differently. Anosmia = absent smell; Hyposmia = reduced smell.",
   },
+  // ── 2023 AIAPGET Questions ──
+  {
+    id: 381,
+    text: "Step wise line of treatment of Zoafe Bah is: (A) Musakhkhinat, (B) Muqawwiyat, (C) Mumsikat, (D) Muwallidat-e-Mani",
+    options: [
+      "(A), (B), (C), (D)",
+      "(D), (A), (B), (C)",
+      "(D), (B), (A), (C)",
+      "(A), (D), (B), (C)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "The stepwise treatment of Zoafe Bah (sexual weakness) follows: first Muwallidat-e-Mani (semen producers) to build the raw material, then Musakhkhinat (warming agents) to stimulate, then Muqawwiyat (strengthening agents) to consolidate, and finally Mumsikat (retaining agents) to prevent premature ejaculation. Sequence: D→A→B→C.",
+  },
+  {
+    id: 382,
+    text: "The meaning of 'Lams' in the definition of Nabz is:",
+    options: [
+      "To touch with the tip of fingers",
+      "To see with the eyes",
+      "To feel the movement of the artery",
+      "To hear the sound of the artery",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "In the classical Unani definition of Nabz (pulse), 'Lams' means to touch with the tip of the fingers. The physician places the fingertips over the artery to feel its movement, hence 'Lams' specifically refers to tactile palpation with fingertips.",
+  },
+  {
+    id: 383,
+    text: "In which condition Nabz is 'Saree' and 'Mutawatir'?",
+    options: [
+      "Warm-e-Kabid",
+      "Warm-e-Reham",
+      "Warm-e-Hazaab",
+      "Warm-e-Kulya",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "In Warm-e-Hazaab (inflammation of the diaphragm/pericardium), the pulse is characteristically 'Saree' (fast/rapid) and 'Mutawatir' (continuous without interruption) because the inflammation is close to the heart, causing it to beat rapidly and continuously.",
+  },
+  {
+    id: 384,
+    text: "'Dawa-e-Ghisali' (detergent) means:",
+    options: [
+      "That cleanses the surface of the organ",
+      "That produces heat in the organ",
+      "That produces coldness in the organ",
+      "That produces moisture in the organ",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Ilaj",
+    year: 2023,
+    explanation:
+      "Dawa-e-Ghisali (from 'Ghasl' meaning to wash/cleanse) refers to a drug that cleanses the surface of an organ by removing morbid matter and impurities from its surface, similar to a detergent action.",
+  },
+  {
+    id: 385,
+    text: "Which of the following is not included in 'Asbab-e-Sittah Zarooriyah'?",
+    options: [
+      "Hawa-e-Muheet",
+      "Makul-o-Mashrub",
+      "Harkat-o-Sukoon-e-Badani",
+      "Daalk-o-Riyazat",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Asbab-e-Sittah Zarooriyah (Six Essential Causes) are: (1) Hawa-e-Muheet, (2) Makul-o-Mashrub, (3) Harkat-o-Sukoon-e-Badani, (4) Harkat-o-Sukoon-e-Nafsani, (5) Naum-o-Yaqza, (6) Ihtibas-o-Istifragh. Daalk-o-Riyazat is not a separate category — Riyazat falls under Harkat-e-Badani.",
+  },
+  {
+    id: 386,
+    text: "The temperament (Mizaj) of 'Rooh' is:",
+    options: ["Haar-Yabis", "Haar-Ratab", "Barid-Yabis", "Barid-Ratab"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Rooh (vital spirit) has a Haar-Ratab (hot and moist) temperament. This is because Rooh is a vaporous substance derived from the finest part of blood and resides in the heart; heat and moisture are essential qualities for its vitality.",
+  },
+  {
+    id: 387,
+    text: "Which organ is the 'Markaz' (center) of 'Quwwat-e-Haiwaniyah'?",
+    options: ["Dimagh", "Kabid", "Qalb", "Khusiyatain"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwwat-e-Haiwaniyah (vital/animal faculty) has its Markaz (center/seat) in the Qalb (heart). The heart generates Rooh-e-Haiwani and distributes it through arteries, controlling vital functions like heartbeat and respiration.",
+  },
+  {
+    id: 388,
+    text: "According to Ibn-e-Sina, the number of 'Aaza-e-Raeesah' is:",
+    options: ["3", "4", "5", "6"] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "According to Ibn-e-Sina (Avicenna), there are 4 Aaza-e-Raeesah (principal/chief organs): Qalb (heart), Dimagh (brain), Kabid (liver), and Khusiyatain (testes/gonads). Each governs one of the four major faculties.",
+  },
+  {
+    id: 389,
+    text: "Which 'Khilt' is called 'Khadim-e-Dam' (servant of blood)?",
+    options: ["Safra", "Balgham", "Sawda", "None of these"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Balgham (phlegm) is called 'Khadim-e-Dam' (servant of blood) because it acts as a nutrient reserve that can be converted to blood when needed. It keeps the blood moist and serves as a backup nutritive substance.",
+  },
+  {
+    id: 390,
+    text: "The meaning of 'Tabiyat' is:",
+    options: [
+      "The power that governs the body",
+      "The physical structure of the body",
+      "The psychological state of the body",
+      "The environmental influence on the body",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Tabiyat (Nature) in Unani medicine refers to the inherent power or force that governs and regulates all bodily functions — nutrition, growth, reproduction, and maintenance of health. It is also called Quwwat-e-Mudabbira-e-Badan.",
+  },
+  {
+    id: 391,
+    text: "Which organ is most 'Haar' (hot) in the human body?",
+    options: ["Kabid", "Qalb", "Lahm", "Jild"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Qalb (heart) is the hottest organ in the human body according to Unani medicine. It is the seat of innate heat (Hararat-e-Ghariziyah) and Rooh, making it the warmest organ.",
+  },
+  {
+    id: 392,
+    text: "'Ustaqussat' are also known as:",
+    options: ["Akhlat", "Arkan", "Aaza", "Arwah"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Ustaqussat is the Greek term for Arkan (elements). The four Arkan — Nar (fire), Hawa (air), Maa (water), Arz (earth) — are also called Ustaqussat, meaning basic/fundamental elements that constitute all matter.",
+  },
+  {
+    id: 393,
+    text: "The number of 'Quwa-e-Nafsaniyah' is:",
+    options: ["2", "3", "4", "5"] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwa-e-Nafsaniyah (psychic/nervous faculties) are 3 in number: (1) Quwwat-e-Mudrika (perceptive power — further divided into Hiss and Hayyiz), (2) Quwwat-e-Muhrika (motor power), and (3) Quwwat-e-Khayal (imaginative power). The main three are sensation, movement, and imagination.",
+  },
+  {
+    id: 394,
+    text: "'Baul-e-Zit-e-Duhni' (oily urine) is a sign of:",
+    options: [
+      "Zoaf-e-Kulya",
+      "Zoaf-e-Kabid",
+      "Tahlil-e-Badan",
+      "Waram-e-Masana",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Baul",
+    year: 2023,
+    explanation:
+      "Baul-e-Zit-e-Duhni (oily/fatty urine) indicates Tahlil-e-Badan (bodily dissolution/wasting), where body fats are being broken down and excreted through urine. This is seen in severe cachexia or advanced wasting diseases.",
+  },
+  {
+    id: 395,
+    text: "'Harkat-e-Moatadil' (moderate exercise) produces:",
+    options: [
+      "Hararat-e-Ghariziyah",
+      "Hararat-e-Gharibah",
+      "Burudat",
+      "Yubusat",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Moderate exercise (Harkat-e-Moatadil) strengthens and enhances Hararat-e-Ghariziyah (innate/natural heat). It improves digestion, circulation, and vitality by increasing the body's intrinsic warmth without causing harmful excess.",
+  },
+  {
+    id: 396,
+    text: "Which 'Khilt' is 'Barid-Yabis' in temperament?",
+    options: ["Dam", "Balgham", "Safra", "Sawda"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Sawda (black bile) has Barid-Yabis (cold and dry) temperament. It corresponds to the earth element and governs cold, dry conditions. Excess Sawda leads to melancholic disorders.",
+  },
+  {
+    id: 397,
+    text: "'Afa'al-e-Nafis' (psychological functions) are related to:",
+    options: ["Qalb", "Kabid", "Dimagh", "Mi'da"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Afa'al-e-Nafis (psychological/psychic functions) are governed by the Dimagh (brain), which is the seat of Quwa-e-Nafsaniyah. All mental faculties including perception, cognition, memory, and voluntary movement originate from the brain.",
+  },
+  {
+    id: 398,
+    text: "The 'Maddi Sabab' (material cause) of Health and Disease is:",
+    options: ["Arkan", "Akhlat", "Aaza", "Arwah"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Aaza (organs) are the Maddi Sabab (material/structural cause) of health and disease. They are the physical substrate — disease manifests in and through the organs. Note: Some texts place Akhlat here, but in context of structural material cause, Aaza is the direct physical matter.",
+  },
+  {
+    id: 399,
+    text: "'Nabz-e-Azim' is a sign of:",
+    options: [
+      "Excessive Hararat",
+      "Excessive Burudat",
+      "Excessive Yubusat",
+      "Excessive Ratubat",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Azim (large/full pulse) indicates excessive Hararat (heat) in the body. When there is excess heat, the heart expands more to dissipate it, producing a large volume pulse.",
+  },
+  {
+    id: 400,
+    text: "The meaning of 'Istehala' is:",
+    options: ["Movement", "Transformation", "Stagnation", "Elimination"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Istehala means transformation or qualitative change — the conversion of one substance into another. In Unani physiology, food undergoes Istehala during digestion, being transformed into blood and other humours.",
+  },
+  {
+    id: 401,
+    text: "'Nafs-e-Natiqa' is the other name of:",
+    options: [
+      "Rooh-e-Haiwani",
+      "Rooh-e-Nafsani",
+      "Rooh-e-Tabiyi",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Nafs-e-Natiqa (rational soul) is another name for Rooh-e-Nafsani (psychic/nervous spirit), which resides in the brain and governs psychic functions, rational thought, and voluntary movement.",
+  },
+  {
+    id: 402,
+    text: "'Baul-e-Rasubi' (sedimentary urine) is found in:",
+    options: [
+      "Amraz-e-Haddah",
+      "Amraz-e-Muzminah",
+      "Amraz-e-Baridah",
+      "Amraz-e-Yabisah",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Baul",
+    year: 2023,
+    explanation:
+      "Baul-e-Rasubi (urine with sediment) is characteristically found in Amraz-e-Muzminah (chronic diseases), where prolonged illness leads to accumulation of morbid matter that settles as sediment in the urine.",
+  },
+  {
+    id: 403,
+    text: "The meaning of 'Tabai' (natural) in Nabz is:",
+    options: [
+      "Movement of the artery according to the requirement of the body",
+      "Movement of the artery faster than normal",
+      "Movement of the artery slower than normal",
+      "Absence of movement in the artery",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Tabai (natural pulse) refers to arterial movement that is perfectly in accordance with the body's needs — neither too fast, nor too slow, neither too strong nor too weak. It reflects normal physiological state.",
+  },
+  {
+    id: 404,
+    text: "'Dawa-e-Mudir' (diuretic) acts on:",
+    options: ["Mi'da", "Kabid", "Kulya", "Masana"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Ilaj",
+    year: 2023,
+    explanation:
+      "Dawa-e-Mudir (diuretic drug) specifically acts on the Kulya (kidneys) to increase urine production and output. It stimulates the kidneys to filter and excrete more fluid and waste products.",
+  },
+  {
+    id: 405,
+    text: "Which 'Quwwat' is responsible for the growth of the body?",
+    options: [
+      "Quwwat-e-Ghaziya",
+      "Quwwat-e-Namiyah",
+      "Quwwat-e-Muwallida",
+      "Quwwat-e-Musawwira",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwwat-e-Namiyah (growing/augmentative faculty) is responsible for the growth of the body. It increases the body's dimensions in all directions by adding appropriate matter to all parts proportionally.",
+  },
+  {
+    id: 406,
+    text: "'Ghalba-e-Dam' (excess of blood) produces:",
+    options: [
+      "Humrat-e-Wajh (redness of face)",
+      "Safrat-e-Wajh (yellowness of face)",
+      "Khuzrat-e-Wajh (greenness of face)",
+      "Sawad-e-Wajh (blackness of face)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Ghalba-e-Dam (dominance of blood humour) produces Humrat-e-Wajh (redness of the face). Excess blood causes flushing and redness due to increased blood flow and vasodilation in facial vessels.",
+  },
+  {
+    id: 407,
+    text: "'Nabz-e-Dauqi' (hectic pulse) is found in:",
+    options: [
+      "Humma-e-Yaum",
+      "Humma-e-Ufooni",
+      "Humma-e-Diq",
+      "Humma-e-Murakkaba",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Dauqi (hectic/undulating pulse — like a worm) is the characteristic pulse of Humma-e-Diq (hectic/consumptive fever). It is small, fast, and soft, reflecting severe debility and wasting of vital power.",
+  },
+  {
+    id: 408,
+    text: "'Mizaj-e-Atfal' (temperament of children) is:",
+    options: ["Haar-Ratab", "Haar-Yabis", "Barid-Ratab", "Barid-Yabis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Atfal (children) have Haar-Ratab (hot and moist) temperament. Children are in a phase of growth, requiring heat for metabolism and moisture for tissue development. Their bodies are soft, moist, and warm.",
+  },
+  {
+    id: 409,
+    text: "'Aaza-e-Aaliya' (subservient organs) of the heart are:",
+    options: ["Nerves", "Veins", "Arteries", "Muscles"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Arteries are the Aaza-e-Aaliya (serving/subservient organs) of the heart. They carry the heart's products (Rooh and vital spirit) to all body parts, serving as the instruments through which the heart performs its vital functions.",
+  },
+  {
+    id: 410,
+    text: "'Khilt-e-Safra' is produced in:",
+    options: ["Qalb", "Dimagh", "Kabid", "Tihal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Safra (yellow bile) is produced in the Kabid (liver) during the process of Hazm-e-Kabidi (hepatic digestion). The excess hot and light froth of blood produced in the liver is Safra.",
+  },
+  {
+    id: 411,
+    text: "'Baul-e-Asali' (honey-like urine) is a sign of:",
+    options: [
+      "Ziabetus Sadiq",
+      "Ziabetus Shakri",
+      "Zoaf-e-Masana",
+      "Waram-e-Kulya",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Baul",
+    year: 2023,
+    explanation:
+      "Baul-e-Asali (honey-like sweet urine) is the hallmark of Ziabetus Shakri (diabetes mellitus/sugar diabetes). The sweet taste and honey-like consistency is due to excess glucose in the urine (glycosuria).",
+  },
+  {
+    id: 412,
+    text: "'Harkat-e-Qasriyah' (forced movement) is:",
+    options: [
+      "Natural movement",
+      "Movement produced by an external force",
+      "Movement produced by internal will",
+      "Absence of movement",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Harkat-e-Qasriyah is movement produced by an external force — against the natural tendency of the body. It is compulsory/forced movement, not arising from the body's own will or natural faculty.",
+  },
+  {
+    id: 413,
+    text: "'Nabz-e-Ghazali' (gazelle pulse) is:",
+    options: [
+      "Slow and weak",
+      "Fast and irregular",
+      "Strong and hard",
+      "Small and soft",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Ghazali (gazelle-like pulse) is characterised by a fast and irregular rhythm, named after the quick, bounding movements of a gazelle. It alternates between fast and slow beats, creating an irregular pattern.",
+  },
+  {
+    id: 414,
+    text: "'Quwwat-e-Masika' is a sub-power of:",
+    options: [
+      "Quwwat-e-Nafsaniyah",
+      "Quwwat-e-Haiwaniyah",
+      "Quwwat-e-Tabiyah",
+      "Quwwat-e-Mughayyarah",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwwat-e-Masika (retaining power) is a sub-faculty of Quwwat-e-Tabiyah (natural faculty). It is one of the four sub-powers of Quwwat-e-Tabiyah: Jaziba (attracting), Masika (retaining), Hazima (digesting), and Dafia (expelling).",
+  },
+  {
+    id: 415,
+    text: "'Arkan-e-Arba' (four elements) are:",
+    options: [
+      "Fire, Air, Water, Earth",
+      "Blood, Phlegm, Yellow Bile, Black Bile",
+      "Heart, Brain, Liver, Testicles",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Arkan-e-Arba (four elements) are: Nar (Fire), Hawa (Air), Maa (Water), and Arz (Earth). These are the four fundamental elements that constitute all matter according to Greek-Unani philosophy.",
+  },
+  {
+    id: 416,
+    text: "'Mizaj-e-Kuhul' (temperament of the middle-aged) is:",
+    options: ["Haar-Ratab", "Haar-Yabis", "Barid-Ratab", "Barid-Yabis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Kuhul (middle/old age) has Barid-Yabis (cold and dry) temperament. As age advances, innate moisture and heat decline, leading to a cold and dry constitution, characteristic of ageing.",
+  },
+  {
+    id: 417,
+    text: "'Aaza-e-Murakkabah' (compound organs) are also called:",
+    options: [
+      "Aaza-e-Mufradah",
+      "Aaza-e-Aliyah",
+      "Aaza-e-Raeesah",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Aaza-e-Murakkabah (compound organs composed of multiple tissue types) are also known as Aaza-e-Aliyah (noble/complex organs). They are formed from multiple Aaza-e-Mufradah (simple organs/tissues) combined together.",
+  },
+  {
+    id: 418,
+    text: "'Rooh' is the 'Hamal' (carrier) of:",
+    options: ["Akhlat", "Quwa", "Aaza", "Arkan"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Rooh (spirit/vital force) is the Hamal (vehicle/carrier) of Quwa (faculties/powers). Rooh carries and transmits the various faculties — Tabiyah, Haiwaniyah, and Nafsaniyah — to all parts of the body.",
+  },
+  {
+    id: 419,
+    text: "'Nabz-e-Munshari' (saw-like pulse) is a sign of:",
+    options: [
+      "Waram-e-Ahsha",
+      "Waram-e-Dimagh",
+      "Waram-e-Qalb",
+      "Waram-e-Mafasil",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Munshari (saw-like/serrated pulse) is a characteristic sign of Waram-e-Ahsha (visceral inflammation/pleuritis). The irregular, jagged pulse pattern resembles the teeth of a saw.",
+  },
+  {
+    id: 420,
+    text: "'Hararat-e-Ghariziyah' is found in:",
+    options: ["Living bodies", "Dead bodies", "Both", "None"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Hararat-e-Ghariziyah (innate/vital heat) is found only in living bodies. It is the life-sustaining heat that maintains all metabolic and physiological functions. Upon death, this innate heat is extinguished.",
+  },
+  {
+    id: 421,
+    text: "Which of the following is 'Muzir' (harmful) for the 'Dimagh' (brain)?",
+    options: [
+      "Adas (Lentils)",
+      "Hantam (Wheat)",
+      "Maash (Black gram)",
+      "Chana (Gram)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Ghiza",
+    year: 2023,
+    explanation:
+      "Adas (lentils) are considered Muzir-e-Dimagh (harmful for the brain) in classical Unani texts because they produce Sawda (black bile), which is cold and dry, adversely affecting the brain's moist temperament and causing mental heaviness.",
+  },
+  {
+    id: 422,
+    text: "'Dawa-e-Munaftith' (expectorant) is used in the treatment of:",
+    options: ["Diarrhoea", "Cough with phlegm", "Constipation", "Headache"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Ilaj",
+    year: 2023,
+    explanation:
+      "Dawa-e-Munaftith (expectorant) helps in expelling phlegm from the respiratory tract. It is used in cough with phlegm (productive cough) to facilitate expectoration and clear the airways.",
+  },
+  {
+    id: 423,
+    text: "The meaning of 'Su-e-Mizaj' is:",
+    options: [
+      "Normal temperament",
+      "Abnormal temperament",
+      "Change in physical structure",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Su-e-Mizaj literally means 'badness of temperament' — it refers to an abnormal or altered temperament where the normal balance of qualities is disturbed. It is the fundamental cause of disease in Unani medicine.",
+  },
+  {
+    id: 424,
+    text: "Which 'Khilt' is called 'Khadim-e-Sawda'?",
+    options: ["Dam", "Balgham", "Safra", "None of these"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Balgham is also called 'Khadim-e-Sawda' (servant of black bile). Balgham serves multiple roles — it is Khadim-e-Dam (servant of blood) by nourishing tissues and also has a relationship with Sawda in balancing cold humours.",
+  },
+  {
+    id: 425,
+    text: "'Nabz-e-Sagheer' is a sign of:",
+    options: [
+      "Strong power",
+      "Weak power",
+      "High heat",
+      "Excessive moisture",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Sagheer (small/thin pulse) indicates weak Quwwat (weak vital power). When the heart's power is diminished, it cannot dilate the artery adequately, resulting in a small volume pulse.",
+  },
+  {
+    id: 426,
+    text: "The 'Faeli Sabab' (efficient cause) of Health is:",
+    options: ["Arkan", "Akhlat", "Tabiyat", "Aaza"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Tabiyat (Nature/the governing power) is the Faeli Sabab (efficient/active cause) of health. Tabiyat actively maintains health by regulating all physiological processes, making it the active agent responsible for the state of health.",
+  },
+  {
+    id: 427,
+    text: "'Baul-e-Abraz' (white urine) is a sign of:",
+    options: [
+      "Excess of Safra",
+      "Excess of Balgham",
+      "Excess of Dam",
+      "Excess of Sawda",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Baul",
+    year: 2023,
+    explanation:
+      "Baul-e-Abraz (white/pale urine) indicates excess Balgham (phlegm) in the body. Phlegm is cold and white in colour, and its excess is reflected in pale, white urine.",
+  },
+  {
+    id: 428,
+    text: "'Harkat-e-Iradiyah' (voluntary movement) is related to:",
+    options: [
+      "Quwwat-e-Tabiyah",
+      "Quwwat-e-Haiwaniyah",
+      "Quwwat-e-Nafsaniyah",
+      "Quwwat-e-Mughayyarah",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Harkat-e-Iradiyah (voluntary movement) is governed by Quwwat-e-Nafsaniyah (psychic faculty). Voluntary movements arise from conscious will, which is a function of the nervous system/psychic faculty seated in the brain.",
+  },
+  {
+    id: 429,
+    text: "Which 'Rukn' is 'Barid-Ratab' (cold and moist)?",
+    options: ["Nar (Fire)", "Hawa (Air)", "Ma'a (Water)", "Arz (Earth)"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Ma'a (Water) is Barid-Ratab (cold and moist) in temperament. Among the four elements: Fire is hot-dry, Air is hot-moist, Water is cold-moist, and Earth is cold-dry.",
+  },
+  {
+    id: 430,
+    text: "The temperament of 'Sin-e-Shabab' (youth) is:",
+    options: ["Haar-Ratab", "Haar-Yabis", "Barid-Ratab", "Barid-Yabis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Sin-e-Shabab (youth/young adulthood) has Haar-Yabis (hot and dry) temperament. After childhood's moist phase, youth becomes hotter and drier as moisture decreases and heat remains high.",
+  },
+  {
+    id: 431,
+    text: "'Aaza-e-Mufradah' are also called:",
+    options: [
+      "Simple organs",
+      "Compound organs",
+      "Primary organs",
+      "Secondary organs",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Aaza-e-Mufradah are called Simple organs — they are uniform in structure, composed of a single tissue type (like bone, cartilage, nerve, vein, artery). They are the basic building blocks of complex organs.",
+  },
+  {
+    id: 432,
+    text: "'Quwwat-e-Dafia' (expulsive power) is a sub-power of:",
+    options: [
+      "Quwwat-e-Nafsaniyah",
+      "Quwwat-e-Tabiyah",
+      "Quwwat-e-Haiwaniyah",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwwat-e-Dafia (expulsive faculty) is one of the four sub-faculties of Quwwat-e-Tabiyah (natural faculty). It expels waste and useless matter from the body, completing the cycle of digestion and metabolism.",
+  },
+  {
+    id: 433,
+    text: "'Nabz-e-Layi' (soft pulse) is found in:",
+    options: [
+      "Dry temperament",
+      "Moist temperament",
+      "Hot temperament",
+      "Cold temperament",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Layi (soft/yielding pulse) is found in moist temperament. Excess moisture softens the arterial wall, making the pulse feel soft and easily compressible under the fingers.",
+  },
+  {
+    id: 434,
+    text: "'Baul-e-Rasubi-e-Kharati' (shred-like sediment) is a sign of:",
+    options: [
+      "Waram-e-Kulya",
+      "Qarha-e-Masana",
+      "Zoaf-e-Mi'da",
+      "Waram-e-Kabid",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Baul",
+    year: 2023,
+    explanation:
+      "Baul-e-Rasubi-e-Kharati (shred/thread-like sediment in urine) is a specific sign of Qarha-e-Masana (ulcer of the urinary bladder). The shredded appearance represents sloughed tissue from the bladder ulcer.",
+  },
+  {
+    id: 435,
+    text: "Which 'Khilt' is 'Haar-Ratab' in temperament?",
+    options: [
+      "Dam (Blood)",
+      "Balgham (Phlegm)",
+      "Safra (Yellow Bile)",
+      "Sawda (Black Bile)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Dam (blood) has Haar-Ratab (hot and moist) temperament, corresponding to the air element. Blood is the most balanced humour, carrying nutrition and warmth throughout the body.",
+  },
+  {
+    id: 436,
+    text: "'Afal-e-Haiwani' (vital functions) are related to:",
+    options: ["Dimagh", "Kabid", "Qalb", "Tihal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Afal-e-Haiwani (vital/animal functions — heartbeat, pulse, respiration) are governed by the Qalb (heart). The heart is the seat of Quwwat-e-Haiwaniyah and performs vital life-sustaining functions.",
+  },
+  {
+    id: 437,
+    text: "'Maddi Sabab' (material cause) of Health and Disease refers to:",
+    options: [
+      "The forces acting on the body",
+      "The physical parts of the body",
+      "The psychological state",
+      "The environment",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Maddi Sabab (material cause) refers to the physical/corporeal parts of the body — the actual material substance (Akhlat, Aaza) in which health and disease manifest. It is the physical substrate of the body.",
+  },
+  {
+    id: 438,
+    text: "'Nabz-e-Bati' (slow pulse) is a sign of:",
+    options: [
+      "High Hararat",
+      "Low Hararat (Burudat)",
+      "High Yubusat",
+      "High Ratubat",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Nabz",
+    year: 2023,
+    explanation:
+      "Nabz-e-Bati (slow pulse) indicates low Hararat or Burudat (cold temperament). When body temperature is low, the heart beats slowly as the need to dissipate heat is minimal, resulting in a slow pulse rate.",
+  },
+  {
+    id: 439,
+    text: "'Quwwat-e-Mughayyarah' (transformative power) is part of:",
+    options: [
+      "Quwwat-e-Tabiyah",
+      "Quwwat-e-Nafsaniyah",
+      "Quwwat-e-Haiwaniyah",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Quwwat-e-Mughayyarah (alterative/transformative power — also called Quwwat-e-Hazima) is part of Quwwat-e-Tabiyah (natural faculty). It transforms and digests food, converting it into body substance.",
+  },
+  {
+    id: 440,
+    text: "'Arkan' are the most 'Mufrad' (simple) parts of:",
+    options: ["Akhlat", "Aaza", "Arwah", "All of these"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Arkan (elements) are the most fundamental and simple parts of everything — Akhlat (humours), Aaza (organs), and Arwah (spirits) are all ultimately composed of Arkan. Hence 'All of these' is correct.",
+  },
+  {
+    id: 441,
+    text: "Match List - I with List - II: (A) Vitamin C, (B) Vitamin B12, (C) Niacin (Vit. B3), (D) Vitamin D.",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Biochemistry",
+    year: 2023,
+    explanation:
+      "Vitamin C (Ascorbic acid) deficiency causes Scurvy (III); Vitamin B12 deficiency causes Megaloblastic anaemia / Pernicious anaemia (IV); Niacin (B3) deficiency causes Pellagra (II); Vitamin D deficiency causes Rickets / Osteomalacia (I). Correct match: (A)-(III), (B)-(IV), (C)-(II), (D)-(I).",
+  },
+  {
+    id: 442,
+    text: "Bitot spot is sign of:",
+    options: [
+      "Vitamin D deficiency",
+      "Vitamin A deficiency",
+      "Vitamin K deficiency",
+      "Vitamin B12 deficiency",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Biochemistry",
+    year: 2023,
+    explanation:
+      "Bitot's spots are triangular, foamy, white patches on the conjunctiva caused by Vitamin A deficiency. They are a classic sign of xerophthalmia and represent keratinised epithelial debris.",
+  },
+  {
+    id: 443,
+    text: "The daily requirement of Vitamin C in children is:",
+    options: ["40-70 mg", "30-40 mg", "50-100 mg", "100-150 mg"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Biochemistry",
+    year: 2023,
+    explanation:
+      "The recommended daily allowance (RDA) of Vitamin C for children is 40-70 mg per day according to ICMR guidelines. This is sufficient to prevent scurvy and support collagen synthesis and immune function.",
+  },
+  {
+    id: 444,
+    text: "The commonest cause of Haematuria in children is:",
+    options: [
+      "Glomerula nephritis (post infectious)",
+      "Alport syndrome",
+      "Thrombocytopenia",
+      "Vascular malformation",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Paediatrics",
+    year: 2023,
+    explanation:
+      "Post-infectious (post-streptococcal) glomerulonephritis is the commonest cause of haematuria in children. It typically follows a throat or skin infection by Group A beta-haemolytic streptococcus and presents with haematuria, proteinuria, oedema and hypertension.",
+  },
+  {
+    id: 445,
+    text: "Match List - I with List - II regarding the 'seat of Nafse Natiqah' and vital organs: (A) Dimagh is the seat..., (B) Qalb is the seat..., (C) Every essential power..., (D) Compound organs....",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "According to Unani philosophy, Dimagh (brain) is the seat of Quwwat-e-Nafsaniyah (psychic faculty), Qalb (heart) is the seat of Quwwat-e-Haiwaniyah (vital faculty). The matching aligns Dimagh with (II) and Qalb with (I).",
+  },
+  {
+    id: 446,
+    text: '"Sabbabah" is described with respect to:',
+    options: ["Arkan", "Mizaj", "Akhlat", "Afal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Sabbabah refers to a type or quality described in the context of Akhlat (humours). It is used in Unani medicine to describe a specific quality/state of the humours, particularly related to putrefaction or specific characteristics of Akhlat.",
+  },
+  {
+    id: 447,
+    text: "What is the correct sequence of the different ages included in the growing age? (A) Sinne Tafulat, (B) Sinne Trar'a, (C) Sinne Rihaque, (D) Sinne Saba, (E) Sinne Fata'.",
+    options: [
+      "(A), (D), (B), (C), (E)",
+      "(C), (E), (A), (D), (B)",
+      "(B), (D), (A), (E), (C)",
+      "(E), (D), (B), (C), (A)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "The correct bookish sequence of growing ages in Unani medicine is: Sinne Tafulat (infancy, 0-2 yrs), Sinne Saba (childhood, 2-7 yrs), Sinne Trar'a (adolescence, 7-14 yrs), Sinne Rihaque (puberty, 14-21 yrs), Sinne Fata' (youth, 21-30 yrs). Sequence: (A), (D), (B), (C), (E).",
+  },
+  {
+    id: 448,
+    text: "The observation of Akhlate Arabah is possible through:",
+    options: ["Riyazat", "Hammam", "Fasd", "Hijamah bila Shurt"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Fasd (venesection/bloodletting) allows direct observation of Akhlate Arabah (four humours). When blood is drawn and allowed to settle, it separates into layers corresponding to Dam (blood), Balgham (phlegm), Safra (yellow bile), and Sawda (black bile).",
+  },
+  {
+    id: 449,
+    text: "Assertion (A): Qalb is a simple organ. Reason (R): The Qalb as a whole and a small part of it may not be called by one name.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Qalb (heart) is NOT a simple (Mufrad) organ; it is a compound (Murakkab) organ composed of different tissues. The Reason (R) is correct — a simple organ is one where the whole and its part can be called by one name, which does not apply to Qalb. Hence (A) is incorrect but (R) is correct.",
+  },
+  {
+    id: 450,
+    text: 'What does it mean "Imshaje Badan"?',
+    options: ["Arkan", "Mizaj", "Akhlat", "Afal"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Imshaje Badan literally means 'the mixture of the body', which refers to Akhlat (humours). Akhlat are the fluid mixtures/blends within the body that result from digestion and metabolism of food, forming the material basis of body composition.",
+  },
+  {
+    id: 451,
+    text: "Which Mizaj is called Mutadil Haqiqi?",
+    options: [
+      "The mizaj which is based on two elements",
+      "The mizaj where the quality and quantity of the anasir are exactly same",
+      "The mizaj which a human has",
+      "The mizaj where the quality and quantity of the anasir are not same to each other",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Mutadil Haqiqi (truly balanced temperament) is the theoretical ideal where all four anasir (elements) are present in exactly equal quality and quantity. This is a philosophical concept — it does not exist in reality but serves as the benchmark for comparing other temperaments.",
+  },
+  {
+    id: 452,
+    text: "How many parts Juz-e-Ilmi of Ilm-e-Tibb has:",
+    options: ["Two", "Four", "Eight", "Ten"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Juz-e-Ilmi (theoretical part) of Ilm-e-Tibb (Unani medicine) has two parts: Hifzan-e-Sehat (preservation of health) and Izalat-e-Marz (elimination of disease). These together constitute the complete theoretical framework of Unani medicine.",
+  },
+  {
+    id: 453,
+    text: "Statement (I): Individually every organ has a natural power. Statement (II): By the natural power, the nutrition of an organ continues.",
+    options: [
+      "Both Statement (I) and Statement (II) are true",
+      "Both Statement (I) and Statement (II) are false",
+      "Statement (I) is correct but Statement (II) is false",
+      "Statement (I) is incorrect but Statement (II) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Both statements are true. Each organ possesses its own Quwwat-e-Tabiyah (natural power/faculty) that governs its functions. Nutrition (Taghziya) is one of the primary functions of Quwwat-e-Tabiyah — it ensures each organ receives and utilises nutrients for growth and maintenance.",
+  },
+  {
+    id: 454,
+    text: "Mizaj-e-Mutadil Tibbi is based on:",
+    options: ["Taadul", "Mutadil", "Ad'l Fi-al-Qismat", "Mizaj-e-Insaani"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Mizaj-e-Mutadil Tibbi (medically balanced temperament) is based on Ad'l Fi-al-Qismat (justice in proportion/distribution), meaning the elements are present in proportions appropriate to the species and individual, not necessarily in exact equal amounts. This is the practical/clinical concept of balanced temperament.",
+  },
+  {
+    id: 455,
+    text: "The number of Anasire Arbah depends on:",
+    options: [
+      "Kaifiyate Arbah",
+      "Arkan Arbah",
+      "Akhlat-e-Arbah",
+      "Fusal-e-Arbah",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "The number of Anasire Arbah (four elements/humours) is derived from and depends upon Kaifiyate Arbah (four primary qualities — hot, cold, moist, dry). These four qualities combine in pairs to produce four distinct elements: Fire (hot+dry), Air (hot+moist), Water (cold+moist), Earth (cold+dry).",
+  },
+  {
+    id: 456,
+    text: "What is the bookish sequence of Umoor-e-Tabiya? (A) Arwah, (B) Mizaj, (C) Arkan, (D) Aza, (E) Akhlat.",
+    options: [
+      "(E), (B), (D), (A), (C)",
+      "(C), (B), (E), (D), (A)",
+      "(D), (A), (C), (E), (B)",
+      "(C), (B), (E), (A), (D)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "The standard bookish (textbook) sequence of Umoor-e-Tabiya (natural things) is: Arkan (elements) → Mizaj (temperament) → Akhlat (humours) → Arwah (spirits) → Aza (organs). This sequence: (C), (B), (E), (A), (D) represents the progression from simple to complex in Unani physiology.",
+  },
+  {
+    id: 457,
+    text: "What are the properties of Khilte Dam? (A) Hot and Moist, (B) Hot and Dry, (C) Bright red, (D) Bright yellow.",
+    options: [
+      "(B), (D) only",
+      "(A), (D) only",
+      "(A), (C) only",
+      "(C), (D) only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Khilte Dam (blood humour) is Hot and Moist in temperament (A) and Bright red in colour (C). It is the most balanced of all four humours and provides nutrition and vitality. Bright yellow colour belongs to Safra, not Dam.",
+  },
+  {
+    id: 458,
+    text: "What is Balghame Ghair Tabai in accordance to the Qiwam?",
+    options: [
+      "Balghame Hamiz",
+      "Balghame Hulu",
+      "Balghame Maee",
+      "Balghame Afi's",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Balghame Maee (watery phlegm) is the Ghair Tabai (abnormal) form of Balgham according to its Qiwam (consistency/density). It is more dilute/watery than normal Balgham, indicating incomplete digestion or excessive dilution, making it pathological.",
+  },
+  {
+    id: 459,
+    text: "Who wrote the book on anatomy namely 'A special treatise of the eyes'?",
+    options: ["Herophilus", "Galen", "Hippocrates", "William Harvey"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "Galen (129-216 AD), the renowned Greek physician, wrote 'A Special Treatise of the Eyes'. Galen made extensive contributions to anatomy and physiology, writing numerous texts that formed the basis of medical education for centuries. Herophilus was known for dissections, Hippocrates for clinical medicine, and Harvey for circulation.",
+  },
+  {
+    id: 460,
+    text: "Assertion (A): The Rectus femoris is the only muscle in the Quadriceps group that crosses both the hip and knee joint. Reason (R): It acts on both above mentioned joint as flexor hip and flexor of knee.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Anatomy",
+    year: 2023,
+    explanation:
+      "Assertion (A) is true — Rectus femoris is the only quadriceps muscle crossing both hip and knee joints. However, Reason (R) is false — Rectus femoris acts as a flexor of the hip but an EXTENSOR (not flexor) of the knee. The quadriceps group extends the knee, not flexes it.",
+  },
+  {
+    id: 461,
+    text: "Varicocele is a condition where the pampiniform plexus of veins becomes tortuous, dilated and forms a palpable mass. It is more common on the left side due to: (R1) the left testicular vein drains into the left renal vein at right angles (90°) hence the venous pressure is high, and (R2) compression of left testicular vein by loaded colon.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Surgery",
+    year: 2023,
+    explanation:
+      "Both reasons are correct and explain why varicocele is more common on the left side. The left testicular vein drains at a right angle (90°) into the left renal vein (unlike the right which drains obliquely into the IVC), creating higher venous pressure. Additionally, the loaded sigmoid colon can compress the left testicular vein, further contributing to venous stasis.",
+  },
+  {
+    id: 462,
+    text: "Which muscles move the eyeball superiorly?",
+    options: [
+      "Inferior Rectus and Lateral Rectus",
+      "Superior Rectus and Inferior oblique",
+      "Medial Rectus and Levator palpebrae superioris",
+      "Superior Oblique and Levator palpebrae superioris",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Anatomy",
+    year: 2023,
+    explanation:
+      "Superior Rectus and Inferior Oblique muscles move the eyeball superiorly (upward). Superior Rectus elevates the eye when it is abducted; Inferior Oblique elevates the eye when it is adducted. Inferior Rectus depresses the eye; Superior Oblique depresses the adducted eye.",
+  },
+  {
+    id: 463,
+    text: "What is Topographic anatomy?",
+    options: [
+      "Study of structures with the aid of a microscope",
+      "Study of deeper organs by plain and radiography",
+      "Study of deeper parts of the body in relation to the skin surface",
+      "Study of structures without a microscope",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Anatomy",
+    year: 2023,
+    explanation:
+      "Topographic (regional) anatomy is the study of the spatial relationships of structures within specific regions of the body, particularly studying deeper structures in relation to surface landmarks on the skin. It is essential for clinical examination, surgical planning, and understanding body regions.",
+  },
+  {
+    id: 464,
+    text: "Which hormone stimulates secretion of HCl and pepsin in stomach?",
+    options: ["Cholecystokinin", "Gastrokinin", "Gastrin", "Gastrone"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Physiology",
+    year: 2023,
+    explanation:
+      "Gastrin is the hormone secreted by G-cells in the gastric antrum that stimulates secretion of HCl (hydrochloric acid) by parietal cells and pepsinogen by chief cells. Cholecystokinin stimulates pancreatic enzyme and bile secretion; Gastrone inhibits gastric secretion.",
+  },
+  {
+    id: 465,
+    text: "Body's energy exchange is based on:",
+    options: [
+      "First law of Thermodynamics",
+      "First Law of Thermogenesis",
+      "Law of conservation of energy",
+      "Quantum mechanics",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Physiology",
+    year: 2023,
+    explanation:
+      "The body's energy exchange is based on the First Law of Thermodynamics (Law of Conservation of Energy), which states that energy can neither be created nor destroyed, only converted from one form to another. In the body, chemical energy from food is converted to heat, mechanical work, and stored energy.",
+  },
+  {
+    id: 466,
+    text: "Assertion (A): Heart sounds are produced by movement of heart valves. Reason (R): Heart sounds are produced due to vibrations in blood.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Physiology",
+    year: 2023,
+    explanation:
+      "Both statements are correct but (R) does not explain (A). Heart sounds are produced by the sudden closure of heart valves (A is correct). The mechanism involves vibrations set up in the blood, heart walls, and surrounding tissues when valves close (R is also correct). However, R is a separate explanation of the mechanism, not the reason why A is true.",
+  },
+  {
+    id: 467,
+    text: "Assertion (A): Protein metabolism is related to exogenous proteins. Reason (R): Protein metabolism is related to both endogenous and exogenous proteins.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Biochemistry",
+    year: 2023,
+    explanation:
+      "Assertion (A) is false — protein metabolism is NOT related only to exogenous proteins. Reason (R) is true — protein metabolism involves both endogenous proteins (body proteins that are continuously broken down and resynthesised) and exogenous proteins (dietary proteins). The body maintains dynamic protein turnover from both sources.",
+  },
+  {
+    id: 468,
+    text: "Functions of Plasma Protein include:",
+    options: [
+      "Co-enzyme and Blood clotting",
+      "Bone formation and Viscosity of blood",
+      "Genetic functions and Blood clotting",
+      "Blood clotting and Viscosity of blood",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Biochemistry",
+    year: 2023,
+    explanation:
+      "Plasma proteins perform important functions including: Blood clotting (fibrinogen, prothrombin), Viscosity of blood (albumin, globulins), Oncotic pressure, Transport (albumin carries drugs, hormones), Immune defense (immunoglobulins), and pH buffering. Blood clotting and viscosity are both correct functions of plasma proteins.",
+  },
+  {
+    id: 469,
+    text: "Alamaate daal indicates:",
+    options: [
+      "Present condition",
+      "Present and Past condition",
+      "Past condition",
+      "Future condition",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Alamaate Daal (indicative signs) in Unani diagnostic terminology indicate the present condition of the patient — the current state of disease and the patient's constitution. They help the physician understand what is happening in the body at the time of examination.",
+  },
+  {
+    id: 470,
+    text: "Statement (I): The temperament of the body is subject to the temperament of the heart. Statement (II): From the heart all the organs receive Rooh Haiwani.",
+    options: [
+      "Both Statement (I) and Statement (II) are true",
+      "Both Statement (I) and Statement (II) are false",
+      "Statement (I) is correct but Statement (II) is false",
+      "Statement (I) is incorrect but Statement (II) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat-e-Unani",
+    year: 2023,
+    explanation:
+      "Both statements are true. In Unani medicine, the heart (Qalb) is the chief organ (Aaza Raeesah) and the seat of Quwwat-e-Haiwaniyah. The overall body temperament is governed by the heart's temperament (I). The heart produces and distributes Rooh Haiwani (vital spirit) to all organs via arteries (II).",
+  },
+  {
+    id: 471,
+    text: "Amraze Tafarruq-e-Ittesal is also known as:",
+    options: [
+      "Marze Khaas",
+      "Marze Aam",
+      "Marze Azae Mufridah",
+      "Marze Azae Murakkabah",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Amraze Tafarruq-e-Ittesal (diseases of discontinuity/disruption of tissue continuity, e.g., wounds, fractures) are also known as Marze Azae Mufridah — diseases of simple/individual organs. These affect the structural integrity of individual organ tissues.",
+  },
+  {
+    id: 472,
+    text: "Assertion (A): Some diseases are passed down from generation to generation like Zeequn Nafas. Reason (R): Naqras is hereditary disease.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Both (A) and (R) are correct but (R) does not explain (A). Some diseases are indeed hereditary like Zeequn Nafas (asthma), and Naqras (gout) also has a hereditary component. However, R (Naqras is hereditary) is a separate fact and does not explain why A (some diseases pass through generations) is true.",
+  },
+  {
+    id: 473,
+    text: 'Fifth sign of inflammation "functio laesa" was later on added by:',
+    options: ["John Hunter", "Paul Ehrlich", "Galen", "Christ Gram"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "The four classical signs of inflammation (Rubor, Calor, Tumor, Dolor) were described by Celsus. Galen later added the fifth sign 'Functio Laesa' (loss of function). This five-sign description of inflammation remains fundamental in pathology teaching to this day.",
+  },
+  {
+    id: 474,
+    text: "Match the water type with its effect: (A) Cold water, (B) Hot water, (C) Salt water, (D) Dirty water.",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "In Unani medicine, different types of water have specific therapeutic effects: Cold water — constricts, cools, reduces fever; Hot water — relaxes, opens pores, promotes sweating; Salt water — has drying/astringent and antiseptic properties; Dirty water — harmful, causes disease. The correct matching places cold water with its cooling effect (II) and hot water with its relaxing effect (I).",
+  },
+  {
+    id: 475,
+    text: "Leprosy is also known as:",
+    options: [
+      "Wilson's disease",
+      "Whipple's disease",
+      "Hansen's disease",
+      "Hirschsprung's disease",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2023,
+    explanation:
+      "Leprosy is also called Hansen's disease, named after Norwegian physician Gerhard Armauer Hansen who discovered Mycobacterium leprae in 1873. Wilson's disease is copper metabolism disorder; Whipple's disease is intestinal lipodystrophy; Hirschsprung's disease is congenital megacolon.",
+  },
+  {
+    id: 476,
+    text: "The book Yadgar-e-Razai consists of which subject:",
+    options: [
+      "Kulliyat",
+      "Ilmul Advia",
+      "Moalijat",
+      "Tahaffuzi wa Samaji Tibb",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "Yadgar-e-Razai is a classical Unani text that deals with Moalijat (therapeutics/treatment). It is attributed to or inspired by Zakariya Razi's therapeutic works and contains treatments for various diseases, making it a valuable reference in Unani clinical medicine.",
+  },
+  {
+    id: 477,
+    text: "Statement (I): Zakariya Razi put forth the correct concept of Judri wa Husbah. Statement (II): Discovery of pulmonary circulation is the contribution of Arab Physician Allama Qarshi.",
+    options: [
+      "Both Statement (I) and Statement (II) are correct",
+      "Both Statement (I) and Statement (II) are incorrect",
+      "Statement (I) is correct but Statement (II) is incorrect",
+      "Statement (I) is incorrect but Statement (II) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "Both statements are correct. Zakariya Razi (865-925 AD) wrote 'Kitab fi al-Judari wa al-Hasba' — the first scientific description distinguishing smallpox from measles. Ibn al-Nafis (Allama Qarshi) discovered pulmonary circulation in the 13th century, predating Harvey's description by 300 years.",
+  },
+  {
+    id: 478,
+    text: "Renowned translators of the Abbasid Period include:",
+    options: [
+      "(A), (B), (C) and (D) only",
+      "(A), (B) and (E) only",
+      "(A), (B) and (D) only",
+      "(A), (C) and (E) only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "The Abbasid Period (8th-13th century) was the golden age of Islamic translation. Renowned translators include Hunain ibn Ishaq (A), his son Ishaq ibn Hunain (B), and Thabit ibn Qurra (D) who translated Greek medical and scientific texts into Arabic. This translation movement preserved and advanced ancient medical knowledge.",
+  },
+  {
+    id: 479,
+    text: "Match the book with its author: (A) Kitabul Nabz, (B) Kitabul Hashaish, (C) Kitabul Manazir, (D) Kitabul Advia wa Al Mufrada.",
+    options: [
+      "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+      "(A)-(III), (B)-(I), (C)-(IV), (D)-(II)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "Kitabul Nabz (Book of Pulse) was written by Galen; Kitabul Hashaish (Book of Plants/Herbs) by Dioscorides; Kitabul Manazir (Book of Optics) by Ibn al-Haytham; Kitabul Advia wa Al Mufrada by Ibn al-Baitar. The correct matching: (A)-(III) Galen, (B)-(I) Dioscorides, (C)-(IV) Ibn al-Haytham, (D)-(II) Ibn al-Baitar.",
+  },
+  {
+    id: 480,
+    text: "Assertion (A): The most important adverse effect of Aspirin is gastric mucosal damage and peptic ulceration. Reason (R): Because Aspirin inhibits Cox enzyme non selectively.",
+    options: [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Pharmacology",
+    year: 2023,
+    explanation:
+      "Both are true and R correctly explains A. Aspirin non-selectively inhibits both COX-1 and COX-2 enzymes. COX-1 inhibition reduces prostaglandin synthesis in the gastric mucosa — prostaglandins normally protect the stomach by stimulating mucus secretion and reducing acid production. Loss of this protection leads to gastric mucosal damage and peptic ulceration.",
+  },
+  {
+    id: 481,
+    text: "The hydro-alcoholic solutions of drugs, usually sweetened with syrup and flavoured by fruit extracts are called:",
+    options: ["Linctus", "Liniment", "Elixir", "Emulsion"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Elixir is a hydroalcoholic (water + alcohol) solution of medicinal substances, sweetened with syrup and flavoured with fruit extracts or aromatic substances. Linctus is a viscous oral preparation for cough; Liniment is an external preparation; Emulsion is an oil-in-water or water-in-oil dispersion.",
+  },
+  {
+    id: 482,
+    text: "Which of the following is toxic to the brain?",
+    options: ["Aaqaraqaraha", "Heeng", "Ikleelul Malik", "Habb-e-Balsan"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Ikleelul Malik (Melilotus officinalis / Sweet clover) is considered toxic to the brain (Mukhdir-e-Dimagh) in Unani pharmacology. Aaqaraqaraha is used as a stimulant; Heeng (asafoetida) is used as an antispasmodic and carminative; Habb-e-Balsan is generally beneficial.",
+  },
+  {
+    id: 483,
+    text: "Which of the following is used as Mus'hir?",
+    options: [
+      "Filfil Siyah",
+      "Pudina Kohi",
+      "Samandar Sookh",
+      "Roghan Nilofar",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Roghan Nilofar (Nymphaea lotus / Water lily oil) is used as a Mus'hil (purgative/laxative) in Unani medicine. Filfil Siyah is a stimulant and digestive; Pudina Kohi is carminative and diaphoretic; Samandar Sookh (Salamander) is used externally.",
+  },
+  {
+    id: 484,
+    text: "Match List - I with List - II: (A) High Ceiling Diuretic, (B) Calcium Channel Blocker, (C) ACE inhibitor, (D) Beta adrenergic Blocker.",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "(A)-(III), (B)-(I), (C)-(IV), (D)-(II)",
+      "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Pharmacology",
+    year: 2023,
+    explanation:
+      "High Ceiling Diuretic (e.g., Furosemide) — (IV) acts on loop of Henle; Calcium Channel Blocker (e.g., Amlodipine) — (I) blocks L-type Ca2+ channels; ACE Inhibitor (e.g., Enalapril) — (II) inhibits Angiotensin Converting Enzyme; Beta-adrenergic Blocker (e.g., Atenolol) — (III) blocks beta-adrenergic receptors.",
+  },
+  {
+    id: 485,
+    text: "Write the names and actions of Azaraqi: (A) Habbul Qalb, (B) Habbul Ghurab, (C) Muharrik Asaab, (D) Habis Dam, (E) Khaniqul Kalb.",
+    options: [
+      "(A), (C) and (D)",
+      "(B), (C) and (E)",
+      "(C), (D) and (E)",
+      "(A), (B) and (C)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Azaraqi (Aconitum species / Monkshood) is known by the names Habbul Ghurab (B) and Khaniqul Kalb (E) in Unani pharmacology, and its action is Muharrik Asaab (nerve stimulant) (C). It is a highly toxic plant used in small quantities for its analgesic and nerve-stimulating properties.",
+  },
+  {
+    id: 486,
+    text: "Match List - I with List - II: (A) Farzija, (B) Sikanjabeen, (C) Washoo, (D) Atoos.",
+    options: [
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(III), (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "In Unani pharmacological preparations: Farzija (A) is matched with (III) a medicated steam inhalation; Sikanjabeen (B) — (IV) oxymel (vinegar+honey preparation); Washoo (C) — (I) a type of collyrium/eye preparation; Atoos (D) — (II) a snuff/nasal preparation. These are traditional Unani dosage forms.",
+  },
+  {
+    id: 487,
+    text: "Find the drug, which is attributed with cold temperament of fourth degree:",
+    options: ["Farfiyoon", "Sankhiya", "Mazaryoon", "Sumaq"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Sumaq (Rhus coriaria / Sumac) is attributed with a cold temperament of the fourth degree (Barid Darjah Chaharum) in Unani pharmacology. Fourth degree cold indicates extreme cold property, making it useful in conditions requiring strong cooling action. Farfiyoon and Mazaryoon are hot in temperament; Sankhiya (arsenic) has different classification.",
+  },
+  {
+    id: 488,
+    text: "Assertion (A): Ajwain Khurasani is used in Insomnia. Reason (R): Because it is a Mus'hir drug.",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Assertion (A) is correct — Ajwain Khurasani (Hyoscyamus niger / Henbane) is used in insomnia due to its sedative/hypnotic properties (contains hyoscine/scopolamine). However, Reason (R) is incorrect — it is NOT a Mus'hil (purgative) but rather a Mukhdir (narcotic/sedative). Its use in insomnia is due to its sedative action, not purgative action.",
+  },
+  {
+    id: 489,
+    text: "Identify the drug, which exerts Mukharrish action on conjunctival layer of the eye:",
+    options: ["Afyun", "Neela thotha", "Luffah", "Rasot"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Neela Thotha (Copper sulphate / Blue vitriol) exerts Mukharrish (irritant) action on the conjunctival layer of the eye. It is used in eye preparations in very small doses for its astringent and antimicrobial properties, but in higher concentrations it is irritating/caustic to the conjunctiva.",
+  },
+  {
+    id: 490,
+    text: "Which of the following drug is useful in Siql Zaban (stammering)?",
+    options: ["Waj", "Badari Kund", "Lisan-al-Hamal", "Jhaw"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Waj (Acorus calamus / Sweet flag) is useful in Siql-e-Zaban (heaviness/stammering of tongue). It has properties that strengthen nerves and muscles of the tongue and pharynx. It is a well-known nervine tonic in Unani medicine used for speech-related disorders and cognitive enhancement.",
+  },
+  {
+    id: 491,
+    text: "Which of the following mainly consists of Glycosides?",
+    options: ["Jadwar", "Atees", "Elwa", "Ajwain Khurasani"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Elwa (Aloe vera / Musabbar) mainly consists of Anthraquinone glycosides (aloin, barbaloin) as its active chemical constituents. These glycosides are responsible for its purgative action. Jadwar contains alkaloids; Atees (Aconitum heterophyllum) contains bitter glycosides and alkaloids; Ajwain Khurasani contains alkaloids (hyoscyamine).",
+  },
+  {
+    id: 492,
+    text: "Which of the following is the active principle found in Saum?",
+    options: ["Alliin", "Allicin", "Leucine", "Methionine"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Allicin is the active principle in Saum (Allium sativum / Garlic) responsible for its characteristic odour and medicinal properties. Alliin is the precursor found in intact garlic cells; when garlic is crushed, alliinase enzyme converts alliin to allicin. Allicin has antimicrobial, antihypertensive, and cardioprotective properties.",
+  },
+  {
+    id: 493,
+    text: "Kunnash is Known as:",
+    options: [
+      "Pharmacopoeia",
+      "Encyclopedia",
+      "Unani formulary",
+      "Materia medica",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "History of Medicine",
+    year: 2023,
+    explanation:
+      "Kunnash is the Arabic term for an Encyclopedia of medicine — a comprehensive compilation covering all branches of medical knowledge. It is a broad medical compendium that includes theory, diagnosis, and treatment. Examples include Kunnash-e-Ahwazi by Ahwazi.",
+  },
+  {
+    id: 494,
+    text: "Qairooti Ard karasna is used in:",
+    options: ["Hepatitis", "Inflammation in uterus", "Piles", "Pleurisy"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Qairooti Ard Karasna (a poultice/plaster made with Karasna — Bitter vetch flour) is used in Pleurisy (Zaat-ul-Janb). It is applied externally on the chest wall as a counterirritant and anti-inflammatory preparation to reduce inflammation and pain in pleurisy.",
+  },
+  {
+    id: 495,
+    text: "1 Ratti is equal to:",
+    options: ["250 mg", "500 mg", "15 mg", "125 mg"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "1 Ratti (a traditional Unani unit of weight) is equal to 125 mg. This is equivalent to the weight of one Ratti seed (Abrus precatorius / Gunja). Traditional Unani weights: 1 Ratti = 125 mg; 8 Ratti = 1 Masha (approximately 1 gram); 12 Masha = 1 Tola (approximately 12 grams).",
+  },
+  {
+    id: 496,
+    text: "Assertion (A): Sirka is used for Tadbeer of Zeera siyah in all types of Jawarish Kamooni. Reason (R): Because Sirka neutrilizes acidity of stomach (Meda).",
+    options: [
+      "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+      "(A) is correct but (R) is not correct",
+      "(A) is not correct but (R) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Assertion (A) is correct — Sirka (vinegar) is used as Tadbeer (modification/processing) of Zeera siyah (black cumin) in Jawarish Kamooni formulations. However, Reason (R) is incorrect — Sirka (acetic acid) does not neutralize acidity; rather it helps modify the temperament of Zeera siyah and enhances its therapeutic properties for digestive disorders.",
+  },
+  {
+    id: 497,
+    text: "Sabun is one of the ingredients of the following dosage form:",
+    options: ["Rushoya", "Paashoya", "Kuhl (Chikni Dawa)", "Ghaaza"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Sabun (soap) is an ingredient in Kuhl (Chikni Dawa) — a type of smooth/oily eye preparation (collyrium) in Unani medicine. The inclusion of Sabun helps achieve the smooth, emollient consistency required for ocular preparations. Rushoya and Paashoya are bathing preparations; Ghaaza is a cosmetic facial preparation.",
+  },
+  {
+    id: 498,
+    text: "Statement (I): Seemab Khalis is obtained from Shingraf. Statement (II): It is free from any impurities, hence, no requirement of any tadbir.",
+    options: [
+      "Both Statement (I) and Statement (II) are correct",
+      "Both Statement (I) and Statement (II) are incorrect",
+      "Statement (I) is correct but Statement (II) is incorrect",
+      "Statement (I) is incorrect but Statement (II) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Statement (I) is correct — Seemab Khalis (pure mercury) is obtained from Shingraf (cinnabar, HgS) by heating. Statement (II) is incorrect — even though Seemab Khalis appears pure, mercury is inherently toxic and requires Tadbeer (pharmaceutical processing/detoxification) before internal use to reduce its toxicity and make it safe for therapeutic use.",
+  },
+  {
+    id: 499,
+    text: "Which one of the following is not part of Maa'ul-Hayat?",
+    options: ["Guggal", "Khardal", "Zafran", "Asl"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Maa'ul-Hayat (Water of Life) is a classical Unani compound preparation. Its ingredients include Guggal (Commiphora mukul), Zafran (Saffron), Asl (Honey), and other invigorating substances. Khardal (mustard) is NOT an ingredient of Maa'ul-Hayat — it is a separate Unani drug used as a rubefacient and expectorant.",
+  },
+  {
+    id: 500,
+    text: "Amle Tasyeed is also called as:",
+    options: [
+      "Damru Jantar",
+      "Garbh Jantar",
+      "Pataal Jantar",
+      "Distilation",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2023,
+    explanation:
+      "Amle Tasyeed (sublimation in Unani pharmaceutical chemistry) is also called Damru Jantar. It is a process in which a solid substance is converted to vapour by heating and then reconverted to solid on cooling, used for purification of mineral drugs. Garbh Jantar and Pataal Jantar are other apparatus used in Unani pharmaceutical processes.",
+  },
 ];

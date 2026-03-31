@@ -419,10 +419,10 @@ export default function PaymentMethodSelectorScreen({
           <Button
             data-ocid="payment.confirm_button"
             onClick={handleConfirmPayment}
-            className="w-full font-body bg-success hover:bg-success/90 text-white border-0"
+            className="w-full font-body text-base py-5 bg-success hover:bg-success/90 text-white border-0 rounded-xl font-semibold flex items-center justify-center gap-2"
           >
-            <CheckCircle2 className="w-4 h-4 mr-2" />
-            Confirm Payment & Activate {planName}
+            <CheckCircle2 className="w-5 h-5" />
+            Submit UTR & Confirm Payment
           </Button>
 
           <button

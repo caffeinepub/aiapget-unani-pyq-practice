@@ -1137,16 +1137,150 @@ export default function AdminPanelScreen({ onBack }: AdminPanelScreenProps) {
                 </p>
               </div>
             ) : !subscriptionsLoading && allSubscriptions.length === 0 ? (
-              <div
-                data-ocid="admin.subscriptions.empty_state"
-                className="bg-card rounded-2xl border border-border p-12 text-center"
-              >
-                <Users className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground text-sm">
-                  No subscriptions yet. They will appear here once users
-                  subscribe and are approved.
-                </p>
-              </div>
+              (() => {
+                // Derive subscriptions from locally approved payment records as fallback
+                const localApproved = paymentRecords.filter(
+                  (r) => r.status === "approved",
+                );
+                if (localApproved.length === 0) {
+                  return (
+                    <div
+                      data-ocid="admin.subscriptions.empty_state"
+                      className="bg-card rounded-2xl border border-border p-12 text-center"
+                    >
+                      <Users className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                      <p className="text-muted-foreground text-sm">
+                        No subscriptions yet. They will appear here once users
+                        subscribe and are approved.
+                      </p>
+                    </div>
+                  );
+                }
+                return (
+                  <div className="space-y-4">
+                    <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-2 text-xs text-amber-700 font-body">
+                      Showing subscriptions derived from approved payment
+                      records (backend sync pending).
+                    </div>
+                    {localApproved.map((r, idx) => {
+                      const days = r.plan === "yearly" ? 365 : 30;
+                      const startDate = r.approvedAt
+                        ? new Date(r.approvedAt)
+                        : new Date(r.date);
+                      const expiryDate = new Date(
+                        startDate.getTime() + days * 24 * 60 * 60 * 1000,
+                      );
+                      const daysRemaining = Math.max(
+                        0,
+                        Math.ceil(
+                          (expiryDate.getTime() - Date.now()) /
+                            (1000 * 60 * 60 * 24),
+                        ),
+                      );
+                      return (
+                        <div
+                          key={r.id}
+                          data-ocid={`admin.subscription.item.fallback.${idx + 1}`}
+                          className="bg-card rounded-2xl border border-success/40 p-5 space-y-3"
+                        >
+                          <div className="flex items-center justify-between gap-3 flex-wrap">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-lg">
+                                #{idx + 1}
+                              </span>
+                              <span
+                                className={
+                                  r.plan === "yearly"
+                                    ? "bg-gold/10 text-gold text-xs px-2 py-1 rounded-lg font-medium"
+                                    : "bg-primary/10 text-primary text-xs px-2 py-1 rounded-lg font-medium"
+                                }
+                              >
+                                {r.plan === "yearly"
+                                  ? "Yearly"
+                                  : r.plan === "free_trial"
+                                    ? "Free Trial"
+                                    : "Monthly"}
+                              </span>
+                              <span className="text-xs px-2 py-1 rounded-lg font-semibold bg-success/15 text-success">
+                                Active
+                              </span>
+                            </div>
+                            <span className="text-xs font-semibold text-success">
+                              {daysRemaining} days left
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-3 text-xs">
+                            <div>
+                              <p className="text-muted-foreground mb-0.5">
+                                User Name
+                              </p>
+                              <p className="font-medium text-foreground">
+                                {r.userName || "—"}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-muted-foreground mb-0.5">
+                                User ID
+                              </p>
+                              <p
+                                className="font-mono text-[11px] text-foreground truncate"
+                                title={r.userId}
+                              >
+                                {r.userId.slice(0, 16)}…
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-muted-foreground mb-0.5">
+                                Start Date
+                              </p>
+                              <p className="font-medium text-foreground">
+                                {startDate.toLocaleDateString("en-IN", {
+                                  day: "2-digit",
+                                  month: "short",
+                                  year: "numeric",
+                                })}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-muted-foreground mb-0.5">
+                                Expiry Date
+                              </p>
+                              <p className="font-medium text-foreground">
+                                {expiryDate.toLocaleDateString("en-IN", {
+                                  day: "2-digit",
+                                  month: "short",
+                                  year: "numeric",
+                                })}
+                              </p>
+                            </div>
+                            {r.utrId && (
+                              <div className="col-span-2">
+                                <p className="text-muted-foreground mb-0.5">
+                                  Payment Ref (UTR)
+                                </p>
+                                <p className="font-mono font-bold text-success text-sm select-all">
+                                  {r.utrId}
+                                </p>
+                              </div>
+                            )}
+                            {r.deviceId && (
+                              <div className="col-span-2">
+                                <p className="text-muted-foreground mb-0.5 flex items-center gap-1">
+                                  <Smartphone className="w-3 h-3" />
+                                  Bound Device ID
+                                </p>
+                                <p className="font-mono text-[11px] text-foreground bg-muted rounded-lg px-2 py-1.5 select-all break-all">
+                                  {r.deviceId}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()
             ) : (
               allSubscriptions.map((sub, idx) => {
                 const isActive = sub.status === "active";
