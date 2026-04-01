@@ -7133,4 +7133,904 @@ export const questions: Question[] = [
     explanation:
       "Amle Tasyeed (sublimation in Unani pharmaceutical chemistry) is also called Damru Jantar. It is a process in which a solid substance is converted to vapour by heating and then reconverted to solid on cooling, used for purification of mineral drugs. Garbh Jantar and Pataal Jantar are other apparatus used in Unani pharmaceutical processes.",
   },
+  {
+    id: 501,
+    text: "Bradykinin causes:",
+    options: [
+      "Vasoconstrictions",
+      "Pain at the site of inflammation",
+      "Bronchodilation",
+      "Decreased vascular permeability",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Pathology",
+    year: 2021,
+    explanation:
+      "Bradykinin is a vasoactive peptide released during inflammation. It causes vasodilation (not vasoconstriction), increased vascular permeability, bronchoconstriction (not dilation), and notably causes pain at the site of inflammation by stimulating pain receptors. Hence option 2 is correct.",
+  },
+  {
+    id: 502,
+    text: "Match the disease with its cause: (A) Byssinosis, (B) Siderosis, (C) Grinder's disease, (D) Black lung disease.",
+    options: [
+      "A-IV (Cotton), B-I (Iron), C-II (Silica), D-III (Coal)",
+      "A-IV, B-II, C-I, D-III",
+      "A-II, B-III, C-IV, D-I",
+      "A-IV, B-III, C-II, D-I",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "Byssinosis is caused by cotton dust, Siderosis by iron dust, Grinder's disease (a type of pneumoconiosis) by silica dust, and Black lung disease (coal worker's pneumoconiosis) by coal dust. The correct match is A-Cotton, B-Iron, C-Silica, D-Coal.",
+  },
+  {
+    id: 503,
+    text: "Pulseless disease is:",
+    options: [
+      "Giant cell arteritis",
+      "Takayasu arteritis",
+      "Kawasaki disease",
+      "Polyarteritis nodosa",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Pathology",
+    year: 2021,
+    explanation:
+      "Takayasu arteritis is known as 'Pulseless disease' because it causes granulomatous inflammation of the aorta and its major branches, leading to stenosis/occlusion and absent pulses in the upper extremities. It predominantly affects young women.",
+  },
+  {
+    id: 504,
+    text: "Statement I: Ballooning degeneration is seen in acute hepatitis. Statement II: Bridging necrosis is seen in chronic hepatitis.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Pathology",
+    year: 2021,
+    explanation:
+      "Both statements are true. Ballooning degeneration (swelling of hepatocytes due to cell injury) is a hallmark of acute hepatitis. Bridging necrosis, where necrosis extends between portal tracts or portal tracts to central veins, is characteristic of chronic/severe hepatitis.",
+  },
+  {
+    id: 505,
+    text: "Match the following: (A) Fasikh, (B) Basiq, (C) Sahaj, (D) Batir.",
+    options: [
+      "A-III, B-I, C-II, D-IV",
+      "A-II, B-I, C-IV, D-III",
+      "A-IV, B-II, C-I, D-III",
+      "A-II, B-III, C-IV, D-I",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat-e-Nabz",
+    year: 2021,
+    explanation:
+      "In Unani pulse terminology: Fasikh refers to a pulse that is soft/relaxed, Basiq is the rising/ascending pulse, Sahaj is the easy/smooth pulse, and Batir is the cutting/sharp pulse. The correct matching is A-II, B-III, C-IV, D-I.",
+  },
+  {
+    id: 506,
+    text: "Causes of Ittesa e Majari include:",
+    options: [
+      "Both weak Quwwate masika/strong Quwwate dafeah AND use of Mushil/Murakhkhi drugs",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Ittesa-e-Majari (dilation of channels/vessels) is caused by both: (1) weak Quwwat-e-Masika (retentive power) or strong Quwwat-e-Dafeah (expulsive power), and (2) use of Mushil (purgative) or Murakhkhi (relaxant) drugs. Both causes are correct.",
+  },
+  {
+    id: 507,
+    text: "Statement I: Alamate Arziya and Alamate Tamamiya are types of Alamate Sahiha. Statement II: Alamate Muwaqqita and Alamate Ghair Muwaqqita are types of Alamate Marziya.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Both statements are correct. Alamat-e-Sahiha (signs of health) includes Alamat-e-Arziya (accidental signs) and Alamat-e-Tamamiya (signs of complete health). Alamat-e-Marziya (signs of disease) includes Alamat-e-Muwaqqita (temporary signs) and Alamat-e-Ghair Muwaqqita (permanent signs).",
+  },
+  {
+    id: 508,
+    text: "The causes which still have their effects even after their removal are termed as:",
+    options: [
+      "Asbabe Ghair Mukhallifa",
+      "Asbabe ghair Muzadda",
+      "Asbabe Wasila",
+      "Asbabe Mukhallifa",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Asbab-e-Mukhallifa are those causative factors whose effects persist even after their removal. These are persistent/lingering causes. In contrast, Asbab-e-Ghair Mukhallifa are causes whose effects cease once the cause is removed.",
+  },
+  {
+    id: 509,
+    text: "Arrange the correct sequence of steps in stages of Waram e har: (A) Darja Tazayyid, (B) Darja Ibtida, (C) Darja Inteha, (D) Darja Inhetat.",
+    options: ["A, B, C, D", "B, C, A, D", "B, A, C, D", "A, C, B, D"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "The correct sequence of stages of Waram-e-Har (hot inflammation) is: Darja Ibtida (beginning stage) → Darja Tazayyid (increasing stage) → Darja Inteha (peak/maximum stage) → Darja Inhetat (declining stage). This follows the classical Unani description of disease progression.",
+  },
+  {
+    id: 510,
+    text: "Riyah ul Afrisah belongs to:",
+    options: [
+      "Marz-e-majari",
+      "Marz-e-shakl",
+      "Marz-e-adad",
+      "Marz-e-safaaih",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Riyah-ul-Afrisah (a type of flatulence/wind disease) is classified under Marz-e-Shakl (diseases of shape/form), as it causes distortion or abnormal shape of the affected organ due to accumulation of gases.",
+  },
+  {
+    id: 511,
+    text: "Assertion A: Presence of fever in case of ascites is an example of Marz-e-Ghair Musallam. Reason R: These are diseases difficult to treat due to complications.",
+    options: [
+      "Both A and R are correct and R is the correct explanation of A",
+      "Both A and R are correct but R is NOT the correct explanation of A",
+      "A is correct but R is not correct",
+      "A is not correct but R is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Marz-e-Ghair Musallam refers to complicated or mixed diseases where one disease is complicated by another (like fever with ascites). The reason that these are diseases difficult to treat due to complications is the correct explanation for this classification. Hence both A and R are correct and R correctly explains A.",
+  },
+  {
+    id: 512,
+    text: "Identify which one is NOT included in Marz-e-khilqat:",
+    options: [
+      "Marz-e-majari",
+      "Marz-e-shakl",
+      "Marz-e-safaaih",
+      "Marz-e-adad",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Marz-e-Khilqat (congenital/constitutional diseases) includes Marz-e-Majari (diseases of channels), Marz-e-Shakl (diseases of shape), and Marz-e-Adad (diseases of number). Marz-e-Safaaih (diseases of surfaces/membranes) is NOT included in Marz-e-Khilqat.",
+  },
+  {
+    id: 513,
+    text: "Match the Physician with their era: (A) Unani, (B) Mughliya, (C) Arabic, (D) Rumi.",
+    options: [
+      "A-IV (Buqrat), B-I (Amanullah Khan), C-III (Razi), D-II (Jalinoos)",
+      "A-III, B-I, C-II, D-IV",
+      "A-II, B-I, C-IV, D-III",
+      "A-IV, B-II, C-I, D-III",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tarikh-e-Tibb",
+    year: 2021,
+    explanation:
+      "The correct matching of physicians with their eras: Unani era – Buqrat (Hippocrates); Mughliya era – Amanullah Khan; Arabic era – Razi (Rhazes); Rumi era – Jalinoos (Galen). This reflects the historical classification of Unani medicine's development.",
+  },
+  {
+    id: 514,
+    text: "Statement I: Azaraqi detoxifies in milk. Statement II: Halelajat detoxifies in Sirka.",
+    options: [
+      "Both statement I and statement II are true",
+      "Both statement I and statement II are false",
+      "Statement I is incorrect but statement II is true",
+      "Statement I is correct but statement II is false",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Azaraqi (Aconitum species) is detoxified in milk — Statement I is correct. However, Halelajat (Myrobalan/Terminalia chebula) does not require detoxification in Sirka (vinegar); it is used as such — Statement II is false. Hence only Statement I is correct.",
+  },
+  {
+    id: 515,
+    text: "Which is NOT prepared from Takhmeer and Ta'feen?",
+    options: ["Arq", "Nabeez", "Fiqaa", "Darbahra"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Takhmeer (fermentation) and Ta'feen (putrefaction) are processes used to prepare Nabeez (fermented drink), Fiqaa (beer-like drink), and Darbahra (fermented preparation). Arq (distillate) is prepared by the process of distillation (Taqteer), NOT by fermentation or putrefaction.",
+  },
+  {
+    id: 516,
+    text: '"Mawad ko rokne wala" is the meaning of:',
+    options: ["Amroosiya", "Aflooniya", "Angarooiya", "Anoshdaru"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "The Urdu phrase 'Mawad ko rokne wala' means 'that which stops/retains matter/discharge'. In Unani pharmacology, Amroosiya refers to a drug that has the property of retaining or stopping mawad (matter/discharge), making it an astringent/retaining agent.",
+  },
+  {
+    id: 517,
+    text: "Johar Loban is prepared by:",
+    options: [
+      "Amal Taseer",
+      "Amal Tabkheer",
+      "Amal Tas'eed",
+      "Amal Tajfeef",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Johar Loban (essence of benzoin/frankincense) is prepared by Amal Tas'eed (sublimation process). In this process, Loban is heated and its vapours are collected and condensed to obtain the pure essence. Tas'eed involves conversion of solid to vapour and back to solid.",
+  },
+  {
+    id: 518,
+    text: "The chief ingredient of Kohal Chikni Dawa is:",
+    options: ["Ghee", "Fat/Charbi", "Soap", "Roghan Bedanjeer"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Kohal Chikni Dawa is a classical Unani ophthalmic preparation (collyrium). Its chief/base ingredient is Sabun (soap), which acts as the vehicle or base in this formulation, giving it its characteristic smooth texture.",
+  },
+  {
+    id: 519,
+    text: "Match authors with their books: (A) Ibn Roomia, (B) Khajandi, (C) Samarqandi, (D) Ibn Abu Albyan.",
+    options: [
+      "A-V, B-II, C-III, D-IV",
+      "A-II, B-V, C-I, D-III",
+      "A-I, B-III, C-IV, D-II",
+      "A-V, B-IV, C-III, D-I",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Tarikh-e-Tibb",
+    year: 2021,
+    explanation:
+      "The correct matching of Unani authors with their books: Ibn Roomia wrote Kitab-ul-Adwiyah al-Mufrada (V), Khajandi wrote related to Ophthalmology (IV), Samarqandi wrote Sharah-ul-Asbab (III), and Ibn Abu Albyan wrote Kitab-ul-Mughni (I). The correct sequence is A-V, B-IV, C-III, D-I.",
+  },
+  {
+    id: 520,
+    text: "Which of the following is used as Raabta? (A) Gulqand, (B) Haloon, (C) Khatmi, (D) Roghan Bedanjeer.",
+    options: [
+      "A, B and D only",
+      "B, C and D only",
+      "A, C and D only",
+      "B and D only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Raabta (binding agent/vehicle) in Unani pharmacology binds ingredients together. Haloon (garden cress seeds), Khatmi (marshmallow), and Roghan Bedanjeer (castor oil) are used as Raabta. Gulqand (rose conserve) is used as a corrective and flavoring agent, not primarily as Raabta.",
+  },
+  {
+    id: 521,
+    text: "Statement I: Kajli is a preparation that involves Sankhya, Para, Kasees, and Gandhak. Statement II: The black color of Kajli is due to the mixing of Para and Gandhak in Kharal.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Kajli is a classical Unani/Ayurvedic preparation made primarily by triturating Para (mercury) and Gandhak (sulphur) together in a Kharal (mortar). The black color of Kajli is indeed due to this mixing. Statement I is incorrect as Sankhya and Kasees are NOT ingredients of Kajli. Statement II is correct.",
+  },
+  {
+    id: 522,
+    text: "The 'Pharmacy Act' came into force in the year:",
+    options: ["1947", "1948", "1949", "1950"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "The Pharmacy Act of India came into force in the year 1948. It regulates the profession of pharmacy in India, setting standards for pharmaceutical education and registration of pharmacists.",
+  },
+  {
+    id: 523,
+    text: "Mixing of Oil and Water is which type of antagonism (Tanaquz)?",
+    options: [
+      "Tanaquz Faeli",
+      "Tanaquz Kaifi",
+      "Tanaquz Suri",
+      "Tanaquz Keemyawi",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Tanaquz Suri (physical antagonism) refers to incompatibility based on physical properties. Mixing oil and water is a classic example of Tanaquz Suri because they don't chemically react but are physically incompatible due to their immiscible nature.",
+  },
+  {
+    id: 524,
+    text: "Which of the following drugs is not included in Ibn Sina's list of Cardiac medicine (Advia Qalbia)?",
+    options: ["Ushna", "Arjun", "Daronaj aqrabi", "Halela"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Ibn Sina's list of Advia Qalbia (cardiac medicines) includes Ushna, Daronaj aqrabi, Halela, and several other herbs. Arjun (Terminalia arjuna), though used in modern Unani/Ayurvedic practice for cardiac conditions, was not included in Ibn Sina's original list of Advia Qalbia.",
+  },
+  {
+    id: 525,
+    text: "Rijlultaer is the synonym of:",
+    options: ["Atrilal", "Bisfaye", "Samagh-e-Arabi", "Kateera"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Rijlultaer (literally 'bird's foot') is an Arabic synonym for Atrilal (Trifolium alexandrinum / Egyptian clover). This plant is also known as Barseem and is used in Unani medicine for its nutritive properties.",
+  },
+  {
+    id: 526,
+    text: "Match the Family in List I with the Drug in List II: (A) Convolvulaceae, (B) Cruciferae, (C) Compositae, (D) Caricaceae.",
+    options: [
+      "A-I, B-III, C-II, D-IV",
+      "A-II, B-IV, C-III, D-I",
+      "A-II (Aftimun), B-III (Todri Surkh), C-I (Aqarqarha), D-IV (Papita)",
+      "A-III, B-II, C-I, D-IV",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Correct family-drug matching: Convolvulaceae – Aftimun (Cuscuta epithymum); Cruciferae (Brassicaceae) – Todri Surkh (Matthiola incana); Compositae (Asteraceae) – Aqarqarha (Anacyclus pyrethrum); Caricaceae – Papita (Carica papaya).",
+  },
+  {
+    id: 527,
+    text: "If there is an increase in the volume of distribution of a drug in the body, then:",
+    options: [
+      "Half-life of the drug remains constant",
+      "Half-life of drug increases",
+      "Half-life of drug decreases",
+      "Half-life of drug may increase or decrease",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Pharmacology",
+    year: 2021,
+    explanation:
+      "Half-life (t½) = 0.693 × Volume of Distribution (Vd) / Clearance. When Vd increases (with clearance constant), the half-life of the drug increases. A larger Vd means more drug is distributed into tissues, taking longer to be eliminated.",
+  },
+  {
+    id: 528,
+    text: "Which of the following drugs is NOT of plant origin?",
+    options: ["Godanti", "Lajwanti", "Nagandbabri", "Ghongchi"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Godanti (Selenite/Gypsum – Calcium sulphate) is a mineral drug, NOT of plant origin. Lajwanti (Mimosa pudica), Nagandbabri (Bacopa monnieri), and Ghongchi (Abrus precatorius) are all plant-origin drugs used in Unani medicine.",
+  },
+  {
+    id: 529,
+    text: "Which of the following drugs is of animal origin?",
+    options: ["Maein", "Kahruba Shamayi", "Shakr Tighal", "Hiran Khuri"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Shakr Tighal (hyena's bile/gall) is a drug of animal origin, derived from the hyena. Maein is a plant-origin drug, Kahruba Shamayi (amber) is of mineral/fossilized origin, and Hiran Khuri (deer hoof) — though from animal, Shakr Tighal is the correct answer here as it is clearly of direct animal glandular origin.",
+  },
+  {
+    id: 530,
+    text: '"Khaya Iblees" is the synonym of:',
+    options: ["Kewda", "Karanjawa", "Kaiphal", "Kahruba"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Khaya Iblees (Devil's testicles/egg) is an Arabic synonym for Karanjawa (Caesalpinia bonducella / Nicker bean). This plant is also known as Karanj and its seeds are used in Unani medicine for their antimalarial and anthelmintic properties.",
+  },
+  {
+    id: 531,
+    text: "Kuth is the synonym of:",
+    options: [
+      "Semicarpus anacardium",
+      "Melissa parviflora",
+      "Emblica officinalis",
+      "Saussurea lappa",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Kuth (also spelled Qust/Kost) is a well-known Unani drug whose botanical source is Saussurea lappa (Costus root). Its root is aromatic and used for respiratory, digestive, and anti-inflammatory conditions. Semicarpus anacardium is Bhilawa, Melissa parviflora is Fanjankasht, and Emblica officinalis is Amla.",
+  },
+  {
+    id: 532,
+    text: 'One "Misqal" weight is equivalent to:',
+    options: ["2.5 gm", "3.5 gm", "4.5 gm", "5.5 gm"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "In Unani pharmacology, one Misqal is equivalent to 4.5 grams (approximately). It is a traditional unit of weight used in Unani formulations. Other common weights: 1 Dirham = 3.5 g, 1 Tola = 11.66 g.",
+  },
+  {
+    id: 533,
+    text: "Ajwain Desi belongs to the family:",
+    options: ["Rutaceae", "Apiaceae", "Brassicaceae", "None of these"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Ajwain Desi (Trachyspermum ammi / Carom seeds) belongs to the family Apiaceae (formerly Umbelliferae). This family is characterized by umbrella-shaped flower clusters. Ajwain is an important Unani drug used for digestive, carminative, and antispasmodic properties.",
+  },
+  {
+    id: 534,
+    text: '"Anjdan" is a/an:',
+    options: ["Oleo gum resin", "Oleo resin", "Gum", "None of these"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Anjdan (Asafoetida / Ferula foetida) is an oleo gum resin — a mixture of volatile oil (oleo), gum, and resin. It is obtained as an exudate from the rhizome and roots of Ferula species and is classified as an oleo gum resin in Unani pharmacognosy.",
+  },
+  {
+    id: 535,
+    text: "Which Unani Physician was born in the Greek city of Pergamon in Asia Minor (now Turkey)?",
+    options: ["Rhazes", "Galen (Jalinoos)", "Hippocrates", "Aesculapius"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Tarikh-e-Tibb",
+    year: 2021,
+    explanation:
+      "Galen (Jalinoos in Arabic/Urdu), the great Greek physician (129–216 AD), was born in Pergamon (modern-day Bergama, Turkey). He contributed enormously to anatomy, physiology, and medicine, and his works formed the basis of Unani medicine for centuries.",
+  },
+  {
+    id: 536,
+    text: 'Statement I: Any loss or abnormality of psychological, physiological, or anatomical structure or function is termed "Impairment". Statement II: Inability to carry out normal activities due to an impairment is termed "disability".',
+    options: [
+      "Both Statement I and Statement II are False",
+      "Both Statement I and Statement II are True",
+      "Statement I is True, Statement II is False",
+      "Statement II is True, Statement I is False",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "Both statements are correct per WHO definitions. Impairment = any loss or abnormality of psychological, physiological, or anatomical structure or function. Disability = any restriction or lack of ability to perform an activity in the manner considered normal due to impairment. Both definitions are accurate.",
+  },
+  {
+    id: 537,
+    text: 'The "Treatment 2.0" initiative, launched by WHO, is related to:',
+    options: ["AIDS", "COVID-19", "Diabetes", "Malaria"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "WHO's 'Treatment 2.0' initiative is related to AIDS/HIV. It was launched to simplify HIV treatment, make it more affordable and accessible globally, and to dramatically scale up treatment. It focused on simpler drug regimens, diagnostic approaches, and community delivery of HIV care.",
+  },
+  {
+    id: 538,
+    text: "Match the Agent in List I with the Water-borne Disease in List II: (A) Viral, (B) Bacterial, (C) Protozoal, (D) Leptospiral.",
+    options: [
+      "A-I (Hepatitis E), B-II (Typhoid), C-III (Giardiasis), D-IV (Weil's disease)",
+      "A-II, B-III, C-I, D-IV",
+      "A-IV, B-III, C-II, D-I",
+      "A-I, B-IV, C-III, D-II",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "Correct matching: Viral – Hepatitis E (water-borne viral hepatitis); Bacterial – Typhoid (Salmonella typhi); Protozoal – Giardiasis (Giardia lamblia); Leptospiral – Weil's disease (Leptospira icterohemorrhagiae). All are classic water-borne diseases transmitted through contaminated water.",
+  },
+  {
+    id: 539,
+    text: "The cause of a high birth rate includes:",
+    options: [
+      "Low standard of living",
+      "Early puberty",
+      "Early marriage",
+      "All of the above",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "High birth rate is caused by multiple factors including: low standard of living (more children as economic support), early puberty (longer reproductive period), and early marriage (longer fertility window). All three are recognized demographic factors contributing to high birth rates.",
+  },
+  {
+    id: 540,
+    text: 'This pill is commonly referred to as the "minipill":',
+    options: [
+      "Combined pill",
+      "Progestogen only pill (POP)",
+      "Post-coital pill",
+      "Male pill",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "The Progestogen Only Pill (POP) is commonly called the 'minipill' because it contains only progestogen (no estrogen) and in smaller doses. It is used by women who cannot take estrogen-containing contraceptives (e.g., breastfeeding mothers, those with cardiovascular risk).",
+  },
+  {
+    id: 541,
+    text: "Assertion A: In Plenum Ventilation fresh air is blown into the room by centrifugal fans. Reason R: Plenum Ventilation creates positive pressure and displaces the vitiated air.",
+    options: [
+      "Both A & R are True and R is not the correct explanation of A",
+      "Both A & R are True and R is the correct explanation of A",
+      "Both A & R are False",
+      "A is True and R is False",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "In Plenum (Mechanical) Ventilation, fresh air is indeed blown in by centrifugal fans (A is true). This creates positive pressure inside the room, which effectively displaces the vitiated (stale/contaminated) air outwards (R is true and correctly explains A). Hence both are true and R is the correct explanation.",
+  },
+  {
+    id: 542,
+    text: "Residents of mountain regions belong to which of the following?",
+    options: [
+      "Masakin Ghayrah",
+      "Masakin Hijriyah",
+      "Masakin Bhairyah",
+      "Masakin Aliya",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "In Unani medicine, Masakin (habitations/dwellings) are classified based on location. Masakin Aliya (elevated habitations) refers to high-altitude or mountainous regions. Residents of mountain regions are classified under Masakin Aliya due to their elevated geographic location.",
+  },
+  {
+    id: 543,
+    text: "This water is beneficial for the liver & spleen and also advantageous in Ascites:",
+    options: [
+      "Ma-e-hadidya",
+      "Ma-e-nihasyaa",
+      "All of the above",
+      "None of them",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Ma-e-Hadidya (iron water/chalybeate water) contains dissolved iron salts and is beneficial for the liver and spleen. It is also used therapeutically in ascites (Istisqa). Its tonic properties make it useful for hepatosplenic conditions in Unani medicine.",
+  },
+  {
+    id: 544,
+    text: "Exercise that is done with the intention and purpose to get the desired benefits does NOT include:",
+    options: [
+      "Riyazat Zatiya",
+      "Riyazat Khalisa",
+      "Riyazat Khassa",
+      "Riyazat Arziya",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Riyazat Arziya (incidental/accidental exercise) is exercise done without specific intention — it occurs as a byproduct of other activities (like walking to work). In contrast, Riyazat Zatiya, Riyazat Khalisa, and Riyazat Khassa are all forms of exercise done with specific intention and purpose.",
+  },
+  {
+    id: 545,
+    text: "Which is the thickest boundary of the orbit?",
+    options: ["Lateral", "Medial", "Roof", "Floor"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "The lateral wall of the orbit is the thickest boundary. It is formed by the zygomatic bone anteriorly and the greater wing of the sphenoid posteriorly. The medial wall is the thinnest (lamina papyracea of ethmoid), making it prone to fractures.",
+  },
+  {
+    id: 546,
+    text: "Which of the following structures does not pass through the foramen magnum?",
+    options: [
+      "Accessory pharyngeal artery",
+      "Vertebral artery",
+      "Spinal accessory nerve",
+      "Vertical band of cruciate ligament",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "The foramen magnum transmits: medulla oblongata, vertebral arteries, spinal roots of accessory nerve (CN XI), anterior and posterior spinal arteries, and the vertical band of cruciate ligament. Accessory pharyngeal artery does NOT pass through the foramen magnum — it is not a recognized structure.",
+  },
+  {
+    id: 547,
+    text: "Which of the following is an example of elastic cartilage?",
+    options: [
+      "Trachea",
+      "Intervertebral disc",
+      "Epiglottis",
+      "Thyroid cartilage",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "Elastic cartilage contains elastic fibers in addition to collagen, giving it flexibility. Examples include: epiglottis, pinna of ear, Eustachian tube, and cuneiform cartilage. Trachea and thyroid cartilage are hyaline cartilage; intervertebral disc is fibrocartilage.",
+  },
+  {
+    id: 548,
+    text: "The first cervical vertebra has all of the following except:",
+    options: [
+      "Lateral masses",
+      "Foramen transversarum",
+      "Anterior arch",
+      "Spinous process",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "The first cervical vertebra (Atlas/C1) has lateral masses, foramen transversarium (for vertebral artery), and anterior arch. However, it does NOT have a spinous process or a body — instead it has a posterior tubercle. The spinous process is a feature of other cervical vertebrae.",
+  },
+  {
+    id: 549,
+    text: "Which of the following arteries supply the fundus of the stomach?",
+    options: [
+      "Right gastric artery",
+      "Splenic artery",
+      "Short gastric arteries",
+      "Gastroduodenal artery",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "The fundus of the stomach is supplied by the short gastric arteries (vasa brevia), which are branches of the splenic artery. The right gastric artery supplies the lesser curvature, the gastroduodenal artery supplies the pyloric region, and the splenic artery gives off the short gastric branches.",
+  },
+  {
+    id: 550,
+    text: "Foot drop is due to injury of:",
+    options: [
+      "Common peroneal nerve",
+      "Superficial peroneal nerve",
+      "Femoral nerve",
+      "Tibial nerve",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "Foot drop (inability to dorsiflex the foot) is caused by injury to the common peroneal nerve (common fibular nerve). This nerve supplies the muscles responsible for dorsiflexion and eversion of the foot (tibialis anterior, extensor muscles). It is the most common nerve injured in the lower limb.",
+  },
+  {
+    id: 551,
+    text: "Intramuscular injections in the upper and lateral quadrant of the gluteal region are given in:",
+    options: [
+      "Glutei maximus and minimus",
+      "Gluteus medius",
+      "Glutei maximus and medius",
+      "Gluteus maximus",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Anatomy",
+    year: 2021,
+    explanation:
+      "IM injections in the upper outer quadrant of the gluteal region are given in the Gluteus medius muscle to avoid the sciatic nerve. The gluteus maximus occupies the lower quadrants, and the sciatic nerve passes through the lower and medial parts. The safe zone is the upper lateral quadrant = gluteus medius.",
+  },
+  {
+    id: 552,
+    text: "In isometric contraction, the length of the muscle fibre:",
+    options: [
+      "Increases",
+      "Decreases",
+      "Remains same",
+      "None of the above",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Physiology",
+    year: 2021,
+    explanation:
+      "In isometric contraction (static contraction), the muscle generates force/tension but the length of the muscle fiber remains the same — there is no change in length, and no joint movement occurs. Examples include holding a weight in a fixed position. Contrast with isotonic contraction where length changes.",
+  },
+  {
+    id: 553,
+    text: "Which of the following is NOT an abnormal hemoglobin derivative?",
+    options: [
+      "Sulfhemoglobin",
+      "Carboxyhemoglobin",
+      "Ferrihemoglobin",
+      "Reticulocyte",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Physiology",
+    year: 2021,
+    explanation:
+      "Abnormal hemoglobin derivatives include Sulfhemoglobin (hemoglobin + hydrogen sulfide), Carboxyhemoglobin (hemoglobin + CO), and Ferrihemoglobin/Methemoglobin (Fe2+ oxidized to Fe3+). Reticulocyte is an immature RBC (red blood cell) — it is a cell type, NOT a hemoglobin derivative.",
+  },
+  {
+    id: 554,
+    text: "Dysbarism is due to:",
+    options: [
+      "Change in temperature",
+      "Gravitational force",
+      "High barometric pressure",
+      "Low barometric pressure",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "Dysbarism refers to health problems arising from changes in ambient pressure, particularly low barometric pressure (altitude sickness, decompression sickness in divers ascending too fast). It results from dissolved gases (nitrogen) coming out of solution when pressure decreases rapidly.",
+  },
+  {
+    id: 555,
+    text: "Oxygen-hemoglobin dissociation curve is sigmoid shaped. If this curve is shifted to the right, it means:",
+    options: [
+      "Excess of 2,3-diphosphoglycerate in RBC",
+      "Decrease in partial pressure of oxygen",
+      "Increase in body temperature",
+      "All of the above",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Physiology",
+    year: 2021,
+    explanation:
+      "Right shift of the O2-Hb dissociation curve indicates decreased affinity of hemoglobin for oxygen (Bohr effect), meaning more O2 is released to tissues. It is caused by: increased 2,3-DPG in RBCs, increased body temperature, increased CO2, decreased pH (acidosis). All three options contribute to rightward shift.",
+  },
+  {
+    id: 556,
+    text: "Ability to speak is linked to which of the following?",
+    options: [
+      "Brocas Area",
+      "Occipital Lobe",
+      "Basal Ganglia",
+      "None of the above",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Physiology",
+    year: 2021,
+    explanation:
+      "Broca's area (Brodmann areas 44 and 45) is located in the inferior frontal gyrus of the dominant (usually left) hemisphere. It is the motor speech area responsible for the production of speech. Damage to Broca's area causes Broca's aphasia (expressive aphasia) — patient understands speech but cannot speak fluently.",
+  },
+  {
+    id: 557,
+    text: "Tardieu's spots are seen in:",
+    options: [
+      "Death from gunshot injury",
+      "Death from asphyxia",
+      "Death from starvation",
+      "Death from cold",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Forensic Medicine",
+    year: 2021,
+    explanation:
+      "Tardieu's spots are small petechial hemorrhages (subpleural ecchymoses) seen on the surface of lungs, heart, and pericardium in cases of death from asphyxia (suffocation, strangulation, drowning). They result from rupture of small capillaries due to increased venous pressure during asphyxial struggle.",
+  },
+  {
+    id: 558,
+    text: "Which of the following is a universal antidote?",
+    options: [
+      "Mixture of charcoal and copper sulphate",
+      "Mixture of charcoal and ferric chloride",
+      "Soap",
+      "Mixture of charcoal, tannic acid and magnesium oxide",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Forensic Medicine",
+    year: 2021,
+    explanation:
+      "The universal antidote is a mixture of activated charcoal (2 parts) + tannic acid (1 part) + magnesium oxide (1 part). Charcoal adsorbs toxins, tannic acid precipitates alkaloids and metals, and magnesium oxide neutralizes acids. This combination addresses multiple types of poisoning.",
+  },
+  {
+    id: 559,
+    text: "When does Saue Mizaj occur?",
+    options: [
+      "Imbalance in Akhlat",
+      "Disturbance in Kaifiyate Arba",
+      "Both conditions occur",
+      "Khalale Shikam",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Su-e-Mizaj (abnormal/imbalanced temperament) occurs specifically due to disturbance in Kaifiyate Arba (the four qualities — heat, cold, moisture, dryness). When these qualities become imbalanced, the mizaj deviates from its normal state. Imbalance in Akhlat is a separate pathological condition.",
+  },
+  {
+    id: 560,
+    text: "Which kaifiya't are called \"kaifiya'at e Fayela\"?",
+    options: [
+      "Harata o Ratubat",
+      "Hrarat o Yabusat",
+      "Ratubat o Yabusat",
+      "Hararat o Barudat",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Kaifiyat-e-Fayela (active qualities) are Hararat (heat) and Barudat (cold). These are called 'Fayela' (active/effective) because they actively cause change in other things. In contrast, Ratubat (moisture) and Yabusat (dryness) are called Kaifiyat-e-Munfaila (passive qualities) as they are acted upon.",
+  },
 ];
