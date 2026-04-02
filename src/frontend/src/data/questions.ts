@@ -8033,4 +8033,904 @@ export const questions: Question[] = [
     explanation:
       "Kaifiyat-e-Fayela (active qualities) are Hararat (heat) and Barudat (cold). These are called 'Fayela' (active/effective) because they actively cause change in other things. In contrast, Ratubat (moisture) and Yabusat (dryness) are called Kaifiyat-e-Munfaila (passive qualities) as they are acted upon.",
   },
+  {
+    id: 561,
+    text: "With reference to Aa'za, Quwa & Af'al, how many types of Rooh exist?",
+    options: ["One", "Two", "Five", "Three"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "According to Unani philosophy, Rooh (vital spirit) exists in three types corresponding to Aa'za (organs), Quwa (faculties/powers), and Af'al (functions): (1) Rooh-e-Haywani (Animal spirit) in heart, (2) Rooh-e-Nafsani (Psychic spirit) in brain, (3) Rooh-e-Tabiee (Natural spirit) in liver. Thus three types of Rooh exist.",
+  },
+  {
+    id: 562,
+    text: "As per the definition, the ustuqussat (Anasir) are:",
+    options: ["Jamid", "Sayyal", "Rihi", "Munfarid"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Ustuqussat (Anasir/Elements) are defined as Munfarid (simple/singular) substances that cannot be further divided into simpler components. They are the basic building blocks of all matter. The four Anasir are: Aab (Water), Naar (Fire), Khak (Earth), and Hawa (Air) — each being Munfarid in nature.",
+  },
+  {
+    id: 563,
+    text: "What is the last stage of Hazm (digestion)?",
+    options: [
+      "Food reaching inside the liver",
+      "Undigested food excreted from the body",
+      "The Khilt becomes Johare Uzu",
+      "Production of Khilt in the liver",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Hazm (digestion) in Unani medicine occurs in four stages: (1) Hazm-e-Meadi (gastric), (2) Hazm-e-Kabdi (hepatic — production of Akhlat), (3) Hazm-e-Urooqi (vascular), (4) Hazm-e-Uzwi (tissue digestion). The last and final stage is Hazm-e-Uzwi, where Khilt (humour) is assimilated into the tissue (Johare Uzu), making it the ultimate stage.",
+  },
+  {
+    id: 564,
+    text: 'To whom does the following statement regarding the Mizaj belong: "المزاج و هو مصدر اطلق على الممتزج مجازا"?',
+    options: ["Ibn Sina", "Abu Sahl Masihi", "Ibn Rushd", "Allama Nafis"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "This Arabic statement about Mizaj — 'Al-Mizaj wa huwa masdar utliqa ala al-mumtazij majazan' (Mizaj is a verbal noun applied metaphorically to the mixture) — is attributed to Allama Nafis ibn Awad Al-Kirmani, a prominent Unani scholar who wrote Sharah-e-Asbab, an important commentary on Unani medicine.",
+  },
+  {
+    id: 565,
+    text: "The theory of three elements was formulated by a group of philosophers known as:",
+    options: [
+      "Ashab-e-Khlit",
+      "Mashshayeen",
+      "Ahl-e-Akseer",
+      "None of these",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "Ahl-e-Akseer (Alchemists/Paracelsists) proposed the theory of three elements: Sulphur (representing combustibility/soul), Mercury (representing volatility/spirit), and Salt (representing solidity/body). This tria prima theory was put forward by Paracelsus and his followers, distinct from the classical four-element theory.",
+  },
+  {
+    id: 566,
+    text: "In which disease is Qai (Emesis) contraindicated?",
+    options: ["Istisqa", "Sara", "Mufrit farbahi", "Rasha"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilaj bil Tadbeer",
+    year: 2021,
+    explanation:
+      "Qai (therapeutic emesis) is contraindicated in Rasha (Parkinsonism/tremor) because it can aggravate neurological instability and worsen tremors. Emesis is also contraindicated in conditions like pregnancy, advanced age, weakness, and cardiac diseases. In Rasha, the strain of vomiting can worsen the condition.",
+  },
+  {
+    id: 567,
+    text: "Which therapy (tadbeer) strengthens the effect of diuretics (Mudirrat)?",
+    options: ["Tabreed", "Pashoya", "Inkebab", "Bakhoor"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilaj bil Tadbeer",
+    year: 2021,
+    explanation:
+      "Pashoya (foot bath / immersion of feet in warm water) strengthens the effect of Mudirrat (diuretics) by causing peripheral vasodilation, drawing blood and fluids towards the lower extremities, and reflexively increasing renal blood flow and urine output. It is a classical supportive tadbeer used alongside diuretic drugs.",
+  },
+  {
+    id: 568,
+    text: "Which of the following options is the appropriate technique in case of excessive morbid material (kasrat-e-mawad) in an organ?",
+    options: [
+      "Fasd before Hijamah",
+      "Hijamah before Fasd",
+      "Dalak before Hijamah",
+      "Hijamah-e-nariyah",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilaj bil Tadbeer",
+    year: 2021,
+    explanation:
+      "When there is kasrat-e-mawad (excess of morbid material) in an organ, the classical Unani approach is to first perform Fasd (venesection/bloodletting from a vein) to reduce the overall load of morbid humours from the systemic circulation, followed by Hijamah (cupping) to remove localised material from the affected area.",
+  },
+  {
+    id: 569,
+    text: "Advantages of Istifragh through emesis (qai) include:",
+    options: [
+      "Taqwiyat-e-Jigar",
+      "Taqwiyat-e-Sadar",
+      "Taqwiyat-e-Ama",
+      "Taqwiyat-e-Basarat",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilaj bil Tadbeer",
+    year: 2021,
+    explanation:
+      "One of the recognised benefits of Istifragh through Qai (therapeutic emesis) is Taqwiyat-e-Basarat (strengthening of vision/eyesight). By evacuating excess morbid humours — particularly Balgham (phlegm) — from the upper body, pressure on cranial nerves including the optic pathway is reduced, thereby improving vision.",
+  },
+  {
+    id: 570,
+    text: "Excess of which type of food items causes tasahul and takahul (Lethargy) in the body?",
+    options: [
+      "Tasteless (phika) food items",
+      "Sweet (shirin) food items",
+      "Sour (Tursh) food items",
+      "Salty (Namkeen) food items",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2021,
+    explanation:
+      "Excess consumption of sweet (Shirin) food items leads to Tasahul (relaxation/flaccidity) and Takahul (lethargy/sluggishness) in the body. Sweet foods increase Balgham (phlegm) and Ratubat (moisture), weakening the overall tone of the body and causing heaviness and lethargy according to Unani dietary principles.",
+  },
+  {
+    id: 571,
+    text: "Which regimen is given priority in Acute fevers (Hummiyat-e-Hadda)?",
+    options: [
+      "Istifragh-e-madda",
+      "Taskeen-e-hararat",
+      "Tasfiya-e-dam",
+      "Tadheen",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "In Hummiyat-e-Hadda (acute fevers), the first priority is Taskeen-e-Hararat (reduction/pacification of heat/fever). The immediate danger is from excessive heat which can damage vital organs. Once the fever is controlled, other treatments like Istifragh-e-Madda can be considered. This principle is fundamental in Unani management of acute febrile conditions.",
+  },
+  {
+    id: 572,
+    text: "Madda-e-Niqris (Gouty material) is derived from which source?",
+    options: [
+      "Hazm-e-Kabdi",
+      "Hazm-e-Uzwi",
+      "Hazm-e-Arbaee",
+      "None of the above",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Madda-e-Niqris (gouty material/uric acid deposits) is derived from Hazm-e-Uzwi (tissue-level digestion). At the tissue level, incomplete metabolism of Akhlat produces waste material. In Niqris (gout), defective Hazm-e-Uzwi in the joint tissues leads to accumulation of morbid material (analogous to uric acid crystals in modern medicine).",
+  },
+  {
+    id: 573,
+    text: "The first line of treatment in Ascites (Istisqa-e-Ziqqi) is:",
+    options: [
+      "Dietary salt Restriction",
+      "Diuretics",
+      "Paracentesis",
+      "Shunt",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "In Istisqa-e-Ziqqi (ascites), the first line of treatment is dietary salt restriction (low sodium diet). Reducing sodium intake decreases water retention and fluid accumulation in the peritoneal cavity. This conservative measure is tried first before diuretics (second line) or more invasive procedures like paracentesis.",
+  },
+  {
+    id: 574,
+    text: "Left ventricular hypertrophy is caused by all of the following, EXCEPT:",
+    options: [
+      "Mitral stenosis",
+      "Aortic stenosis",
+      "Mitral regurgitation",
+      "Aortic regurgitation",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Mitral stenosis causes LEFT ATRIAL hypertrophy and right ventricular hypertrophy (due to pulmonary hypertension), NOT left ventricular hypertrophy. The left ventricle is actually protected in mitral stenosis as less blood enters it. Aortic stenosis, mitral regurgitation, and aortic regurgitation all cause left ventricular hypertrophy due to pressure or volume overload.",
+  },
+  {
+    id: 575,
+    text: "What is the most common complication of acute Pancreatitis?",
+    options: [
+      "Pancreatic Abscess",
+      "Pseudocyst",
+      "Phlegmon",
+      "Pleural Effusion",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Pseudocyst is the most common complication of acute pancreatitis, occurring in approximately 10-20% of cases. It forms when pancreatic enzymes and fluid become encapsulated by fibrous tissue, usually appearing 4-6 weeks after the acute episode. Most pseudocysts resolve spontaneously; large or symptomatic ones require drainage.",
+  },
+  {
+    id: 576,
+    text: "Which sue-mizaj (maldistemperament) is found in Bars (Vitiligo)?",
+    options: [
+      "Sue-mizaj Haar Ratab",
+      "Sue-mizaj Barid Ratab",
+      "Sue-mizaj Haar Yabis",
+      "Sue-mizaj Barid Yabis",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Bars (Vitiligo) is caused by Sue-mizaj Barid Ratab (cold-moist maldistemperament). In Unani medicine, the depigmentation in vitiligo is attributed to excess Balgham (phlegm) which is cold and moist, leading to loss of skin colour. The cold-moist temperament suppresses the normal pigment-forming activity of the skin.",
+  },
+  {
+    id: 577,
+    text: "Which of the following conditions leads to exudative pleural effusion?",
+    options: [
+      "Cirrhosis of liver",
+      "Nephrotic syndrome",
+      "Congestive heart failure",
+      "Bronchogenic Carcinoma",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Bronchogenic carcinoma (lung cancer) causes exudative pleural effusion by direct invasion or lymphatic obstruction, increasing pleural membrane permeability and protein content. Cirrhosis, nephrotic syndrome, and congestive heart failure all cause transudative effusions due to low protein/oncotic pressure or increased hydrostatic pressure. Light's criteria distinguish exudates from transudates.",
+  },
+  {
+    id: 578,
+    text: "Assertion A: Levity headache (Sudai khiffa) is commonly seen in women during puerperium. Reason R: Because the main cause of Levity headache is dryness.",
+    options: [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Both the assertion and reason are correct, and R correctly explains A. Suda-e-Khiffa (levity/lightness headache) is indeed commonly seen in women during puerperium (post-delivery period). Its main cause is Yabusat (dryness), which increases after delivery due to blood loss and fluid shifts. The puerperium state naturally causes dryness, thus explaining the increased incidence.",
+  },
+  {
+    id: 579,
+    text: "Statement I: The cause of Anasarca (Istisqa-e-Lami) is weakness of liver function and its coldness. Statement II: Anasarca is not a type of Ascites.",
+    options: [
+      "Statement I is correct but Statement II is incorrect",
+      "Statement II is correct but I is incorrect",
+      "Statement I & Statement II both are correct",
+      "Statement I & Statement II both are incorrect",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Statement I is correct: Istisqa-e-Lami (Anasarca/generalised oedema) is caused by weakness and coldness of the liver (Zoufe Kabid Barid), leading to failure of protein synthesis and fluid regulation. Statement II is incorrect: Anasarca IS actually considered a type of Istisqa (dropsy/oedema) in Unani medicine — Istisqa has three types: Ziqqi (ascites), Lami (anasarca), and Tabalي (tympanites).",
+  },
+  {
+    id: 580,
+    text: "Match List I with List II: (A) WARDEENAJ, (B) WADQAH, (C) BAYAZ, (D) BAMNI.",
+    options: [
+      "AI (Cornea), BII (Eyelid), CIII (Conjunctiva), DIV (Retina)",
+      "AII, BIII, CIV, DI",
+      "AIV, BIII, CI, DII",
+      "AIII (Conjunctiva), BIV (Retina), CII (Eyelid), DI (Cornea)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "In Unani ophthalmology: Wardeenaj = Conjunctiva (the mucous membrane lining the eye), Wadqah = Retina (the innermost light-sensitive layer), Bayaz = Eyelid (white of the outer eye area/eyelid), Bamni = Cornea (the transparent front part of the eye). Option 4 correctly matches: A-III (Conjunctiva), B-IV (Retina), C-II (Eyelid), D-I (Cornea).",
+  },
+  {
+    id: 581,
+    text: "According to Ibn Sina, what is the first stage of Humma-e-Diq?",
+    options: ["Zubool", "Iltisaq", "Mufatit", "Muhashif"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "According to Ibn Sina (Avicenna) in Al-Qanun, Humma-e-Diq (hectic/consumptive fever) progresses through four stages: (1) Iltisaq — the fever adheres to the vital spirit/rooh, (2) Zubool — wasting begins, (3) Mufatit — bone-consuming stage, (4) Muhashif — final stage with complete desiccation. Iltisaq is the first/earliest stage.",
+  },
+  {
+    id: 582,
+    text: "In Parkinsonism (Rasha), which of the following is NOT present?",
+    options: [
+      "Tremor at rest",
+      "Past Pointing",
+      "Bradykinesia",
+      "Muscular Rigidity",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Past Pointing (dysmetria) is a cerebellar sign, NOT a feature of Parkinsonism. The classical triad of Parkinson's disease is: Tremor at rest (pill-rolling), Rigidity (cogwheel/lead pipe), and Bradykinesia (slowness of movement). Other features include postural instability and shuffling gait. Past pointing indicates cerebellar ataxia, which is a different condition.",
+  },
+  {
+    id: 583,
+    text: "In which type of headache does the head feel very hot but very light?",
+    options: [
+      "Suda-e-Damvi",
+      "Suda-e-Safravi",
+      "Suda-e-Balghami",
+      "Suda-e-Sodawi",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Suda-e-Safravi (bilious/hot-dry headache) is characterised by the head feeling very hot (due to Safra/yellow bile being hot) but very light (Safra is light in weight). Other features include bitter taste, thirst, and nausea. Suda-e-Damvi feels hot and heavy, Suda-e-Balghami feels heavy and cold, Suda-e-Sodawi feels heavy, cold and dark.",
+  },
+  {
+    id: 584,
+    text: "Which type of Malankholia (Melancholia) is associated with Junoon (Mania)?",
+    options: [
+      "Sauda Balghami",
+      "Sauda Safravi",
+      "Sauda Saudavi",
+      "Sauda Damvi",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Sauda Safravi (melancholia due to burnt/adust bile) is associated with Junoon (mania). When Safra (yellow bile) gets burnt (Ihtiraaq), it produces a caustic, acrid Sauda (black bile) called Sauda Safravi. This type causes the most violent and agitated form of melancholia that can transition into manic episodes.",
+  },
+  {
+    id: 585,
+    text: "Intisabi (Orthopnea) is a recommended clinical sign/position for the diagnosis of which disorder?",
+    options: [
+      "Faale",
+      "Zeuf e meada",
+      "Hassatul kuliya",
+      "Zeequnafas (Asthma)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Intisabi (orthopnea — difficulty breathing while lying flat, relieved by sitting upright) is a classic diagnostic sign for Zeequnafas (Asthma/respiratory distress). Patients with asthma or cardiac-related breathlessness prefer to sit upright (Intisab) to breathe easier. In Unani diagnostics, observing this posture helps confirm Zeequnafas.",
+  },
+  {
+    id: 586,
+    text: "Zubha Sadriya (Angina Pectoris) is related to which of the following?",
+    options: [
+      "Pleura",
+      "Pulmonary embolism",
+      "Coronary Artery Disease",
+      "Valvular Heart Disease",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Zubha Sadriya is the Unani term for Angina Pectoris, which is directly caused by Coronary Artery Disease (CAD). Reduced blood supply through narrowed coronary arteries causes ischaemic chest pain (angina). In Unani concepts, it correlates with weakness and obstruction of the vessels supplying the Qalb (heart).",
+  },
+  {
+    id: 587,
+    text: "Sooul Qinniya (Anemia/Pre-ascites) is always associated with which of the following?",
+    options: [
+      "Zoufe Jigar (Liver weakness)",
+      "Ascites",
+      "Anasarca",
+      "All of the above",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Sooul Qinniya is always associated with Zoufe Jigar (liver weakness). In Unani medicine, this condition represents a pre-ascitic state where liver dysfunction leads to impaired blood formation and fluid regulation. The primary pathology is in the liver, making liver weakness (Zoufe Jigar) the constant association.",
+  },
+  {
+    id: 588,
+    text: "Humma Maeviya (Enteric Fever) is which type of fever?",
+    options: [
+      "Humma Mufatra, Muaziba and Matbaqa",
+      "Humma Matbaqa and Muaziba",
+      "Humma Matbaqa, Lasqa and Damviya Afooniya",
+      "Humma Matbaqa and Damviya Afooniya",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Humma Maeviya (Enteric/Typhoid fever) is classified as Humma Mufatra (intermittent pattern), Muaziba (stubborn/persistent), and Matbaqa (continuous/remittent). These three characteristics together describe the typical fever pattern of typhoid: it starts intermittently, becomes persistent and stubborn to treat, and shows a step-ladder remittent pattern.",
+  },
+  {
+    id: 589,
+    text: "Nuskha Gariussamak is recommended for which of the following?",
+    options: [
+      "Bronchial Asthma",
+      "Tuberculosis (Diq-e-Revi)",
+      "Paralysis",
+      "All the above",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Nuskha Gariussamak is a classical Unani compound formulation recommended specifically for Diq-e-Revi (Tuberculosis/pulmonary consumption). It is a nutritive and tonic preparation used to strengthen the lungs and support the patient's constitution in chronic wasting diseases like TB.",
+  },
+  {
+    id: 590,
+    text: "Non-bullous Impetigo is which of the following diseases?",
+    options: ["Fungal", "Autoimmune", "Bacterial", "Atopic"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Non-bullous impetigo (also called impetigo contagiosa) is a bacterial skin infection. It is primarily caused by Staphylococcus aureus and/or Streptococcus pyogenes (Group A Streptococcus). It presents as honey-coloured crusted lesions, most commonly on the face in children. Bullous impetigo is exclusively caused by Staph. aureus toxin-producing strains.",
+  },
+  {
+    id: 591,
+    text: "Bowen's Disease is related to which of the following?",
+    options: [
+      "Liver Diseases",
+      "Kidney Diseases",
+      "Skin Diseases",
+      "Haematological disorders",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Bowen's Disease is a skin condition — specifically squamous cell carcinoma in situ (intraepidermal SCC). It presents as a slowly enlarging, well-demarcated, erythematous plaque with crusting. It is considered a pre-invasive malignancy confined to the epidermis. Risk factors include sun exposure, HPV infection, and arsenic exposure.",
+  },
+  {
+    id: 592,
+    text: "ECG in Prinzmetal angina shows:",
+    options: [
+      "ST-segment elevation",
+      "ST-segment depression",
+      "Absent P wave",
+      "Prolonged PR interval",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Prinzmetal (variant) angina is caused by coronary artery vasospasm rather than fixed atherosclerotic obstruction. The ECG during an attack shows transient ST-segment elevation (similar to STEMI) due to transmural ischaemia from complete vessel spasm. This differentiates it from stable angina (ST depression) and occurs typically at rest, often at night.",
+  },
+  {
+    id: 593,
+    text: "Which of the following is NOT a feature of nephrotic syndrome?",
+    options: [
+      "Peripheral oedema",
+      "Microscopic Hematuria",
+      "Hypoalbuminaemia",
+      "Proteinuria > 3.5 g/day",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Moalijat",
+    year: 2021,
+    explanation:
+      "Microscopic haematuria is NOT a typical feature of nephrotic syndrome. The classic tetrad of nephrotic syndrome is: (1) Heavy proteinuria (>3.5 g/day), (2) Hypoalbuminaemia (<3.5 g/dL), (3) Generalised oedema (peripheral, periorbital, ascites), (4) Hyperlipidaemia and lipiduria. Haematuria is more characteristic of nephritic syndrome.",
+  },
+  {
+    id: 594,
+    text: "SARS is called a zoonotic virus because:",
+    options: [
+      "They are confined only to animals",
+      "They do not cause disease to animals",
+      "They emerge from animals to cross the species barrier infrequently",
+      "They cause pandemics",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "SARS (Severe Acute Respiratory Syndrome) is classified as a zoonotic disease because the virus originated in animals (bats, with civet cats as intermediate hosts) and crossed the species barrier to infect humans. Zoonoses are diseases that can be transmitted from vertebrate animals to humans. The infrequent but significant species-crossing is what defines SARS as zoonotic.",
+  },
+  {
+    id: 595,
+    text: "Cleft lip is ideally repaired at what age?",
+    options: [
+      "Soon after birth",
+      "06 wks - 12 wks",
+      "12 wks - 24 wks",
+      "24 wks - 36 wks",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "Cleft lip repair follows the 'Rule of 10s': weight ≥10 lbs, haemoglobin ≥10 g/dL, and age ≥10 weeks. The ideal timing for cleft lip repair is 12–24 weeks (3–6 months) of age. This allows sufficient growth and development for anaesthetic safety while enabling early correction before speech and feeding problems become established.",
+  },
+  {
+    id: 596,
+    text: "Which of the following is the LEAST common position of the appendix?",
+    options: ["Retrocaecal", "Retroileal", "Preileal", "Pelvic"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "The positions of appendix in order of frequency: Retrocaecal (most common, ~65%), Pelvic/Descending (~31%), Preileal (least common, ~1%), Postileal/Retroileal (~0.5%), Subcaecal. Preileal (in front of the ileum) is the least common position. This is clinically important as the position affects the presentation of appendicitis.",
+  },
+  {
+    id: 597,
+    text: "Griesinger's sign means:",
+    options: [
+      "Pain over the temporo-mandibular joint",
+      "Pain in the eye",
+      "Pain and tenderness over the mastoid",
+      "Pain and tenderness over the auricle",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "Griesinger's sign is pain and oedematous swelling/tenderness over the mastoid process (behind the ear), caused by thrombophlebitis of the mastoid emissary vein. It is a sign of lateral (sigmoid) sinus thrombosis, a serious intracranial complication of otitis media/mastoiditis. It indicates spread of infection to the sigmoid sinus.",
+  },
+  {
+    id: 598,
+    text: "Statement I: Hydrocele fluid does not clot if drained into a vessel. Statement II: It coagulates if mixed with a small quantity of blood.",
+    options: [
+      "Statement I and Statement II both are correct",
+      "Statement I and Statement II both are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "Both statements are correct. Hydrocele fluid (a transudate) lacks clotting factors and fibrinogen, so it does not spontaneously clot when drained — this is a characteristic property used in diagnosis. However, when even a small amount of blood is mixed with it (introducing clotting factors), it can coagulate. These properties help differentiate hydrocele from haematocele.",
+  },
+  {
+    id: 599,
+    text: "Match the clinical case in List I with the diagnosis in List II: (A) Painless scrotal swelling, (B) Scrotal swelling increasing on straining, (C) Lower limb swelling with scrotal enlargement, (D) Left scrotum lower than right.",
+    options: [
+      "AI, BIV, CIII, DII",
+      "AIII, BI, CII, DIV",
+      "AII (Hydrocele), BIII (Hernia), CI (Filariasis), DIV (Varicocele)",
+      "AIV, BII, CI, DIII",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "The correct clinical matches are: (A) Painless scrotal swelling = Hydrocele (fluid collection, transilluminates), (B) Scrotal swelling increasing on straining = Hernia (reducible, cough impulse positive), (C) Lower limb swelling with scrotal enlargement = Filariasis (lymphatic obstruction causing lymphoedema), (D) Left scrotum lower than right = Varicocele (dilated pampiniform plexus, more common on left due to angle of left testicular vein drainage).",
+  },
+  {
+    id: 600,
+    text: "Which of the following statements regarding triage is FALSE?",
+    options: [
+      "Triage means treating the most seriously injured first",
+      "Triage is carried out where casualties are found",
+      "Triage is carried out at the same time as simple emergency life-saving procedures",
+      "Triage category cannot be reviewed once assigned",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "The FALSE statement is that triage category cannot be reviewed once assigned. Triage is a DYNAMIC process — categories must be regularly reassessed as patient conditions can change rapidly. A patient initially categorised as delayed may deteriorate to immediate, or a patient may improve. The principle of triage is to do the greatest good for the greatest number, and this requires ongoing reassessment.",
+  },
+  {
+    id: 601,
+    text: "Match the condition in List I with the correct surgical operation in List II: (A) Rectal prolapse, (B) High Anal fistula, (C) Grade 3 piles, (D) Anal fissure.",
+    options: [
+      "A-III, B-I, C-II, D-IV",
+      "A-IV, B-II, C-I, D-III",
+      "A-I (Altemier's), B-III (Glyceryl trinitrate), C-IV (Lateral internal Sphincterotomy), D-II (Stapled Anopexy)",
+      "A-II, B-IV, C-III, D-I",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "Correct surgical matches: (A) Rectal prolapse → Altemeier's procedure (perineal rectosigmoidectomy), (B) High anal fistula → Glyceryl trinitrate/Seton (conservative approach to preserve sphincter), (C) Grade 3 piles → Lateral internal sphincterotomy/Stapled anopexy, (D) Anal fissure → Lateral internal sphincterotomy. Option 3 is correct: A-I (Altemeier's), B-III (GTN), C-IV (LIS), D-II (Stapled anopexy).",
+  },
+  {
+    id: 602,
+    text: "A 35-year-old male presents with painless haematuria. Endoscopy reveals scattered tubercles and pale patches resembling sand. What is the diagnosis?",
+    options: [
+      "Bladder Stone",
+      "Tuberculosis of the bladder",
+      "Schistosomiasis of bladder",
+      "Bladder carcinoma",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Surgery",
+    year: 2021,
+    explanation:
+      "The classic endoscopic appearance of scattered tubercles and pale sandy patches ('sandy patches') in the bladder wall is pathognomonic of Schistosomiasis (Bilharziasis) of the bladder, caused by Schistosoma haematobium. The 'sandy patches' represent calcified dead eggs in the submucosa. It presents with terminal haematuria and is common in Africa/Middle East.",
+  },
+  {
+    id: 603,
+    text: "The tympanic membrane is positioned obliquely at an angle of:",
+    options: ["55 degree", "65 degree", "80 degree", "70 degree"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "ENT",
+    year: 2021,
+    explanation:
+      "The tympanic membrane (eardrum) is not perpendicular to the ear canal but is tilted obliquely. It is positioned at an angle of approximately 55 degrees to the floor of the external auditory canal. This oblique positioning means the anterior wall and floor of the canal are longer than the posterior wall and roof, which is important during otoscopic examination.",
+  },
+  {
+    id: 604,
+    text: "Which coat of the eye supplies nutrition to various structures of the eyeball?",
+    options: [
+      "Fibrous Coat",
+      "Uveal tissue",
+      "Nervous Coat",
+      "None of the above",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ophthalmology",
+    year: 2021,
+    explanation:
+      "The Uveal tract (uvea) is the vascular/nutritive coat of the eye, consisting of the iris, ciliary body, and choroid. The choroid is highly vascular and provides nutrition to the outer retinal layers. The ciliary body produces aqueous humour nourishing the lens and cornea. The uveal tissue is the primary nutritive layer of the eyeball.",
+  },
+  {
+    id: 605,
+    text: "Anotia refers to the complete absence of:",
+    options: [
+      "Ear Ossicles",
+      "Teeth",
+      "Auricle of Ear",
+      "Tympanic Membrane",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "ENT",
+    year: 2021,
+    explanation:
+      "Anotia (from Greek: 'an' = without, 'otia' = ear) refers to the complete congenital absence of the auricle (pinna) of the ear. It is the most severe form of microtia spectrum (grade IV). It is a rare congenital anomaly that may be associated with other craniofacial abnormalities and requires surgical reconstruction.",
+  },
+  {
+    id: 606,
+    text: 'Which ear ossicle is also known as the "anvil"?',
+    options: ["Malleus", "Incus", "Stapes", "None"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "ENT",
+    year: 2021,
+    explanation:
+      "The Incus is known as the 'anvil' due to its resemblance to a blacksmith's anvil. The three ossicles and their common names: Malleus = Hammer (attached to tympanic membrane), Incus = Anvil (middle ossicle), Stapes = Stirrup (attached to oval window). Together they form a mechanical chain transmitting sound vibrations from eardrum to inner ear.",
+  },
+  {
+    id: 607,
+    text: "Bayonetting sign is seen in:",
+    options: [
+      "Cataract",
+      "Conjunctivitis",
+      "Glaucoma",
+      "Ophthalmic injury",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ophthalmology",
+    year: 2021,
+    explanation:
+      "Bayonetting sign is seen in Glaucoma. It refers to the appearance of blood vessels at the optic disc margin that appear to 'dip' and then re-emerge due to the deep glaucomatous cupping of the optic disc. The vessels appear to have a bayonet-like bend as they pass over the sharp margin of the deeply excavated glaucomatous disc.",
+  },
+  {
+    id: 608,
+    text: "Which of the following systemic diseases has nasal manifestations?",
+    options: [
+      "Wegener's granulomatosis",
+      "Sarcoidosis",
+      "Churg-strauss syndrome",
+      "All of the above",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "ENT",
+    year: 2021,
+    explanation:
+      "All three systemic diseases have nasal manifestations: (1) Wegener's granulomatosis (GPA) — saddle nose deformity, nasal septal perforation, bloody nasal discharge; (2) Sarcoidosis — nasal polyps, mucosal granulomas, epistaxis; (3) Churg-Strauss syndrome (EGPA) — allergic rhinitis, nasal polyposis, chronic sinusitis. These are all granulomatous/vasculitic conditions affecting the nasal mucosa.",
+  },
+  {
+    id: 609,
+    text: "Which mucocutaneous blistering disease is associated with severe ocular complications?",
+    options: [
+      "Stevens Johnsons syndrome",
+      "Lyell syndrome",
+      "Mayer Rokitansky Kuster Hauser syndrome",
+      "Both 1 and 2",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ophthalmology",
+    year: 2021,
+    explanation:
+      "Both Stevens-Johnson syndrome (SJS) and Lyell syndrome (Toxic Epidermal Necrolysis/TEN) are severe mucocutaneous blistering diseases associated with serious ocular complications including conjunctivitis, symblepharon, corneal ulceration, and blindness. SJS and TEN are considered part of the same disease spectrum (TEN being more severe). Mayer-Rokitansky-Kuster-Hauser syndrome is a Müllerian aplasia affecting the reproductive tract.",
+  },
+  {
+    id: 610,
+    text: "Jarjavay fracture is attributed to:",
+    options: ["Maxilla", "Nasal septum", "Mandible", "None of the above"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "ENT",
+    year: 2021,
+    explanation:
+      "Jarjavay fracture is a fracture of the nasal septum. It specifically refers to a fracture of the perpendicular plate of the ethmoid bone (part of the bony nasal septum). This type of injury typically results from direct trauma to the nose and is important to recognise as it can cause nasal septal deviation and obstruction if not properly managed.",
+  },
+  {
+    id: 611,
+    text: "Gestational hypertension is characterized by hypertension in pregnancy:",
+    options: [
+      "Without proteinuria",
+      "Without pathological oedema",
+      "With proteinuria",
+      "Without proteinuria and pathological oedema",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Obstetrics & Gynaecology",
+    year: 2021,
+    explanation:
+      "Gestational hypertension (pregnancy-induced hypertension without proteinuria) is defined as BP ≥140/90 mmHg arising after 20 weeks of gestation WITHOUT proteinuria and WITHOUT pathological oedema. If proteinuria develops, it becomes pre-eclampsia. The absence of both proteinuria AND pathological oedema distinguishes gestational hypertension from pre-eclampsia.",
+  },
+  {
+    id: 612,
+    text: "The cause of Mittelschmerz's Syndrome is:",
+    options: [
+      "Menstrual pain",
+      "Premenstrual tension",
+      "Ovular pain",
+      "Prelabour pains",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Obstetrics & Gynaecology",
+    year: 2021,
+    explanation:
+      "Mittelschmerz (German: 'middle pain') is caused by ovulation (ovular pain). It occurs at mid-cycle (around day 14) when the follicle ruptures and releases the egg. The pain is thought to be caused by the released follicular fluid and blood irritating the peritoneum. It presents as unilateral lower abdominal pain at mid-cycle, lasting a few hours to 2 days.",
+  },
+  {
+    id: 613,
+    text: "A placenta implanted partially or completely over the lower uterine segment is called:",
+    options: [
+      "Abruptio placenta",
+      "Placenta praevia",
+      "Vasa praevia",
+      "Velamentous placenta",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Obstetrics & Gynaecology",
+    year: 2021,
+    explanation:
+      "Placenta praevia is when the placenta is partially or completely implanted in the lower uterine segment, covering or near the internal os. It presents with painless, bright-red antepartum haemorrhage in the third trimester. Abruptio placentae is premature separation of a normally situated placenta. Vasa praevia involves fetal vessels crossing over the cervical os.",
+  },
+  {
+    id: 614,
+    text: "The relation of the different parts of the foetus to one another is called:",
+    options: ["Lie", "Position", "Attitude", "Presentation"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Obstetrics & Gynaecology",
+    year: 2021,
+    explanation:
+      "Attitude (also called posture) refers to the relation of the different parts of the foetus to one another — specifically the degree of flexion or extension of the foetal spine, head, and limbs. Normal foetal attitude is complete flexion (foetus curled up). Lie = relation of long axis of foetus to mother. Presentation = part of foetus at pelvic inlet. Position = relation of denominator to maternal pelvis.",
+  },
+  {
+    id: 615,
+    text: "Assertion A: Breast milk is a rich source of vitamin D. Reason R: Exclusively breastfed infants are at high risk of developing vitamin D deficiency.",
+    options: [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Paediatrics",
+    year: 2021,
+    explanation:
+      "Assertion A is FALSE: Breast milk is actually POOR in vitamin D (contains only 15-40 IU/L, far below requirements). Reason R is TRUE: Exclusively breastfed infants ARE at high risk of vitamin D deficiency precisely because breast milk lacks adequate vitamin D. Therefore, R is the correct and important clinical fact, while A is the false statement. Vitamin D supplementation (400 IU/day) is recommended for all breastfed infants.",
+  },
+  {
+    id: 616,
+    text: "Match the Disease in List I with its Feature in List II: (A) Rabies, (B) Rubeola, (C) Scarlet Fever, (D) Tetanus.",
+    options: [
+      "AI, BIII, CII, DV",
+      "AIII, BII, CI, DIV",
+      "AIII (Negri Bodies), BI (Koplik's spot), CIV (Strawberry Tongue), DII (Trismus)",
+      "AIII, BI, CII, DV",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Community Medicine",
+    year: 2021,
+    explanation:
+      "Classic pathognomonic features: (A) Rabies → Negri bodies (intracytoplasmic inclusions in neurons, especially Purkinje cells and hippocampal neurons), (B) Rubeola (Measles) → Koplik's spots (white spots on buccal mucosa, pathognomonic of measles), (C) Scarlet Fever → Strawberry tongue (red papillae on white-coated tongue), (D) Tetanus → Trismus (lock-jaw, spasm of masseter muscles). Option 3 is correct.",
+  },
+  {
+    id: 617,
+    text: "Arrange the following terms in sequence from birth towards adulthood: (A) Sinn-i-Rihaq, (B) Sinn-i-Fata, (C) Sinn-i-Tufulat, (D) Sinn-i-Saba, (E) Sin-i-Tara'ru.",
+    options: [
+      "C, A, B, D, E",
+      "C, D, E, A, B",
+      "D, B, C, A, E",
+      "D, C, B, E, A",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2021,
+    explanation:
+      "The correct sequence of Sinn (ages of life) from birth to adulthood in Unani medicine is: (C) Sinn-i-Tufulat (infancy, 0-4 years) → (D) Sinn-i-Saba (childhood, 4-14 years) → (E) Sinn-i-Tara'ru (adolescence/youth, 14-30 years) → (A) Sinn-i-Rihaq (young adulthood, 30-40 years) → (B) Sinn-i-Fata (maturity, 40+ years). This gives sequence C, D, E, A, B.",
+  },
+  {
+    id: 618,
+    text: "Which of the following are synonyms for Tashannuj al-Atfal (Infantile convulsion)? (A) Tashannuj-i-Salaami, (B) Ra'sha al-Atfal, (C) Uqaal al-Atfal, (D) Uqaal al-Hawamil, (E) Khunaq.",
+    options: [
+      "A, B and D only",
+      "C and D only",
+      "A and C only",
+      "D and E only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Paediatrics",
+    year: 2021,
+    explanation:
+      "Tashannuj al-Atfal (infantile convulsions) has two recognised synonyms in classical Unani texts: (A) Tashannuj-i-Salaami — meaning convulsions/spasms of the bones/skeleton, and (C) Uqaal al-Atfal — literally meaning 'binding/restraint of children' referring to the rigidity/spasm. Ra'sha al-Atfal means infantile tremor, Uqaal al-Hawamil refers to convulsions in pregnant women, and Khunaq is angina/throat spasm.",
+  },
+  {
+    id: 619,
+    text: "Statement I: Children are prone to bedwetting (Bowl fi'l Farash) because their organs are more moist. Statement II: It is caused by the flaccidity of the urinary bladder muscles.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is true but Statement II is false",
+      "Statement I is false but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Paediatrics",
+    year: 2021,
+    explanation:
+      "Both statements are correct. In Unani medicine, children have Ratab (moist) Mizaj — their organs and tissues are more moist, which affects the tone of the urinary bladder. The excess moisture leads to flaccidity (laxity) of the bladder muscles (Zoufe Quwa-e-Masika of the bladder), resulting in inability to retain urine during sleep — causing bedwetting (Bowl fi'l Farash/nocturnal enuresis).",
+  },
+  {
+    id: 620,
+    text: "Delayed closure of the anterior fontanelle in babies is seen in which conditions? (A) Rickets, (B) Craniostenosis, (C) Hypothyroidism, (D) Microcephaly, (E) Hydrocephalus.",
+    options: [
+      "A, B and D only",
+      "A, B and E only",
+      "A, C and E only",
+      "A, C and D only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Paediatrics",
+    year: 2021,
+    explanation:
+      "Delayed closure of the anterior fontanelle (normally closes by 18-24 months) is seen in: (A) Rickets (vitamin D deficiency causing defective bone mineralisation), (C) Hypothyroidism (cretinism — delayed bone maturation), (E) Hydrocephalus (increased intracranial pressure keeping fontanelle open). Craniostenosis (B) causes premature closure of fontanelles. Microcephaly (D) is associated with small/early closed fontanelles.",
+  },
 ];
