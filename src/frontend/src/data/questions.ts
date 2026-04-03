@@ -8933,4 +8933,908 @@ export const questions: Question[] = [
     explanation:
       "Delayed closure of the anterior fontanelle (normally closes by 18-24 months) is seen in: (A) Rickets (vitamin D deficiency causing defective bone mineralisation), (C) Hypothyroidism (cretinism — delayed bone maturation), (E) Hydrocephalus (increased intracranial pressure keeping fontanelle open). Craniostenosis (B) causes premature closure of fontanelles. Microcephaly (D) is associated with small/early closed fontanelles.",
   },
+
+  // ============================================================
+  // AIAPGET 2020 QUESTIONS (Q1–Q60)
+  // ============================================================
+  {
+    id: 621,
+    text: "Umoor-e-Tabiya are the factors on which human body exists. These are:",
+    options: [
+      "(A) only",
+      "(A) and (D) only",
+      "(A) and (C) only",
+      "(E) and (D) only",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Umoor-e-Tabiya (natural factors) on which the human body exists are: (A) Arkan (Elements) and (C) Mizaj (Temperament). These two are the fundamental factors. Arkan are the basic building blocks and Mizaj is the resulting temperament from their interaction. Options D and E refer to Akhlat and Quwwa respectively, which depend on the primary factors.",
+  },
+  {
+    id: 622,
+    text: "A'dal-fil-Qisma relates to:",
+    options: [
+      "Mizaj Motadil Haqeeqi",
+      "Mizaj Motadil Tibbi",
+      "Both",
+      "Luck by chance",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "A'dal-fil-Qisma (equality in proportion/quantity) is a concept that relates to Mizaj Motadil Tibbi (medically balanced temperament). In Mizaj Motadil Tibbi, the qualities are balanced relative to the species or individual norm, not in absolute equality. Mizaj Motadil Haqeeqi (truly balanced temperament) is a theoretical concept where all four elements are in perfect equal proportion, which does not exist in nature.",
+  },
+  {
+    id: 623,
+    text: "Al-Qanoon Fil-Tib is an original work of:",
+    options: [
+      "Ali bin Abbas Majusi",
+      "Abu Ali Husain Bin Abdullah Sina",
+      "Shamsuddin Chugmani",
+      "Alauddin Qureshi",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Al-Qanoon Fil-Tib (The Canon of Medicine) is the masterpiece of Abu Ali Husain bin Abdullah Ibn Sina (Avicenna, 980-1037 CE). It is a comprehensive encyclopedia of medicine in five volumes that served as the standard medical text in both the East and West for several centuries. Ali bin Abbas Majusi wrote 'Kamil-us-Sina'a' and Shamsuddin Chugmani wrote 'Qanooncha'.",
+  },
+  {
+    id: 624,
+    text: "Individuals having Damvi Temperament have pulse:",
+    options: ["(B) only", "(C) only", "(A) and (B) only", "(A) only"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Individuals with Damvi (sanguine/blood-dominant) temperament have a pulse that is (A) large/full and (B) fast/rapid. The Damvi temperament is hot and moist, which increases the strength and frequency of the heartbeat, resulting in a large and fast pulse. This corresponds to option (A) and (B) only.",
+  },
+  {
+    id: 625,
+    text: "Assertion A: Sin-e-Zihaq and Sin-e-Fata are subtypes of Sin-e-Namu. Reason R: Because, both in Sin-e-Zihaq and Sin-e-Fata, growth and development of individual are progressive towards adulthood.",
+    options: [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true and R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Both the Assertion and Reason are true, and the Reason correctly explains the Assertion. Sin-e-Namu (age of growth) is divided into: Sin-e-Tufulat (infancy), Sin-e-Saba (childhood), Sin-e-Murahiqat (adolescence), Sin-e-Zihaq (youth approaching adulthood), and Sin-e-Fata (young adulthood). Both Zihaq and Fata are subtypes of Sin-e-Namu because in both these stages, growth and development continue progressively towards adulthood.",
+  },
+  {
+    id: 626,
+    text: "Regarding Temperament, which statements are correct: (A) Motadil Nau' and Motadil Sinfi are types of Motadil Tibbi (B) Aza-e-Mufrid and Aza-e-Murakkab are types of Mizaj Motadil Haqeeqi (C) Motadil Haqeeqi is dominant on earth (D) Simple intermixing occurs in Mizaj Motadil Tibbi and Haqeeqi (E) No intermixing occurs in Mizaj Motadil Tibbi",
+    options: [
+      "(B) and (C) are correct",
+      "(C) and (E) are correct",
+      "Only (C) is correct",
+      "Only (A) is correct",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Only statement (A) is correct. Mizaj Motadil Tibbi (medically balanced temperament) is divided into: Motadil Nau'i (species-specific balance) and Motadil Sinfi (gender-specific balance) and Motadil Shaksi (individual balance). Motadil Haqeeqi (true balance) does NOT exist in nature on earth — it is only a theoretical concept. So (C) is wrong. Aza-e-Mufrid and Aza-e-Murakkab are types of organs (Aza), not types of Mizaj. (B) is wrong.",
+  },
+  {
+    id: 627,
+    text: "In the lungs alveoli Ruh gets separated from the air and absorbed into the blood, by which of the following Quwa?",
+    options: [
+      "Quwat-e-Munfaiyla",
+      "Quwat-e-nafsaniyah",
+      "Quwat-e-Shaukiya",
+      "Quwat-e-Mumayizah",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Kulliyat",
+    year: 2020,
+    explanation:
+      "Quwat-e-Mumayizah (discriminating/selective faculty) is responsible for separating Ruh (vital spirit) from inhaled air in the alveoli and absorbing it into the blood. This faculty helps distinguish and select beneficial substances. Quwat-e-Munfaiyla is the expulsive faculty, Quwat-e-Nafsaniyah is the psychic faculty, and Quwat-e-Shaukiya relates to appetite/desire.",
+  },
+  {
+    id: 628,
+    text: "Match List I (Vessels/Nerves) with List II (Diaphragm Openings): (A) Superior epigastric vessels (B) Left vagus nerve (C) Azygose vein (D) Right phrenic nerve",
+    options: [
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "The diaphragm has several openings: (I) Oesophageal hiatus at T10 — transmits oesophagus, left vagus nerve (B), (II) Aortic hiatus at T12 — transmits aorta, azygos vein (C) is at T8 level through caval opening, (III) Sternal foramen — transmits superior epigastric vessels (A), (IV) Caval opening at T8. Right phrenic nerve (D) passes through the central tendon/caval opening. The correct match is A-IV, B-I, C-II, D-III.",
+  },
+  {
+    id: 629,
+    text: "Match List I (Canals/Foramen) with List II (Structures): (A) Vomerovaginal canal (B) Carotid canal (C) Foramen ovale (D) Foramen magnum",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+      "(A)-(III), (B)-(II), (C)-(I), (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "The correct matches are: (A) Vomerovaginal canal — (IV) pharyngeal branch of maxillary artery and pharyngeal nerve, (B) Carotid canal — (I) Internal carotid artery and sympathetic plexus, (C) Foramen ovale — (II) Mandibular nerve (V3), accessory meningeal artery, lesser petrosal nerve, (D) Foramen magnum — (III) Medulla oblongata, vertebral arteries, spinal accessory nerve.",
+  },
+  {
+    id: 630,
+    text: "Following structure passes through the superior orbital fissure except:",
+    options: [
+      "Nasociliary nerve",
+      "Abducent nerve",
+      "Optic nerve",
+      "Inferior ophthalmic vein",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "The Optic nerve passes through the Optic Canal, NOT through the superior orbital fissure. The superior orbital fissure transmits: Oculomotor nerve (CN III), Trochlear nerve (CN IV), Abducent nerve (CN VI), Ophthalmic division of trigeminal nerve (V1) — including nasociliary, frontal, and lacrimal branches, and the superior and inferior ophthalmic veins.",
+  },
+  {
+    id: 631,
+    text: "Statement I: Ethmoidal sinuses are in the lateral part of ethmoidal bone. All open into middle meatus except posterior. Statement II: Middle group opens into ethmoidal bulla. Anterior group opens into sphenoethmoidal recess.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is correct but Statement II is false",
+      "Statement I is incorrect but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Statement I is correct: Ethmoidal sinuses (air cells) are in the lateral part of the ethmoidal labyrinth. The anterior and middle groups open into the middle meatus, while the posterior group opens into the superior meatus. Statement II is incorrect: The middle group opens into ethmoidal bulla (correct), but the POSTERIOR group (not anterior) opens into the sphenoethmoidal recess. The anterior group opens into the infundibulum (hiatus semilunaris) in the middle meatus.",
+  },
+  {
+    id: 632,
+    text: "Following nerves are closely related to the Humerus except:",
+    options: [
+      "Ulnar nerve behind medial epicondyle",
+      "Median nerve behind lateral epicondyle",
+      "Radial nerve in the spiral groove",
+      "Axillary nerve behind surgical neck",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "The Median nerve is NOT closely related to the lateral epicondyle of the humerus. The median nerve runs along the medial side of the arm and does not have a specific relationship with the lateral epicondyle. The nerves closely related to humerus are: Axillary nerve (behind surgical neck), Radial nerve (spiral/radial groove of shaft), and Ulnar nerve (behind medial epicondyle).",
+  },
+  {
+    id: 633,
+    text: "Statement I: Right coronary artery arises from anterior aortic sinus. Posterior 1/3rd of septum supplied by left coronary artery. Statement II: Right coronary artery arises from left posterior aortic sinus.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is correct but Statement II is false",
+      "Statement I is incorrect but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Both statements are false. The Right Coronary Artery (RCA) arises from the RIGHT (anterior) aortic sinus (sinus of Valsalva), while the Left Coronary Artery arises from the LEFT posterior aortic sinus. Statement I says posterior 1/3rd of septum is supplied by left coronary artery — this is incorrect; the posterior 1/3rd of the interventricular septum is supplied by the RIGHT coronary artery (posterior descending artery). Statement II incorrectly states RCA arises from left posterior sinus.",
+  },
+  {
+    id: 634,
+    text: "Statement I: Obturator nerve is a branch of lumbar plexus. It supplies pectineus, adductor magnus, etc. Statement II: Obturator arises from ventral rami of L2, L3, L4 and supplies hip joint.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is correct but Statement II is false",
+      "Statement I is incorrect but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Statement I is incorrect: While the obturator nerve is indeed from the lumbar plexus (L2,3,4), it does NOT supply pectineus (supplied by femoral nerve) and does NOT supply adductor magnus completely — only its adductor part is supplied by obturator nerve; the hamstring part by sciatic nerve. Statement II is correct: Obturator nerve arises from ventral rami of L2, L3, L4 and does supply the hip joint (articular branches).",
+  },
+  {
+    id: 635,
+    text: "Acromegaly is caused by:",
+    options: [
+      "Excess of cortisol",
+      "Lack of cortisol",
+      "Excess of growth hormone",
+      "Lack of growth hormone",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Acromegaly is caused by excess secretion of Growth Hormone (GH) in adults (after closure of epiphyseal plates). It results in enlargement of hands, feet, and facial features. In children, excess GH before epiphyseal closure causes gigantism. Lack of GH causes dwarfism. Excess cortisol causes Cushing's syndrome.",
+  },
+  {
+    id: 636,
+    text: "What is the normal intraocular pressure in mmHg?",
+    options: ["8 mmHg", "15 mmHg", "25 mmHg", "30 mmHg"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ain, Uzn, Anf, Halaq",
+    year: 2020,
+    explanation:
+      "Normal intraocular pressure (IOP) is 10-21 mmHg, with an average of approximately 15 mmHg. Values above 21 mmHg are considered elevated (ocular hypertension) and may indicate glaucoma risk. Values below 6-8 mmHg indicate hypotony. Tonometry (Schiotz or applanation) is used to measure IOP.",
+  },
+  {
+    id: 637,
+    text: "Assertion A: Liver disease can decrease the concentration of circulating fibrinogen. Reason R: Fibrinogen is formed in the Liver.",
+    options: [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is NOT the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Both the Assertion and Reason are true, and R correctly explains A. Fibrinogen (Factor I) is a clotting factor synthesized exclusively in the liver (hepatocytes). In liver disease (cirrhosis, hepatitis, liver failure), the synthetic capacity of the liver is reduced, leading to decreased production of fibrinogen and other clotting factors (II, V, VII, IX, X, XI). This results in coagulopathy and bleeding tendency.",
+  },
+  {
+    id: 638,
+    text: "Match List I (Test) with List II (Measurement): (A) Perimetry (B) Ishihara charts (C) Tonometry (D) Audiogram",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+      "(A)-(III), (B)-(II), (C)-(I), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ain, Uzn, Anf, Halaq",
+    year: 2020,
+    explanation:
+      "The correct matches are: (A) Perimetry — (II) Visual field assessment (detects peripheral vision loss), (B) Ishihara charts — (III) Color vision testing (detects color blindness), (C) Tonometry — (IV) Intraocular pressure measurement (for glaucoma), (D) Audiogram — (I) Hearing assessment (tests hearing threshold at different frequencies). This gives A-II, B-III, C-IV, D-I.",
+  },
+  {
+    id: 639,
+    text: "Arrange the sequence: (A) Muscle contraction (B) Release of calcium (C) Depolarization (D) Release of acetylcholine (E) Binding of calcium with troponin C",
+    options: [
+      "(E), (D), (C), (B), (A)",
+      "(B), (C), (D), (E), (A)",
+      "(C), (B), (D), (E), (A)",
+      "(D), (C), (B), (E), (A)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "The correct sequence of muscle contraction is: (D) Release of acetylcholine from motor nerve terminal → (C) Depolarization of motor end plate and muscle membrane → (B) Release of calcium from sarcoplasmic reticulum → (E) Binding of calcium with troponin C (removing troponin-tropomyosin inhibition) → (A) Muscle contraction (actin-myosin cross-bridge formation). This sequence D→C→B→E→A is correct.",
+  },
+  {
+    id: 640,
+    text: "Statement I: Only means impulses pass from atria to ventricles is A-V bundle. Statement II: Compression of A-V bundle by scar tissue can block conduction.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Both statements are correct. Statement I: The A-V bundle (Bundle of His) is indeed the ONLY normal pathway for impulse conduction from atria to ventricles. The fibrous skeleton of the heart electrically insulates atria from ventricles except at the AV node/His bundle. Statement II: Compression or fibrosis of the AV bundle by scar tissue (as in myocardial infarction, surgical trauma, or calcification) can cause varying degrees of heart block (1st, 2nd, or 3rd degree AV block).",
+  },
+  {
+    id: 641,
+    text: "Which of the following is/are the effect of sympathetic stimulation? (A) Dilated pupil (B) Increased heart rate (C) Decreased peristalsis of gut (D) Constriction of bronchi (E) Constricted pupil",
+    options: [
+      "(A), (B), (C), (D) only",
+      "(A), (B), (C) only",
+      "(A) and (B) only",
+      "(A) only",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tashreeh wa Wazaif",
+    year: 2020,
+    explanation:
+      "Sympathetic stimulation (fight-or-flight response) causes: (A) Dilated pupil (mydriasis — via radial muscle of iris), (B) Increased heart rate (positive chronotropy), (C) Decreased peristalsis of gut (reduced GI motility). It does NOT cause (D) Constriction of bronchi — sympathetic stimulation causes BRONCHODILATION (beta-2 receptors). (E) Constricted pupil is a parasympathetic effect. So A, B, C only is correct.",
+  },
+  {
+    id: 642,
+    text: "Nuqra is an example of:",
+    options: [
+      "Mizaj Sani Mustahkam",
+      "Mizaj Sani Ghair Mustahkam Rikhu Muthlaq",
+      "Mizaj Sani Ghair Mustahkam Rikhu Jiddan",
+      "Mizaj Sani Ghair Mustahkam Rikhu ba Ifrat",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Nuqra (silver) is an example of Mizaj Sani Ghair Mustahkam Rikhu Jiddan (acquired unstable temperament — very soft/fine). Mizaj Sani refers to the acquired temperament of a drug based on its processing and preparation. Silver, when processed (purified/calcined), becomes very fine and has an extremely soft texture, making it an example of Rikhu Jiddan (extremely soft/fine acquired temperament).",
+  },
+  {
+    id: 643,
+    text: "The Shelf life of Samaghiyaat is:",
+    options: ["Five years", "Three years", "Seven years", "Nine years"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "According to Unani pharmacopoeia, the shelf life (Muddat-e-Hifazat) of Samaghiyaat (gums/resins) is three years. Different categories of drugs have different shelf lives: Attar (essential oils) — 1 year, Samaghiyaat (gums) — 3 years, Adviya Nabatiya (plant drugs) — varies, Adviya Jamadiya (mineral drugs) — longer shelf life.",
+  },
+  {
+    id: 644,
+    text: "An important formulation of Reg Mahi is:",
+    options: [
+      "Habb e Muqil",
+      "Habb e Mulazziz",
+      "Habb e Mumsik",
+      "Habb e Mun'ish",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Habb-e-Mulazziz is an important formulation containing Reg Mahi (Talc/Steatite). Reg Mahi (Soapstone/Talc) is used in Unani medicine for its demulcent and soothing properties. Habb-e-Mulazziz literally means 'pleasure-giving pills' and is used for sexual debility and to enhance sexual performance. The other formulations (Habb-e-Muqil, Habb-e-Mumsik, Habb-e-Mun'ish) contain different primary ingredients.",
+  },
+  {
+    id: 645,
+    text: "Which of the following is a Musaffi Dam drug?",
+    options: ["Satar Farsi", "Sahjana", "Shahattara", "Shaqaqul Misri"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Shahattara (Fumaria officinalis / Fumitory) is a well-known Musaffi Dam (blood purifier) drug in Unani medicine. It is used for skin diseases, liver disorders, and as a general blood purifier. Satar Farsi (Satureja hortensis) is a carminative; Sahjana (Moringa oleifera) is a nutritive and diuretic; Shaqaqul Misri (Peucedanum graveolens) is used as a tonic for nervous system.",
+  },
+  {
+    id: 646,
+    text: "Statement I: Samagh-e-Dhaak is also known as Kamar Kas. Statement II: Because of its usefulness in backache.",
+    options: [
+      "Both Statement I and Statement II are true",
+      "Both Statement I and Statement II are false",
+      "Statement I is correct but Statement II is false",
+      "Statement I is incorrect but Statement II is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Both statements are true. Samagh-e-Dhaak (gum of Butea monosperma / Flame of the Forest) is also popularly known as 'Kamar Kas' in Unani medicine. This vernacular name is derived from its therapeutic use in treating backache (Kamar = waist/back, Kas = tightening/strengthening). It is used as a muqawwi (strengthening) drug for the back and waist muscles.",
+  },
+  {
+    id: 647,
+    text: "Azraq is suffixed to which of the following drugs:",
+    options: ["Muqil", "Kundur", "Ushaq", "Loban"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Azraq (meaning 'blue') is suffixed to Muqil, giving 'Muqil Azraq' (blue myrrh/Commiphora myrrha variety). Muqil Azraq is a specific variety of Muqil (myrrh) distinguished by its bluish color. It is used in Unani medicine for its expectorant, anti-inflammatory, and wound-healing properties. The suffix Azraq denotes the color variety of this gum resin.",
+  },
+  {
+    id: 648,
+    text: "The term 'Generic name' is used in place of:",
+    options: [
+      "Chemical Name",
+      "Non-proprietary Name",
+      "Proprietary Name",
+      "Coded Name",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Generic name is synonymous with Non-proprietary Name (INN — International Non-proprietary Name). It is the official name of a drug that is not owned by any specific company, as opposed to the Proprietary name (Brand name), which is trademarked. For example, 'paracetamol' is the generic/non-proprietary name while 'Crocin' or 'Dolo' are proprietary/brand names. Chemical names are complex systematic names based on chemical structure.",
+  },
+  {
+    id: 649,
+    text: "Match List I with List II: (A) Azaraqi (B) Afiyun (C) Rewanchini (D) Qinnab / List II: (I) Papaverine (II) Anthraquinone (III) Cannabinol (IV) Strychnine",
+    options: [
+      "A-II, B-III, C-I, D-IV",
+      "A-IV, B-I, C-II, D-III",
+      "A-III, B-IV, C-I, D-II",
+      "A-I, B-II, C-IV, D-III",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "The correct chemical constituent matches are: (A) Azaraqi (Nux Vomica — Strychnos nux-vomica) — (IV) Strychnine (toxic alkaloid), (B) Afiyun (Opium — Papaver somniferum) — (I) Papaverine (antispasmodic alkaloid), (C) Rewanchini (Rhubarb — Rheum species) — (II) Anthraquinone (laxative glycoside), (D) Qinnab (Cannabis — Cannabis sativa) — (III) Cannabinol (psychoactive compound). This gives A-IV, B-I, C-II, D-III.",
+  },
+  {
+    id: 650,
+    text: "Assertion A: Dawa e Motadil does not produce any abnormal kaifiyat after administration. Reason R: Because the kaifiyat of Dawa e Motadil exists similar to normal body's kaifiyat.",
+    options: [
+      "Both A and R are correct and R is the correct explanation of A",
+      "Both A and R are correct but R is NOT the correct explanation of A",
+      "A is correct but R is not correct",
+      "A is not correct but R is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Both A and R are correct, and R correctly explains A. Dawa-e-Motadil (balanced/neutral drug) is one whose temperament (Mizaj) is exactly similar to the normal temperament of the human body. Because its qualities are in equilibrium matching body's natural state, it does not produce any abnormal or perceptible change (kaifiyat) in body functions after administration. This is in contrast to drugs with dominant hot, cold, moist, or dry qualities.",
+  },
+  {
+    id: 651,
+    text: "Which of the following is not an animal origin drug?",
+    options: [
+      "Shakar Teeghal",
+      "Kafe Darya",
+      "Lodh Pathani",
+      "Shaakh Ghozan",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Lodh Pathani (Symplocos racemosa) is a plant origin drug (bark of the Lodh tree), NOT an animal origin drug. It is used in gynecological disorders. In contrast: Shakar Teeghal is animal origin (secretion/product from insects or animals); Kafe Darya (cuttlefish bone — Sepia officinalis) is animal origin (marine animal); Shaakh Ghozan is animal origin (deer antler/horn). Hence Lodh Pathani is the odd one out.",
+  },
+  {
+    id: 652,
+    text: "Identify which one is not included in the Sulfonylurea group of oral antidiabetic drugs:",
+    options: ["Tolbutamide", "Glibenclamide", "Metformin", "Glipizide"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Moalijat",
+    year: 2020,
+    explanation:
+      "Metformin belongs to the Biguanide group, NOT the Sulfonylurea group. Metformin works by decreasing hepatic glucose production and improving insulin sensitivity. Sulfonylureas (Tolbutamide, Glibenclamide/Glyburide, Glipizide, Glimepiride, Gliclazide) work by stimulating insulin secretion from pancreatic beta cells by closing ATP-sensitive K+ channels.",
+  },
+  {
+    id: 653,
+    text: "Turanjabeen acts by virtue of:",
+    options: [
+      "Mus'hil bil Izabat",
+      "Mus'hil bil Izlaaq",
+      "Mus'hil bil Asr",
+      "Mus'hil bil Jila wa al Taqtee",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Turanjabeen (Mann/manna — a sweet exudate) acts as a laxative by virtue of Mus'hil bil Izlaaq (lubrication/slipping mechanism). It acts by lubricating and softening the intestinal contents, making them slippery and easy to pass. Mus'hil bil Izabat means by dissolving/melting, Mus'hil bil Asr means by expression/pressing, and Mus'hil bil Jila wa al Taqtee means by cleansing and cutting mucus.",
+  },
+  {
+    id: 654,
+    text: "Match List I with List II: (A) Anqrooya Saghir (B) Habbe Shifa (C) Sharbate Sadr (D) Sharbate Bazoori Moatadil / List II: (I) Sual muzmin (II) Amraze Gurda wa Masanah (III) Amraze Balghamiya (IV) De-addiction of Opium",
+    options: [
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "The correct indication matches are: (A) Anqrooya Saghir — (III) Amraze Balghamiya (phlegmatic diseases/conditions with excess phlegm), (B) Habbe Shifa — (IV) De-addiction of Opium (used in Afyun (opium) addiction treatment), (C) Sharbate Sadr — (I) Sual Muzmin (chronic cough — 'Sadr' means chest), (D) Sharbate Bazoori Moatadil — (II) Amraze Gurda wa Masanah (kidney and bladder diseases — 'Bazoori' relates to urinary system). This gives A-III, B-IV, C-I, D-II.",
+  },
+  {
+    id: 655,
+    text: "Match List I with List II: (A) Intasabi (B) Habbe Qooba (C) Majoon Biladur (D) Roghane Hanzal / List II: (I) Jarb wo Hikkah (II) Taqwiate Bah (III) Daad (IV) Damaah",
+    options: [
+      "(A)-(II), (B)-(IV), (C)-(I), (D)-(III)",
+      "(A)-(I), (B)-(III), (C)-(IV), (D)-(II)",
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "The correct matches are: (A) Intasabi — (IV) Damaah (warts/skin tags — Intasabi is used for removing warts), (B) Habbe Qooba — (III) Daad (ringworm/tinea — Qooba in Unani is ringworm), (C) Majoon Biladur — (II) Taqwiate Bah (aphrodisiac/sexual tonic — Biladur/Anacardium contains potent aphrodisiac properties), (D) Roghane Hanzal — (I) Jarb wo Hikkah (scabies and itching — Hanzal/colocynth oil is used externally for skin parasitic conditions). This gives A-IV, B-III, C-II, D-I.",
+  },
+  {
+    id: 656,
+    text: "The author of 'Minhajud Dukan wa Dastoorul Ayan' is:",
+    options: [
+      "Mohammad bin Khajandi",
+      "Najeebuddin Samarqandi",
+      "Abu Nasr Attar Israili",
+      "Mohammad bin Zakaria Razi",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Minhajud Dukan wa Dastoorul Ayan (Guide for the Pharmacist and Reference for the Knowledgeable) was written by Abu Nasr Attar Israili (also known as Ibn al-Attar). This is an important classical Unani pharmacological text. Mohammad bin Zakaria Razi wrote Al-Hawi and Kitab al-Mansuri; Najeebuddin Samarqandi wrote Aghraz al-Tibbiyya; Mohammad bin Khajandi wrote on various subjects.",
+  },
+  {
+    id: 657,
+    text: "Assertion A: As, Cd, Cr, Pb and Hg are Heavy metals. Reason R: These heavy metals are toxic.",
+    options: [
+      "Both A and R are correct and R is the correct explanation of A",
+      "Both A and R are correct but R is NOT the correct explanation of A",
+      "A is correct but R is not correct",
+      "A is not correct but R is correct",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Both A and R are correct, but R is NOT the correct explanation of A. The Assertion is correct — As (Arsenic), Cd (Cadmium), Cr (Chromium), Pb (Lead), and Hg (Mercury) are indeed heavy metals based on their high atomic weight/density (>5 g/cm³). The Reason states they are toxic — this is also true. However, toxicity is NOT the criterion for classifying metals as 'heavy metals'. The classification is based on physical properties (density/atomic weight), not toxicity. Some heavy metals (like iron, zinc) are essential nutrients.",
+  },
+  {
+    id: 658,
+    text: "Statement I: NFUM and UPI are similar official books. Statement II: Pharmaceutical Standards of compound formulations are not mentioned in NFUM, whereas they are mentioned in UPI.",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct",
+    ] as [string, string, string, string],
+    correctIndex: 3,
+    topic: "Ilmul Advia",
+    year: 2020,
+    explanation:
+      "Statement I is incorrect: NFUM (National Formulary of Unani Medicine) and UPI (Unani Pharmacopoeia of India) are NOT similar books — they serve different purposes. UPI contains monographs on single drugs with quality standards, while NFUM contains standards for compound formulations. Statement II is correct: Pharmaceutical standards for compound (poly-herbal) formulations are mentioned in NFUM, whereas UPI focuses on single drug (simple) standards. This makes Statement I wrong and Statement II right.",
+  },
+  {
+    id: 659,
+    text: "Assertion A: Absorption of Kushtajat are swift as compared to other drugs. Reason R: Because due to calcinations process metals minerals are converted into nanoparticles.",
+    options: [
+      "Both A and R are correct and R is the correct explanation of A",
+      "Both A and R are correct but R is NOT the correct explanation of A",
+      "A is correct but R is not correct",
+      "A is not correct but R is correct",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "Both A and R are correct, and R correctly explains A. Kushtajat are calcined preparations of metals and minerals in Unani medicine. The calcination (Kushta-making) process involves repeated heating and quenching, which converts the metals/minerals into very fine particles — essentially nanoparticles. These nanoparticles have a large surface area to volume ratio, which significantly enhances their bioavailability and rate of absorption in the gastrointestinal tract compared to uncalcined drugs.",
+  },
+  {
+    id: 660,
+    text: "Assertion A: Amber is incorporated in a formulation during slow heating at later stage. Reason R: Because Amber evaporates on higher temperature.",
+    options: [
+      "Both A and R are true and R is the correct explanation of A",
+      "Both A and R are true but R is not the correct explanation of A",
+      "A is true but R is false",
+      "A is false but R is true",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "Both A and R are true, and R is the correct explanation of A. Anbar (Ambergris — a waxy substance from sperm whales) is a heat-sensitive substance. When heated to high temperatures, it evaporates and its volatile aromatic compounds are lost, reducing its therapeutic efficacy. Therefore, in pharmaceutical preparations requiring heat, Amber is added at a later stage during slow/gentle heating (not at high temperatures) to preserve its active constituents. This practice is documented in Unani pharmacopoeial texts.",
+  },
+  {
+    id: 661,
+    text: "Match List I (Formulation) with List II (Action): (A) Qurse Kafoor (B) Qurse Haabis (C) Johare Seen (D) Jawarishe Falafil / List II: (I) Muqqavi Aasab (II) Muharrike Ratubaat Maida (III) Mubarrid (IV) Habise Dam",
+    options: [
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+      "(A)-(IV), (B)-(II), (C)-(III), (D)-(I)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "The correct action matches are: (A) Qurse Kafoor — (III) Mubarrid (cooling agent — Kafoor/camphor is cold in temperament and is used as a cooling formulation), (B) Qurse Haabis — (IV) Habise Dam (haemostatic/stops bleeding — 'Haabis' means to stop/arrest, specifically bleeding), (C) Johare Seen — (I) Muqqavi Aasab (nervine tonic — Seen/zinc formulation strengthens nervous system), (D) Jawarishe Falafil — (II) Muharrike Ratubaat Maida (stimulates gastric secretions — Falafil/pepper stimulates stomach). A-III, B-IV, C-I, D-II.",
+  },
+  {
+    id: 662,
+    text: "Match List I (Indication) with List II (Khamira): (A) Effective in Khafqan wa Baswas (B) Remove Khushki-e-Dimagh (C) Effective in Malekholia (D) Prevent Nazalae Haar / List II: (I) Khamira Khaskhash (II) Khamira Abresham Shire Unnabwala (III) Khamira Banafsha (IV) Khamira Abresham Ood Mastagiwala",
+    options: [
+      "(A)-(II), (B)-(III), (C)-(IV), (D)-(I)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Saidla",
+    year: 2020,
+    explanation:
+      "The correct matches are: (A) Khafqan wa Baswas (palpitation and anxiety/whispers) — (IV) Khamira Abresham Ood Mastagiwala (contains silk, aloe-wood and mastic, used for cardiac/mental complaints), (B) Remove Khushki-e-Dimagh (dryness of brain) — (II) Khamira Abresham Shire Unnabwala (contains silk with jujube syrup, a moistening formulation), (C) Malekholia (melancholia/depression) — (I) Khamira Khaskhash (contains poppy — sedative/antidepressant properties), (D) Nazalae Haar (hot catarrh) — (III) Khamira Banafsha (contains violet — cooling and demulcent). A-IV, B-II, C-I, D-III.",
+  },
+  {
+    id: 663,
+    text: "Definition of the disability is:",
+    options: [
+      "Any loss or abnormality of psychological physiological or anatomical structure or function",
+      "A disadvantage for a given individual resulting from a impairment or a disability that limits or prevents the fulfillment of a role",
+      "Any description or lack of ability to perform an activity in the manner or within the range considered normal for a human being",
+      "Restoration of family and social relationship",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "According to WHO ICIDH (International Classification of Impairments, Disabilities and Handicaps): Disability is defined as 'any restriction or lack of ability to perform an activity in the manner or within the range considered normal for a human being.' Impairment (Option 1) refers to loss of psychological, physiological or anatomical structure/function. Handicap (Option 2) is the disadvantage/social disadvantage resulting from impairment or disability. These three are distinct concepts in rehabilitation medicine.",
+  },
+  {
+    id: 664,
+    text: "Which one is the most appropriate definition of Surveillance?",
+    options: [
+      "The limitation of freedom of movement of such well person or domestic animals exposed to communicable disease",
+      "Continuous analysis, interpretation and feedback of systematically collected data",
+      "The person, animal or substance from which an infectious agent passes or disseminated to the host",
+      "Termination of all transmission of infection by extermination of the infectious agent through surveillance and containment",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "Surveillance in public health is defined as 'the continuous, systematic collection, analysis and interpretation of health-related data needed for the planning, implementation, and evaluation of public health practice.' The most appropriate definition here is option 2 — continuous analysis, interpretation and feedback of systematically collected data. Option 1 describes Quarantine; Option 3 describes the concept of Source/Reservoir; Option 4 describes Eradication.",
+  },
+  {
+    id: 665,
+    text: "The declaration of Alma-ata stated that primary health care includes: (C) Immunization against infectious disease (D) Provision of essential drugs (E) Promotion of food supply and nutrition",
+    options: [
+      "(C), (D) and (E)",
+      "(A), (B) and (C)",
+      "(B), (D) and (E)",
+      "(A), (C) and (D)",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "The Declaration of Alma-Ata (1978) defined eight essential components of Primary Health Care: (1) Education about health problems, (2) Promotion of food supply and nutrition (E), (3) Adequate supply of safe water and sanitation, (4) Maternal and child health including family planning, (5) Immunization against major infectious diseases (C), (6) Prevention and control of locally endemic diseases, (7) Appropriate treatment of common diseases and injuries, (8) Provision of essential drugs (D). So C, D, and E are all included.",
+  },
+  {
+    id: 666,
+    text: "The clinical features like nausea, vomiting, colicky abdominal pain and headache are related with:",
+    options: [
+      "Lead poisoning",
+      "Cholera",
+      "Arsenic poisoning",
+      "Mercury poisoning",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Qanoon wa Tibb",
+    year: 2020,
+    explanation:
+      "Nausea, vomiting, colicky abdominal pain (lead colic), and headache are classic features of Lead (Pb) poisoning (Plumbism). Other features of lead poisoning include: Burtonian line (blue line on gums), peripheral neuropathy (wrist/foot drop), anaemia (basophilic stippling), encephalopathy, and constipation. Cholera causes rice-water diarrhoea. Arsenic poisoning causes Mee's lines on nails and peripheral neuropathy. Mercury poisoning causes tremors and neurological symptoms.",
+  },
+  {
+    id: 667,
+    text: "Preservative used for the preservation of viscera is:",
+    options: [
+      "Iodine",
+      "Formalin",
+      "Saturated solution of common salt",
+      "Alcohol",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Qanoon wa Tibb",
+    year: 2020,
+    explanation:
+      "For medico-legal preservation of viscera (for chemical analysis), Saturated solution of common salt (NaCl) is used. Formalin (formaldehyde) is NOT used for viscera preservation in forensic cases because it interferes with subsequent chemical analysis and toxicological examination. Saturated salt solution preserves the tissues without affecting the chemical constituents that need to be analyzed. Spirit (rectified spirit/alcohol) is used as an alternative when salt solution is unavailable.",
+  },
+  {
+    id: 668,
+    text: "Match List I (Disease) with List II (Incubation Period): (A) Chickenpox (B) Mumps (C) Poliomyelitis (D) Hepatitis B / List II: (I) 30-180 days (II) 7-14 days (III) 18-72 hours (IV) 14-16 days",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(III) and (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(II) and (D)-(I)",
+      "(A)-(II), (B)-(IV), (C)-(III) and (D)-(I)",
+      "(A)-(III), (B)-(I), (C)-(II) and (D)-(IV)",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "The correct incubation periods: (A) Chickenpox — (IV) 14-16 days (range 10-21 days), (B) Mumps — (III) 18-72 hours is incorrect; Mumps IP is 14-21 days. However, per the AIAPGET key, B matches III. The standard answer per AIAPGET 2020 is A-IV, B-III, C-II, D-I. Hepatitis B (D) — (I) 30-180 days (average 60-90 days). Poliomyelitis (C) — (II) 7-14 days (range 3-35 days).",
+  },
+  {
+    id: 669,
+    text: "Match List I (Disease) with List II (Agent factor): (A) Cholera (B) Typhoid (C) Diphtheria (D) Rabies / List II: (I) Salmonella typhii (II) Lyssa virus type I (III) Vibrio cholera (IV) Corynebacterium diphtherae",
+    options: [
+      "(A)-(I), (B)-(III), (C)-(II) and (D)-(IV)",
+      "(A)-(II), (B)-(III), (C)-(IV) and (D)-(I)",
+      "(A)-(III), (B)-(I), (C)-(IV) and (D)-(II)",
+      "(A)-(IV), (B)-(III), (C)-(I) and (D)-(II)",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "The correct agent-disease matches: (A) Cholera — (III) Vibrio cholerae (comma-shaped gram-negative bacteria), (B) Typhoid — (I) Salmonella typhi (gram-negative bacillus causing enteric fever), (C) Diphtheria — (IV) Corynebacterium diphtheriae (gram-positive club-shaped bacteria producing exotoxin), (D) Rabies — (II) Lyssa virus type I (rhabdovirus belonging to genus Lyssavirus). This gives A-III, B-I, C-IV, D-II.",
+  },
+  {
+    id: 670,
+    text: "Burtonian line is seen in the poisoning of:",
+    options: ["Mercury", "Arsenic", "Lead", "Copper"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 2,
+    topic: "Qanoon wa Tibb",
+    year: 2020,
+    explanation:
+      "Burtonian line (Burton's line) is a bluish-black/gray line on the gingival margin (gums) seen in chronic Lead (Pb) poisoning. It is caused by deposition of lead sulphide in the gum tissue. It was described by Henry Burton. In Mercury poisoning, a similar line may be seen but it is typically blue-black at the gingival-dental junction. Arsenic poisoning causes Mee's lines on nails and hyperpigmentation.",
+  },
+  {
+    id: 671,
+    text: "Incubation Period of Cholera is commonly of:",
+    options: ["5-6 days", "7-10 days", "1-5 days", "2-3 days"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "The incubation period of Cholera (caused by Vibrio cholerae) is commonly 2-3 days, with a range of a few hours to 5 days. The disease can present very rapidly. The classic presentation is sudden onset of profuse rice-water diarrhoea and vomiting leading to severe dehydration. The WHO states the incubation period ranges from 2 hours to 5 days, with most cases occurring within 2-3 days.",
+  },
+  {
+    id: 672,
+    text: "Germ's theory of the disease was given by:",
+    options: [
+      "Louis Pasteur",
+      "Mac Mohan",
+      "Leavell and Clark",
+      "Leuwenhoek",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Tahaffuzi wa Samaji Tib",
+    year: 2020,
+    explanation:
+      "The Germ Theory of Disease was propounded by Louis Pasteur (1822-1895), a French microbiologist, along with Robert Koch. Pasteur demonstrated that microorganisms (germs) are the cause of infectious diseases. Antonie van Leeuwenhoek first observed microorganisms under a microscope. Brian MacMahon is known for epidemiological concepts including the web of causation. Leavell and Clark formulated the concept of levels of prevention and natural history of disease.",
+  },
+  {
+    id: 673,
+    text: "Heart failure cells are found in:",
+    options: [
+      "Chronic congestive failure of lungs",
+      "Chronic congestive failure of liver",
+      "Chronic congestive failure of spleen",
+      "Acute myocardial infarction",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Heart failure cells are haemosiderin-laden macrophages found in the alveoli (air sacs) of the lungs in chronic congestive cardiac failure (left-sided heart failure). When the left ventricle fails, blood backs up into the pulmonary circulation causing pulmonary congestion and edema. Red blood cells leak into alveoli and are phagocytosed by macrophages, which convert haemoglobin to haemosiderin. These iron-pigment containing macrophages are called 'heart failure cells'.",
+  },
+  {
+    id: 674,
+    text: "Gamma-Gandy bodies are seen in:",
+    options: [
+      "Chronic congestive failure of lungs",
+      "Chronic congestive failure of liver",
+      "Chronic congestive failure of spleen",
+      "Acute myocardial infarction",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Gamma-Gandy bodies (also called siderotic nodules or Gandy-Gamna bodies) are seen in chronic congestive splenomegaly (spleen). They appear as small foci of organized fibrous tissue with haemosiderin and calcium deposits in the spleen, resulting from repeated microhemorrhages due to chronic passive congestion. They are seen in conditions causing splenomegaly like sickle cell disease, thalassemia, and chronic venous congestion. They appear as low-signal foci on MRI (T2-weighted images).",
+  },
+  {
+    id: 675,
+    text: "An example of Granulomatous Inflammation is:",
+    options: ["Tuberculosis", "Leprosy", "Sarcoidosis", "All of above"] as [
+      string,
+      string,
+      string,
+      string,
+    ],
+    correctIndex: 3,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Granulomatous inflammation is characterized by formation of granulomas — discrete collections of activated macrophages (epithelioid cells) often surrounded by lymphocytes. Classic examples include: Tuberculosis (caseating granuloma with central caseous necrosis), Leprosy (non-caseating granuloma in tuberculoid type; foamy macrophages in lepromatous type), Sarcoidosis (non-caseating granuloma), and also Crohn's disease, fungal infections, foreign body reactions. All three options are correct examples.",
+  },
+  {
+    id: 676,
+    text: "Caseation Necrosis is characteristic of:",
+    options: [
+      "Acute Myocardial Infarction",
+      "Tuberculosis",
+      "Cerebral Infarction",
+      "Acute Pancreatitis",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Caseous (caseation) necrosis is pathognomonic of Tuberculosis. Macroscopically, it resembles soft, white, crumbly cheese (hence 'caseous' from Latin caseus = cheese). Microscopically, it shows amorphous, acellular, granular eosinophilic material without any tissue architecture. It is a specific type of coagulative necrosis with complete destruction of cellular architecture. Myocardial infarction causes coagulative necrosis; Cerebral infarction causes liquefactive necrosis; Acute pancreatitis causes fat necrosis.",
+  },
+  {
+    id: 677,
+    text: "All events are common to primary and secondary healing except:",
+    options: [
+      "Formation of blood clot",
+      "Inflammatory response",
+      "Wound contraction",
+      "Epithelial changes",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Wound contraction is seen predominantly in secondary intention healing (healing by second intention/secondary union) but NOT in primary intention healing (primary union/healing by first intention). In primary healing (clean, sutured wound with minimal gap), there is minimal contraction. In secondary healing (large open wounds), extensive wound contraction by myofibroblasts occurs to reduce wound size. Both types share: blood clot formation, inflammatory response, and epithelial regeneration.",
+  },
+  {
+    id: 678,
+    text: "Leucocyte count will be decreased in:",
+    options: [
+      "Appendicitis",
+      "Meningitis",
+      "Typhoid",
+      "Acute Glomerular Nephritis",
+    ] as [string, string, string, string],
+    correctIndex: 2,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Leucocyte count is decreased (leucopenia) in Typhoid fever (Enteric fever caused by Salmonella typhi). Typhoid characteristically causes relative leucopenia/leucopenia despite high fever. The Salmonella toxin suppresses bone marrow and causes leucopenia. In contrast: Appendicitis causes leucocytosis (neutrophilia); Meningitis (bacterial) causes leucocytosis; Acute Glomerulonephritis may have mild leucocytosis. Typhoid leucopenia is an important diagnostic clue.",
+  },
+  {
+    id: 679,
+    text: "The most common termination of Pneumonia is:",
+    options: [
+      "Consolidation",
+      "Resolution",
+      "Abscess formation",
+      "Empyema",
+    ] as [string, string, string, string],
+    correctIndex: 1,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Resolution (complete resolution) is the most common and favourable outcome of Lobar Pneumonia. With proper antibiotic treatment, the consolidation resolves completely and the lung tissue returns to normal architecture within 1-3 weeks. The inflammatory exudate is liquefied by enzymatic activity and cleared by macrophages and lymphatics. Other complications like lung abscess, empyema, and fibrous organization are less common outcomes.",
+  },
+  {
+    id: 680,
+    text: "Characteristic feature of Amoebic ulcer is:",
+    options: [
+      "Flask shaped",
+      "Undermined edges",
+      "Rolled up edge",
+      "Punched out",
+    ] as [string, string, string, string],
+    correctIndex: 0,
+    topic: "Ilmul Amraz",
+    year: 2020,
+    explanation:
+      "Flask-shaped (or collar-button/bottle-shaped) ulcer is the characteristic feature of Amoebic dysentery ulcer in the large intestine. Entamoeba histolytica burrows through the mucosal surface and spreads laterally in the submucosa, creating a narrow neck at the mucosa and a wide base in the submucosa — giving it a flask/bottle shape. Undermined edges are seen in tuberculous ulcers; Rolled-up (everted/raised) edges in carcinomatous ulcers; Punched-out in syphilitic ulcers.",
+  },
 ];
